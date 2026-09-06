@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뉴스투데이 | newstoday.co.kr</title>
+<meta name="description" content="뉴스투데이 — 함께 읽고 나누는 비영리 디지털 공공광장. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료실을 한 곳에서 만나보세요.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F7F5EF;
+    --surface: #FFFFFF;
+    --ink: #1E1D1A;
+    --ink-soft: #55524A;
+    --navy: #1F3C57;
+    --navy-deep: #16293B;
+    --brick: #A6491F;
+    --line: #DCD5C4;
+    --line-soft: #EAE5D8;
+    --focus: #1F3C57;
+    --font-body: 'Noto Sans KR', sans-serif;
+    --font-head: 'Noto Serif KR', serif;
+    --step: 0px; /* font-size adjustment, changed by JS */
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:calc(18px + var(--step));
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--navy); text-underline-offset:3px;}
+  a:hover{color:var(--brick);}
+
+  :focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+    border-radius:2px;
+  }
+
+  .skip-link{
+    position:absolute; left:-9999px; top:0;
+    background:var(--navy); color:#fff; padding:12px 18px;
+    z-index:200; border-radius:0 0 6px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    border-bottom:4px solid var(--navy-deep);
+    background:var(--surface);
+  }
+  .masthead-inner{
+    max-width:920px;
+    margin:0 auto;
+    padding:22px 24px 16px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex; flex-direction:column; gap:2px;}
+  .brand-mark{
+    font-family:var(--font-head);
+    font-weight:700;
+    font-size:calc(2.1rem + var(--step));
+    letter-spacing:0.02em;
+    color:var(--navy-deep);
+  }
+  .brand-url{
+    font-size:calc(0.85rem + var(--step));
+    letter-spacing:0.14em;
+    color:var(--ink-soft);
+  }
+  .brand-tagline{
+    font-size:calc(0.95rem + var(--step));
+    color:var(--ink-soft);
+    text-align:right;
+  }
+
+  .toolbar{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 24px 14px;
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+  }
+  .fontctl{
+    display:flex; align-items:center; gap:6px;
+    border:1px solid var(--line);
+    background:var(--bg);
+    border-radius:8px;
+    padding:4px;
+  }
+  .fontctl span{font-size:0.8rem; color:var(--ink-soft); padding:0 6px;}
+  .fontctl button{
+    font-family:var(--font-body);
+    background:var(--surface);
+    border:1px solid var(--line);
+    color:var(--navy-deep);
+    border-radius:6px;
+    padding:6px 11px;
+    font-weight:700;
+    cursor:pointer;
+    min-width:38px;
+    min-height:38px;
+  }
+  .fontctl button:hover{background:var(--navy-deep); color:#fff;}
+
+  main{max-width:920px; margin:0 auto; padding:0 24px 80px;}
+
+  /* ---------- Home page ---------- */
+  .hero{
+    padding:36px 0 20px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero h1{
+    font-family:var(--font-head);
+    font-size:calc(1.6rem + var(--step));
+    line-height:1.5;
+    margin:0 0 10px;
+    color:var(--ink);
+    font-weight:600;
+  }
+  .hero p{
+    margin:0;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+
+  .index-list{list-style:none; margin:0; padding:0;}
+  .index-item{border-bottom:1px solid var(--line-soft);}
+  .index-item:first-child{border-top:1px solid var(--line-soft);}
+
+  .index-link{
+    display:flex;
+    align-items:center;
+    gap:22px;
+    padding:22px 6px;
+    text-decoration:none;
+    color:var(--ink);
+    border-left:4px solid transparent;
+  }
+  .index-link:hover, .index-link:focus-visible{
+    background:var(--line-soft);
+    border-left-color:var(--brick);
+    color:var(--ink);
+  }
+  .index-num{
+    font-family:var(--font-head);
+    font-weight:600;
+    font-size:calc(1.6rem + var(--step));
+    color:var(--navy);
+    width:2.2em;
+    flex:none;
+  }
+  .index-body{flex:1; min-width:0;}
+  .index-title{
+    font-weight:700;
+    font-size:calc(1.08rem + var(--step));
+    display:block;
+  }
+  .index-desc{
+    display:block;
+    color:var(--ink-soft);
+    font-size:calc(0.92rem + var(--step));
+    margin-top:3px;
+  }
+  .index-chevron{
+    flex:none;
+    color:var(--ink-soft);
+    font-size:1.3rem;
+  }
+
+  /* ---------- Sub pages ---------- */
+  .view{display:none;}
+  .view.active{display:block;}
+
+  .subhead{
+    padding:28px 0 18px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:22px;
+  }
+  .home-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--navy-deep);
+    color:#fff;
+    text-decoration:none;
+    padding:10px 16px;
+    border-radius:8px;
+    font-weight:700;
+    font-size:calc(0.92rem + var(--step));
+    min-height:44px;
+  }
+  .home-btn:hover, .home-btn:focus-visible{background:var(--brick); color:#fff;}
+  .subhead h2{
+    font-family:var(--font-head);
+    font-size:calc(1.5rem + var(--step));
+    margin:16px 0 6px;
+    color:var(--ink);
+  }
+  .subhead .hint{color:var(--ink-soft); font-size:calc(0.9rem + var(--step));}
+
+  /* Book list rows */
+  .book-list{list-style:none; margin:0; padding:0;}
+  .book-row{border-bottom:1px solid var(--line-soft);}
+  .book-row:first-child{border-top:1px solid var(--line-soft);}
+  .book-link{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:18px 6px;
+    text-decoration:none;
+    color:var(--ink);
+    border-left:4px solid transparent;
+  }
+  .book-link:hover, .book-link:focus-visible{
+    background:var(--line-soft);
+    border-left-color:var(--navy);
+  }
+  .book-no{
+    font-family:var(--font-head);
+    color:var(--ink-soft);
+    width:2em;
+    flex:none;
+    font-size:calc(1rem + var(--step));
+  }
+  .book-title{flex:1; font-weight:500;}
+  .book-go{
+    flex:none;
+    font-size:calc(0.85rem + var(--step));
+    color:var(--navy);
+    font-weight:700;
+    white-space:nowrap;
+  }
+
+  /* Dongbang view */
+  .dongbang-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:32px;
+    align-items:start;
+  }
+  @media (max-width:640px){
+    .dongbang-grid{grid-template-columns:1fr;}
+  }
+  .dongbang-grid img{
+    width:100%;
+    height:auto;
+    border-radius:4px;
+    border:1px solid var(--line);
+    display:block;
+  }
+  .dongbang-text p{margin:0 0 14px; color:var(--ink);}
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--navy);
+    color:#fff;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:700;
+    min-height:44px;
+  }
+  .btn-primary:hover, .btn-primary:focus-visible{background:var(--brick); color:#fff;}
+
+  /* Log tables (오피니언 / AI 대화 / 자료실 / Temp) */
+  .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:6px;}
+  table.log{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--surface);
+    font-size:calc(0.95rem + var(--step));
+  }
+  table.log caption{
+    text-align:left;
+    padding:12px 14px;
+    color:var(--ink-soft);
+    font-size:calc(0.85rem + var(--step));
+    background:var(--line-soft);
+  }
+  table.log th, table.log td{
+    padding:14px 14px;
+    text-align:left;
+    border-bottom:1px solid var(--line-soft);
+    vertical-align:middle;
+  }
+  table.log thead th{
+    background:var(--navy-deep);
+    color:#fff;
+    font-weight:700;
+    position:sticky; top:0;
+  }
+  table.log tbody tr:nth-child(even){background:var(--line-soft);}
+  table.log tbody tr:hover{background:#EFE6D8;}
+  table.log td.no-col{width:56px; color:var(--ink-soft); font-family:var(--font-head);}
+  table.log td.date-col{width:130px; white-space:nowrap; color:var(--ink-soft);}
+  .row-link{font-weight:700;}
+  .empty-note{color:var(--ink-soft); font-style:normal; font-size:calc(0.85rem + var(--step));}
+
+  footer{
+    border-top:4px solid var(--navy-deep);
+    margin-top:40px;
+    background:var(--surface);
+  }
+  .footer-inner{
+    max-width:920px; margin:0 auto; padding:24px;
+    color:var(--ink-soft);
+    font-size:calc(0.85rem + var(--step));
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <span class="brand-mark">뉴스투데이</span>
+      <span class="brand-url">newstoday.co.kr</span>
+    </div>
+    <div class="brand-tagline">함께 읽고 나누는<br>비영리 디지털 공공광장</div>
+  </div>
+  <div class="toolbar">
+    <div class="fontctl" role="group" aria-label="글자 크기 조절">
+      <span>글자 크기</span>
+      <button type="button" id="font-dec" aria-label="글자 크기 줄이기">가−</button>
+      <button type="button" id="font-reset" aria-label="글자 크기 기본값">가</button>
+      <button type="button" id="font-inc" aria-label="글자 크기 키우기">가+</button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- ============ 메인 화면 ============ -->
+  <section id="view-home" class="view active" aria-label="메인 메뉴">
+    <div class="hero">
+      <h1>오늘, 이곳에서 만나는 이야기들</h1>
+      <p>저서, 그림 유물 이야기, 기고문, 매일의 기록을 한자리에 모았습니다. 아래 항목을 눌러 살펴보세요.</p>
+    </div>
+
+    <ul class="index-list">
+      <li class="index-item">
+        <a class="index-link" href="#pod" data-view="view-pod">
+          <span class="index-num">01</span>
+          <span class="index-body">
+            <span class="index-title">내가 출간한 POD(종이책)</span>
+            <span class="index-desc">번호를 누르면 온라인 서점 구매 페이지로 이동합니다</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#ebook" data-view="view-ebook">
+          <span class="index-num">02</span>
+          <span class="index-body">
+            <span class="index-title">내가 출간한 전자책</span>
+            <span class="index-desc">번호를 누르면 온라인 서점 구매 페이지로 이동합니다</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#dongbang" data-view="view-dongbang">
+          <span class="index-num">03</span>
+          <span class="index-body">
+            <span class="index-title">사이버 동방예술관</span>
+            <span class="index-desc">고려박물관에서 다시 태어난 동방예술관 소개</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#opinion" data-view="view-opinion">
+          <span class="index-num">04</span>
+          <span class="index-body">
+            <span class="index-title">비즈넷타임즈 오피니언 기고문</span>
+            <span class="index-desc">2주마다 새 글이 쌓이는 기고문 목록</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#ai-talks" data-view="view-ai-talks">
+          <span class="index-num">05</span>
+          <span class="index-body">
+            <span class="index-title">매일 AI와 나눈 이야기 모음</span>
+            <span class="index-desc">노션에 공유한 대화 기록 모음</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#archive" data-view="view-archive">
+          <span class="index-num">06</span>
+          <span class="index-body">
+            <span class="index-title">자료실</span>
+            <span class="index-desc">구글 드라이브에 공유한 자료 모음</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+      <li class="index-item">
+        <a class="index-link" href="#temp" data-view="view-temp">
+          <span class="index-num">07</span>
+          <span class="index-body">
+            <span class="index-title">Temp</span>
+            <span class="index-desc">임시 자료 보관 목록</span>
+          </span>
+          <span class="index-chevron" aria-hidden="true">›</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 01 POD 종이책 ============ -->
+  <section id="view-pod" class="view" aria-label="내가 출간한 POD 종이책">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>01. 내가 출간한 POD(종이책)</h2>
+      <p class="hint">제목을 누르면 새 창에서 온라인 서점 구매 페이지가 열립니다.</p>
+    </div>
+    <ol class="book-list" id="pod-list"></ol>
+  </section>
+
+  <!-- ============ 02 전자책 ============ -->
+  <section id="view-ebook" class="view" aria-label="내가 출간한 전자책">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>02. 내가 출간한 전자책</h2>
+      <p class="hint">제목을 누르면 새 창에서 온라인 서점 구매 페이지가 열립니다.</p>
+    </div>
+    <ol class="book-list" id="ebook-list"></ol>
+  </section>
+
+  <!-- ============ 03 사이버 동방예술관 ============ -->
+  <section id="view-dongbang" class="view" aria-label="사이버 동방예술관">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>03. 사이버 동방예술관</h2>
+    </div>
+    <div class="dongbang-grid">
+      <img src="assets/dongbang-poster.jpg" alt="동방예술관 소장 유물 도록 표지 — 삼존상 청동 유물 사진과 '고려박물관, 새 이름으로 다시 태어나다' 문구">
+      <div class="dongbang-text">
+        <p>동방예술관은 2011년 고려박물관으로 문을 연 뒤 2024년 폐관을 거쳐, 2026년 '동방예술관 재건 프로젝트'로 새 이름을 얻었습니다. 소장 유물 도록에는 삼존상을 비롯한 유물들이 담겨 있으며, 이 공간은 동방예술관 건립자금 후원의 시작을 알리는 자리이기도 합니다.</p>
+        <p>아래 링크를 통해 사이버 동방예술관 전시실을 직접 둘러보실 수 있습니다.</p>
+        <a class="btn-primary" href="https://hjyeagle.github.io/cyber_dongbang/" target="_blank" rel="noopener noreferrer">
+          사이버 동방예술관 바로가기 (새 창) ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 비즈넷타임즈 오피니언 ============ -->
+  <section id="view-opinion" class="view" aria-label="비즈넷타임즈 오피니언 기고문">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>04. 비즈넷타임즈 오피니언 기고문</h2>
+      <p class="hint">약 2주 간격으로 새 기고문이 등록됩니다. 링크는 새 창에서 열립니다.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="log" id="table-opinion">
+        <caption>윤희준의 AI를 읽다 — 등록 기고문 목록</caption>
+        <thead>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">링크 주소</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 05 매일 AI와 나눈 이야기 모음 ============ -->
+  <section id="view-ai-talks" class="view" aria-label="매일 AI와 나눈 이야기 모음">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>05. 매일 AI와 나눈 이야기 모음</h2>
+      <p class="hint">노션에 공유된 대화 기록입니다. 링크는 새 창에서 열립니다.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="log" id="table-ai-talks">
+        <caption>노션 공유 링크 목록</caption>
+        <thead>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">노션에 공유한 주소</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 06 자료실 ============ -->
+  <section id="view-archive" class="view" aria-label="자료실">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>06. 자료실</h2>
+      <p class="hint">구글 드라이브에 공유된 자료입니다. 링크는 새 창에서 열립니다.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="log" id="table-archive">
+        <caption>공유 자료 목록</caption>
+        <thead>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자 / 제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 07 Temp ============ -->
+  <section id="view-temp" class="view" aria-label="Temp">
+    <div class="subhead">
+      <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+      <h2>07. Temp</h2>
+      <p class="hint">임시로 보관하는 자료입니다. 링크는 새 창에서 열립니다.</p>
+    </div>
+    <div class="table-wrap">
+      <table class="log" id="table-temp">
+        <caption>임시 자료 목록</caption>
+        <thead>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자 / 제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 뉴스투데이 · newstoday.co.kr</span>
+    <span>비영리 · 자원봉사 기반 디지털 공공광장</span>
+  </div>
+</footer>
+
+<script>
+/* =========================================================================
+   뉴스투데이 데이터
+   -------------------------------------------------------------------------
+   ▶ 04, 05, 06, 07번 목록은 시간이 지나며 항목이 계속 늘어납니다.
+     아래 각 배열( opinionData / aiTalksData / archiveData / tempData )에
+     { date: "YYYY.MM.DD", url: "링크주소" } 형식으로 한 줄만 추가하면
+     표에 자동으로 새 행이 생성됩니다. (엑셀에 한 줄 추가하는 것과 동일한 방식)
+   ========================================================================= */
+
+// 01/02 공통 도서 제목 (번호순)
+const bookTitles = [
+  "17년 그 길 위의 이야기들(해외여행편)",
+  "18년 그 길 위의 이야기들 2026년 1부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2026년 2부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2025년 1부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2025년 2부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2025년 3부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2025년 4부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2024년 1부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2024년 2부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2024년 3부(국내 맛집편)",
+  "18년 그 길 위의 이야기들 2024년 4부(국내 맛집편)"
+];
+
+// 01 POD(종이책) 구매 링크 — 교보문고
+const podLinks = [
+  "https://product.kyobobook.co.kr/detail/S000220939969",
+  "https://product.kyobobook.co.kr/detail/S000221075801",
+  "https://product.kyobobook.co.kr/detail/S000221109819",
+  "https://product.kyobobook.co.kr/detail/S000221109818",
+  "https://product.kyobobook.co.kr/detail/S000221109817",
+  "https://product.kyobobook.co.kr/detail/S000221109816",
+  "https://product.kyobobook.co.kr/detail/S000221109815",
+  "https://product.kyobobook.co.kr/detail/S000221109813",
+  "https://product.kyobobook.co.kr/detail/S000221109812",
+  "https://product.kyobobook.co.kr/detail/S000221109811",
+  "https://product.kyobobook.co.kr/detail/S000221109810"
+];
+
+// 02 전자책 구매 링크 — 교보문고 / YES24
+const ebookLinks = [
+  "https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000011939920",
+  "https://www.yes24.com/product/goods/195485493",
+  "https://www.yes24.com/product/goods/195485466",
+  "https://www.yes24.com/product/goods/195485457",
+  "https://www.yes24.com/product/goods/195485458",
+  "https://www.yes24.com/product/goods/195485460",
+  "https://www.yes24.com/product/goods/195485461",
+  "https://www.yes24.com/product/goods/195485462",
+  "https://www.yes24.com/product/goods/195485463",
+  "https://www.yes24.com/product/goods/195485464",
+  "https://www.yes24.com/product/goods/195485465"
+];
+
+// 04 비즈넷타임즈 오피니언 기고문 (2주 간격 누적)
+const opinionData = [
+  { date: "2026.08.31", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30925" },
+  { date: "2026.08.18", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30734" }
+  // ↓ 새 기고문 등록 시 아래에 한 줄 추가
+  // , { date: "YYYY.MM.DD", url: "https://www.biznettimes.co.kr/..." }
+];
+
+// 05 매일 AI와 나눈 이야기 모음 (노션 공유 링크, 누적)
+const aiTalksData = [
+  { date: "2026.08.18", url: "https://app.notion.com/p/newstoday/2026-08-18-3c0d5308c4dd8160a983c201b14afcd3?source=copy_link" }
+  // ↓ 새 기록 등록 시 아래에 한 줄 추가
+  // , { date: "YYYY.MM.DD", url: "https://app.notion.com/..." }
+];
+
+// 06 자료실 (구글 드라이브 공유 링크, 누적)
+const archiveData = [
+  { date: "2024.06.15", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
+  // ↓ 새 자료 등록 시 아래에 한 줄 추가
+  // , { date: "YYYY.MM.DD / 제목", url: "https://drive.google.com/..." }
+];
+
+// 07 Temp (임시 자료, 누적)
+const tempData = [
+  { date: "2024.06.15", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
+  // ↓ 새 자료 등록 시 아래에 한 줄 추가
+  // , { date: "YYYY.MM.DD / 제목", url: "https://drive.google.com/..." }
+];
+
+/* -------------------------- 렌더링 함수 -------------------------- */
+
+function renderBookList(ulId, titles, links){
+  const ul = document.getElementById(ulId);
+  ul.innerHTML = "";
+  titles.forEach((title, i) => {
+    const li = document.createElement("li");
+    li.className = "book-row";
+    const url = links[i] || "#";
+    li.innerHTML = `
+      <a class="book-link" href="${url}" target="_blank" rel="noopener noreferrer">
+        <span class="book-no">${i + 1}</span>
+        <span class="book-title">${title}</span>
+        <span class="book-go">구매 링크 ↗</span>
+      </a>`;
+    ul.appendChild(li);
+  });
+}
+
+function renderLogTable(tableId, data, titleCol){
+  const tbody = document.querySelector(`#${tableId} tbody`);
+  tbody.innerHTML = "";
+  if (data.length === 0){
+    tbody.innerHTML = `<tr><td colspan="3" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
+    return;
+  }
+  data.forEach((row, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="no-col">${i + 1}</td>
+      <td class="date-col">${row.date}</td>
+      <td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+renderBookList("pod-list", bookTitles, podLinks);
+renderBookList("ebook-list", bookTitles, ebookLinks);
+renderLogTable("table-opinion", opinionData);
+renderLogTable("table-ai-talks", aiTalksData);
+renderLogTable("table-archive", archiveData);
+renderLogTable("table-temp", tempData);
+
+/* -------------------------- 화면 전환 (라우팅) -------------------------- */
+
+const views = document.querySelectorAll(".view");
+const validHashes = {
+  "pod": "view-pod",
+  "ebook": "view-ebook",
+  "dongbang": "view-dongbang",
+  "opinion": "view-opinion",
+  "ai-talks": "view-ai-talks",
+  "archive": "view-archive",
+  "temp": "view-temp"
+};
+
+function showView(viewId){
+  views.forEach(v => v.classList.toggle("active", v.id === viewId));
+  document.getElementById("main-content").scrollTop = 0;
+  window.scrollTo(0, 0);
+  const heading = document.querySelector(`#${viewId} h1, #${viewId} h2`);
+  if (heading){ heading.setAttribute("tabindex", "-1"); heading.focus(); }
+}
+
+function routeFromHash(){
+  const hash = location.hash.replace("#", "");
+  if (hash && validHashes[hash]){
+    showView(validHashes[hash]);
+  } else {
+    showView("view-home");
+  }
+}
+
+window.addEventListener("hashchange", routeFromHash);
+routeFromHash();
+
+// 메인으로 돌아가기 버튼
+document.querySelectorAll("[data-home]").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    location.hash = "";
+    showView("view-home");
+  });
+});
+
+// 물리적 Home 키로도 메인 메뉴 복귀 지원
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Home"){
+    const current = document.querySelector(".view.active");
+    if (current && current.id !== "view-home"){
+      e.preventDefault();
+      location.hash = "";
+      showView("view-home");
+    }
+  }
+});
+
+/* -------------------------- 글자 크기 조절 -------------------------- */
+const STEP_MIN = 0, STEP_MAX = 6, STEP_UNIT = 2;
+function applyStep(px){
+  document.documentElement.style.setProperty("--step", px + "px");
+  try{ localStorage.setItem("nt-font-step", px); }catch(e){}
+}
+(function initFontStep(){
+  let saved = 0;
+  try{ saved = parseInt(localStorage.getItem("nt-font-step") || "0", 10); }catch(e){}
+  applyStep(isNaN(saved) ? 0 : saved);
+})();
+document.getElementById("font-inc").addEventListener("click", () => {
+  let cur = parseInt(document.documentElement.style.getPropertyValue("--step") || "0", 10);
+  applyStep(Math.min(STEP_MAX, cur + STEP_UNIT));
+});
+document.getElementById("font-dec").addEventListener("click", () => {
+  let cur = parseInt(document.documentElement.style.getPropertyValue("--step") || "0", 10);
+  applyStep(Math.max(STEP_MIN, cur - STEP_UNIT));
+});
+document.getElementById("font-reset").addEventListener("click", () => applyStep(0));
+</script>
+
+</body>
+</html>
