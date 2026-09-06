@@ -503,7 +503,7 @@
       <table class="log" id="table-ai-talks">
         <caption>노션 공유 링크 목록</caption>
         <thead>
-          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">노션에 공유한 주소</th></tr>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">대화 제목</th><th scope="col">노션에 공유한 주소</th></tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -620,9 +620,10 @@ const opinionData = [
 
 // 05 매일 AI와 나눈 이야기 모음 (노션 공유 링크, 누적)
 const aiTalksData = [
-  { date: "2026.08.18", url: "https://app.notion.com/p/newstoday/2026-08-18-3c0d5308c4dd8160a983c201b14afcd3?source=copy_link" }
-  // ↓ 새 기록 등록 시 아래에 한 줄 추가
-  // , { date: "YYYY.MM.DD", url: "https://app.notion.com/..." }
+  { date: "2026.08.18", title: "동방예술관 도록 제작 프로젝트 — 업무 인수인계 보고서", url: "https://app.notion.com/p/newstoday/2026-08-18-3c0d5308c4dd8160a983c201b14afcd3?source=copy_link" },
+  { date: "2026.09.06", title: "동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리", url: "https://app.notion.com/p/3d3d5308c4dd810ba3cced40d007018d" }
+  // ↓ 새 기록 등록 시 아래에 한 줄 추가 (title에는 대화 주제를 간단히 적어주세요)
+  // , { date: "YYYY.MM.DD", title: "대화 제목", url: "https://app.notion.com/..." }
 ];
 
 // 06 자료실 (구글 드라이브 공유 링크, 누적)
@@ -658,7 +659,7 @@ function renderBookList(ulId, titles, links){
   });
 }
 
-function renderLogTable(tableId, data, titleCol){
+function renderLogTable(tableId, data){
   const tbody = document.querySelector(`#${tableId} tbody`);
   tbody.innerHTML = "";
   if (data.length === 0){
@@ -676,10 +677,30 @@ function renderLogTable(tableId, data, titleCol){
   });
 }
 
+// 대화 제목 열이 포함된 표(05번 매일 AI와 나눈 이야기 모음)용 렌더 함수
+function renderLogTableWithTitle(tableId, data){
+  const tbody = document.querySelector(`#${tableId} tbody`);
+  tbody.innerHTML = "";
+  if (data.length === 0){
+    tbody.innerHTML = `<tr><td colspan="4" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
+    return;
+  }
+  data.forEach((row, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td class="no-col">${i + 1}</td>
+      <td class="date-col">${row.date}</td>
+      <td>${row.title || ""}</td>
+      <td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
 renderBookList("pod-list", bookTitles, podLinks);
 renderBookList("ebook-list", bookTitles, ebookLinks);
 renderLogTable("table-opinion", opinionData);
-renderLogTable("table-ai-talks", aiTalksData);
+renderLogTableWithTitle("table-ai-talks", aiTalksData);
 renderLogTable("table-archive", archiveData);
 renderLogTable("table-temp", tempData);
 
