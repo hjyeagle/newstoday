@@ -485,7 +485,7 @@
       <table class="log" id="table-opinion">
         <caption>윤희준의 AI를 읽다 — 등록 기고문 목록</caption>
         <thead>
-          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">링크 주소</th></tr>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">링크 주소</th></tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -551,7 +551,7 @@
 <footer>
   <div class="footer-inner">
     <span>© 뉴스투데이 · newstoday.co.kr</span>
-    <span>비영리 · 디지털 공공광장</span>
+    <span>비영리 · 자원봉사 기반 디지털 공공광장</span>
   </div>
 </footer>
 
@@ -612,10 +612,10 @@ const ebookLinks = [
 
 // 04 비즈넷타임즈 오피니언 기고문 (2주 간격 누적)
 const opinionData = [
-  { date: "2026.08.31", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30925" },
-  { date: "2026.08.18", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30734" }
+  { date: "2026.08.31", title: "[윤희준의 AI를 읽다] 시니어가 AI시대를 맞이하는 법(2)", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30925" },
+  { date: "2026.08.18", title: "[윤희준의 AI를 읽다] 시니어가 AI시대를 맞이하는 법(1)", url: "https://www.biznettimes.co.kr/news/articleView.html?idxno=30734" }
   // ↓ 새 기고문 등록 시 아래에 한 줄 추가
-  // , { date: "YYYY.MM.DD", url: "https://www.biznettimes.co.kr/..." }
+  // , { date: "YYYY.MM.DD", title: "기사 제목", url: "https://www.biznettimes.co.kr/..." }
 ];
 
 // 05 매일 AI와 나눈 이야기 모음 (노션 공유 링크, 누적)
@@ -699,7 +699,7 @@ function renderLogTableWithTitle(tableId, data){
 
 renderBookList("pod-list", bookTitles, podLinks);
 renderBookList("ebook-list", bookTitles, ebookLinks);
-renderLogTable("table-opinion", opinionData);
+renderLogTableWithTitle("table-opinion", opinionData);
 renderLogTableWithTitle("table-ai-talks", aiTalksData);
 renderLogTable("table-archive", archiveData);
 renderLogTable("table-temp", tempData);
