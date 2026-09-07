@@ -521,7 +521,7 @@
       <table class="log" id="table-archive">
         <caption>공유 자료 목록</caption>
         <thead>
-          <tr><th scope="col">No.</th><th scope="col">등록 일자 / 제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -539,7 +539,7 @@
       <table class="log" id="table-temp">
         <caption>임시 자료 목록</caption>
         <thead>
-          <tr><th scope="col">No.</th><th scope="col">등록 일자 / 제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
+          <tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
         </thead>
         <tbody></tbody>
       </table>
@@ -621,25 +621,23 @@ const opinionData = [
 // 05 매일 AI와 나눈 이야기 모음 (노션 공유 링크, 누적)
 const aiTalksData = [
   { date: "2026.08.18", title: "동방예술관 도록 제작 프로젝트 — 업무 인수인계 보고서", url: "https://app.notion.com/p/newstoday/2026-08-18-3c0d5308c4dd8160a983c201b14afcd3?source=copy_link" },
-  { date: "2026.09.06", title: "동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리", url: "https://app.notion.com/p/3d3d5308c4dd810ba3cced40d007018d" },
-  { date: "2026.09.07", title: "초보자도 싹 다 자동화 가능한 역대급 AI 에이전트 (그록봇) — 대화 정리", url: "https://app.notion.com/p/3d3d5308c4dd81faa813d11ab4face2f" },
-  { date: "2026.09.07", title: "그롯봇 안내영상(한글.영문 각10개) — 그록봇(에이전트)은 무료티어 없음", url: "https://app.notion.com/p/3d4d5308c4dd81f9a37befdf3e198f8a" }
+  { date: "2026.09.06", title: "동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리", url: "https://app.notion.com/p/3d3d5308c4dd810ba3cced40d007018d" }
   // ↓ 새 기록 등록 시 아래에 한 줄 추가 (title에는 대화 주제를 간단히 적어주세요)
   // , { date: "YYYY.MM.DD", title: "대화 제목", url: "https://app.notion.com/..." }
 ];
 
 // 06 자료실 (구글 드라이브 공유 링크, 누적)
 const archiveData = [
-  { date: "2024.06.15", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
+  { date: "2024.06.15", title: "", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
   // ↓ 새 자료 등록 시 아래에 한 줄 추가
-  // , { date: "YYYY.MM.DD / 제목", url: "https://drive.google.com/..." }
+  // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://drive.google.com/..." }
 ];
 
 // 07 Temp (임시 자료, 누적)
 const tempData = [
-  { date: "2024.06.15", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
+  { date: "2024.06.15", title: "", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
   // ↓ 새 자료 등록 시 아래에 한 줄 추가
-  // , { date: "YYYY.MM.DD / 제목", url: "https://drive.google.com/..." }
+  // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://drive.google.com/..." }
 ];
 
 /* -------------------------- 렌더링 함수 -------------------------- */
@@ -661,25 +659,7 @@ function renderBookList(ulId, titles, links){
   });
 }
 
-function renderLogTable(tableId, data){
-  const tbody = document.querySelector(`#${tableId} tbody`);
-  tbody.innerHTML = "";
-  if (data.length === 0){
-    tbody.innerHTML = `<tr><td colspan="3" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
-    return;
-  }
-  data.forEach((row, i) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td class="no-col">${i + 1}</td>
-      <td class="date-col">${row.date}</td>
-      <td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-// 대화 제목 열이 포함된 표(05번 매일 AI와 나눈 이야기 모음)용 렌더 함수
+// 대화 제목 / 자료 제목 열이 포함된 표(04, 05, 06, 07번 모두 공용)용 렌더 함수
 function renderLogTableWithTitle(tableId, data){
   const tbody = document.querySelector(`#${tableId} tbody`);
   tbody.innerHTML = "";
@@ -703,8 +683,8 @@ renderBookList("pod-list", bookTitles, podLinks);
 renderBookList("ebook-list", bookTitles, ebookLinks);
 renderLogTableWithTitle("table-opinion", opinionData);
 renderLogTableWithTitle("table-ai-talks", aiTalksData);
-renderLogTable("table-archive", archiveData);
-renderLogTable("table-temp", tempData);
+renderLogTableWithTitle("table-archive", archiveData);
+renderLogTableWithTitle("table-temp", tempData);
 
 /* -------------------------- 화면 전환 (라우팅) -------------------------- */
 
