@@ -10,7 +10,7 @@
 | 02 | 내가 출간한 전자책 | `#ebook` | 전자책 | 활성 — `bookTitles` + `ebookLinks` |
 | 03 | 사이버 동방예술관 | `#dongbang` | 동방예술관 | 활성 — 소개문·포스터·사이버관 링크 |
 | 04 | 비즈넷타임즈 오피니언 기고문 | `#opinion` | 비즈넷타임즈 | 유지 — 현재 `opinionData` 그대로 |
-| 05 | 매일 AI와 나눈 이야기 모음 | `#ai-talks` | 노션공유 | 활성 — `aiTalksData` `{date,title,url}` |
+| 05 | 매일 AI와 나눈 이야기 모음 | `#ai-talks` | 노션공유 | 활성 — 선별된 공유만 `aiTalksData`에 유지 (전체 DB 아님) |
 | 06 | 자료실 | `#archive` | — | 미연계 |
 | 07 | Temp | `#temp` | — | 미연계 |
 
