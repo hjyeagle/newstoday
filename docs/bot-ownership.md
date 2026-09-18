@@ -2,7 +2,7 @@
 
 저장소: `hjyeagle/newstoday`  
 공개 페이지: https://hjyeagle.github.io/newstoday/  
-기준일: 2026-09-16
+기준일: 2026-09-18
 
 | 번호 | 섹션 | 해시 | 담당 봇 | 연계 |
 |------|------|------|---------|------|
@@ -11,7 +11,7 @@
 | 03 | 사이버 동방예술관 | `#dongbang` | 동방예술관 | 활성 — 소개문·포스터·사이버관 링크 |
 | 04 | 비즈넷타임즈 오피니언 기고문 | `#opinion` | 비즈넷타임즈 | 유지 — 현재 `opinionData` 그대로 |
 | 05 | 매일 AI와 나눈 이야기 모음 | `#ai-talks` | 노션공유 | 활성 — 선별된 공유만 `aiTalksData`에 유지 (전체 DB 아님) |
-| 06 | 자료실 | `#archive` | — | 미연계 |
+| 06 | 시니어수익 | `#archive` | 시니어수익 | 활성 — `archiveData` |
 | 07 | Temp | `#temp` | — | 미연계 |
 
 ## 반영 경로
@@ -27,5 +27,5 @@
 - 02 링크: `ebookLinks`
 - 04: `opinionData`
 - 05: `aiTalksData`
-- 06: `archiveData` (미연계)
+- 06: `archiveData`
 - 07: `tempData` (미연계)
