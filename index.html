@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>뉴스투데이 | newstoday.co.kr</title>
-<meta name="description" content="뉴스투데이 — 함께 읽고 나누는 비영리 디지털 공공광장. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료실을 한 곳에서 만나보세요.">
+<meta name="description" content="뉴스투데이 — 함께 읽고 나누는 비영리 디지털 공공광장. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 시니어수익을 한 곳에서 만나보세요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -267,7 +267,7 @@ font-weight:700;
 min-height:44px;
 }
 .btn-primary:hover, .btn-primary:focus-visible{background:var(--brick); color:#fff;}
-/* Log tables (오피니언 / AI 대화 / 자료실 / Temp) */
+/* Log tables (오피니언 / AI 대화 / 시니어수익 / Temp) */
 .table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:6px;}
 table.log{
 width:100%;
@@ -426,8 +426,8 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 <a class="index-link" href="#archive" data-view="view-archive">
 <span class="index-num">06</span>
 <span class="index-body">
-<span class="index-title">자료실</span>
-<span class="index-desc">구글 드라이브에 공유한 자료 모음</span>
+<span class="index-title">시니어수익</span>
+<span class="index-desc">시니어 온라인·AI 수익 자료 모음 (노션·드라이브 링크)</span>
 </span>
 <span class="index-chevron" aria-hidden="true">›</span>
 </a>
@@ -520,18 +520,18 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 <div class="pagination" id="pagination-ai-talks"></div>
 </section>
 
-<!-- ============ 06 자료실 ============ -->
-<section id="view-archive" class="view" aria-label="자료실">
+<!-- ============ 06 시니어수익 ============ -->
+<section id="view-archive" class="view" aria-label="시니어수익">
 <div class="subhead">
 <a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>06. 자료실</h2>
-<p class="hint">구글 드라이브에 공유된 자료입니다. 링크는 새 창에서 열립니다.</p>
+<h2>06. 시니어수익</h2>
+<p class="hint">시니어 온라인·AI 수익 자료입니다. 노션·드라이브 링크는 새 창에서 열립니다.</p>
 </div>
 <div class="table-wrap">
 <table class="log" id="table-archive">
 <caption>공유 자료 목록</caption>
 <thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">구글 드라이브에 공유한 주소</th></tr>
+<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">공유 주소</th></tr>
 </thead>
 <tbody></tbody>
 </table>
@@ -672,11 +672,12 @@ const aiTalksData = [
 // , { date: "YYYY.MM.DD", title: "대화 제목", url: "https://app.notion.com/..." }
 ];
 
-// 06 자료실 (구글 드라이브 공유 링크, 누적)
+// 06 시니어수익 (노션·드라이브 공유 링크, 누적)
 const archiveData = [
+{ date: "2026.09.18", title: "시니어수익 — 65세·단안·온라인 AI 반복수익 분야 30선", url: "https://app.notion.com/p/3dfd5308c4dd8190bc75ee0b64279823" },
 { date: "2024.06.15", title: "중장년을 위한 디지털 & AI도구 가이드북", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
-// ↓ 새 자료 등록 시 아래에 한 줄 추가
-// , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://drive.google.com/..." }
+// ↓ 새 자료 등록 시 위에 한 줄 추가 (최신 항목이 위에 오도록)
+// , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
 ];
 
 // 07 Temp (임시 자료, 누적)
