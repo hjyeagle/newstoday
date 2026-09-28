@@ -442,6 +442,16 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 <span class="index-chevron" aria-hidden="true">›</span>
 </a>
 </li>
+<li class="index-item">
+<a class="index-link" href="#blog" data-view="view-blog">
+<span class="index-num">08</span>
+<span class="index-body">
+<span class="index-title">네이버 블로그 전체 글</span>
+<span class="index-desc">동방예술관 네이버 블로그 게시글 자동 수집 목록</span>
+</span>
+<span class="index-chevron" aria-hidden="true">›</span>
+</a>
+</li>
 </ul>
 </section>
 
@@ -556,6 +566,25 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 </div>
 </section>
 
+<!-- ============ 08 네이버 블로그 전체 글 ============ -->
+<section id="view-blog" class="view" aria-label="네이버 블로그 전체 글">
+<div class="subhead">
+<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
+<h2>08. 네이버 블로그 전체 글</h2>
+<p class="hint">동방예술관 네이버 블로그(blog.naver.com/dongbang_artmuseum)의 게시글을 RSS로 자동 수집한 목록입니다. 링크는 새 창에서 열립니다.</p>
+</div>
+<div class="table-wrap">
+<table class="log" id="table-blog">
+<caption>네이버 블로그 게시글 목록</caption>
+<thead>
+<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">카테고리</th><th scope="col">제목</th><th scope="col">링크</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+<div class="pagination" id="pagination-blog"></div>
+</section>
+
 </main>
 
 <footer>
@@ -576,6 +605,9 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 ▶ 05번(매일 AI와 나눈 이야기 모음)은 게시물이 10개를 넘으면
 표 아래에 '이전페이지 / 다음페이지' 버튼이 자동으로 나타납니다.
 페이지당 표시 개수는 AI_TALKS_PAGE_SIZE 값을 바꾸면 조절됩니다.
+▶ 08번(네이버 블로그 전체 글)의 blogData 배열은 손으로 수정하지 않습니다.
+scripts/sync-naver-blog.mjs 를 GitHub Actions가 주기 실행하여
+네이버 블로그 RSS에서 신규 글을 읽어와 이 배열 전체를 자동으로 갱신·커밋합니다.
 ========================================================================= */
 
 const AI_TALKS_PAGE_SIZE = 10;
@@ -690,6 +722,12 @@ const tempData = [
 // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://app.notion.com/..." }
 ];
 
+// 08 네이버 블로그 전체 글 — scripts/sync-naver-blog.mjs(GitHub Actions 자동 실행)가 관리합니다.
+// 이 배열은 RSS 동기화 봇이 통째로 다시 생성하므로, 수동으로 줄을 추가해도 다음 자동 실행 때 덮어써집니다.
+const BLOG_PAGE_SIZE = 10;
+const blogData = [
+];
+
 /* -------------------------- 렌더링 함수 -------------------------- */
 
 function renderBookList(ulId, titles, links){
@@ -785,12 +823,69 @@ if (nextBtn) nextBtn.addEventListener("click", () => renderPage(currentPage + 1)
 renderPage(1);
 }
 
+// 08번(네이버 블로그 전체 글) 전용 — 카테고리 열이 추가된 페이지네이션 렌더 함수
+function renderPaginatedBlogTable(tableId, paginationId, data, pageSize){
+let currentPage = 1;
+const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
+
+function renderPage(page){
+currentPage = Math.min(Math.max(1, page), totalPages);
+const tbody = document.querySelector(`#${tableId} tbody`);
+tbody.innerHTML = "";
+
+if (data.length === 0){
+tbody.innerHTML = `<tr><td colspan="5" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
+} else {
+const start = (currentPage - 1) * pageSize;
+const pageData = data.slice(start, start + pageSize);
+pageData.forEach((row, i) => {
+const tr = document.createElement("tr");
+tr.innerHTML = `
+<td class="no-col">${start + i + 1}</td>
+<td class="date-col">${row.date}</td>
+<td>${row.category || ""}</td>
+<td>${row.title || ""}</td>
+<td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
+`;
+tbody.appendChild(tr);
+});
+}
+
+renderPaginationControls();
+document.getElementById(tableId).closest("section").scrollTop = 0;
+}
+
+function renderPaginationControls(){
+const container = document.getElementById(paginationId);
+if (!container) return;
+
+if (data.length <= pageSize){
+container.innerHTML = "";
+return;
+}
+
+container.innerHTML = `
+<button type="button" class="page-btn" id="${paginationId}-prev" ${currentPage === 1 ? "disabled" : ""}>‹ 이전페이지</button>
+<span class="page-info">${currentPage} / ${totalPages} 페이지</span>
+<button type="button" class="page-btn" id="${paginationId}-next" ${currentPage === totalPages ? "disabled" : ""}>다음페이지 ›</button>
+`;
+
+const prevBtn = document.getElementById(`${paginationId}-prev`);
+const nextBtn = document.getElementById(`${paginationId}-next`);
+if (prevBtn) prevBtn.addEventListener("click", () => renderPage(currentPage - 1));
+if (nextBtn) nextBtn.addEventListener("click", () => renderPage(currentPage + 1));
+}
+
+renderPage(1);
+}
+
 renderBookList("pod-list", bookTitles, podLinks);
 renderBookList("ebook-list", bookTitles, ebookLinks);
 renderLogTableWithTitle("table-opinion", opinionData);
 renderPaginatedLogTable("table-ai-talks", "pagination-ai-talks", aiTalksData, AI_TALKS_PAGE_SIZE);
 renderLogTableWithTitle("table-archive", archiveData);
 renderLogTableWithTitle("table-temp", tempData);
+renderPaginatedBlogTable("table-blog", "pagination-blog", blogData, BLOG_PAGE_SIZE);
 
 /* -------------------------- 화면 전환 (라우팅) -------------------------- */
 const views = document.querySelectorAll(".view");
@@ -801,7 +896,8 @@ const validHashes = {
 "opinion": "view-opinion",
 "ai-talks": "view-ai-talks",
 "archive": "view-archive",
-"temp": "view-temp"
+"temp": "view-temp",
+"blog": "view-blog"
 };
 
 function showView(viewId){

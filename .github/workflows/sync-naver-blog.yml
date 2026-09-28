@@ -1,0 +1,41 @@
+name: 네이버 블로그 자동 동기화
+
+on:
+  schedule:
+    # 매일 06:00 KST (UTC 21:00) 1회 실행
+    - cron: "0 21 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-naver-blog
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: RSS 동기화 스크립트 실행
+        run: node scripts/sync-naver-blog.mjs
+
+      - name: 변경 사항 커밋 및 푸시
+        run: |
+          git config user.name "newstoday-bot"
+          git config user.email "newstoday7720@gmail.com"
+          if git diff --quiet -- index.html; then
+            echo "변경 없음 — 커밋하지 않습니다."
+          else
+            git add index.html
+            git commit -m "chore: 네이버 블로그 신규 게시글 동기화 (08번 섹션)"
+            git push
+          fi
