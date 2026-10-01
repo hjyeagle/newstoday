@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>뉴스투데이 | newstoday.co.kr</title>
-<meta name="description" content="뉴스투데이 — 함께 읽고 나누는 비영리 디지털 공공광장. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 시니어수익을 한 곳에서 만나보세요.">
+<meta name="description" content="뉴스투데이 — 실버세대가 AI와 소통하며 만들어 가는 이야기들. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료 모음을 한 곳에서 만나보세요.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
 --focus: #1F3C57;
 --font-body: 'Noto Sans KR', sans-serif;
 --font-head: 'Noto Serif KR', serif;
---step: 0px; /* font-size adjustment, changed by JS */
 }
 *{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -35,8 +34,8 @@ margin:0;
 background:var(--bg);
 color:var(--ink);
 font-family:var(--font-body);
-font-size:calc(18px + var(--step));
-line-height:1.7;
+font-size:17px;
+line-height:1.65;
 -webkit-font-smoothing:antialiased;
 }
 a{color:var(--navy); text-underline-offset:3px;}
@@ -58,288 +57,131 @@ border-bottom:4px solid var(--navy-deep);
 background:var(--surface);
 }
 .masthead-inner{
-max-width:920px;
+max-width:1120px;
 margin:0 auto;
 padding:22px 24px 16px;
-display:flex;
-align-items:flex-end;
-justify-content:space-between;
-gap:16px;
-flex-wrap:wrap;
 }
 .brand{display:flex; flex-direction:column; gap:2px;}
 .brand-mark{
 font-family:var(--font-head);
 font-weight:700;
-font-size:calc(2.1rem + var(--step));
+font-size:2.1rem;
 letter-spacing:0.02em;
 color:var(--navy-deep);
 }
 .brand-url{
-font-size:calc(0.85rem + var(--step));
+font-size:0.85rem;
 letter-spacing:0.14em;
 color:var(--ink-soft);
 }
-.brand-tagline{
-font-size:calc(0.95rem + var(--step));
-color:var(--ink-soft);
-text-align:right;
+main{max-width:1120px; margin:0 auto; padding:0 24px 40px;}
+/* ---------- Hero ---------- */
+.hero{padding:36px 0 22px;}
+.hero h1{
+font-family:var(--font-head);
+font-size:1.7rem;
+line-height:1.5;
+margin:0;
+color:var(--ink);
+font-weight:600;
 }
-.toolbar{
-max-width:920px;
-margin:0 auto;
-padding:0 24px 14px;
+/* ---------- Menu cards (3 x 3) ---------- */
+.menu-grid{
+list-style:none;
+margin:0;
+padding:0;
+display:grid;
+grid-template-columns:repeat(3, minmax(0, 1fr));
+gap:20px;
+}
+@media (max-width:900px){ .menu-grid{grid-template-columns:repeat(2, minmax(0, 1fr));} }
+@media (max-width:600px){ .menu-grid{grid-template-columns:1fr;} }
+.card{
 display:flex;
-justify-content:flex-end;
-gap:8px;
-}
-.fontctl{
-display:flex; align-items:center; gap:6px;
+flex-direction:column;
+background:var(--surface);
 border:1px solid var(--line);
-background:var(--bg);
-border-radius:8px;
-padding:4px;
+border-radius:6px;
+padding:20px 20px 14px;
+min-height:100%;
 }
-.fontctl span{font-size:0.8rem; color:var(--ink-soft); padding:0 6px;}
-.fontctl button{
+.card h2{
+font-family:var(--font-head);
+font-size:1.12rem;
+line-height:1.45;
+margin:0 0 10px;
+padding-bottom:10px;
+border-bottom:1px solid var(--line-soft);
+color:var(--navy-deep);
+}
+.card-desc{
+margin:0 0 12px;
+color:var(--ink-soft);
+font-size:0.9rem;
+line-height:1.6;
+}
+.card-body{flex:1;}
+.card-body p{margin:0 0 12px; font-size:0.93rem; color:var(--ink);}
+.item-list{list-style:none; margin:0; padding:0;}
+.item-list li{border-bottom:1px solid var(--line-soft);}
+.item-list li:last-child{border-bottom:0;}
+.item-list a{
+display:flex;
+gap:8px;
+padding:8px 2px;
+text-decoration:none;
+color:var(--ink);
+font-size:0.93rem;
+line-height:1.5;
+}
+.item-list a:hover, .item-list a:focus-visible{color:var(--brick);}
+.item-no{flex:none; min-width:1.5em; color:var(--ink-soft); font-family:var(--font-head);}
+.item-text{flex:1; min-width:0; overflow-wrap:anywhere;}
+.item-date{display:block; font-size:0.78rem; color:var(--ink-soft);}
+.empty-note{margin:0; padding:8px 2px; color:var(--ink-soft); font-size:0.9rem;}
+.btn-link{
+display:inline-block;
+margin-top:4px;
+color:var(--navy);
+font-weight:700;
+font-size:0.93rem;
+}
+/* ---------- Pager ---------- */
+.pager{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:14px;
+margin-top:10px;
+padding-top:8px;
+border-top:1px solid var(--line-soft);
+min-height:44px;
+}
+.pager button{
 font-family:var(--font-body);
 background:var(--surface);
 border:1px solid var(--line);
 color:var(--navy-deep);
 border-radius:6px;
-padding:6px 11px;
-font-weight:700;
+width:40px;
+height:36px;
+font-size:1.05rem;
 cursor:pointer;
-min-width:38px;
-min-height:38px;
 }
-.fontctl button:hover{background:var(--navy-deep); color:#fff;}
-main{max-width:920px; margin:0 auto; padding:0 24px 80px;}
-/* ---------- Home page ---------- */
-.hero{
-padding:36px 0 20px;
-border-bottom:1px solid var(--line);
-}
-.hero h1{
-font-family:var(--font-head);
-font-size:calc(1.6rem + var(--step));
-line-height:1.5;
-margin:0 0 10px;
-color:var(--ink);
-font-weight:600;
-}
-.hero p{
-margin:0;
-color:var(--ink-soft);
-max-width:62ch;
-}
-.index-list{list-style:none; margin:0; padding:0;}
-.index-item{border-bottom:1px solid var(--line-soft);}
-.index-item:first-child{border-top:1px solid var(--line-soft);}
-.index-link{
-display:flex;
-align-items:center;
-gap:22px;
-padding:22px 6px;
-text-decoration:none;
-color:var(--ink);
-border-left:4px solid transparent;
-}
-.index-link:hover, .index-link:focus-visible{
-background:var(--line-soft);
-border-left-color:var(--brick);
-color:var(--ink);
-}
-.index-num{
-font-family:var(--font-head);
-font-weight:600;
-font-size:calc(1.6rem + var(--step));
-color:var(--navy);
-width:2.2em;
-flex:none;
-}
-.index-body{flex:1; min-width:0;}
-.index-title{
-font-weight:700;
-font-size:calc(1.08rem + var(--step));
-display:block;
-}
-.index-desc{
-display:block;
-color:var(--ink-soft);
-font-size:calc(0.92rem + var(--step));
-margin-top:3px;
-}
-.index-chevron{
-flex:none;
-color:var(--ink-soft);
-font-size:1.3rem;
-}
-/* ---------- Sub pages ---------- */
-.view{display:none;}
-.view.active{display:block;}
-.subhead{
-padding:28px 0 18px;
-border-bottom:1px solid var(--line);
-margin-bottom:22px;
-}
-.home-btn{
-display:inline-flex;
-align-items:center;
-gap:8px;
-background:var(--navy-deep);
-color:#fff;
-text-decoration:none;
-padding:10px 16px;
-border-radius:8px;
-font-weight:700;
-font-size:calc(0.92rem + var(--step));
-min-height:44px;
-}
-.home-btn:hover, .home-btn:focus-visible{background:var(--brick); color:#fff;}
-.subhead h2{
-font-family:var(--font-head);
-font-size:calc(1.5rem + var(--step));
-margin:16px 0 6px;
-color:var(--ink);
-}
-.subhead .hint{color:var(--ink-soft); font-size:calc(0.9rem + var(--step));}
-/* Book list rows */
-.book-list{list-style:none; margin:0; padding:0;}
-.book-row{border-bottom:1px solid var(--line-soft);}
-.book-row:first-child{border-top:1px solid var(--line-soft);}
-.book-link{
-display:flex;
-align-items:center;
-gap:18px;
-padding:18px 6px;
-text-decoration:none;
-color:var(--ink);
-border-left:4px solid transparent;
-}
-.book-link:hover, .book-link:focus-visible{
-background:var(--line-soft);
-border-left-color:var(--navy);
-}
-.book-no{
-font-family:var(--font-head);
-color:var(--ink-soft);
-width:2em;
-flex:none;
-font-size:calc(1rem + var(--step));
-}
-.book-title{flex:1; font-weight:500;}
-.book-go{
-flex:none;
-font-size:calc(0.85rem + var(--step));
-color:var(--navy);
-font-weight:700;
-white-space:nowrap;
-}
-/* Dongbang view */
-.dongbang-grid{
-display:grid;
-grid-template-columns:280px 1fr;
-gap:32px;
-align-items:start;
-}
-@media (max-width:640px){
-.dongbang-grid{grid-template-columns:1fr;}
-}
-.dongbang-grid img{
-width:100%;
-height:auto;
-border-radius:4px;
-border:1px solid var(--line);
-display:block;
-}
-.dongbang-text p{margin:0 0 14px; color:var(--ink);}
-.btn-primary{
-display:inline-flex;
-align-items:center;
-gap:8px;
-background:var(--navy);
-color:#fff;
-text-decoration:none;
-padding:12px 20px;
-border-radius:8px;
-font-weight:700;
-min-height:44px;
-}
-.btn-primary:hover, .btn-primary:focus-visible{background:var(--brick); color:#fff;}
-/* Log tables (오피니언 / AI 대화 / 시니어수익 / 당뇨관리) */
-.table-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:6px;}
-table.log{
-width:100%;
-border-collapse:collapse;
-background:var(--surface);
-font-size:calc(0.95rem + var(--step));
-}
-table.log caption{
-text-align:left;
-padding:12px 14px;
-color:var(--ink-soft);
-font-size:calc(0.85rem + var(--step));
-background:var(--line-soft);
-}
-table.log th, table.log td{
-padding:14px 14px;
-text-align:left;
-border-bottom:1px solid var(--line-soft);
-vertical-align:middle;
-}
-table.log thead th{
-background:var(--navy-deep);
-color:#fff;
-font-weight:700;
-position:sticky; top:0;
-}
-table.log tbody tr:nth-child(even){background:var(--line-soft);}
-table.log tbody tr:hover{background:#EFE6D8;}
-table.log td.no-col{width:56px; color:var(--ink-soft); font-family:var(--font-head);}
-table.log td.date-col{width:130px; white-space:nowrap; color:var(--ink-soft);}
-.row-link{font-weight:700;}
-.empty-note{color:var(--ink-soft); font-style:normal; font-size:calc(0.85rem + var(--step));}
-/* Pagination controls */
-.pagination{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:16px;
-margin-top:16px;
-padding:8px 0 4px;
-}
-.page-btn{
-font-family:var(--font-body);
-background:var(--surface);
-border:1px solid var(--line);
-color:var(--navy-deep);
-border-radius:8px;
-padding:10px 18px;
-font-weight:700;
-font-size:calc(0.92rem + var(--step));
-cursor:pointer;
-min-height:44px;
-}
-.page-btn:hover:not(:disabled){background:var(--navy-deep); color:#fff;}
-.page-btn:disabled{opacity:0.4; cursor:not-allowed;}
-.page-info{
-color:var(--ink-soft);
-font-size:calc(0.92rem + var(--step));
-font-weight:700;
-min-width:5em;
-text-align:center;
-}
+.pager button:hover:not(:disabled){background:var(--navy-deep); color:#fff;}
+.pager button:disabled{opacity:0.35; cursor:not-allowed;}
+.pager .page-info{font-size:0.82rem; color:var(--ink-soft); min-width:3.5em; text-align:center;}
+/* ---------- Footer ---------- */
 footer{
 border-top:4px solid var(--navy-deep);
-margin-top:40px;
+margin-top:20px;
 background:var(--surface);
 }
 .footer-inner{
-max-width:920px; margin:0 auto; padding:24px;
+max-width:1120px; margin:0 auto; padding:22px 24px;
 color:var(--ink-soft);
-font-size:calc(0.85rem + var(--step));
-display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+font-size:0.85rem;
+text-align:center;
 }
 </style>
 </head>
@@ -351,266 +193,99 @@ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
 <span class="brand-mark">뉴스투데이</span>
 <span class="brand-url">newstoday.co.kr</span>
 </div>
-<div class="brand-tagline">함께 읽고 나누는<br>비영리 디지털 공공광장</div>
-</div>
-<div class="toolbar">
-<div class="fontctl" role="group" aria-label="글자 크기 조절">
-<span>글자 크기</span>
-<button type="button" id="font-dec" aria-label="글자 크기 줄이기">가−</button>
-<button type="button" id="font-reset" aria-label="글자 크기 기본값">가</button>
-<button type="button" id="font-inc" aria-label="글자 크기 키우기">가+</button>
-</div>
 </div>
 </header>
 
 <main id="main-content">
-
-<!-- ============ 메인 화면 ============ -->
-<section id="view-home" class="view active" aria-label="메인 메뉴">
 <div class="hero">
-<h1>오늘, 이곳에서 만나는 이야기들</h1>
-<p>저서, 그림 유물 이야기, 기고문, 매일의 기록을 한자리에 모았습니다. 아래 항목을 눌러 살펴보세요.</p>
+<h1>실버세대가 AI와 소통하며<br>만들어 가는 이야기들…</h1>
 </div>
-<ul class="index-list">
-<li class="index-item">
-<a class="index-link" href="#pod" data-view="view-pod">
-<span class="index-num">01</span>
-<span class="index-body">
-<span class="index-title">내가 출간한 POD(종이책)</span>
-<span class="index-desc">번호를 누르면 온라인 서점 구매 페이지로 이동합니다</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#ebook" data-view="view-ebook">
-<span class="index-num">02</span>
-<span class="index-body">
-<span class="index-title">내가 출간한 전자책</span>
-<span class="index-desc">번호를 누르면 온라인 서점 구매 페이지로 이동합니다</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#dongbang" data-view="view-dongbang">
-<span class="index-num">03</span>
-<span class="index-body">
-<span class="index-title">사이버 동방예술관</span>
-<span class="index-desc">고려박물관에서 다시 태어난 동방예술관 소개</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#opinion" data-view="view-opinion">
-<span class="index-num">04</span>
-<span class="index-body">
-<span class="index-title">비즈넷타임즈 오피니언 기고문</span>
-<span class="index-desc">2주마다 새 글이 쌓이는 기고문 목록</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#ai-talks" data-view="view-ai-talks">
-<span class="index-num">05</span>
-<span class="index-body">
-<span class="index-title">매일 AI와 나눈 이야기 모음</span>
-<span class="index-desc">노션에 공유한 대화 기록 모음</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#archive" data-view="view-archive">
-<span class="index-num">06</span>
-<span class="index-body">
-<span class="index-title">시니어수익</span>
-<span class="index-desc">시니어 온라인·AI 수익 자료 모음 (노션·드라이브 링크)</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#temp" data-view="view-temp">
-<span class="index-num">07</span>
-<span class="index-body">
-<span class="index-title">당뇨관리</span>
-<span class="index-desc">당뇨·혈당·식단 자료 모음 (노션 요약)</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-<li class="index-item">
-<a class="index-link" href="#blog" data-view="view-blog">
-<span class="index-num">08</span>
-<span class="index-body">
-<span class="index-title">네이버 블로그 전체 글</span>
-<span class="index-desc">동방예술관 네이버 블로그 게시글 자동 수집 목록</span>
-</span>
-<span class="index-chevron" aria-hidden="true">›</span>
-</a>
-</li>
-</ul>
-</section>
 
-<!-- ============ 01 POD 종이책 ============ -->
-<section id="view-pod" class="view" aria-label="내가 출간한 POD 종이책">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>01. 내가 출간한 POD(종이책)</h2>
-<p class="hint">제목을 누르면 새 창에서 온라인 서점 구매 페이지가 열립니다.</p>
-</div>
-<ol class="book-list" id="pod-list"></ol>
-</section>
-
-<!-- ============ 02 전자책 ============ -->
-<section id="view-ebook" class="view" aria-label="내가 출간한 전자책">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>02. 내가 출간한 전자책</h2>
-<p class="hint">제목을 누르면 새 창에서 온라인 서점 구매 페이지가 열립니다.</p>
-</div>
-<ol class="book-list" id="ebook-list"></ol>
-</section>
-
-<!-- ============ 03 사이버 동방예술관 ============ -->
-<section id="view-dongbang" class="view" aria-label="사이버 동방예술관">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>03. 사이버 동방예술관</h2>
-</div>
-<div class="dongbang-grid">
-<img src="assets/dongbang-poster.jpg" alt="동방예술관 소장 유물 도록 표지 — 삼존상 청동 유물 사진과 '고려박물관, 새 이름으로 다시 태어나다' 문구">
-<div class="dongbang-text">
+<ul class="menu-grid">
+<!-- 01 -->
+<li><section class="card" id="card-pod" aria-labelledby="h-pod">
+<h2 id="h-pod">AI와 POD(종이책) 출간</h2>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 02 -->
+<li><section class="card" id="card-ebook" aria-labelledby="h-ebook">
+<h2 id="h-ebook">AI와 전자책 출간</h2>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 03 -->
+<li><section class="card" id="card-dongbang" aria-labelledby="h-dongbang">
+<h2 id="h-dongbang">사이버 동방예술관</h2>
+<div class="card-body">
 <p>동방예술관은 2011년 고려박물관으로 문을 연 뒤 2024년 폐관을 거쳐, 2026년 '동방예술관 재건 프로젝트'로 새 이름을 얻었습니다. 소장 유물 도록에는 삼존상을 비롯한 유물들이 담겨 있으며, 이 공간은 동방예술관 건립자금 후원의 시작을 알리는 자리이기도 합니다.</p>
-<p>아래 링크를 통해 사이버 동방예술관 전시실을 직접 둘러보실 수 있습니다.</p>
-<a class="btn-primary" href="https://hjyeagle.github.io/cyber_dongbang/" target="_blank" rel="noopener noreferrer">
-사이버 동방예술관 바로가기 (새 창) ↗
-</a>
+<a class="btn-link" href="https://hjyeagle.github.io/cyber_dongbang/" target="_blank" rel="noopener noreferrer">사이버 동방예술관 바로가기 (새 창) ↗</a>
 </div>
-</div>
-</section>
-
-<!-- ============ 04 비즈넷타임즈 오피니언 ============ -->
-<section id="view-opinion" class="view" aria-label="비즈넷타임즈 오피니언 기고문">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>04. 비즈넷타임즈 오피니언 기고문</h2>
-<p class="hint">약 2주 간격으로 새 기고문이 등록됩니다. 링크는 새 창에서 열립니다.</p>
-</div>
-<div class="table-wrap">
-<table class="log" id="table-opinion">
-<caption>윤희준의 AI를 읽다 — 등록 기고문 목록</caption>
-<thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">링크 주소</th></tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-</section>
-
-<!-- ============ 05 매일 AI와 나눈 이야기 모음 ============ -->
-<section id="view-ai-talks" class="view" aria-label="매일 AI와 나눈 이야기와 참고 유튜브 영상 요약 모음">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>05. 매일 AI와 나눈 이야기 모음</h2>
-<p class="hint">노션에 공유된 대화 기록입니다. 링크는 새 창에서 열립니다.</p>
-</div>
-<div class="table-wrap">
-<table class="log" id="table-ai-talks">
-<caption>노션 공유 링크 목록</caption>
-<thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">대화 제목</th><th scope="col">노션에 공유한 주소</th></tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-<div class="pagination" id="pagination-ai-talks"></div>
-</section>
-
-<!-- ============ 06 시니어수익 ============ -->
-<section id="view-archive" class="view" aria-label="시니어수익">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>06. 시니어수익</h2>
-<p class="hint">시니어 온라인·AI 수익 자료입니다. 노션·드라이브 링크는 새 창에서 열립니다.</p>
-</div>
-<div class="table-wrap">
-<table class="log" id="table-archive">
-<caption>공유 자료 목록</caption>
-<thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">공유 주소</th></tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-</section>
-
-<!-- ============ 07 당뇨관리 ============ -->
-<section id="view-temp" class="view" aria-label="07. 당뇨관리">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>07. 당뇨관리</h2>
-<p class="hint">당뇨 관련 자료를 모읍니다. 링크는 새 창에서 열립니다.</p>
-</div>
-<div class="table-wrap">
-<table class="log" id="table-temp">
-<caption>당뇨관리 자료 목록</caption>
-<thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">제목</th><th scope="col">자료 링크</th></tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-</section>
-
-<!-- ============ 08 네이버 블로그 전체 글 ============ -->
-<section id="view-blog" class="view" aria-label="네이버 블로그 전체 글">
-<div class="subhead">
-<a class="home-btn" href="#" data-home="1">🏠 메인으로</a>
-<h2>08. 네이버 블로그 전체 글</h2>
-<p class="hint">동방예술관 네이버 블로그(blog.naver.com/dongbang_artmuseum)의 게시글을 RSS로 자동 수집한 목록입니다. 링크는 새 창에서 열립니다.</p>
-</div>
-<div class="table-wrap">
-<table class="log" id="table-blog">
-<caption>네이버 블로그 게시글 목록</caption>
-<thead>
-<tr><th scope="col">No.</th><th scope="col">등록 일자</th><th scope="col">카테고리</th><th scope="col">제목</th><th scope="col">링크</th></tr>
-</thead>
-<tbody></tbody>
-</table>
-</div>
-<div class="pagination" id="pagination-blog"></div>
-</section>
-
+</section></li>
+<!-- 04 -->
+<li><section class="card" id="card-opinion" aria-labelledby="h-opinion">
+<h2 id="h-opinion">비즈넷타임즈 오피니언 기고문</h2>
+<p class="card-desc">약 2주 간격으로 새 기고문이 등록됩니다. 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 05 -->
+<li><section class="card" id="card-ai-talks" aria-labelledby="h-ai-talks">
+<h2 id="h-ai-talks">AI와 나눈 이야기 모음</h2>
+<p class="card-desc">노션에 공유된 대화 기록입니다. 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 06 -->
+<li><section class="card" id="card-senior" aria-labelledby="h-senior">
+<h2 id="h-senior">시니어 수익창출 방법</h2>
+<p class="card-desc">시니어 온라인·AI 수익창출 자료입니다. 노션·드라이브 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 07 -->
+<li><section class="card" id="card-diabetes" aria-labelledby="h-diabetes">
+<h2 id="h-diabetes">당뇨관리와 관련한 이야기</h2>
+<p class="card-desc">당뇨 관련 자료를 모읍니다. 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 08 -->
+<li><section class="card" id="card-blog" aria-labelledby="h-blog">
+<h2 id="h-blog">네이버 블로그 전체 글</h2>
+<p class="card-desc">blog.naver.com/dongbang_artmuseum 의 RSS로 자동 수집한 목록입니다. 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+<!-- 09 -->
+<li><section class="card" id="card-etc" aria-labelledby="h-etc">
+<h2 id="h-etc">기타 모음</h2>
+<p class="card-desc">기타 참고자료들을 모아 놓은 자료입니다. 링크는 새 창에서 열립니다.</p>
+<div class="card-body"><ol class="item-list"></ol></div>
+<div class="pager"></div>
+</section></li>
+</ul>
 </main>
 
 <footer>
-<div class="footer-inner">
-<span>© 뉴스투데이 · newstoday.co.kr</span>
-<span>비영리 디지털 공공광장</span>
-</div>
+<div class="footer-inner">Copyright 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</div>
 </footer>
 
 <script>
 /* =========================================================================
 뉴스투데이 데이터
 -------------------------------------------------------------------------
-▶ 04, 05, 06, 07번 목록은 시간이 지나며 항목이 계속 늘어납니다.
-아래 각 배열( opinionData / aiTalksData / archiveData / tempData )에
-{ date: "YYYY.MM.DD", url: "링크주소" } 형식으로 한 줄만 추가하면
-표에 자동으로 새 행이 생성됩니다. (엑셀에 한 줄 추가하는 것과 동일한 방식)
-▶ 05번(매일 AI와 나눈 이야기 모음)은 게시물이 10개를 넘으면
-표 아래에 '이전페이지 / 다음페이지' 버튼이 자동으로 나타납니다.
-페이지당 표시 개수는 AI_TALKS_PAGE_SIZE 값을 바꾸면 조절됩니다.
-▶ 08번(네이버 블로그 전체 글)의 blogData 배열은 손으로 수정하지 않습니다.
-scripts/sync-naver-blog.mjs 를 GitHub Actions가 주기 실행하여
-네이버 블로그 RSS에서 신규 글을 읽어와 이 배열 전체를 자동으로 갱신·커밋합니다.
+▶ 각 배열에 { date: "YYYY.MM.DD", title: "제목", url: "링크주소" } 형식으로
+  한 줄만 추가하면 해당 박스에 자동으로 항목이 생성됩니다.
+▶ POD(종이책)·전자책 박스는 한 화면에 5개, 나머지 박스는 3개씩 표시되며
+  초과분은 박스 하단의 ‹ › 화살표로 이전/다음 페이지를 볼 수 있습니다.
+   (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_LIST 값으로 조절)
+▶ 08번(네이버 블로그) blogData 배열은 손으로 수정하지 않습니다.
+  scripts/sync-naver-blog.mjs 를 GitHub Actions가 주기 실행하여 이 배열 전체를 자동 갱신·커밋합니다.
 ========================================================================= */
 
-const AI_TALKS_PAGE_SIZE = 10;
+const PAGE_SIZE_BOOK = 5;
+const PAGE_SIZE_LIST = 3;
 
 // 01/02 공통 도서 제목 (번호순)
 const bookTitles = [
@@ -708,7 +383,7 @@ const aiTalksData = [
 ];
 
 // 06 시니어수익 (노션·드라이브 공유 링크, 누적)
-const archiveData = [
+const seniorData = [
 { date: "2026.09.20", title: "우리가 눈여겨 봐야 할 일본의 실버사업 7가지 (아재썰전)", url: "https://app.notion.com/p/3e1d5308c4dd81538cf7e6673dcfe3a7" },
 { date: "2026.09.18", title: "시니어수익 — 65세·단안·온라인 AI 반복수익 분야 30선", url: "https://app.notion.com/p/3dfd5308c4dd8190bc75ee0b64279823" },
 { date: "2024.06.15", title: "중장년을 위한 디지털 & AI도구 가이드북", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
@@ -716,8 +391,8 @@ const archiveData = [
 // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
 ];
 
-// 07 당뇨관리
-const tempData = [
+// 07 당뇨관리와 관련한 이야기
+const diabetesData = [
 { date: "2026.09.20", title: "당뇨가 무섭다면 이 음식 10가지 (건강 노트) — 요점 정리", url: "https://app.notion.com/p/3e1d5308c4dd8147a0d3e83e87da7a28" }
 // ↓ 새 자료 등록 시 아래에 한 줄 추가
 // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://app.notion.com/..." }
@@ -725,7 +400,6 @@ const tempData = [
 
 // 08 네이버 블로그 전체 글 — scripts/sync-naver-blog.mjs(GitHub Actions 자동 실행)가 관리합니다.
 // 이 배열은 RSS 동기화 봇이 통째로 다시 생성하므로, 수동으로 줄을 추가해도 다음 자동 실행 때 덮어써집니다.
-const BLOG_PAGE_SIZE = 10;
 const blogData = [
 { date: "2026.09.28", category: "매일 AI와 나눈 이야기 모음", title: "네이버 블로그와 newstoday.co.kr과 연동 완료", url: "https://blog.naver.com/dongbang_artmuseum/224425017414", guid: "https://blog.naver.com/dongbang_artmuseum/224425017414" },
 { date: "2026.09.22", category: "내가 출간한 전자책", title: "내가 출간한 전자책", url: "https://blog.naver.com/dongbang_artmuseum/224419479320", guid: "https://blog.naver.com/dongbang_artmuseum/224419479320" },
@@ -743,244 +417,67 @@ const blogData = [
 { date: "2025.07.02", category: "사이버 동방예술관", title: "동방예술관 건립 홍보 영상", url: "https://blog.naver.com/dongbang_artmuseum/223919351385", guid: "https://blog.naver.com/dongbang_artmuseum/223919351385" }
 ];
 
-/* -------------------------- 렌더링 함수 -------------------------- */
+// 09 기타 모음 (누적)
+const etcData = [
+// ↓ 새 자료 등록 시 아래에 한 줄 추가
+// { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
+];
 
-function renderBookList(ulId, titles, links){
-const ul = document.getElementById(ulId);
-ul.innerHTML = "";
-titles.forEach((title, i) => {
-const li = document.createElement("li");
-li.className = "book-row";
-const url = links[i] || "#";
-li.innerHTML = `
-<a class="book-link" href="${url}" target="_blank" rel="noopener noreferrer">
-<span class="book-no">${i + 1}</span>
-<span class="book-title">${title}</span>
-<span class="book-go">구매 링크 ↗</span>
-</a>`;
-ul.appendChild(li);
-});
+/* -------------------------- 렌더링 -------------------------- */
+
+function esc(str){
+return String(str).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 }
 
-// 대화 제목 / 자료 제목 열이 포함된 표(04, 06, 07번용) 렌더 함수 — 페이지네이션 없음
-function renderLogTableWithTitle(tableId, data){
-const tbody = document.querySelector(`#${tableId} tbody`);
-tbody.innerHTML = "";
-if (data.length === 0){
-tbody.innerHTML = `<tr><td colspan="4" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
+// items: [{ title, url, date? }]  — 박스 하나에 목록 + 이전/다음 화살표를 그린다.
+function renderCard(cardId, items, pageSize, emptyText){
+const card = document.getElementById(cardId);
+const list = card.querySelector(".item-list");
+const pager = card.querySelector(".pager");
+const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+let page = 1;
+
+function draw(){
+page = Math.min(Math.max(1, page), totalPages);
+const start = (page - 1) * pageSize;
+list.setAttribute("start", start + 1);
+if (items.length === 0){
+list.innerHTML = `<li><p class="empty-note">${emptyText || "등록된 항목이 없습니다."}</p></li>`;
+} else {
+list.innerHTML = items.slice(start, start + pageSize).map((it, i) => `
+<li><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
+<span class="item-no">${start + i + 1}.</span>
+<span class="item-text">${esc(it.title)}${it.date ? `<span class="item-date">${esc(it.date)}</span>` : ""}</span>
+</a></li>`).join("");
+}
+if (totalPages <= 1){
+pager.innerHTML = "";
+pager.style.visibility = "hidden";
 return;
 }
-data.forEach((row, i) => {
-const tr = document.createElement("tr");
-tr.innerHTML = `
-<td class="no-col">${i + 1}</td>
-<td class="date-col">${row.date}</td>
-<td>${row.title || ""}</td>
-<td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
-`;
-tbody.appendChild(tr);
-});
+pager.style.visibility = "visible";
+pager.innerHTML = `
+<button type="button" class="prev" aria-label="이전 페이지" ${page === 1 ? "disabled" : ""}>‹</button>
+<span class="page-info">${page} / ${totalPages}</span>
+<button type="button" class="next" aria-label="다음 페이지" ${page === totalPages ? "disabled" : ""}>›</button>`;
+pager.querySelector(".prev").addEventListener("click", () => { page--; draw(); });
+pager.querySelector(".next").addEventListener("click", () => { page++; draw(); });
+}
+draw();
 }
 
-// 05번(매일 AI와 나눈 이야기 모음) 전용 — 페이지네이션이 있는 렌더 함수
-// pageSize개 단위로 표를 나누고, 표 아래에 '이전페이지 / 다음페이지' 버튼을 붙인다.
-function renderPaginatedLogTable(tableId, paginationId, data, pageSize){
-let currentPage = 1;
-const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
+const bookItems = links => bookTitles.map((t, i) => ({ title: t, url: links[i] || "#" }));
 
-function renderPage(page){
-currentPage = Math.min(Math.max(1, page), totalPages);
-const tbody = document.querySelector(`#${tableId} tbody`);
-tbody.innerHTML = "";
+renderCard("card-pod", bookItems(podLinks), PAGE_SIZE_BOOK);
+renderCard("card-ebook", bookItems(ebookLinks), PAGE_SIZE_BOOK);
+renderCard("card-opinion", opinionData, PAGE_SIZE_LIST);
+renderCard("card-ai-talks", aiTalksData, PAGE_SIZE_LIST);
+renderCard("card-senior", seniorData, PAGE_SIZE_LIST);
+renderCard("card-diabetes", diabetesData, PAGE_SIZE_LIST);
+renderCard("card-etc", etcData, PAGE_SIZE_LIST);
 
-if (data.length === 0){
-tbody.innerHTML = `<tr><td colspan="4" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
-} else {
-const start = (currentPage - 1) * pageSize;
-const pageData = data.slice(start, start + pageSize);
-pageData.forEach((row, i) => {
-const tr = document.createElement("tr");
-tr.innerHTML = `
-<td class="no-col">${start + i + 1}</td>
-<td class="date-col">${row.date}</td>
-<td>${row.title || ""}</td>
-<td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
-`;
-tbody.appendChild(tr);
-});
-}
-
-renderPaginationControls();
-document.getElementById(tableId).closest("section").scrollTop = 0;
-}
-
-function renderPaginationControls(){
-const container = document.getElementById(paginationId);
-if (!container) return;
-
-if (data.length <= pageSize){
-container.innerHTML = "";
-return;
-}
-
-container.innerHTML = `
-<button type="button" class="page-btn" id="${paginationId}-prev" ${currentPage === 1 ? "disabled" : ""}>‹ 이전페이지</button>
-<span class="page-info">${currentPage} / ${totalPages} 페이지</span>
-<button type="button" class="page-btn" id="${paginationId}-next" ${currentPage === totalPages ? "disabled" : ""}>다음페이지 ›</button>
-`;
-
-const prevBtn = document.getElementById(`${paginationId}-prev`);
-const nextBtn = document.getElementById(`${paginationId}-next`);
-if (prevBtn) prevBtn.addEventListener("click", () => renderPage(currentPage - 1));
-if (nextBtn) nextBtn.addEventListener("click", () => renderPage(currentPage + 1));
-}
-
-renderPage(1);
-}
-
-// 08번(네이버 블로그 전체 글) 전용 — 카테고리 열이 추가된 페이지네이션 렌더 함수
-function renderPaginatedBlogTable(tableId, paginationId, data, pageSize){
-let currentPage = 1;
-const totalPages = Math.max(1, Math.ceil(data.length / pageSize));
-
-function renderPage(page){
-currentPage = Math.min(Math.max(1, page), totalPages);
-const tbody = document.querySelector(`#${tableId} tbody`);
-tbody.innerHTML = "";
-
-if (data.length === 0){
-tbody.innerHTML = `<tr><td colspan="5" class="empty-note">등록된 항목이 없습니다.</td></tr>`;
-} else {
-const start = (currentPage - 1) * pageSize;
-const pageData = data.slice(start, start + pageSize);
-pageData.forEach((row, i) => {
-const tr = document.createElement("tr");
-tr.innerHTML = `
-<td class="no-col">${start + i + 1}</td>
-<td class="date-col">${row.date}</td>
-<td>${row.category || ""}</td>
-<td>${row.title || ""}</td>
-<td><a class="row-link" href="${row.url}" target="_blank" rel="noopener noreferrer">바로가기 ↗</a></td>
-`;
-tbody.appendChild(tr);
-});
-}
-
-renderPaginationControls();
-document.getElementById(tableId).closest("section").scrollTop = 0;
-}
-
-function renderPaginationControls(){
-const container = document.getElementById(paginationId);
-if (!container) return;
-
-if (data.length <= pageSize){
-container.innerHTML = "";
-return;
-}
-
-container.innerHTML = `
-<button type="button" class="page-btn" id="${paginationId}-prev" ${currentPage === 1 ? "disabled" : ""}>‹ 이전페이지</button>
-<span class="page-info">${currentPage} / ${totalPages} 페이지</span>
-<button type="button" class="page-btn" id="${paginationId}-next" ${currentPage === totalPages ? "disabled" : ""}>다음페이지 ›</button>
-`;
-
-const prevBtn = document.getElementById(`${paginationId}-prev`);
-const nextBtn = document.getElementById(`${paginationId}-next`);
-if (prevBtn) prevBtn.addEventListener("click", () => renderPage(currentPage - 1));
-if (nextBtn) nextBtn.addEventListener("click", () => renderPage(currentPage + 1));
-}
-
-renderPage(1);
-}
-
-renderBookList("pod-list", bookTitles, podLinks);
-renderBookList("ebook-list", bookTitles, ebookLinks);
-renderLogTableWithTitle("table-opinion", opinionData);
-renderPaginatedLogTable("table-ai-talks", "pagination-ai-talks", aiTalksData, AI_TALKS_PAGE_SIZE);
-renderLogTableWithTitle("table-archive", archiveData);
-renderLogTableWithTitle("table-temp", tempData);
-renderPaginatedBlogTable("table-blog", "pagination-blog", blogData, BLOG_PAGE_SIZE);
-
-/* -------------------------- 화면 전환 (라우팅) -------------------------- */
-const views = document.querySelectorAll(".view");
-const validHashes = {
-"pod": "view-pod",
-"ebook": "view-ebook",
-"dongbang": "view-dongbang",
-"opinion": "view-opinion",
-"ai-talks": "view-ai-talks",
-"archive": "view-archive",
-"temp": "view-temp",
-"blog": "view-blog"
-};
-
-function showView(viewId){
-views.forEach(v => v.classList.toggle("active", v.id === viewId));
-document.getElementById("main-content").scrollTop = 0;
-window.scrollTo(0, 0);
-const heading = document.querySelector(`#${viewId} h1, #${viewId} h2`);
-if (heading){ heading.setAttribute("tabindex", "-1"); heading.focus(); }
-}
-
-function routeFromHash(){
-const hash = location.hash.replace("#", "");
-if (hash && validHashes[hash]){
-showView(validHashes[hash]);
-} else {
-showView("view-home");
-}
-}
-
-window.addEventListener("hashchange", routeFromHash);
-routeFromHash();
-
-// 메인으로 돌아가기 버튼
-document.querySelectorAll("[data-home]").forEach(btn => {
-btn.addEventListener("click", (e) => {
-e.preventDefault();
-location.hash = "";
-showView("view-home");
-});
-});
-
-// 물리적 Home 키로도 메인 메뉴 복귀 지원
-window.addEventListener("keydown", (e) => {
-if (e.key === "Home"){
-const current = document.querySelector(".view.active");
-if (current && current.id !== "view-home"){
-e.preventDefault();
-location.hash = "";
-showView("view-home");
-}
-}
-});
-
-/* -------------------------- 글자 크기 조절 -------------------------- */
-const STEP_MIN = 0, STEP_MAX = 6, STEP_UNIT = 2;
-
-function applyStep(px){
-document.documentElement.style.setProperty("--step", px + "px");
-try{ localStorage.setItem("nt-font-step", px); }catch(e){}
-}
-
-(function initFontStep(){
-let saved = 0;
-try{ saved = parseInt(localStorage.getItem("nt-font-step") || "0", 10); }catch(e){}
-applyStep(isNaN(saved) ? 0 : saved);
-})();
-
-document.getElementById("font-inc").addEventListener("click", () => {
-let cur = parseInt(document.documentElement.style.getPropertyValue("--step") || "0", 10);
-applyStep(Math.min(STEP_MAX, cur + STEP_UNIT));
-});
-
-document.getElementById("font-dec").addEventListener("click", () => {
-let cur = parseInt(document.documentElement.style.getPropertyValue("--step") || "0", 10);
-applyStep(Math.max(STEP_MIN, cur - STEP_UNIT));
-});
-
-document.getElementById("font-reset").addEventListener("click", () => applyStep(0));
+// 08 네이버 블로그 전체 글 (blogData는 GitHub Actions가 자동 갱신)
+renderCard("card-blog", blogData.map(r => ({ title: r.title, url: r.url, date: r.date + (r.category ? " · " + r.category : "") })), PAGE_SIZE_LIST);
 </script>
 </body>
 </html>
