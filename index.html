@@ -76,8 +76,39 @@ color:var(--ink-soft);
 }
 main{max-width:1120px; margin:0 auto; padding:0 24px 40px;}
 /* ---------- Hero ---------- */
-.hero{padding:36px 0 22px;}
+.hero{
+padding:36px 0 22px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:28px;
+}
+.hero-covers{
+display:flex;
+gap:10px;
+flex:none;
+}
+.hero-covers a{display:block; line-height:0; width:84px; aspect-ratio:3/4; overflow:hidden; font-size:0;}
+.hero-covers img{
+width:84px;
+height:auto;
+aspect-ratio:3/4;
+object-fit:cover;
+border:1px solid var(--line);
+border-radius:3px;
+background:var(--surface);
+box-shadow:0 1px 3px rgba(0,0,0,0.12);
+transition:transform .15s;
+}
+.hero-covers a:hover img, .hero-covers a:focus-visible img{transform:translateY(-3px);}
+@media (max-width:900px){
+.hero{flex-direction:column; align-items:flex-start; gap:18px;}
+.hero-covers{flex-wrap:wrap;}
+}
+@media (max-width:480px){ .hero-covers a, .hero-covers img{width:72px;} }
 .hero h1{
+flex:1 1 auto;
+min-width:12em;
 font-family:var(--font-head);
 font-size:1.7rem;
 line-height:1.5;
@@ -199,6 +230,7 @@ text-align:center;
 <main id="main-content">
 <div class="hero">
 <h1>실버세대가 AI와 소통하며<br>만들어 가는 이야기들…</h1>
+<div class="hero-covers" id="hero-covers" aria-label="POD(종이책) 대표 도서"></div>
 </div>
 
 <ul class="menu-grid">
@@ -467,6 +499,12 @@ draw();
 }
 
 const bookItems = links => bookTitles.map((t, i) => ({ title: t, url: links[i] || "#" }));
+
+// 상단 책 표지 6권 — POD(종이책) 1~6번과 동일한 구매 링크로 연결
+document.getElementById("hero-covers").innerHTML = [0,1,2,3,4,5].map(i => `
+<a href="${podLinks[i]}" target="_blank" rel="noopener noreferrer" title="${esc(bookTitles[i])}">
+<img src="assets/covers/cover${i + 1}.jpg" alt="${esc(bookTitles[i])} 표지 (구매 페이지 새 창)" loading="lazy">
+</a>`).join("");
 
 renderCard("card-pod", bookItems(podLinks), PAGE_SIZE_BOOK);
 renderCard("card-ebook", bookItems(ebookLinks), PAGE_SIZE_BOOK);
