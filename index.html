@@ -309,6 +309,8 @@ text-align:center;
 -------------------------------------------------------------------------
 ▶ 각 배열에 { date: "YYYY.MM.DD", title: "제목", url: "링크주소" } 형식으로
   한 줄만 추가하면 해당 박스에 자동으로 항목이 생성됩니다.
+  화면에서는 날짜가 최신인 항목이 첫 페이지에 나옵니다. 같은 날짜이거나 날짜가 없으면
+  배열에서 나중에 적은 항목이 앞에 옵니다. (2026.10.05, 2026-10-05 형식 모두 인식)
 ▶ POD(종이책)·전자책 박스는 한 화면에 5개, 나머지 박스는 3개씩 표시되며
   초과분은 박스 하단의 ‹ › 화살표로 이전/다음 페이지를 볼 수 있습니다.
    (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_LIST 값으로 조절)
@@ -511,8 +513,32 @@ function esc(str){
 return String(str).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 }
 
+function dateKey(value){
+const text = String(value == null ? "" : value).trim();
+const matched = text.match(/^(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})/);
+if (!matched) return null;
+const month = Number(matched[2]);
+const day = Number(matched[3]);
+if (month < 1 || month > 12 || day < 1 || day > 31) return null;
+return Number(matched[1]) * 10000 + month * 100 + day;
+}
+
+// 최신 날짜가 앞에 온다. 같은 날짜이거나 날짜가 없으면 배열에서 나중에 추가한 항목이 앞이다.
+function newestFirst(items){
+return items.map((item, index) => ({ item, index })).sort((a, b) => {
+const da = dateKey(a.item && a.item.date);
+const db = dateKey(b.item && b.item.date);
+if (da == null && db == null) return b.index - a.index;
+if (da == null) return 1;
+if (db == null) return -1;
+if (da !== db) return db - da;
+return b.index - a.index;
+}).map(row => row.item);
+}
+
 // items: [{ title, url, date? }]  — 박스 하나에 목록 + 이전/다음 화살표를 그린다.
 function renderCard(cardId, items, pageSize, emptyText){
+items = newestFirst(items);
 const card = document.getElementById(cardId);
 const list = card.querySelector(".item-list");
 const pager = card.querySelector(".pager");
