@@ -311,6 +311,7 @@ text-align:center;
   한 줄만 추가하면 해당 박스에 자동으로 항목이 생성됩니다.
   화면에서는 날짜가 최신인 항목이 첫 페이지에 나옵니다. 같은 날짜이거나 날짜가 없으면
   배열에서 나중에 적은 항목이 앞에 옵니다. (2026.10.05, 2026-10-05 형식 모두 인식)
+  POD(종이책), 전자책, 사이버 동방예술관은 적힌 순서를 그대로 둡니다.
 ▶ POD(종이책)·전자책 박스는 한 화면에 5개, 나머지 박스는 3개씩 표시되며
   초과분은 박스 하단의 ‹ › 화살표로 이전/다음 페이지를 볼 수 있습니다.
    (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_LIST 값으로 조절)
@@ -538,7 +539,8 @@ return b.index - a.index;
 
 // items: [{ title, url, date? }]  — 박스 하나에 목록 + 이전/다음 화살표를 그린다.
 function renderCard(cardId, items, pageSize, emptyText){
-items = newestFirst(items);
+const keepOriginalOrder = cardId === "card-pod" || cardId === "card-ebook" || cardId === "card-dongbang";
+if (!keepOriginalOrder) items = newestFirst(items);
 const card = document.getElementById(cardId);
 const list = card.querySelector(".item-list");
 const pager = card.querySelector(".pager");
