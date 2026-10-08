@@ -1,18 +1,18 @@
 # 뉴스투데이 섹션 ↔ 봇 연계
 
 저장소: `hjyeagle/newstoday`  
-공개 페이지: https://hjyeagle.github.io/newstoday/  
+공개 페이지: https://newstoday.co.kr
 기준일: 2026-09-18
 
 | 번호 | 섹션 | 해시 | 담당 봇 | 연계 |
 |------|------|------|---------|------|
-| 01 | 내가 출간한 POD(종이책) | `#pod` | POD | 활성 — `bookTitles` + `podLinks` |
-| 02 | 내가 출간한 전자책 | `#ebook` | 전자책 | 활성 — `bookTitles` + `ebookLinks` |
+| 01 | AI와 POD(종이책) 출간 | `#pod` | POD | 활성 — `bookTitles` + `podLinks` |
+| 02 | AI와 전자책 출간 | `#ebook` | 전자책 | 활성 — `bookTitles` + `ebookLinks` |
 | 03 | 사이버 동방예술관 | `#dongbang` | 동방예술관 | 활성 — 소개문·포스터·사이버관 링크 |
 | 04 | 비즈넷타임즈 오피니언 기고문 | `#opinion` | 비즈넷타임즈 | 유지 — 현재 `opinionData` 그대로 |
-| 05 | 매일 AI와 나눈 이야기 모음 | `#ai-talks` | 노션공유 | 활성 — 선별된 공유만 `aiTalksData`에 유지 (전체 DB 아님) |
-| 06 | 시니어수익 | `#archive` | 시니어수익 | 활성 — `archiveData` |
-| 07 | 당뇨관리 | `#temp` | — | 미연계 |
+| 05 | AI와 나눈 이야기 모음 | `#ai-talks` | 노션공유 | 활성 — 선별된 공유만 `aiTalksData`에 유지 (전체 DB 아님) |
+| 06 | 시니어 수익창출 방법 | `#archive` | 시니어수익 | 활성 — `archiveData` |
+| 07 | 유튜브채널 요약정보 | `#temp` | — | 미연계 |
 | 08 | 네이버 블로그 전체 글 | `#blog` | 네이버블로그 동기화 봇 (GitHub Actions) | 활성 — RSS 자동 수집, `blogData` |
 
 ## 반영 경로
