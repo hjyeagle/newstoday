@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 상품소싱 자동화 (Codex 활용) | 뉴스투데이</title>
+<meta name="description" content="영상 정보 영상 URL: https://youtu.be/iWkcYh7r7lk?si=dq-zucbW2VlsK8Yf 구분: AI창업 요약 [결론] ChatGPT Codex(월 20달러 플러스 요금제 내 무료)로 에이블리·하이버·지그재그·스마트스토어…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/ai-talks/016.html">
+<meta property="og:title" content="AI 상품소싱 자동화 (Codex 활용) | 뉴스투데이">
+<meta property="og:description" content="영상 정보 영상 URL: https://youtu.be/iWkcYh7r7lk?si=dq-zucbW2VlsK8Yf 구분: AI창업 요약 [결론] ChatGPT Codex(월 20달러 플러스 요금제 내 무료)로 에이블리·하이버·지그재그·스마트스토어…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/ai-talks/016.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#card-ai-talks">목록으로</a></p>
+<p class="post-kicker">AI와 나눈 이야기 모음 · 2026.09.15</p>
+<h1>AI 상품소싱 자동화 (Codex 활용)</h1>
+<article class="prose">
+<h2>영상 정보</h2>
+<ul>
+<li>영상 URL: <a href="https://youtu.be/iWkcYh7r7lk?si=dq-zucbW2VlsK8Yf" target="_blank" rel="noopener noreferrer">https://youtu.be/iWkcYh7r7lk?si=dq-zucbW2VlsK8Yf</a></li>
+<li>구분: AI창업</li>
+</ul>
+<h2>요약</h2>
+<p>[결론] ChatGPT Codex(월 20달러 플러스 요금제 내 무료)로 에이블리·하이버·지그재그·스마트스토어 4개 플랫폼을 6시간마다 자동 순찰하며, 신규진입/급상승/스테디셀러 3개 카테고리 x S/A/B 3등급 = 총 9개 상품을 추려 슬랙으로 보고하는 AI 소싱 직원을 무료로 구축 가능. 실제 결과물의 상품 적중률이 높았다고 저자는 평가함.</p>
+<p>[핵심 근거]</p>
+<ol>
+<li>규모: 4개 플랫폼 x 랭킹 100위 x 6시간마다 체크 = 1일 1,600개 상품 스캔(사람이 하면 불가능한 물량).</li>
+<li>검증 로직(100점 만점): 복수 플랫폼 교차발견 25점 + 순위 상승세 25점 + 신상품 15점 + 네이버 데이터랩 검색량 교차검증 15점 + 자사몰 판매가능성(비브랜드) 20점.</li>
+<li>준비물 3가지, 전부 무료: ①슬랙 채널 ②네이버 데이터랩 API(월 5만 건까지 무료) ③플랫폼별 랭킹 100 URL.</li>
+<li>비슷한 디자인의 상품을 이름이 달라도 하나의 트렌드 군으로 묶어 인식.</li>
+</ol>
+<p>[실행 방법 요약]</p>
+<ol>
+<li>슬랙 전용 채널 생성.</li>
+<li>네이버 개발자센터 가입 → API 허브에서 쇼핑인사이트 앱 등록 → API 키 발급(약 10분).</li>
+<li>에이블리/하이버/지그재그 랭킹100 URL, 루핏 인기상품 URL 확보.</li>
+<li>위 100점 채점 기준을 코덱스에 입력(API 키는 채팅창에 직접 노출 금지, 코덱스에 암호화 저장 방법을 물어 터미널에 입력).</li>
+<li>&quot;4개 플랫폼을 6시간마다 순찰해 신규진입/급상승/스테디 x S/A/B 총 9개 상품을 슬랙으로 보고해줘&quot;라고 지시하면 코덱스가 자동 구축.</li>
+<li>이후 채팅창으로 &quot;지금 조사해줘&quot;, &quot;이 상품이 왜 S등급인지 설명해줘&quot; 등 추가 명령 가능.</li>
+</ol>
+<p>[유의사항]</p>
+<ul>
+<li>영상 속 등급/점수 기준은 저자가 7년간 쇼핑몰을 운영하며 경험적으로 세운 것으로, 실제 채택 시 자사 상황에 맞는 검증이 필요함.</li>
+<li>클로드 코드로도 구현 가능하나 비용 부담으로 코덱스를 택했다고 언급됨.</li>
+</ul>
+<h2>키워드</h2>
+<p>코덱스, 상품소싱, 쇼핑몰, 자동화, 슬랙, 네이버데이터랩, 트렌드분석</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3dcd5308c4dd81429c1cff864af4183e" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

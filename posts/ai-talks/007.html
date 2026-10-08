@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리 | 뉴스투데이</title>
+<meta name="description" content="2026년 9월 6일 · Claude와의 대화 정리 1. 오늘 진행한 작업 개요 newstoday.co.kr 홈페이지를 정적 사이트(index.html 1개 파일) 로 제작하고, GitHub Pages를 통해 무료로 배포하는 작업을 진행함. 기존…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/ai-talks/007.html">
+<meta property="og:title" content="동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리 | 뉴스투데이">
+<meta property="og:description" content="2026년 9월 6일 · Claude와의 대화 정리 1. 오늘 진행한 작업 개요 newstoday.co.kr 홈페이지를 정적 사이트(index.html 1개 파일) 로 제작하고, GitHub Pages를 통해 무료로 배포하는 작업을 진행함. 기존…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/ai-talks/007.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#card-ai-talks">목록으로</a></p>
+<p class="post-kicker">AI와 나눈 이야기 모음 · 2026.09.06</p>
+<h1>동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리</h1>
+<article class="prose">
+<p><em>2026년 9월 6일 · Claude와의 대화 정리</em></p>
+<hr>
+<h1>1. 오늘 진행한 작업 개요</h1>
+<p><a href="http://newstoday.co.kr" target="_blank" rel="noopener noreferrer">newstoday.co.kr</a> 홈페이지를 <strong>정적 사이트(index.html 1개 파일)</strong> 로 제작하고, GitHub Pages를 통해 무료로 배포하는 작업을 진행함. 기존에 확정된 7개 메뉴 사이트맵(PDF)을 기준으로 실제 동작하는 웹페이지를 완성함.</p>
+<h1>2. 완료된 작업</h1>
+<ol>
+<li><strong>index.html 제작</strong><ul>
+<li>첨부된 <code>newstoday_사이트맵.pdf</code>를 기준으로 7개 메뉴 구조 그대로 구현</li>
+<li>01/02(POD·전자책): 번호 클릭 시 새 창으로 온라인 서점 구매 페이지 연결</li>
+<li>03(사이버 동방예술관): PDF에서 도록 표지 이미지를 추출해 <code>assets/dongbang-poster.jpg</code>로 저장, 소개문 + <code>hjyeagle.github.io/cyber_dongbang/</code> 새 창 연결</li>
+<li>04~07(오피니언 기고문 / AI 대화 모음 / 자료실 / Temp): 표(엑셀 형태) 로 구현, 데이터 배열(<code>opinionData</code>, <code>aiTalksData</code>, <code>archiveData</code>, <code>tempData</code>)에 한 줄만 추가하면 새 항목이 누적되는 구조</li>
+<li>모든 하위 화면에 &quot;🏠 메인으로&quot; 버튼 + 키보드 Home 키로 메인 메뉴 복귀 기능</li>
+<li>고령자·접근성 사용자를 고려해 큰 글자 크기 기본값 + 글자 크기 조절 버튼(가−/가/가+) 추가</li>
+</ul>
+</li>
+<li><strong>GitHub 저장소 정리</strong><ul>
+<li>사용하지 않는 저장소(<code>weniv_blog</code> 등) Settings → Danger Zone → Delete this repository 경로로 삭제 진행</li>
+</ul>
+</li>
+<li><strong>GitHub Pages 배포 설정</strong><ul>
+<li><code>hjyeagle/newstoday</code> 저장소가 비공개(Private) 상태라 Pages가 비활성화되어 있던 문제 확인</li>
+<li>Settings → General → Danger Zone → Change visibility → <strong>Public 전환</strong>으로 해결</li>
+<li>Settings → Pages → Source를 &quot;Deploy from a branch&quot;로 지정, <code>main</code> 브랜치 <code>/ (root)</code> 폴더 저장 안내</li>
+<li>배포 완료 시 예상 주소: <code>https://newstoday.co.kr/</code></li>
+</ul>
+</li>
+</ol>
+<h1>3. 파일 구조</h1>
+<pre><code class="language-javascript">(저장소 루트)
+ ├─ index.html
+ └─ assets/
+     └─ dongbang-poster.jpg
+</code></pre>
+<h1>4. 콘텐츠 갱신 방법 (담당자용 메모)</h1>
+<p>04~07번 메뉴에 새 항목을 추가할 때:</p>
+<ol>
+<li>GitHub에서 <code>hjyeagle/newstoday</code> 저장소 → <code>index.html</code> 열기</li>
+<li>연필 아이콘(Edit this file) 클릭 → 브라우저에서 바로 편집</li>
+<li>해당 데이터 배열(<code>aiTalksData</code> 등)을 Ctrl+F로 찾기</li>
+<li>마지막 항목 뒤에 <code>{ date: &quot;YYYY.MM.DD&quot;, url: &quot;링크&quot; }</code> 형식으로 한 줄 추가</li>
+<li>Commit changes → Commit directly to the main branch</li>
+</ol>
+<h1>5. 다음에 이어서 할 일</h1>
+<ul>
+<li><input disabled="" type="checkbox"> GitHub Pages 배포 후 실제 접속 확인 (<code>https://newstoday.co.kr/</code>)</li>
+<li><input disabled="" type="checkbox"> Gabia에서 관리 중인 <code>newstoday.co.kr</code> 도메인을 GitHub Pages 커스텀 도메인으로 연결(CNAME 설정)</li>
+<li><input disabled="" type="checkbox"> 이 페이지 링크를 05번 메뉴(매일 AI와 나눈 이야기 모음) 표에 항목으로 추가</li>
+<li><input disabled="" type="checkbox"> 05번 메뉴의 기존 노션 링크(2026.08.18 항목)가 외부에서도 열리는 공개 링크인지 확인</li>
+</ul>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3d3d5308c4dd810ba3cced40d007018d" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_비즈니스 데이터 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;비즈니스 데이터&amp;#39; (영상 7개, 중복 제외 7개) · 2026.10.05 생성 비즈니스 데이터 분석 [1/7] 파이썬 비즈니스 데이터 분석 📊Online Retail…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/040.html">
+<meta property="og:title" content="오늘코드todaycode_비즈니스 데이터 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;비즈니스 데이터&amp;#39; (영상 7개, 중복 제외 7개) · 2026.10.05 생성 비즈니스 데이터 분석 [1/7] 파이썬 비즈니스 데이터 분석 📊Online Retail…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/040.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_비즈니스 데이터</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;비즈니스 데이터&#39; (영상 7개, 중복 제외 7개) · 2026.10.05 생성</p>
+<h2>비즈니스 데이터 분석 [1/7] 파이썬 비즈니스 데이터 분석 📊Online Retail 🛍️️ 온라인 커머스 🌐 다이소와 유사한 잡화 거래 데이터는 어떤 구성일까? 🤔👜📝📊 🔍</h2>
+<ul>
+<li>UCI 머신러닝 리포지토리의 유명한 영국 온라인 소매(Online Retail) 공공 데이터셋(54만 여 건, 8개 컬럼)으로, 선물용 잡화 거래 이력으로 구성되어 있습니다.</li>
+<li>주요 데이터 변수로는 주문번호(InvoiceNo), 상품코드(StockCode), 상품명(Description), 수량(Quantity), 주문일시(InvoiceDate), 단가(UnitPrice), 고객ID(CustomerID), 국가(Country) 등이 있습니다.</li>
+<li>주문번호가 &#39;C&#39;로 시작하는 데이터는 구매 취소건(Cancellation)을 의미하며, 수량이나 단가에 마이너스(-) 값이 표기되어 있어 전처리 시 제외나 주의가 필요합니다.</li>
+<li>고객ID의 결측치가 약 13만 5천 건(전체의 약 24%) 존재하며, 이는 비회원 주문으로 해석할 수 있어 회원 가입 유도 프로모션 설계의 계기가 됩니다.</li>
+<li>50만 건 이상의 대용량 데이터를 처리할 때는 엑셀이나 일반 CSV보다 열 단위 압축 포맷인 파케이(Parquet) 파일 형태로 판다스에 로드하는 것이 속도 측면에서 훨씬 유리합니다.</li>
+<li>고객별 구매 금액 및 RFM 분석을 수행하기 위해 수량(Quantity)과 단가(UnitPrice)를 곱한 총 구매금액(TotalPrice) 파생변수를 새로 생성합니다.</li>
+<li>교차표(<code>pd.crosstab</code>)를 통해 국가별 회원/비회원 구매 비중을 분석할 수 있으며, 최다 거래 국가인 영국을 비롯해 다양한 국가별 거래 특성을 확인합니다.</li>
+</ul>
+<hr>
+<h2>비즈니스 데이터 분석 [2/7] 📊Online Retail 🛍️ 온라인 커머스 🌐🤔 월별, 일별, 요일별 분석을📝📊 실제 비즈니스에 적용한다면?  👜 🔍</h2>
+<ul>
+<li>수량이 0보다 작거나 단가가 0 이하인 데이터, 고객ID가 없는 데이터 및 중복 행(<code>drop_duplicates</code>)을 제외하여 39만 여 건의 유효 데이터(Valid Data)로 정제합니다.</li>
+<li><code>pd.to_datetime()</code>을 통해 주문일시를 데이트타임 객체로 변환한 후 연(Year), 월(Month), 일(Day), 요일(Day of Week), 시간(Hour), 연월(ym) 파생변수를 추출합니다.</li>
+<li>월별 거래 건수를 시각화한 결과, 2011년 9월부터 11월 사이에 거래량이 급격히 증가하며 비즈니스의 성장세를 나타냅니다.</li>
+<li>요일별 분석 결과 목요일에 주문 건수가 가장 많고, 토요일 거래 데이터는 존재하지 않으며 주말 및 금요일은 상대적으로 주문량이 적은 특성을 보입니다.</li>
+<li>시간대별 분석을 수행하면 주로 오전 10시와 점심시간대인 낮 12시~1시 사이에 주문 건수 및 매출액이 집중되는 현상이 관찰됩니다.</li>
+<li>시간대별 및 요일별 교차표(<code>pd.crosstab</code>)를 작성하고 판다스 백그라운드 그라데이션 및 씨본(<code>sns.heatmap</code>) 시각화를 통해 마케팅 및 광고 예산 집행 타겟 시간대를 도출합니다.</li>
+<li>유튜브 시청 시간대 분석 사례처럼 서비스 이용률이 높은 특정 요일과 시간대에 프로모션 및 광고를 집중하는 전략적 의사결정이 가능합니다.</li>
+</ul>
+<hr>
+<h2>비즈니스 데이터 분석 [3/7] 📊Online Retail 🛍️️ 온라인 커머스 🌐🤔  📝📊 ARPU MAU?</h2>
+<ul>
+<li>핵심 비즈니스 지표인 ARPU(가입자당 평균 매출) 및 ARPPU(결제 유저당 평균 매출), MAU(월간 활성 사용자 수)의 개념을 이해하고 데이터로 구현합니다.</li>
+<li>월별(InvoiceYearMonth)로 총 매출액(TotalPrice Sum)을 유니크 결제 고객 수(CustomerID Nunique)로 나누어 월별 ARPPU 추이를 산출합니다.</li>
+<li>월별 ARPPU 및 총매출액, 유니크 고객 수 시각화 결과 2010년 12월 이후 전반적으로 고객 수와 매출액, 고객당 평균 결제액이 함께 상승하는 우상향 추세를 파악합니다.</li>
+<li>고객별로 그룹화(<code>groupby(&#39;CustomerID&#39;)</code>)하여 총 주문 횟수, 평균 구매 금액, 누적 구매 금액의 기술통계량(<code>describe</code>) 및 이상치 분포를 검증합니다.</li>
+<li>월별 유니크 고객 수(<code>nunique()</code>)를 집계하여 이커머스 서비스의 월간 활성 사용자 지표인 MAU(Monthly Active Users) 추이를 도출합니다.</li>
+<li><code>groupby</code>와 <code>agg</code> 연산자를 활용해 월별 주문 건수, 판매된 중복 제외 상품 종류 수(StockCode Nunique), 평균 단가, 총 매출액 등을 한꺼번에 요약 집계합니다.</li>
+</ul>
+<hr>
+<h2>비즈니스 데이터 분석 [4/7] 📊Online Retail 🛍️ 온라인 커머스 🌐🤔 투자자가 반한 지표 📝📊 리텐션은 어떻게 구하나?  👜 🔍시간 코호트 분석</h2>
+<ul>
+<li>스타트업 투자 유치(IR) 및 서비스 성장의 핵심 지표인 사용자 잔존율(User Retention)과 시간 코호트(Cohort) 분석의 원리를 다룹니다.</li>
+<li>각 고객(<code>CustomerID</code>)별 첫 구매일시(<code>transform(&#39;min&#39;)</code>)를 구하고, 이를 기준으로 첫 구매 연월(First YM) 파생변수를 생성합니다.</li>
+<li>구매 시점과 첫 구매 시점 간의 월 차이를 계산하여 각 구매 트랜잭션이 첫 구매 후 몇 개월 차(<code>CohortIndex</code>)에 일어났는지 산출합니다.</li>
+<li>첫 구매 월과 코호트 인덱스를 기준으로 유니크 고객 수를 집계하고, <code>unstack()</code>을 적용해 첫 구매 달 기준 잔존 고객 수 코호트 매트릭스를 구축합니다.</li>
+<li>첫 달(CohortIndex=1) 신규 유입 고객 수 대비 이후 월별 잔존 고객 비율을 계산하여 코호트 잔존율(Retention Rate) 히트맵을 시각화합니다.</li>
+<li>잔존율 분석 결과 첫 달 이후 고객 이탈이 발생하지만, 장기적으로 특정 비율의 충성 고객층이 지속적으로 남아 재구매를 이어가는 흐름을 확인합니다.</li>
+<li>단순 고객 수 잔존율뿐만 아니라 첫 구매 코호트별 매출액(TotalPrice Sum) 리텐션을 함께 시각화하여 초기 유입 고객이 가져다주는 장기적 LTV(고객 생애 가치) 효과를 입증합니다.</li>
+</ul>
+<hr>
+<h2>비즈니스 데이터 분석 [5/7]  📊Online Retail 🛍️ 온라인 커머스 🌐🤔 고객을 다양한 측면에서 📝📊 입체적으로 보고 싶다면?  👜 🔍RFM 분석</h2>
+<ul>
+<li>고객을 최근성(Recency), 구매빈도(Frequency), 구매금액(Monetary)의 3가지 입체적 축으로 분류하는 RFM 마케팅 분석 기법을 실습합니다.</li>
+<li>분석 기준일(마지막 거래일 + 1일)을 설정하고 고객별 최근 거래일 차이(Recency), 주문 건수/상품수(Frequency), 총 지출액(Monetary)을 집계합니다.</li>
+<li>상대평가 방식인 <code>pd.qcut</code>을 사용하여 R, F, M 각각의 지표를 약 20% 비율 단위의 5개 등급(1~5점)으로 나눕니다.</li>
+<li>R, F, M 등급을 결합한 세그먼트 코드(예: &#39;555&#39;, &#39;111&#39;)와 세 점수를 합산한 RFM 스코어(3~15점) 파생변수를 생성합니다.</li>
+<li>RFM 스코어를 바탕으로 고객군을 실버(Silver), 골드(Gold), 플래티넘(Platinum) 등 3단계 간소화 클래스로 재분류하여 관리 편의성을 높입니다.</li>
+<li>3차원 산점도(<code>Scatter 3D</code>) 및 페어플롯(<code>pairplot</code>), 상관계수 히트맵을 통해 스코어별 고객 분포와 실제 지표(평균 지출액, 방문 빈도) 간의 비례 관계를 검증합니다.</li>
+<li>RFM 세그먼트에 따라 휴면 고객 불러오기, 우수 고객 전용 혜택 제공, 구매 금액 증대 이벤트 등 차별화된 맞춤형 마케팅 전략을 도출합니다.</li>
+</ul>
+<hr>
+<h2>비즈니스 데이터 분석 [6/7] 📊Online Retail 🛍️ 온라인 커머스 🌐🤔 RFM 분석을 머신러닝으로? 📝📊  고객 군집화를 위한 👜 🔍비지도학습 클러스터링</h2>
+<ul>
+<li>사람이 정한 규칙 기반 RFM 분석을 넘어, 다차원 변수를 정답 레이블 없이 스스로 그룹화하는 비지도학습(Unsupervised Learning) 군집화 개념을 다룹니다.</li>
+<li>K-평균(K-Means) 알고리즘은 임의의 K개 중심점(Centroid)을 잡고 거리가 가까운 데이터를 할당하며 중심을 재계산하는 과정을 반복합니다.</li>
+<li>거리 기반 머신러닝 모델의 성능을 높이기 위해 치우친(Skewed) RFM 데이터 분포에 로그 변환(<code>np.log1p</code>)을 취해 정규분포 형태로 완화합니다.</li>
+<li>특성 간 스케일 차이로 인한 편향을 방지하기 위해 사이킷런의 <code>StandardScaler</code>를 활용해 평균 0, 표준편차 1로 스케일링 전처리를 수행합니다.</li>
+<li>K-Means 알고리즘의 한계점으로 군집 수 K를 직접 지정해야 하고, 지역 최솟값(Local Optimum) 빠짐 및 이상치/비구형 데이터에 민감한 특성을 파악합니다.</li>
+<li>군집화 전처리 시 스케일링과 분포 정규화가 모델의 군집 형성 결과에 결정적인 영향을 미침을 이해합니다.</li>
+</ul>
+<hr>
+<h2>파이썬 비즈니스 데이터 분석 [7/7] 📊Online Retail 🛍️ 온라인 커머스 🌐🤔 RFM 분석을 머신러닝으로? 📝📊  고객 군집화를 위한 👜 🔍K-means 클러스터링</h2>
+<ul>
+<li>사이킷런의 <code>KMeans</code> 라이브러리를 활용해 전처리된 RFM 데이터셋에 대한 군집화 모델을 구현하고 결과를 해석합니다.</li>
+<li>군집 내 오차제곱합(Inertia) 변화를 관찰하여 급격히 꺾이는 지점을 찾는 엘보우 메소드(Elbow Method)로 적정 군집 수 K를 탐색합니다.</li>
+<li>군집 간 분리도와 군집 내 응집도를 나타내는 실루엣 스코어(Silhouette Score) 및 옐로우브릭(<code>KElbowVisualizer</code>) 시각화로 적정 K값(3~5개)을 검증합니다.</li>
+<li>K-Means로 생성된 군집 레이블과 기존 규칙 기반 RFM 클래스(실버, 골드, 플래티넘) 간 교차표(<code>pd.crosstab</code>)를 작성하여 군집 정합성을 비교합니다.</li>
+<li>머신러닝 군집화 결과와 RFM 분석 결과가 실버/골드/플래티넘 고객군 구분에 유사하게 대응함을 확인합니다.</li>
+<li>복잡하고 다차원적인 고객 행동 변수가 존재할 때 머신러닝 비지도 학습을 활용하여 정교한 고객 맞춤형 세그먼테이션 파이프라인을 구축할 수 있음을 입증합니다.</li>
+</ul>
+<hr>
+<h2>라벨 종합 정리</h2>
+<p>이 영상 시리즈는 실제 이커머스 거래 데이터를 활용해 결측치·이상치 정제부터 시계열 패턴 분석, 핵심 비즈니스 지표(ARPPU, MAU) 도출, 시간 코호트 리텐션 분석까지 전체 분석 파이프라인을 체계적으로 다룹니다.</p>
+<p>고객을 최근성(Recency), 방문빈도(Frequency), 구매금액(Monetary) 관점에서 입체적으로 평가하는 RFM 기법을 구현하고, 이를 규칙 기반 및 머신러닝 비지도학습(K-Means)으로 확장하여 정교한 고객 세그먼테이션을 완성합니다.</p>
+<p>데이터 전처리(로그 변환, 스케일링)와 히트맵·시각화를 결합해 투자자 설득용 잔존율 리텐션과 고객 맞춤형 마케팅 전략을 이끌어내는 실무 데이터 분석 역량을 제시합니다.</p>
+<p>💡 <strong>다음 단계 제안</strong>: 필요하시다면 이 요약본을 바탕으로 한 페이지 보고서나 슬라이드 개요로 가공해 드릴 수 있습니다. 원하시는 형태가 있으신가요?</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd814da5aef62e7b8e42df" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

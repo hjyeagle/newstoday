@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_넘파이 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;넘파이&amp;#39; (영상 26개, 중복 제외 26개) · 2026.10.05 생성 01 파이썬 수치 계산 도구의 핵심 🧮 넘파이 공식문서로 시작하기! ⚡️ 넘파이(NumPy)는…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/037.html">
+<meta property="og:title" content="오늘코드todaycode_넘파이 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;넘파이&amp;#39; (영상 26개, 중복 제외 26개) · 2026.10.05 생성 01 파이썬 수치 계산 도구의 핵심 🧮 넘파이 공식문서로 시작하기! ⚡️ 넘파이(NumPy)는…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/037.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_넘파이</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;넘파이&#39; (영상 26개, 중복 제외 26개) · 2026.10.05 생성</p>
+<h2>01 파이썬 수치 계산 도구의 핵심 🧮 넘파이 공식문서로 시작하기! ⚡️</h2>
+<ul>
+<li>넘파이(NumPy)는 파이썬에서 다차원 배열(nd-array)과 수치 연산을 빠르고 효율적으로 처리하기 위한 핵심 오픈소스 라이브러리입니다.</li>
+<li>판다스(Pandas), 사이파이(SciPy), 머신러닝/딥러닝 프레임워크인 텐서플로(TensorFlow), 파이토치(PyTorch) 등 파이썬 데이터 과학 생태계의 기초 기반을 이룹니다.</li>
+<li>관례적으로 <code>import numpy as np</code> 형태로 불러와 별칭 <code>np</code>를 사용하는 것이 세계적인 대다수 공식 문서 및 커뮤니티의 표준 규칙입니다.</li>
+<li>리뉴얼된 공식 웹사이트에서는 주피터 라이트(JupyterLite) 기반의 대화형 실행 환경을 내장하여 별도 설치 없이 브라우저에서 직접 실습할 수 있습니다.</li>
+<li><code>np.arange()</code>로 연속된 숫자 배열을 생성하고 <code>dtype</code> 파라미터를 통해 <code>int64</code> 등 명시적 데이터 타입을 지정할 수 있습니다.</li>
+<li><code>reshape()</code>로 차원의 형태를 변경하고, 파이썬 기본 슬라이싱 문법(<code>:</code>) 및 스텝 간격 조정을 배열 색인에 동일하게 적용할 수 있습니다.</li>
+<li>배열 전체 또는 <code>axis</code> 축 지정을 통해 축 기준 최댓값(<code>max()</code>)을 쉽게 추출할 수 있으며 정규분포 난수 생성기 등 다양한 수치 연산 기능을 제공합니다.</li>
+</ul>
+<hr>
+<h2>02 파이썬은 느린데 넘파이는 빠르다?!</h2>
+<ul>
+<li>파이썬은 순수 반복문(for loop)을 중첩할수록 인터프리터 언어 특성상 연산 속도가 급격히 느려지는 단점이 있습니다.</li>
+<li>넘파이는 파이썬 인터페이스 아래에 C언어로 미리 컴파일된 고성능 코드가 동작하는 접착제(Glue) 언어 구조를 취하고 있습니다.</li>
+<li>명시적인 반복문 없이 배열 전체에 연산을 적용하는 백터화(Vectorization) 기법을 통해 코드가 간결해지고 버그 발생률이 감소합니다.</li>
+<li>브로드캐스팅(Broadcasting) 메커니즘을 지원하여 서로 다른 크기나 차원의 배열 및 스칼라 간에도 효율적인 연산을 수행합니다.</li>
+<li>파이썬 기본 리스트의 요소별 곱셈 연산과 넘파이 벡터 곱셈의 실행 속도를 <code>%timeit</code>으로 비교 시, 넘파이가 마이크로초에서 나노초 단위로 압도적으로 빠릅니다.</li>
+<li>아나콘다(Anaconda) 환경 사용 시 라이브러리 간 호환성과 의존성 충돌을 줄이기 위해 <code>conda</code> 명령어로 넘파이를 설치하는 것을 권장합니다.</li>
+</ul>
+<hr>
+<h2>0201 넘파이 Numpy 이미지는 왜 3차원일까, 내가 찍은 사진을 넘파이 배열로 만들어 볼까?!</h2>
+<ul>
+<li>디지털 컬러 이미지는 가산 혼합 방식의 빛의 3원색인 RGB(Red, Green, Blue) 3개 채널로 이루어져 3차원 배열 구조를 갖습니다.</li>
+<li>각 픽셀 색상값은 0(검정)부터 255(흰색/최대 밝기) 사이의 수치(8비트)로 표현되어 넘파이 다차원 배열(nd-array)에 저장됩니다.</li>
+<li>매트플롯립(Matplotlib)의 <code>imread()</code> 기능을 활용하면 스마트폰 등으로 직접 촬영한 JPG/PNG 사진을 손쉽게 넘파이 배열로 로드할 수 있습니다.</li>
+<li>로드된 이미지 배열의 <code>shape</code> 속성을 확인하면 <code>(행 높이, 열 너비, 채널 수)</code> 순서의 3차원 차원 크기를 반환합니다.</li>
+<li>이미지 인덱싱을 통해 0번(Red), 1번(Green), 2번(Blue) 각 채널 배열을 따로 추출하거나 특정 픽셀 좌표의 RGB 값을 조회할 수 있습니다.</li>
+<li>딥러닝 입력을 위해 이미지 배열을 255로 나누면 원본 정보 손실 없이 0~1 사이 값으로 정규화(Normalization)할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>0202 넘파이 Numpy 행렬곱으로 이미지를 그레이스케일로 바꾸는 공식이 있다?!</h2>
+<ul>
+<li>RGB 3개 채널로 구성된 3차원 컬러 이미지는 행렬곱(Matrix Multiplication, <code>@</code> 연산자)을 통해 2차원 그레이스케일(흑백) 이미지로 전환할 수 있습니다.</li>
+<li>인간의 시각적 감도 특성에 맞춘 표준 공식 가중치(R: 0.2989, G: 0.5870, B: 0.1140 등)를 RGB 채널 배열과 행렬곱합니다.</li>
+<li>행렬곱 연산을 수행하려면 첫 번째 행렬의 열 개수와 두 번째 행렬의 행 개수가 반드시 일치해야 합니다.</li>
+<li><code>@</code> 연산자를 활용한 행렬곱은 각 채널별 슬라이싱 후 개별 곱셈과 가산 연산을 수행한 결과와 완전히 동일하게 작동합니다.</li>
+<li>3차원 RGB 배열이 행렬곱을 거치면 3개 채널 축이 축소되어 차원이 감축된 2차원 배열 형태의 그레이스케일 이미지가 생성됩니다.</li>
+<li>변환된 2차원 배열을 Matplotlib의 <code>imshow()</code>에 <code>cmap=&#39;gray&#39;</code> 옵션과 함께 전달하고 <code>plt.show()</code>를 호출해 깔끔하게 출력할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>0203 넘파이 NumPy 활용 100배! 선형대수 특잇값분해 SVD 이렇게 쉽게 사용할 수 있다고?!</h2>
+<ul>
+<li>특잇값분해(SVD, Singular Value Decomposition)는 직사각형 행렬을 세 개의 특정한 행렬 곱(\\(U, \Sigma, V^T\\))으로 분해하는 선형대수학 기법입니다.</li>
+<li>넘파이의 선형대수 모듈인 <code>np.linalg.svd()</code>를 활용하면 복잡한 수식 구현 없이 단 한 줄의 코드로 SVD를 쉽게 수행할 수 있습니다.</li>
+<li>SVD는 데이터 압축, 이미지 노이즈 제거, 차원 축소 및 중요한 특징(Feature) 추출 등 다양한 분야에서 널리 활용됩니다.</li>
+<li>SVD로 분해된 대각행렬(\\(\Sigma\\))의 값들은 특잇값의 크기순으로 정렬되어 있으며, 뒤로 갈수록 영향력이 급격히 감소합니다.</li>
+<li>전체 특잇값 중 상위 K개의 핵심 특잇값만 선택해 복원하면 원본 이미지의 주요 특징을 유지하면서 파일 용량과 차원을 대폭 축소할 수 있습니다.</li>
+<li>복원 과정에서 부동소수점 오차로 0~1 범위를 벗어나는 수치는 <code>np.clip(..., 0, 1)</code>을 사용해 안전하게 정제합니다.</li>
+</ul>
+<hr>
+<h2>03 넘파이 초보자를 위한 절대적인 기본 - list 와 np.array 의 차이</h2>
+<ul>
+<li>파이썬 기본 리스트(list)는 서로 다른 다양한 데이터 타입을 혼합하여 저장할 수 있는 가변 컨테이너입니다.</li>
+<li>넘파이 배열(<code>np.array</code>)은 동일한 데이터 타입(Homogeneous)의 요소만 저장할 수 있어 메모리를 훨씬 적게 점유하고 연산이 효율적입니다.</li>
+<li>서로 다른 타입이 섞인 리스트를 넘파이 배열로 변환하면 모든 요소가 가장 포괄적인 타입(예: 문자열)으로 자동 형변환됩니다.</li>
+<li><code>np.newaxis</code>를 인덱싱에 사용하면 기존 1차원 벡터 배열에 새로운 축을 삽입하여 2차원 행렬 형태로 차원을 확장할 수 있습니다.</li>
+<li>넘파이 배열의 인덱싱은 파이썬과 마찬가지로 0부터 시작하며, 2차원 배열에서는 대괄호 내에 쉼표로 행과 열 위치를 지정합니다.</li>
+<li>넘파이는 주피터 노트북 환경에서 괄호 안 <code>Shift + Tab</code>을 눌러 함수 도움말(Docstring)을 바로 확인할 수 있어 학습에 용이합니다.</li>
+</ul>
+<hr>
+<h2>0301 넘파이 NumPy 딥러닝 손글씨 이미지 MNIST 데이터셋 로드와 정답 원핫인코딩으로 바꾸기</h2>
+<ul>
+<li>MNIST 손글씨 데이터셋은 0부터 9까지의 숫자로 이루어진 28x28 픽셀의 대표적인 딥러닝 기초 학습용 이미지 데이터입니다.</li>
+<li>웹 URL을 통해 파이썬 <code>requests</code> 및 <code>gzip</code> 모듈로 바이너리 형태의 MNIST 데이터셋을 다운로드하고 넘파이 배열로 변환합니다.</li>
+<li>28x28 크기의 2차원 이미지는 784개의 1차원 평탄화(Flat) 벡터 형태로 저장되어 모델 학습 입력값으로 다루어집니다.</li>
+<li>이미지 픽셀의 0~255 수치 데이터를 255로 나누어 0.0~1.0 범주의 실수(float) 타입으로 정규화(Normalization) 전처리를 진행합니다.</li>
+<li>0~9 정수 레이블(Label)을 10개 클래스 중 해당하는 정답 위치만 1이고 나머지는 0인 원-핫 인코딩(One-Hot Encoding) 배열로 변환합니다.</li>
+<li>빠른 실습과 경량 학습을 위해 전체 60,000개 트레이닝 데이터 중 일부 샘플(예: 1,000개)만 서브셋으로 슬라이싱하여 활용합니다.</li>
+</ul>
+<hr>
+<h2>0302 넘파이 NumPy MNIST 손글씨 이미지 딥러닝 학습</h2>
+<ul>
+<li>넘파이 행렬 연산만으로 입력층-은닉층-출력층으로 구성된 기본 순전파(Forward Propagation) 딥러닝 신경망을 밑바닥부터 구현합니다.</li>
+<li><code>np.random.default_rng()</code>를 통해 가중치(Weight) 초기값을 설정하고 난수 생성 시드(Seed)를 고정하여 결과 재현성을 확보합니다.</li>
+<li>음수 값을 0으로 바꾸는 렐루(ReLU) 활성화 함수를 정의하여 입력 데이터의 비선형 특징 추출을 수행합니다.</li>
+<li>오버피팅(Overfitting)을 방지하고 모델 일반화 성능을 높이기 위해 노드 일부를 랜덤하게 비활성화하는 드롭아웃(Dropout) 마스크를 적용합니다.</li>
+<li>행렬곱 연산(<code>@</code> 또는 <code>np.dot</code>)으로 각 레이어의 가중합을 계산하고, 실제 정답 원-핫 레이블과의 오차(Loss)를 계산합니다.</li>
+<li>역전파(Backpropagation) 과정에서 가중치 기울기(Gradient)를 구하고 학습률(Learning Rate)을 적용하여 가중치를 반복 갱신합니다.</li>
+</ul>
+<hr>
+<h2>0303 넘파이 NumPy MNIST 손글씨 예측과 정확도 측정</h2>
+<ul>
+<li>학습이 완료된 가중치 행렬을 테스트 데이터셋에 적용하여 10개 숫자 클래스별 예측 확률값을 도출합니다.</li>
+<li><code>np.argmax(..., axis=1)</code>를 사용하면 10개 확률값 중 가장 높은 값을 가진 인덱스를 선택하여 최종 예측 숫자를 판단합니다.</li>
+<li>예측된 숫자 배열과 실제 정답 레이블 배열을 불리언 비교하여 맞춘 개수의 합과 정확도(Accuracy, %)를 계산합니다.</li>
+<li>에포크(Epoch) 학습 회수가 반복됨에 따라 손실값(Loss)은 점차 감소하고 정확도(Accuracy)는 꾸준히 상승하는 학습 곡선을 확인합니다.</li>
+<li>에포크를 20회에서 100회로 늘려 반복 학습을 수행하면 테스트 데이터셋에서의 예측 정확도가 대폭 향상됩니다.</li>
+<li>Matplotlib으로 에포크별 손실 및 정확도 변화 추이를 선그래프로 시각화하여 학습 성능을 직관적으로 검증합니다.</li>
+</ul>
+<hr>
+<h2>04 넘파이 배열을 만드는 여러 방법 np.array, np.zeros, np.ones, np.empty, np.linspace</h2>
+<ul>
+<li><code>np.array()</code>는 파이썬 리스트나 튜플을 받아 넘파이 다차원 배열로 직접 변환해 주는 기본 생성 함수입니다.</li>
+<li><code>np.zeros()</code>는 지정한 쉐이프 크기만큼 모든 요소를 0으로 채운 배열을 생성하며 초기화 작업에 유용합니다.</li>
+<li><code>np.ones()</code>는 지정한 쉐이프 크기만큼 모든 요소를 1로 채운 배열을 빠르게 만듭니다.</li>
+<li><code>np.empty()</code>는 메모리를 따로 초기화하지 않고 빠르게 공간만 할당하므로 기존 메모리의 무작위 값이 들어갈 수 있습니다.</li>
+<li><code>np.arange(start, stop, step)</code>는 지정한 범위 내에서 일정한 간격(step)으로 숫자를 생성합니다.</li>
+<li><code>np.linspace(start, stop, num)</code>는 지정한 구간을 균일한 개수(num)로 정확히 나눈 선형 간격 배열을 생성합니다.</li>
+<li>생성 함수 호출 시 <code>dtype=np.int32</code>와 같이 원하는 데이터 타입을 명시적으로 지정하여 메모리를 관리할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>05 넘파이 배열을 만드는 방법2 - 넘파이 배열 생성 정리와 속도 측정</h2>
+<ul>
+<li>배열 생성 함수별 메커니즘 차이와 <code>%timeit</code> 매직 커맨드를 이용한 배열 생성 성능 비교를 다룹니다.</li>
+<li><code>np.zeros()</code>와 <code>np.ones()</code>는 메모리 할당 후 각각 0과 1로 값을 초기화하는 과정을 거칩니다.</li>
+<li><code>np.empty()</code>는 초기화 과정을 생략하고 메모리 블록만 할당하므로 속도가 매우 빠르나 쓰레기값이 포함될 수 있습니다.</li>
+<li><code>np.linspace()</code>는 정밀한 균등 분할 계산 연산이 수반되므로 일반 생성 함수보다 연산시간이 더 소요됩니다.</li>
+<li>소규모 배열에서는 생성 속도 차이가 미미하나, 수천만 건 이상의 대용량 배열을 다룰 때 적절한 생성 함수 선택이 중요합니다.</li>
+<li>기존 파이썬 데이터 구조를 넘파이 배열로 변환할 때는 <code>np.array()</code>를 사용하고, 빈 구조가 필요할 때는 목적에 따라 <code>zeros</code>나 <code>empty</code>를 선택합니다.</li>
+</ul>
+<hr>
+<h2>06 넘파이 정렬과 병합</h2>
+<ul>
+<li><code>np.sort()</code>는 배열 요소를 오름차순으로 정렬한 새로운 배열을 반환하며, 내장 정렬 알고리즘(기본 퀵소트)을 사용할 수 있습니다.</li>
+<li><code>np.argsort()</code>는 정렬된 요소의 실제 데이터값 대신 정렬 전의 기존 인덱스(Index) 번호를 반환하여 분류 모델 결과 정렬에 자주 쓰입니다.</li>
+<li>넘파이는 내장 내림차순 정렬 옵션이 없으므로, 슬라이싱 스텝을 역순(<code>[::-1]</code>)으로 지정하여 내림차순 정렬을 구현합니다.</li>
+<li>2차원 이상 배열 정렬 시 <code>axis=-1</code>(기본값, 마지막 축/열 기준) 또는 <code>axis=0</code>(행 기준)을 지정해 특정 축 방향으로 정렬합니다.</li>
+<li><code>np.concatenate()</code>는 두 개 이상의 배열을 지정한 축(<code>axis</code>) 방향으로 이어서 하나의 배열로 합쳐줍니다.</li>
+<li><code>np.lexsort()</code>를 사용하면 여러 개의 키(컬럼)를 기준 우선순위로 하여 복합 정렬을 수행할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>07 ndim, size, shape, reshape 로 배열의 크기 구하기</h2>
+<ul>
+<li><code>ndim</code> 속성은 배열의 차원 수(1차원, 2차원, 3차원 등)를 정수로 반환합니다.</li>
+<li><code>size</code> 속성은 차원과 상관없이 배열 내에 존재하는 전체 요소(Element)의 총개수를 반환합니다.</li>
+<li><code>shape</code> 속성은 배열의 각 차원별 크기를 나타내는 튜플 형태(예: <code>(행, 열)</code>)로 반환합니다.</li>
+<li><code>reshape()</code> 메소드를 사용하면 원본 요소의 개수를 유지한 채 배열의 차원 형태를 자유롭게 변경할 수 있습니다.</li>
+<li><code>reshape()</code> 시 변경 전 전체 <code>size</code>와 변경 후 요소 개수의 곱이 정확히 일치해야 오류가 발생하지 않습니다.</li>
+<li><code>reshape()</code> 시 한 개 차원에 <code>-1</code>을 입력하면 넘파이가 전체 크기에 맞춰 해당 차원의 크기를 자동으로 계산해 줍니다.</li>
+</ul>
+<hr>
+<h2>08 넘파이 배열 축 추가하기 np.newaxis, np.expand_dims()</h2>
+<ul>
+<li>1차원 벡터 배열을 2차원 행렬 구조(행 벡터 또는 열 벡터)로 확장할 때 축 추가 기법을 사용합니다.</li>
+<li>슬라이싱 위치에 <code>np.newaxis</code>를 삽입하면 차원이 1 증가하여 새로운 축이 생성됩니다.</li>
+<li><code>a[np.newaxis, :]</code> 형태로 작성하면 <code>(1, N)</code> 크기의 행 벡터(Row Vector)가 생성됩니다.</li>
+<li><code>a[:, np.newaxis]</code> 형태로 작성하면 <code>(N, 1)</code> 크기의 열 벡터(Column Vector)가 생성됩니다.</li>
+<li><code>np.expand_dims(a, axis=...)</code> 함수를 사용하면 원하는 축 위치(<code>axis=0</code> 또는 <code>axis=1</code>)에 명시적으로 차원을 확장할 수 있습니다.</li>
+<li>차원 확장은 행렬곱이나 브로드캐스팅 연산 수행 시 서로 다른 차원 크기를 맞추기 위한 필수 전처리 기법입니다.</li>
+</ul>
+<hr>
+<h2>09 넘파이 Numpy 인덱싱과 슬라이싱 조건 검색</h2>
+<ul>
+<li>넘파이 배열은 파이썬과 동일하게 0부터 시작하는 인덱싱 및 범위를 추출하는 슬라이싱(<code>start:stop:step</code>)을 지원합니다.</li>
+<li>2차원 배열 슬라이싱 시 <code>a[행_범위, 열_범위]</code> 형태로 쉼표를 사용해 각 축의 범위를 동시에 지정할 수 있습니다.</li>
+<li>배열에 비교 연산자(<code>a &gt; 5</code>, <code>a % 2 == 0</code>)를 적용하면 각 요소별 참/거짓으로 구성된 불리언(Boolean) 배열이 생성됩니다.</li>
+<li>불리언 배열을 색인 기호 내에 넣는 불리언 인덱싱(<code>a[a &gt; 5]</code>)을 통해 조건에 맞는 특정 요소만 추출할 수 있습니다.</li>
+<li>복수 조건을 조합할 때는 파이썬의 <code>and</code>, <code>or</code> 대신 비트 연산자 <code>&amp;</code>(AND), <code>|</code>(OR)를 사용하고 각 조건을 괄호로 묶어야 합니다.</li>
+<li><code>np.nonzero()</code>나 <code>np.where()</code>를 사용하면 조건식을 만족하는 요소들의 차원별 인덱스 위치 튜플을 검색할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>10 넘파이 NumPy vstack hstack hsplit 데이터 병합, 얕은 복사와 깊은 복사</h2>
+<ul>
+<li><code>np.vstack()</code>은 배열을 수직(행) 방향으로 쌓아 올리고, <code>np.hstack()</code>은 수평(열) 방향으로 연결해 결합합니다.</li>
+<li><code>np.hsplit()</code>을 사용하면 하나의 2차원 배열을 수평(열) 방향 기준으로 여러 개의 서브 배열로 분할할 수 있습니다.</li>
+<li>슬라이싱이나 <code>view()</code>로 생성된 배열은 원본 데이터를 공유하는 얕은 복사(View) 상태이므로 값을 수정하면 원본도 함께 변경됩니다.</li>
+<li>얕은 복사는 메모리를 절약하고 속도가 빠르지만, 의도치 않은 원본 데이터 오염 위험이 존재합니다.</li>
+<li>원본과 완전히 독립된 메모리 공간을 갖는 완전한 배열을 생성하려면 <code>copy()</code> 메소드로 깊은 복사(Deep Copy)를 수행해야 합니다.</li>
+<li>머신러닝/딥러닝 데이터 처리 시 파이프라인 안전성을 위해 가공 배열은 <code>copy()</code>를 사용하여 독립적으로 관리하는 것이 좋습니다.</li>
+</ul>
+<hr>
+<h2>11 넘파이 NumPy  배열의 산술연산</h2>
+<ul>
+<li>넘파이 배열 간 사칙연산(<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>)은 동일한 위치의 요소끼리 연산되는 요소별(Element-wise) 방식으로 작동합니다.</li>
+<li>배열에 스칼라 값을 연산하면 브로드캐스팅이 적용되어 모든 요소에 해당 스칼라 연산이 각각 반영됩니다.</li>
+<li>배열 요소 전체의 합을 구하려면 <code>np.sum(a)</code> 또는 <code>a.sum()</code> 메소드를 호출합니다.</li>
+<li>2차원 이상 배열에서 <code>axis=0</code>을 지정하면 행 방향(열별 합계)으로, <code>axis=1</code>을 지정하면 열 방향(행별 합계)으로 축 축소 집계를 수행합니다.</li>
+<li>배열 간 곱셈(<code>a * b</code>)은 요소별 곱셈이며, 선형대수학의 행렬곱을 수행하려면 <code>@</code> 연산자나 <code>np.dot(a, b)</code>를 사용해야 합니다.</li>
+<li>배열 사칙연산 결과는 데이터 타입이 자동으로 유지되거나 더 큰 범위의 타입으로 상향 형변환(Upcasting)됩니다.</li>
+</ul>
+<hr>
+<h2>12 넘파이 NumPy  브로드캐스팅</h2>
+<ul>
+<li>브로드캐스팅(Broadcasting)은 서로 다른 쉐이프를 가진 배열 간 사칙연산을 수행할 수 있도록 넘파이가 차원을 자동으로 확장해 주는 기능입니다.</li>
+<li>배열과 스칼라 연산 시 스칼라 값이 배열과 동일한 크기로 자동 확장되어 요소별 연산이 가공됩니다.</li>
+<li>브로드캐스팅이 성립하려면 각 차원의 크기가 동일하거나, 두 차원 중 하나가 반드시 1이어야 합니다.</li>
+<li>뒤에서부터 차원 크기를 비교하여 호환되지 않는 쉐이프 간 연산 시 <code>ValueError</code> 브로드캐스팅 오류가 발생합니다.</li>
+<li>1차원 배열과 2차원 배열 연산 시 1차원 배열의 크기가 2차원 배열의 마지막 차원(열) 크기와 일치해야 브로드캐스팅이 가능합니다.</li>
+<li>필요에 따라 <code>np.newaxis</code>로 명시적 차원을 확장해 주면 호환되지 않던 배열 간 브로드캐스팅 연산을 가능하게 만들 수 있습니다.</li>
+</ul>
+<hr>
+<h2>13 넘파이 NumPy 1D 2D 집계함수 - np.max, min, std, mean, prod 사용하기</h2>
+<ul>
+<li>넘파이는 배열의 다양한 통계량을 계산하는 수치 집계 함수(<code>max</code>, <code>min</code>, <code>mean</code>, <code>std</code>, <code>prod</code> 등)를 제공합니다.</li>
+<li><code>np.max()</code>와 <code>np.min()</code>은 배열 내 최댓값과 최솟값을 찾고, <code>np.mean()</code>은 전체 요소의 산술평균을 구합니다.</li>
+<li><code>np.std()</code>는 표준편차, <code>np.var()</code>는 분산, <code>np.prod()</code>는 배열 내 모든 요소의 누적 곱을 계산합니다.</li>
+<li>집계 함수 호출 시 <code>axis</code> 파라미터를 생략하면 전체 요소를 단일 스칼라값으로 집계합니다.</li>
+<li>2차원 배열에서 <code>axis=0</code>을 지정하면 각 열 기준 집계 결과를, <code>axis=1</code>을 지정하면 각 행 기준 집계 결과를 반환합니다.</li>
+<li>슬라이싱 및 인덱싱과 집계 함수를 결합하여 행렬의 특정 영역에 대한 부분 집계 통계량을 유연하게 산출할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>14 넘파이 NumPy 랜덤 이렇게 사용하면 훨씬 빠르다?!</h2>
+<ul>
+<li>넘파이 최신 버전에서는 기존 <code>np.random.rand()</code> 방식 대신 <code>np.random.default_rng()</code> 기반의 난수 생성기 사용을 강력히 권장합니다.</li>
+<li><code>default_rng()</code>는 비트 생성기(PCG64) 알고리즘을 사용하여 기존 레거시 난수 생성 함수보다 연산 속도가 대폭 향상되었습니다.</li>
+<li><code>rng = np.random.default_rng(seed=42)</code> 형태로 시드값을 고정하면 난수 발생 결과를 완벽하게 재현할 수 있습니다.</li>
+<li><code>rng.random(size)</code>은 0.0 이상 1.0 미만의 균등 분포 난수 배열을 생성합니다.</li>
+<li><code>rng.integers(low, high, size)</code>는 지정한 범위 내의 무작위 정수 배열을 생성합니다.</li>
+<li><code>rng.standard_normal(size)</code>은 평균 0, 표준편차 1인 표준정규분포 난수 배열을 신속하게 생성해 줍니다.</li>
+</ul>
+<hr>
+<h2>15 넘파이 unique 유일값으로 중복된 값은 거르고 보자!</h2>
+<ul>
+<li><code>np.unique()</code> 함수는 배열 내의 중복 요소를 제거하고 오름차순으로 정렬된 유일한 값(Unique Value) 배열을 반환합니다.</li>
+<li><code>return_index=True</code> 옵션을 지정하면 유일한 값이 원본 배열에서 처음 등장한 인덱스 위치 배열을 함께 반환합니다.</li>
+<li><code>return_counts=True</code> 옵션을 부여하면 각 유일한 값이 원본 배열에서 몇 번 등장했는지 출현 빈도수(Count) 배열을 함께 얻을 수 있습니다.</li>
+<li><code>return_inverse=True</code> 옵션을 설정하면 유일값 배열을 이용해 원본 배열을 재구성할 수 있는 정수 인덱스 배열을 반환합니다.</li>
+<li>2차원 배열에 <code>axis=0</code> 또는 <code>axis=1</code>을 지정하면 개별 요소가 아닌 행 단위 또는 열 단위의 중복 행/열을 제거할 수 있습니다.</li>
+<li>데이터 전처리 및 탐색적 데이터 분석(EDA) 시 중복값 검증 및 범주형 데이터 빈도 집계에 매우 유용하게 활용됩니다.</li>
+</ul>
+<hr>
+<h2>16 numpy 넘파이 전치행렬과 뒤집기 역순정렬 reshape transpose flip</h2>
+<ul>
+<li><code>transpose()</code> 메소드 또는 <code>.T</code> 속성을 사용하면 2차원 행렬의 행과 열 위치를 바꾸는 전치행렬(Transpose)을 생성합니다.</li>
+<li>다차원 배열에서 <code>transpose(1, 0, 2)</code>와 같이 축 순서를 명시하여 원하는 차원 축 배치로 자유롭게 재배열할 수 있습니다.</li>
+<li><code>np.flip()</code> 함수는 배열 요소들의 순서를 축 기준 전체 역순으로 뒤집어 반환합니다.</li>
+<li><code>np.flip(a, axis=0)</code>은 행 순서를 위아래로 상하 반전시키고, <code>np.flip(a, axis=1)</code>은 열 순서를 좌우 반전시킵니다.</li>
+<li>슬라이싱의 역순 스텝(<code>a[::-1]</code>)을 사용하여 배열 요소를 간편하게 뒤집는 방법도 동일하게 작동합니다.</li>
+<li>이미 정렬된 배열에 <code>np.flip()</code> 또는 역순 슬라이싱을 적용하여 오름차순 결과를 내림차순 배열로 손쉽게 전환할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>17 넘파이 NumPy 1D array flatten ravel 같은 기능을 하지만 무엇이 다를까?</h2>
+<ul>
+<li><code>flatten()</code>과 <code>ravel()</code>은 모두 다차원 배열을 1차원 평탄화(Flat) 배열로 펼쳐주는 고주파 활용 메소드입니다.</li>
+<li><code>flatten()</code>은 항시 새로운 독립 메모리 공간을 할당하여 1차원 배열 복사본(Copy)을 생성하고 반환합니다.</li>
+<li><code>ravel()</code>은 가능한 한 원본 배열의 메모리를 참조하는 뷰(View)를 반환하므로 메모리 효율성과 속도가 훨씬 뛰어납니다.</li>
+<li><code>ravel()</code>로 반환된 배열의 요소 값을 수정하면 원본 다차원 배열의 값도 함께 변경되므로 사용 시 주의가 필요합니다.</li>
+<li>딥러닝 완전연결층(Fully-Connected Layer) 입력 전 이미지 배열 평탄화 작업 시 두 함수가 핵심적으로 활용됩니다.</li>
+<li>원본과의 완전한 격리가 필요할 때는 <code>flatten()</code>을 사용하고, 대용량 연산 성능과 메모리 절약이 우선일 때는 <code>ravel()</code>을 선택합니다.</li>
+</ul>
+<hr>
+<h2>18 넘파이 꿀팁 공식문서 보는 단축키는 뭐다?! Numpy help docstring</h2>
+<ul>
+<li>파이썬 내장 <code>help(함수명)</code> 함수를 사용하면 해당 넘파이 함수나 객체의 공식 독스트링(Docstring) 도움말을 터미널에 출력할 수 있습니다.</li>
+<li>아이파이썬(IPython) 및 주피터 노트북 환경에서는 함수명 뒤에 물음표 하나(<code>np.abs?</code>)를 붙여 요약 도움말 창을 빠르게 띄울 수 있습니다.</li>
+<li>함수명 뒤에 물음표 두 개(<code>np.abs??</code>)를 붙이면 해당 함수의 파이썬 파이프라인 구현 소스코드까지 직접 열람할 수 있습니다.</li>
+<li>주피터 노트북의 셀 내부 괄호 안에서 <code>Shift + Tab</code> 단축키를 누르면 파라미터 설명과 사용 예시가 담긴 툴팁 팝업이 표시됩니다.</li>
+<li><code>Shift + Tab</code>을 2회 또는 4회 누르면 도움말 팝업 크기가 확대되거나 하단 고정 창으로 분리되어 긴 문서를 편하게 열람할 수 있습니다.</li>
+<li>직접 생성한 사용자 정의 함수(def) 상단에 따옴표 세 개(<code>&quot;&quot;&quot;...&quot;&quot;&quot;</code>)로 주석을 달면 동일한 물음표 및 단축키 도움말 조회가 가능합니다.</li>
+</ul>
+<hr>
+<h2>19 넘파이 NumPy 회귀의 오차 측정 공식 MSE RMSE MAE MAPE</h2>
+<ul>
+<li>머신러닝 회귀(Regression) 모델의 예측값과 실제값 간 손실 오차를 평가하기 위한 다양한 오차 측정 지표 수식을 넘파이로 구현합니다.</li>
+<li>평균제곱오차(MSE)는 <code>np.mean((y_pred - y_true) ** 2)</code>로 구현하며, 오차를 제곱하므로 큰 오차에 과도한 패널티를 부여합니다.</li>
+<li>루트평균제곱오차(RMSE)는 MSE에 <code>np.sqrt()</code>를 씌워 실제 데이터 단위와 동일한 스케일로 변환한 대표 오차 지표입니다.</li>
+<li>평균절댓값오차(MAE)는 <code>np.mean(np.abs(y_pred - y_true))</code>로 계산하며 이상치(Outlier) 영향을 덜 받는 직관적 지표입니다.</li>
+<li>평균절댓값단위오차(MAPE)는 실제값 대비 오차 비율의 절댓값 평균으로 백분율(%) 스케일 손실 지표를 표현합니다.</li>
+<li>회귀 오차 측정 지표들은 0에 가까울수록 예측 정밀도가 뛰어남을 의미하며, 넘파이 벡터 연산을 통해 대용량 데이터셋에서도 빠르게 산출됩니다.</li>
+</ul>
+<hr>
+<h2>20 넘파이 Numpy 파일저장은 같은 데이터 타입만 되는데 다른 타입 일때는?</h2>
+<ul>
+<li>넘파이 배열 단일 오브젝트를 바이너리 파일로 저장할 때는 <code>np.save(&#39;file.npy&#39;, arr)</code>를 사용하고, 읽어올 때는 <code>np.load(&#39;file.npy&#39;)</code>를 사용합니다.</li>
+<li>여러 개의 넘파이 배열을 압축하여 하나의 파일로 저장할 때는 <code>np.savez(&#39;file.npz&#39;, a=arr1, b=arr2)</code> 방식을 활용합니다.</li>
+<li>텍스트/CSV 포맷으로 수치형 배열을 저장할 때는 <code>np.savetxt(&#39;file.csv&#39;, arr, delimiter=&#39;,&#39;)</code> 및 <code>np.loadtxt()</code>를 다룹니다.</li>
+<li><code>np.savetxt()</code>는 균일한 단일 수치 데이터 타입만 지원하며, 문자열과 수치가 혼합된 데이터를 저장하려고 하면 에러가 발생합니다.</li>
+<li>수치, 문자열, 날짜 등 다양한 데이터 타입이 섞여 있는 이종(Heterogeneous) 표 형태 데이터 저장에는 판다스(Pandas) 데이터프레임을 활용하는 것이 권장됩니다.</li>
+<li>판다스의 <code>to_csv()</code> 및 <code>read_csv()</code>를 결합하면 이종 타입 데이터셋도 오염 없이 안전하고 손쉽게 저장하고 불러올 수 있습니다.</li>
+</ul>
+<hr>
+<h2>라벨 종합 정리</h2>
+<p>이 영상 모음은 파이썬 수치 연산과 데이터 과학 생태계의 뿌리가 되는 **넘파이(NumPy)**의 핵심 원리와 실무 활용법을 체계적으로 다룹니다. C언어 기반의 연속 메모리 구조와 벡터화·브로드캐스팅 메커니즘을 통해 파이썬 반복문의 한계를 극복하고 대용량 수치·배열 연산을 수 나노초 단위로 고속 처리할 수 있습니다. 1D~ND 차원 관리(인덱싱, 슬라이싱, reshape, axis 축 집계, SVD를 활용한 이미지 차원 축소), 딥러닝(MNIST 학습, ReLU, 회귀 오차 산출) 구현 등 기초부터 고급 테크닉까지 완성도 높게 다룹니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd81fea72ac7a5f933b86a" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

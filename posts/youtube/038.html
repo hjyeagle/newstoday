@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_데이터 시각화 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;데이터 시각화&amp;#39; (영상 76개, 중복 제외 75개) · 2026.10.05 생성 선택된 75개 영상(중복 제외)을 3회로 나누어 요약한 결과를 합친 것입니다. (데이터톤…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/038.html">
+<meta property="og:title" content="오늘코드todaycode_데이터 시각화 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;데이터 시각화&amp;#39; (영상 76개, 중복 제외 75개) · 2026.10.05 생성 선택된 75개 영상(중복 제외)을 3회로 나누어 요약한 결과를 합친 것입니다. (데이터톤…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/038.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_데이터 시각화</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;데이터 시각화&#39; (영상 76개, 중복 제외 75개) · 2026.10.05 생성</p>
+<p>선택된 75개 영상(중복 제외)을 3회로 나누어 요약한 결과를 합친 것입니다.</p>
+<hr>
+<h2>(데이터톤 05) 파이썬 데이터 분석 02 - Pandas, seaborn  으로 시각화 하기(정부혁신 국민포럼 페이지 분석)</h2>
+<ul>
+<li>국민참여 혁신 제안 페이지 크롤링 데이터의 제안 시작일과 마감일(문자열)을 <code>pd.to_datetime()</code>으로 변환하여 날짜형 처리 기반을 마련했습니다.</li>
+<li><code>dt.weekday</code> 및 <code>apply(lambda x: ...)</code>를 활용해 숫자로 표현된 요일 데이터를 &#39;월~일&#39; 문자로 매핑하여 새로운 컬럼을 생성했습니다.</li>
+<li>연도와 월을 조합한 파생변수를 통해 월별 제안 건수를 추적하고, 특정 시점(2018년 10월 등)에 제안 및 투표 수가 집중되는 현상을 파악했습니다.</li>
+<li><code>sns.pointplot()</code>과 <code>sns.barplot()</code>으로 월별 평균 투표 수와 신뢰구간(편차)을 표현하고, 월요일과 수요일에 제안 건수가 상대적으로 많음을 확인했습니다.</li>
+<li>일자별 제안 건수를 시각화하고 <code>rotate=60</code> 옵션을 부여하여 축 라벨 겹침을 방지하고 특정 날짜의 제안 집중 현상을 색인했습니다.</li>
+<li>2018년 10월 투표 수 2,000건 이상을 기록한 인기 제안(난임 지원 확대 등)의 세부 주제와 득표 양상을 별도로 추출해 분석했습니다.</li>
+<li><code>sns.distplot()</code> 시각화를 통해 대부분의 제안은 투표 수가 0건에 가깝고 상위 득표 제안은 극소수에 불과하다는 편향성을 검증했습니다.</li>
+<li><code>sort_values(ascending=False)</code>로 투표 수 상위 제안 및 &#39;일반행정&#39; 등 카테고리별 주요 제안 내용을 확인했습니다.</li>
+</ul>
+<hr>
+<h2>(데이터톤 06) 파이썬 데이터 분석 03 - 워드클라우드로 텍스트 시각화 하기(정부혁신 국민포럼 페이지 분석)</h2>
+<ul>
+<li>크롤링한 제안 데이터의 텍스트 분석을 위해 KoNLPy의 매캡(Mecab) 형태소 분석기를 로드하고 결측치는 공백 처리 후 명사만 추출했습니다.</li>
+<li>추출한 명사 데이터를 기반으로 워드클라우드(WordCloud) 시각화 함수를 정의하여 주요 단어의 출현 빈도를 한눈에 파악했습니다.</li>
+<li>카테고리별 분석 시 &#39;일반행정&#39; 분야에서는 혁신, 정부, 공무원, 문제점 등의 키워드가 자주 등장함을 확인했습니다.</li>
+<li>&#39;보건복지&#39; 분야는 장애, 복지, 육아, 주차 등이, &#39;안전&#39; 분야는 차량, 경찰, 주차, 인도 등의 단어가 빈번히 추출되었습니다.</li>
+<li>투표 수가 가장 높았던 난임·부린·임신 관련 제안들을 정규표현식으로 필터링하고 워드클라우드를 그려 난임 부부의 고충 키워드를 관찰했습니다.</li>
+<li>미세먼지, 자동차, 100표 이상 획득 제안 등 관심 키워드별로 서브셋을 구성하여 주요 이슈 단어들을 개별 추출했습니다.</li>
+<li>워드클라우드는 정밀한 정량 분석보다는 전체 텍스트에 포함된 직관적인 핵심 단어 및 주제 흐름을 시각적으로 훑어보는 데 유용합니다.</li>
+</ul>
+<hr>
+<h2>[1/3] scatterplot, lineplot으로 같은 그래프를 그릴 수 있음에도 relplot 이 있는 이유는?</h2>
+<ul>
+<li>Seaborn 공식 튜토리얼의 <code>Visualizing statistical relationships</code> 문서 흐름에 따라 통계적 연관성 시각화 기법을 다룹니다.</li>
+<li><code>relplot</code>은 <code>scatterplot</code>과 <code>lineplot</code>을 내장하고 있으며 서브플롯(FacetGrid)을 한 번에 그려주는 고수준(High-level) 인터페이스입니다.</li>
+<li>디폴트 설정(<code>kind=&#39;scatter&#39;</code>)은 수치형 변수 간 산점도를 그리며 <code>tips</code> 데이터셋의 전체 금액과 팁 간의 양의 관계를 보여줍니다.</li>
+<li><code>kind=&#39;line&#39;</code>으로 변경하면 수치 데이터의 시간 흐름이나 연속적 변화량 추이를 선그래프로 나타낼 수 있습니다.</li>
+<li>단일 차트는 <code>scatterplot</code>이나 <code>lineplot</code> 단독으로도 작성 가능하지만, 여러 범주형 변수를 기준으로 격자형 서브플롯을 만들 때는 <code>relplot</code>이 훨씬 유용합니다.</li>
+</ul>
+<hr>
+<h2>[1/3] 수치형 단일변수의 빈도수 분포 distplot, kdeplot, rugplot</h2>
+<ul>
+<li>수치형 단일 변수(Univariate)의 분포를 확인하기 위해 <code>sns.distplot()</code>을 활용하며 히스토그램과 커널 밀도 추정(KDE) 곡선을 동시에 표현합니다.</li>
+<li><code>kde=False</code> 옵션을 주면 커널 밀도 곡선을 제외하고 히스토그램과 빈도수 축만 깔끔하게 출력할 수 있습니다.</li>
+<li><code>bins</code> 파라미터 조정을 통해 구간(통)의 개수를 설정하여 데이터의 세부 분포 형태를 다각도로 탐색합니다.</li>
+<li><code>hist=False</code>로 지정하거나 <code>sns.kdeplot()</code>을 사용하면 적분값이 1이 되는 밀도 추정 곡선만 유연하게 시각화합니다.</li>
+<li><code>shade=True</code> 옵션으로 KDE 곡선 하단 면적에 색상을 채우고, <code>rug=True</code> 또는 <code>sns.rugplot()</code>으로 실제 데이터 위치를 카페트 털 모양으로 바닥 축에 표시합니다.</li>
+</ul>
+<hr>
+<h2>[1/3] 파이썬 데이터 시각화 seaborn lmplot 예제 따라하기 - 평균, 표준편차, 상관계수, 회귀값이 같은 데이터 시각화</h2>
+<ul>
+<li>Seaborn 갤러리의 대표 예제인 앤스컴 쿼텟(Anscombe&#39;s Quartet)을 통해 데이터 시각화의 절대적 필요성을 설명합니다.</li>
+<li>앤스컴 쿼텟은 4개의 서로 다른 데이터셋이 동일한 평균, 표준편차, 피어슨 상관계수, 선형 회귀선을 갖도록 설계되어 있습니다.</li>
+<li>단순 요약 통계량만 확인하면 4개 데이터셋이 동일해 보이지만, 실제 그래프를 그리면 연속 분포, 곡선 형태, 이상치(Outlier) 영향 등 완전히 다른 패턴을 드러냅니다.</li>
+<li>통계 수치 계산만으로는 발견할 수 없는 이상치나 왜곡 구조를 시각화를 통해 직관적으로 파악할 수 있음을 입증합니다.</li>
+<li>알베르토 카이로의 데이터사우루스(Datasaurus Dozen) 예시를 함께 소개하며 동일 통계량에서 공룡이나 공 모양 등 다채로운 차트가 나올 수 있음을 언급합니다.</li>
+</ul>
+<hr>
+<h2>[1/4] 수치형 vs 범주형 변수를 표현하는 그래프를 서브플롯으로 그려보자</h2>
+<ul>
+<li>수치형 변수와 범주형 변수의 관계를 시각화하는 <code>catplot</code> 계열 인터페이스와 범주형 시각화 전반의 구조를 다룹니다.</li>
+<li>범주형 산점도 도구로 데이터 점이 한쪽에 겹치는 것을 방지하기 위해 점을 점진적으로 흩뿌려주는 <code>stripplot</code>과 <code>swarmplot</code>을 사용합니다.</li>
+<li>분포 표현 도구로는 4분위수와 이상치를 상자로 나타내는 <code>boxplot</code>, 박스플롯 단점을 보완한 <code>boxenplot</code>, 밀도를 결합한 <code>violinplot</code>이 제공됩니다.</li>
+<li>통계 추정 도구로는 평균 및 신뢰구간을 그리는 <code>pointplot</code>과 <code>barplot</code>, 단순 빈도수를 세는 <code>countplot</code>을 다룹니다.</li>
+<li><code>catplot</code>은 이러한 개별 범주형 차트들을 <code>kind</code> 파라미터 지정만으로 통합 전환하고 서브플롯 작성을 용이하게 만듭니다.</li>
+</ul>
+<hr>
+<h2>[1/4] 추세 분석, 상관 분석, 회귀 계수 등을 분석할 수 있는 선형회귀 코드 한 줄로 시각화 하기</h2>
+<ul>
+<li><code>sns.regplot()</code>은 산점도와 함께 선형 회귀선(Linear Regression Line) 및 신뢰구간을 단 한 줄의 코드로 자동 계산하여 출력합니다.</li>
+<li>독립변수 X와 종속변수 Y 간의 양/음의 선형 상관관계 및 회귀 추세선을 직관적으로 파악할 수 있습니다.</li>
+<li>프랜시스 골턴과 칼 피어슨의 역사적 연구에서 유래한 회귀 분석의 개념 및 전체 평균으로 돌아가려는 경향성을 안내합니다.</li>
+<li>선형 회귀는 추세 분석, 역학 조사, 재무/경제 예측 및 머신러닝 지도학습 등 다양한 산업·학술 분야에 광범위하게 응용됩니다.</li>
+<li>더 정밀한 통계 리포트나 회귀 계수 산출이 필요한 경우 <code>statsmodels</code> 라이브러리를 병행 사용하는 방안을 권장합니다.</li>
+</ul>
+<hr>
+<h2>[1/5] plotly 를 통한 파이썬 동적 시각화 - 쉬운 방법(express) vs 복잡한 방법(graph_objs)</h2>
+<ul>
+<li>Plotly 라이브러리를 사용하면 정적 이미지 차트를 넘어 마우스 호버, 확대, 필터링이 가능한 동적(Interactive) 시각화를 구현할 수 있습니다.</li>
+<li><code>plotly.express</code>(<code>px</code>)는 Seaborn과 유사한 고수준 인터페이스를 제공하여 적은 코드로 손쉽게 인터랙티브 차트를 작성합니다.</li>
+<li><code>plotly.graph_objects</code>(<code>go</code>)는 저수준(Low-level) 인터페이스로 세부 속성을 세밀하게 제어할 수 있으나 설정 코드가 다소 복잡합니다.</li>
+<li>금융 및 주식 데이터 분석을 위한 캔들차트(Candlestick), OHLC 차트, 3D 차트 및 지도 시각화를 강력하게 지원합니다.</li>
+<li><code>cufflinks</code> 라이브러리를 활용하면 판다스 데이터프레임의 <code>plot()</code> 문법에 <code>iplot()</code>을 붙여 Plotly 차트로 즉시 변환할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[2/20] ETF분석 종목코드의 숫자가 사라진다면?! 데이터로드와 결측치 확인 시각화</h2>
+<ul>
+<li>CSV 파일 로드 시 6자리 숫자 종목코드의 앞자리 &#39;0&#39;이 제거되는 현상을 막기 위해 <code>dtype={&#39;종목코드&#39;: np.object_}</code>로 문자열 지정하여 불러옵니다.</li>
+<li><code>df.shape</code>, <code>head()</code>, <code>tail()</code>, <code>info()</code>를 실행하여 행·열 크기, 데이터 타입 및 메모리 사용량을 다각도로 점검합니다.</li>
+<li><code>isnull()</code> 또는 <code>isna()</code>를 실행한 후 <code>sum()</code>을 수행하여 컬럼별 결측치 개수를 집계하고, <code>mean() * 100</code>으로 결측치 비율(%)을 산출합니다.</li>
+<li>해외 지수 기초 ETF의 NAV 미제공이나 상장 3개월 미만 상품의 3개월 수익률 부재 등 결측치 발생의 원인을 데이터 특성 기반으로 해석합니다.</li>
+<li><code>sns.heatmap(df.isnull(), cbar=False, cmap=&#39;gray&#39;)</code>를 활용하여 전체 데이터프레임 내 결측치의 위치 분포를 시각적으로 확인합니다.</li>
+</ul>
+<hr>
+<h2>[2/2] 이변량, 다변량 데이터 표현하기 countplot, catplot</h2>
+<ul>
+<li><code>countplot</code>에 <code>hue</code> 파라미터를 지정하면 특정 범주형 변수의 세부 그룹별(생존 여부, 클래스, 성별 등) 빈도수를 다른 색상의 막대로 표현합니다.</li>
+<li>타이타닉 데이터셋 분석 시 객실 등급(<code>class</code>) 및 덱(<code>deck</code>) 정보별 탑승객 분포와 생존율 차이를 <code>hue</code> 옵션으로 입체적으로 비교했습니다.</li>
+<li><code>catplot</code>을 사용하면 <code>col</code> 및 <code>row</code> 파라미터를 지정하여 여러 변수에 대한 <code>countplot</code> 서브플롯을 한 번에 생성할 수 있습니다.</li>
+<li><code>col_wrap</code> 옵션으로 한 줄에 표시할 서브플롯 개수를 제한하여 다변량 범주 데이터를 깔끔한 격자 형태로 시각화합니다.</li>
+<li>단일 그래프에 너무 많은 <code>hue</code> 그룹을 넣으면 가독성이 떨어지므로 <code>catplot</code>을 이용해 차트를 분할해 탐색하는 것이 좋습니다.</li>
+</ul>
+<hr>
+<h2>[2/3] scatterplot, lineplot으로 같은 그래프를 그릴 수 있음에도 relplot 이 있는 이유는?</h2>
+<ul>
+<li><code>scatterplot</code>과 <code>relplot</code>은 동일한 단일 산점도를 그릴 수 있지만, <code>relplot</code>은 서브플롯 분할 기능인 <code>col</code>과 <code>row</code> 옵션을 갖추고 있습니다.</li>
+<li><code>relplot</code>의 <code>hue</code> 옵션으로 색상을 다르게 표현하고, <code>style</code> 옵션으로 점의 모양(동그라미, X 등)을 범주별로 다르게 지정합니다.</li>
+<li><code>size</code> 및 <code>sizes=(min, max)</code> 옵션을 부여하면 수치형 파생변수의 크기에 따라 산점도 마커 점의 크기를 동적으로 조절합니다.</li>
+<li><code>col=&#39;smoker&#39;</code>, <code>row=&#39;time&#39;</code> 옵션을 지정하면 흡연 여부와 식사 시간대별 산점도를 격자형 서브플롯으로 깔끔하게 분리 출력합니다.</li>
+<li>단일 차트 스타일링에는 <code>scatterplot</code>을 쓰고, 복수 변수를 결합해 격자형 차트로 확장할 때는 <code>relplot</code>을 사용하는 것이 핵심 차이점입니다.</li>
+</ul>
+<hr>
+<h2>[2/3] 수치형 2변수의 빈도수 분포 jointplot</h2>
+<ul>
+<li><code>sns.jointplot()</code>은 두 수치형 변수 간의 이변량(Bivariate) 산점도와 각 변수의 단일변수 밀도/히스토그램 분포를 중앙과 상단·우측 축에 동시에 보여줍니다.</li>
+<li><code>kind=&#39;scatter&#39;</code>(기본값)는 두 변수 좌표를 점으로 찍고 외곽 상단/우측에 각각의 히스토그램을 배치합니다.</li>
+<li><code>kind=&#39;hex&#39;</code>로 변경하면 육각형 벌집 모양(Hexbin) 그라데이션으로 데이터 밀집도를 표현하여 대용량 점 겹침 문제를 완화합니다.</li>
+<li><code>kind=&#39;kde&#39;</code>로 설정하면 이변량 커널 밀도 등고선을 그리고 외곽에 개별 KDE 곡선을 함께 출력합니다.</li>
+<li><code>sns.kdeplot()</code>으로 2D 등고선을 직접 그리고 <code>shade=True</code> 및 <code>cmap</code> 옵션을 부여하면 등고선 내부 면적을 색상 그라데이션으로 표현할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[2/3] 여러 종목의 수익률 어떻게 시각화 할까?!</h2>
+<ul>
+<li>Matplotlib/Seaborn 차트에 한글 폰트(Mac <code>AppleGothic</code>, Win <code>Malgun Gothic</code>) 및 마이너스 깨짐 방지(<code>unicode_minus=False</code>) 설정을 적용합니다.</li>
+<li>주가 스케일이 크게 다른 두 종목(예: 삼성전자와 LG화학)의 추이를 비교할 때 <code>secondary_y</code> 옵션으로 2축 그래프를 구성해 기울기를 비교합니다.</li>
+<li>주가 금액 스케일 차이를 극복하기 위해 첫 번째 거래일 종가 가격으로 전체 행을 나눈 뒤 1을 빼주어 기간별 상대 수익률(%)로 표준화합니다.</li>
+<li><code>plt.subplots(1, 2)</code>로 1행 2열 서브플롯 공간을 만들고 좌측에는 2축 주가 차트, 우측에는 기준일 대비 상대 수익률 차트를 나란히 배치해 비교합니다.</li>
+<li>수익률 데이터프레임의 <code>hist(bins=50)</code>를 호출하여 0%를 중심으로 한 종목별 일단위 수익률 분포와 변동성 폭을 시각적으로 검증합니다.</li>
+</ul>
+<hr>
+<h2>[2/3] 파이썬 데이터 시각화 - seaborn lmplot 같은 통계적 수치를 가지는 데이터셋의 요약을 pandas의 describe와 corr으로 보기</h2>
+<ul>
+<li>앤스컴 쿼텟 데이터셋을 판다스 데이터프레임으로 로드하고 <code>describe()</code>를 실행하여 전체 44개 데이터의 요약 통계량을 구합니다.</li>
+<li><code>dataset</code> 컬럼 기준(I, II, III, IV)으로 서브셋을 분리하여 각 데이터셋별 <code>describe()</code>를 산출하면 X·Y의 평균 및 표준편차가 서로 동일함을 확인합니다.</li>
+<li><code>df.corr()</code> 메소드로 피어슨 상관계수를 구하면 4개 데이터셋 모두 소수점 셋째 자리까지 거의 같은 상관계수(~0.816)를 반환합니다.</li>
+<li>수치적 수치와 상관계수가 완전히 동일함에도 불구하고, 데이터를 그래프로 옮기기 전까지는 세부 구조적 차이를 인지할 수 없음을 수치 데이터로 입증합니다.</li>
+</ul>
+<hr>
+<h2>[2/4] 선형회귀 다변수 시각화</h2>
+<ul>
+<li><code>sns.lmplot()</code>은 <code>regplot</code>과 달리 <code>hue</code>, <code>col</code>, <code>row</code> 옵션을 지원하여 범주형 그룹별 회귀선 서브플롯을 생성할 수 있습니다.</li>
+<li><code>hue=&#39;smoker&#39;</code>를 지정하면 흡연자와 비흡연자 그룹별로 색상과 선형 회귀선 기울기를 각각 다르게 추정하여 시각화합니다.</li>
+<li><code>col=&#39;day&#39;</code> 옵션으로 요일별 서브플롯을 나누고 <code>col_wrap=2</code>로 한 줄에 2개씩 배치하여 다변량 조건부 회귀 분석 차트를 구성합니다.</li>
+<li><code>truncate=False</code> 옵션을 지정하면 데이터 분포 범위를 넘어 회귀선 축 끝까지 선을 연장하여 표시합니다.</li>
+<li>수치 데이터 컬럼에 <code>jitter</code> 옵션을 주어 겹친 점을 퍼뜨리거나, <code>x_estimator=np.mean</code> 및 <code>ci=95</code>를 주어 이산 구간별 평균과 신뢰구간 밴드를 표시할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[2/4] 수치형 vs 범주형 변수의 서브플롯 쉽게 그리기 - stripplot, swarmplot</h2>
+<ul>
+<li><code>stripplot</code>은 범주형 축 위에 수치 점들을 흩뿌려 나타내며, <code>jitter=False</code>로 설정하면 일직선상에 겹쳐진 스캐터 형태로 출력됩니다.</li>
+<li><code>swarmplot</code>은 점들이 서로 겹치지 않도록 중심축에서 좌우로 비집고 확장 배치되어 범주별 데이터 밀도와 개수를 직관적으로 표현합니다.</li>
+<li><code>catplot</code>의 <code>kind=&#39;strip&#39;</code> 또는 <code>kind=&#39;swarm&#39;</code>으로 호출하면 <code>col</code> 옵션을 통해 식사 시간대(<code>time</code>)별 서브플롯으로 용이하게 분할할 수 있습니다.</li>
+<li><code>hue</code> 파라미터로 성별이나 흡연 여부 색상을 구분하고, <code>order=[&#39;Sat&#39;, &#39;Sun&#39;, &#39;Thur&#39;, &#39;Fri&#39;]</code>를 통해 축 라벨 표시 순서를 맞춤 지정합니다.</li>
+<li><code>orient=&#39;h&#39;</code> 또는 X·Y 축 변수 위치를 맞바꿔 지정하면 가로형 범주 산점도 차트로 변환할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[2/5] 대한민국 인구통계 point lineplot으로 그리기</h2>
+<ul>
+<li>위키피디아 &#39;대한민국의 인구&#39; 문서에서 1925년부터 2019년까지의 추계인구, 출생자 수, 사망자 수 데이터를 파싱해 시각화에 활용했습니다.</li>
+<li>Matplotlib 한글 폰트 설정 및 <code>set_matplotlib_formats(&#39;retina&#39;)</code>를 선언해 라벨 깨짐을 막고 선명도를 확보했습니다.</li>
+<li><code>sns.pointplot()</code>으로 연도별 추계인구 변화를 그려 1,000만 명대에서 5,000만 명대로 꾸준히 증가한 흐름을 관찰했습니다.</li>
+<li><code>plt.xticks(rotation=60)</code> 옵션으로 연도 라벨 기울기를 조절하여 축 라벨 겹침 현상을 해결했습니다.</li>
+<li><code>sns.lineplot()</code>으로 출생자 수 추이를 그려 1950~1970년대 100만 명대이던 출생아 수가 최근 30만 명대로 급감하는 구조적 인구 변화를 확인했습니다.</li>
+</ul>
+<hr>
+<h2>[3/20] ETF분석 어떤 종류의 상품이 많을까? - 한 개의 변수 분석과 시각화</h2>
+<ul>
+<li>범주형 데이터 요약을 위해 <code>df.describe(include=&#39;object&#39;)</code> 또는 <code>exclude=&#39;number&#39;</code>를 활용해 유일값 개수(unique), 최다 빈도 항목(top), 빈도수(freq)를 파악합니다.</li>
+<li><code>df.nunique()</code>를 실행하여 스칼라 수치형으로 표기된 컬럼이라도 유일값 개수가 적으면 범주형 변수로 가공·판단하는 기준을 제시합니다.</li>
+<li><code>df[&#39;유형&#39;].value_counts()</code>로 각 ETF 상품 카테고리별 개수를 집계하고, <code>normalize=True</code>를 부여해 백분율 비중(%)을 구합니다.</li>
+<li><code>sns.countplot(data=df, y=&#39;유형&#39;)</code>을 작성해 카테고리별 빈도수를 횡방향 막대그래프로 정돈하여 출력합니다.</li>
+<li><code>order=df[&#39;유형&#39;].value_counts().index</code>로 오더 인덱스를 전달하여 최다 빈도순으로 카테고리 막대를 깔끔하게 정렬합니다.</li>
+</ul>
+<hr>
+<h2>[3/3] scatterplot, lineplot으로 같은 그래프를 그릴 수 있음에도 relplot 이 있는 이유는?</h2>
+<ul>
+<li><code>fmri</code> 데이터셋을 활용해 시간 흐름(<code>timepoint</code>)에 따른 신호 변화량(<code>signal</code>)의 평균과 신뢰구간 밴드를 <code>relplot(kind=&#39;line&#39;)</code>으로 구현합니다.</li>
+<li><code>ci=None</code> 옵션을 지정하면 선 주변의 신뢰구간 투명 그림자를 제거하고 중앙 추세선만 깔끔하게 표시합니다.</li>
+<li><code>ci=&#39;sd&#39;</code> 옵션을 설정하면 신뢰구간 대신 표준편차(Standard Deviation) 범위를 그림자로 변경하여 표현합니다.</li>
+<li><code>estimator=None</code>으로 설정하면 평균 집계를 하지 않고 각 데이터 포인트 전체의 생 파형을 겹쳐서 그립니다.</li>
+<li><code>col=&#39;region&#39;</code>, <code>row=&#39;event&#39;</code> 옵션을 적용하여 뇌 부위 및 자극 이벤트 조건별 2차원 격자형 서브플롯으로 수월하게 확장합니다.</li>
+</ul>
+<hr>
+<h2>[3/3] 일별 시세 시각화 2축 그래프, 과학적 표기법?!</h2>
+<ul>
+<li>종목명 입력 시 상장 종목 목록에서 코드를 조회하여 <code>FinanceDataReader</code>로 일별 시세를 수집하는 자동화 함수를 작성했습니다.</li>
+<li>종가(<code>Close</code>) 시리즈에 <code>plot()</code>을 적용하여 주가 추이 선그래프를 빠르게 생성했습니다.</li>
+<li>데이터프레임 전체 컬럼에 <code>plot(subplots=True, figsize=(10, 8))</code>를 적용하여 시가, 고가, 저가, 종가, 거래량 차트를 개별 서브플롯으로 분할했습니다.</li>
+<li><code>hist(bins=20)</code>를 호출하여 주가 및 거래량 변수의 구간별 도수분포 히스토그램을 검증했습니다.</li>
+<li>주가와 거래량을 단일 차트에 그릴 때 스케일 차이로 종가가 바닥에 붙는 현상을 <code>secondary_y=&#39;Volume&#39;</code> 옵션으로 2축 분리하여 해결했습니다.</li>
+<li>차트 축이나 기술통계 출력 시 \\(1e6\\) (\\(1 \times 10^6\\)) 형태로 표기되는 지수 표기법(Scientific Notation)의 의미와 읽는 법을 설명했습니다.</li>
+</ul>
+<hr>
+<h2>[3/3] 수치형 다변수의 분포 PairGrid, pairplot</h2>
+<ul>
+<li><code>sns.pairplot()</code>은 데이터프레임 내 모든 수치형 변수 쌍(Pair) 간의 이변량 산점도와 대각선 위치의 단일변수 분포를 대칭 격자로 보여줍니다.</li>
+<li>아이리스(<code>iris</code>) 데이터셋을 전달하여 꽃잎·꽃받침의 길이와 너비 간 산점도 매트릭스를 단 한 줄로 시각화했습니다.</li>
+<li><code>hue=&#39;species&#39;</code> 파라미터를 부여하면 품종별 데이터가 다른 색상으로 구분되며 대각선 그래프가 자동 KDE 밀도 곡선으로 전환됩니다.</li>
+<li><code>sns.PairGrid()</code>를 사용하면 대각선(<code>map_diag</code>), 상단 산점도(<code>map_upper</code>), 하단 등고선(<code>map_lower</code>)에 각각 다른 차트 종류를 직접 매핑할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[3/3] 파이썬 데이터 시각화 - seaborn lmplot과 regplot의 차이 신뢰구간의 의미와 hue 등 다양한 옵션 사용하기</h2>
+<ul>
+<li><code>lmplot</code>은 <code>regplot</code>과 달리 <code>hue</code> 파라미터를 통해 그룹별 선형 회귀선과 신뢰구간 밴드를 개별 색상으로 분리 표현할 수 있습니다.</li>
+<li><code>ci=None</code>으로 신뢰구간 밴드를 숨기거나 <code>ci=95</code>(기본값) 및 <code>ci=50</code> 등으로 신뢰구간 범위를 가조정합니다.</li>
+<li><code>col=&#39;dataset&#39;</code> 및 <code>col_wrap=2</code> 옵션을 활용해 앤스컴 쿼텟 4개 데이터셋의 회귀선 차트를 2x2 격자 서브플롯으로 시각화합니다.</li>
+<li><code>scatter_kws={&#39;s&#39;: 50, &#39;alpha&#39;: 0.8}</code> 파라미터를 내장하여 산점도 마커의 크기, 투명도 및 색상을 자유롭게 커스텀 스타일링합니다.</li>
+</ul>
+<hr>
+<h2>[3/4] 비선형 회귀, 국소회귀, 잔차 시각화로 표현하기</h2>
+<ul>
+<li>직선 선형 회귀가 부적합한 데이터 분포에 <code>order=2</code> 파라미터를 부여하여 2차 다항식 비선형 회귀 곡선을 맞춤 추정합니다.</li>
+<li>극단적 이상치가 존재할 때 <code>robust=True</code> 옵션을 설정하여 이상치의 영향을 배제한 로버스트 회귀선을 도출합니다.</li>
+<li>종속변수가 0과 1의 범주형 이진 데이터인 경우 <code>logistic=True</code> 파라미터를 부여하여 시그모이드 형태의 로지스틱 회귀 곡선을 시각화합니다.</li>
+<li><code>lowess=True</code> 옵션을 지정하면 국소 가중 회귀(LOESS/LOWESS)를 적용하여 데이터의 비선형 흐름을 유연하게 추적합니다.</li>
+<li><code>sns.residplot()</code>을 사용해 예측 회귀선으로부터의 잔차(Residuals) 분포를 시각화하여 회귀 모형의 가정 적합성을 검증합니다.</li>
+</ul>
+<hr>
+<h2>[3/4] 수치형 vs 범주형 변수의 서브플롯 - boxplot, boxenplot, violinplot</h2>
+<ul>
+<li><code>boxplot</code>은 1·2·3 사분위수 상자, IQR, 위스커(수염) 및 IQR 1.5배 범위를 벗어난 점 형태의 이상치를 나타냅니다.</li>
+<li>판다스 <code>groupby(&#39;day&#39;)[&#39;total_bill&#39;].describe()</code>로 요일별 25%, 50%, 75% 값 및 최소/최댓값을 산출하고 박스플롯 지표와 상호 검증했습니다.</li>
+<li><code>boxenplot</code>은 대용량 데이터 분포를 세분화된 구간 상자로 나타내어 박스플롯보다 풍부한 사분위 분포 정보를 제공합니다.</li>
+<li><code>violinplot</code>은 박스플롯 내부에 커널 밀도 곡선(KDE)을 대칭으로 결합하여 연속적 데이터 밀도 모양을 직관적으로 보여줍니다.</li>
+<li><code>violinplot</code>에 <code>split=True</code> 및 <code>hue</code> 옵션을 지정하면 하나의 바이올린 반쪽씩 서로 다른 범주 그룹 데이터를 합성해 비교할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[3/5] 대한민국 인구통계 출생사망자수를 같은 그래프에서 그리기</h2>
+<ul>
+<li>위키피디아 인구 데이터에서 출생자 수와 사망자 수 컬럼을 선택하여 단일 좌표계 위에 겹쳐서 시각화했습니다.</li>
+<li><code>sns.pointplot()</code>으로 출생자 수와 사망자 수를 각각 그리고, <code>color=&#39;orange&#39;</code> 등 색상을 다르게 지정하여 두 지표의 교차 추이를 나타냈습니다.</li>
+<li>1950년대 6.25 전쟁 시기 사망자 수 급증과 그 이후 출생아 수의 가파른 증가(베이비붐)를 한눈에 파악했습니다.</li>
+<li>1970년대 이후 출생아 수는 급감하고 사망자 수는 점진적으로 늘어나며 최근 두 곡선이 교차(데드크로스)하는 구조적 저출산·고령화 현상을 시각적으로 입증했습니다.</li>
+<li>판다스 <code>df.set_index(&#39;연도&#39;)[[&#39;출생자수&#39;, &#39;사망자수&#39;]].plot(figsize=(15, 4))</code>로 동일한 이중 선그래프를 간편하게 작성하는 방법도 함께 실습했습니다.</li>
+</ul>
+<hr>
+<h2>[통계청X오늘코드] 파이썬 활용 강좌 ⑥ MDIS를 활용한 경제활동인구조사 데이터 시각화 하기</h2>
+<ul>
+<li>MDIS(마이크로데이터 통합서비스)에서 추출하여 전처리한 연령별 구직단념자 현황 데이터를 매트플롯립(Matplotlib)과 플롯리(Plotly)로 시각화했습니다.</li>
+<li>Matplotlib의 <code>plt.pie()</code> 함수를 사용하여 10대부터 60대 이상까지 연령대별 구직단념자 비율을 파이 차트로 구현했습니다.</li>
+<li><code>startangle=90</code> 및 <code>counterclock=False</code> 옵션을 지정하여 12시 방향부터 시계방향 순서로 연령대가 차례대로 배치되도록 정돈했습니다.</li>
+<li><code>autopct=&#39;%1.1f%%&#39;</code> 파라미터를 설정해 각 연령대 항목별 퍼센트 비중을 소수점 첫째 자리까지 표기했습니다.</li>
+<li>Plotly Express의 <code>px.pie()</code>를 활용하여 마우스 호버 시 세부 인원수와 비율이 노출되는 인터랙티브 파이 차트를 생성했습니다.</li>
+<li><code>update_traces()</code>의 <code>textinfo</code> 및 <code>direction=&#39;clockwise&#39;</code> 옵션으로 시계방향 정렬과 표시 스타일을 커스텀했습니다.</li>
+<li><code>color_discrete_sequence</code> 파라미터로 핑크·옐로우 계열 그라데이션 컬러를 적용해 뉴스 기사 스타일의 시각화를 완성했습니다.</li>
+</ul>
+<hr>
+<h2>mermaid를 활용하여 Gantt chart를 활용해 프로젝트의 타임라인을 시각화하는 방법을 소개합니다. AI 모델 서비스 출시 일정은 덤으로 알아봅니다.</h2>
+<ul>
+<li>퍼플렉시티(Perplexity) RAG 검색을 통해 GPT-1부터 GPT-4o, o1-preview, 클로드, 트랜스포머 논문까지 주요 AI 모델의 출시 타임라인을 수집했습니다.</li>
+<li>디자인 도구 없이 텍스트 다이어그램 코드로 간트 차트(Gantt Chart)를 자동 생성해 주는 머메이드(Mermaid) 오픈소스 문법을 활용했습니다.</li>
+<li>머메이드 간트 차트 스크립트를 작성하여 AI 모델별 출시 시점과 프로젝트 마일스톤을 시각적 타임라인으로 구현했습니다.</li>
+<li>간트 차트 코드 내의 날짜 수치를 수정하여 모델 간 출시 시기와 유지 기간을 자유롭게 커스텀 조절했습니다.</li>
+<li>구글의 트랜스포머(Transformer) 논문 발표(2017년) 항목을 코드 맨 위로 끌어올려 AI 혁신의 시작점으로 재배치했습니다.</li>
+<li>머메이드 간트 차트를 활용하면 AI 모델 출시 일정뿐만 아니라 다양한 프로젝트 타임라인을 장표나 보고서용으로 신속하게 시각화할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>1년치 시계열 데이터 변화량을 선그래프로 그리기</h2>
+<ul>
+<li>2016년 1월 1일부터 12월 30일까지 365일간의 난수를 고정(<code>random_state</code>) 생성하여 4개 컬럼(A, B, C, D)을 갖는 데이터프레임을 구축했습니다.</li>
+<li><code>pd.date_range()</code> 함수로 일 단위(<code>freq=&#39;D&#39;</code>) 365일 시계열 날짜 인덱스를 생성해 데이터프레임에 적용했습니다.</li>
+<li><code>df.rolling(window=7).mean()</code> 기능을 활용하여 7일(1주일) 이동평균을 산출하고 단기 변동성 노이즈를 부드럽게 완화했습니다.</li>
+<li>X축과 Y축을 별도로 지정하지 않고 이동평균 데이터프레임 전체를 <code>sns.lineplot()</code>에 전달해 4개 컬럼의 추이를 한 번에 그렸습니다.</li>
+<li>Seaborn의 <code>palette=&#39;tab10&#39;</code> 옵션을 설정하여 각 변수(A, B, C, D) 컬럼별로 명확히 구분되는 선 색상을 부여했습니다.</li>
+<li>와이드 폼(Wide-form) 구조의 데이터프레임을 내장 시각화 함수에 그대로 입력하여 시계열 변화량을 효율적으로 비교했습니다.</li>
+</ul>
+<hr>
+<h2>박스플롯과 분포도를 합친 그래프가 있다고? 바이올린? violin plot을 tips 데이터로 그려보기</h2>
+<ul>
+<li><code>sns.violinplot()</code>은 박스플롯(Boxplot)의 요약 통계량과 커널 밀도 추정(KDE) 곡선을 결합하여 데이터 분포 모양을 바이올린 형태로 시각화합니다.</li>
+<li><code>tips</code> 데이터셋의 요일별(<code>day</code>) 전체 식사 금액(<code>total_bill</code>) 분포를 바이올린 플롯으로 그려 요일별 편차와 밀집 구간을 파악했습니다.</li>
+<li>X축과 Y축 변수의 위치를 바꾸어 지정함으로써 가로형 바이올린 플롯 형태로 유연하게 전환했습니다.</li>
+<li><code>hue=&#39;smoker&#39;</code> 파라미터를 추가하여 흡연자와 비흡연자 그룹별 바이올린 곡선을 개별 색상으로 비교했습니다.</li>
+<li><code>split=True</code> 옵션을 부여하여 하나의 바이올린 양쪽 반쪽에 서로 다른 범주(흡연/비흡연) 데이터를 통합해 직관적으로 비교했습니다.</li>
+<li><code>inner=&#39;quartile&#39;</code> 옵션을 설정해 바이올린 내부 면적에 사분위수(25%, 50%, 75%) 지점 선을 점선 형태로 명확히 표시했습니다.</li>
+</ul>
+<hr>
+<h2>planets 데이터로 scatterplot 산점도,  상관계수, 상관분석 이해하기</h2>
+<ul>
+<li>Seaborn의 내장 <code>planets</code> 외계 행성 데이터셋을 로드하여 관측 거리(<code>distance</code>)와 궤도 주기(<code>orbital_period</code>) 간의 산점도를 그렸습니다.</li>
+<li><code>hue=&#39;year&#39;</code> 옵션을 지정하여 관측 연도 수치 데이터에 따라 마커 점의 색상을 그라데이션으로 표현했습니다.</li>
+<li><code>size=&#39;mass&#39;</code> 및 <code>sizes=(20, 200)</code> 옵션을 설정해 행성 질량 수치에 따라 산점도 마커 크기를 동적으로 조절했습니다.</li>
+<li><code>df.corr()</code>로 두 변수 간 피어슨 상관계수를 산출하여 -0.034 수준의 상관관계가 거의 없는 상태임을 검증했습니다.</li>
+<li><code>sns.lmplot()</code>으로 회귀선을 그렸을 때 극단적 이상치(Outlier)로 인해 전체 차트 스케일과 회귀선이 왜곡되는 현상을 확인했습니다.</li>
+<li>산점도 시각화를 통해 극단 이상치의 존재 위치를 직관적으로 탐색하고 조건부 색인으로 이상치를 필터링하는 전처리를 수행했습니다.</li>
+</ul>
+<hr>
+<h2>[4/5] 최근50간 데이터를 슬라이싱으로 나눠서 시각화하기</h2>
+<ul>
+<li>위키피디아 인구 통계 데이터프레임에서 파이썬 슬라이싱 문법(<code>df[-50:]</code>)을 적용해 최근 50년간(1970~2019년)의 데이터만 추출했습니다.</li>
+<li>추출한 서브셋을 판다스 내장 <code>plot()</code> 함수에 전달하고 <code>figsize=(15, 8)</code>로 크기를 조절하여 출생자 수 및 사망자 수 추이를 시각화했습니다.</li>
+<li><code>sns.lineplot()</code>에도 동일하게 최근 50년 슬라이싱 데이터(<code>df[-50:]</code>)를 전달하여 최근 인구 변화 흐름을 선명하게 부각시켰습니다.</li>
+<li>1970년대 이후 급격히 감소하는 출생자 수와 점진적으로 증가하는 사망자 수의 추이를 또렷하게 대비시켰습니다.</li>
+<li>전체 시계열 중 특정 분석 기간만을 슬라이싱으로 추출함으로써 저출산·고령화 데드크로스 경향성을 가독성 높게 분석했습니다.</li>
+</ul>
+<hr>
+<h2>21 넘파이 NumPy 로 이런 것도 만들 수 있다고?! 시각화에 빠져든다~</h2>
+<ul>
+<li>넘파이(NumPy) 배열 데이터를 매트플롯립(<code>plt</code>)과 연동하여 다차원 그래프로 시각화하는 방법론을 다뤘습니다.</li>
+<li>1차원 넘파이 배열을 <code>plt.plot()</code>에 전달하여 인덱스 대비 수치 데이터의 상승 및 하강 추이를 선그래프로 출력했습니다.</li>
+<li><code>np.linspace()</code>로 0부터 5까지 균등 분할된 배열을 생성하고 마커 색상(<code>red</code>), 선 스타일, 점 모양(동그라미, 삼각형)을 설정했습니다.</li>
+<li><code>np.meshgrid()</code>를 활용해 2차원 격자 좌표 배열을 생성하고 <code>plt.imshow()</code> 및 <code>cmap=&#39;coolwarm&#39;</code>으로 수치 밀도 이미지를 시각화했습니다.</li>
+<li>3차원 공간 생성을 위해 <code>plt.figure()</code>에서 <code>projection=&#39;3d&#39;</code> 서브플롯 축을 생성했습니다.</li>
+<li>2차원 메시그리드와 <code>np.sin()</code>, <code>np.sqrt()</code> 연산 결과를 <code>ax.plot_surface()</code>에 전달해 입체적인 3D 수곡면 그래프를 구현했습니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼][6/9] folium 으로 Marker, CircleMarker 로 그려보기</h2>
+<ul>
+<li>폴리움(Folium) 라이브러리를 사용해 서울시 스타벅스와 이디야 매장 위치 데이터를 대화형 지도 위에 시각화했습니다.</li>
+<li>데이터프레임 내 위도(<code>lat</code>)와 경도(<code>lng</code>)의 평균값(<code>mean()</code>)을 구하여 <code>folium.Map(location=[...], zoom_start=12)</code>의 중심 좌표로 지정했습니다.</li>
+<li><code>tiles=&#39;Stamen Toner&#39;</code> 옵션을 설정하여 매장 마커가 도드라지도록 깔끔한 흑백 톤의 지도 배경 스타일을 적용했습니다.</li>
+<li><code>for</code> 반복문과 인덱스 색인을 활용해 매장 좌표를 순회하며 <code>folium.CircleMarker</code>를 생성했습니다.</li>
+<li>조건문(<code>if/else</code>)을 작성하여 이디야 매장은 파란색(<code>blue</code>), 스타벅스 매장은 초록색(<code>green</code>) 원형 마커로 구분하여 표시했습니다.</li>
+<li>마커의 <code>tooltip</code> 파라미터에 매장 상호명과 도로명 주소를 결합한 f-string 문자열을 전달해 마우스 호버 시 정보를 띄웠습니다.</li>
+<li>지도 확대 탐색을 통해 스타벅스는 주로 큰 대로변에, 이디야는 대로변 안쪽 이면도로 상권에 입지해 있음을 시각적으로 검증했습니다.</li>
+</ul>
+<hr>
+<h2>다이아몬드 데이터셋으로 박스플롯을 보완한  boxenplot 으로 boxplot, violinplot  과 비교해 보기 - seaborn diamonds boxen</h2>
+<ul>
+<li>Seaborn의 <code>diamonds</code> 데이터셋을 활용해 박스플롯의 한계를 보완한 <code>sns.boxenplot()</code>의 시각적 특징을 다뤘습니다.</li>
+<li>기존 <code>boxplot</code>은 1·2·3 사분위수와 이상치만 표시되어 수염(Whisker) 구간 내부의 세부 데이터 분포를 확인하기 어렵습니다.</li>
+<li><code>boxenplot</code>은 사분위수를 넘어선 사분위 구간 상자들을 여러 단계로 겹쳐 나타내어 대용량 데이터의 수염 구간 밀도를 정밀하게 보여줍니다.</li>
+<li><code>scale=&#39;linear&#39;</code> 옵션을 부여하면 이상치 영역 끝까지 분위수 상자가 선형 스케일로 정밀하게 확장되어 표현됩니다.</li>
+<li>동일한 다이아몬드 투명도(<code>clarity</code>) 및 캐럿(<code>carat</code>) 변수로 <code>boxplot</code>, <code>boxenplot</code>, <code>violinplot</code>을 비교 시각화했습니다.</li>
+<li>요약 통계량이 동일하더라도 실제 데이터 분포 형태가 크게 다를 수 있음을 시각화를 통해 직접 확인했습니다.</li>
+</ul>
+<hr>
+<h2>PairGrid 서브플롯을 한 번에 그려주는 pairplot 과 비슷하지만 다르다?!</h2>
+<ul>
+<li><code>sns.PairGrid()</code>는 데이터프레임 내 여러 수치형 변수 간의 서브플롯 격자를 세밀하게 제어하는 고수준 클래스입니다.</li>
+<li><code>sns.pairplot()</code>이 단 한 줄로 산점도 매트릭스를 자동 생성하는 반면, <code>PairGrid</code>는 대각선·상단·하단 영역별 차트를 개별 지정할 수 있습니다.</li>
+<li><code>g = sns.PairGrid(df, hue=&#39;species&#39;)</code> 객체를 생성하고 <code>g.map_diag(sns.kdeplot)</code>을 호출해 대각선 위치에 품종별 밀도 곡선을 그렸습니다.</li>
+<li><code>g.map_upper(sns.scatterplot)</code>을 호출하여 대각선 기준 상단 그리드에는 품종별 산점도를 배치했습니다.</li>
+<li><code>g.map_lower(sns.kdeplot)</code>을 지정하여 대각선 기준 하단 그리드에는 2차원 밀도 등고선(KDE) 그래프를 출력했습니다.</li>
+<li>대각선을 경계로 상단과 하단에 서로 다른 시각화 도구를 매핑함으로써 다변량 수치 데이터를 다각도로 분석했습니다.</li>
+</ul>
+<hr>
+<h2>seaborn 선그래프, 산포도, 회귀선을 그리는 서브플롯 쉽게 그리기relplot lmplot</h2>
+<ul>
+<li><code>sns.relplot()</code>과 <code>sns.lmplot()</code>은 FacetGrid 기반으로 작동하여 서브플롯 분할과 범주형 구분을 수월하게 수행합니다.</li>
+<li><code>relplot()</code>에 <code>kind=&#39;line&#39;</code>을 지정하고 <code>x=&#39;time&#39;</code>, <code>y=&#39;firing_rate&#39;</code>를 설정해 시간 흐름에 따른 선그래프 서브플롯을 그렸습니다.</li>
+<li><code>hue=&#39;coherence&#39;</code>로 선의 색상을 구분하고 <code>size=&#39;choice&#39;</code>를 주어 범주별 선의 굵기를 다르게 표현했습니다.</li>
+<li><code>col=&#39;align&#39;</code> 파라미터를 설정해 조건 그룹별 가로 격자 서브플롯으로 깔끔하게 분할 시각화했습니다.</li>
+<li><code>height=3</code>, <code>aspect=0.75</code> 파라미터를 조절하여 각 서브플롯의 높이와 가로 비율을 맞춤 스타일링했습니다.</li>
+<li><code>sns.lmplot()</code>을 사용해 스모커 데이터에 대한 산점도 위에 그룹별 회귀선과 신뢰구간 밴드를 동시에 출력했습니다.</li>
+</ul>
+<hr>
+<h2>[통계청X오늘코드] 파이썬 활용 TIP_②국가통계포털(KOSIS)자료로 소비자물가지수 꺾은선 그래프 그리기</h2>
+<ul>
+<li>KOSIS 소비자물가지수 데이터에서 총지수 항목만을 필터링하고 <code>pct_change(12) * 100</code> 연산을 적용해 전년 동월 대비 물가 변동률(%)을 산출했습니다.</li>
+<li>전년도 비교 대상이 없어 발생한 초기 12개월 분량의 <code>NaN</code> 결측치를 <code>dropna()</code>로 제거했습니다.</li>
+<li><code>plt.figure(figsize=(15, 5))</code>로 가로가 긴 도화지를 생성하고 <code>plt.plot()</code>에 시점과 물가 변동률 데이터를 전달하여 꺾은선 그래프를 그렸습니다.</li>
+<li><code>marker=&#39;o&#39;</code> 옵션을 지정하여 각 시점별 데이터 포인트 위치에 동그라미 마커를 명시적으로 표시했습니다.</li>
+<li><code>for</code> 문을 돌며 <code>plt.text(x, y, s)</code> 메소드를 호출해 그래프 각 마커 포인트 위에 실제 물가 변동률 수치를 텍스트로 출력했습니다.</li>
+<li><code>f&quot;{val:.1f}&quot;</code> f-string 포맷팅을 적용해 수치를 소수점 첫째 자리로 반올림 표기하고, Y축 좌표 offset(<code>y + 0.07</code>)을 주어 선과 글자가 겹치지 않게 배치했습니다.</li>
+</ul>
+<hr>
+<h2>[통계청X오늘코드] 파이썬 활용 TIP_③국가통계포털(KOSIS)자료로 소비자물가지수 주요 품목 막대 그래프 그리기</h2>
+<ul>
+<li>달걀, 상추, 마늘, 돼지고기, 라면, 경유, 휘발유, 전세 등 주요 품목을 추출하여 <code>groupby(&#39;품목별&#39;).pct_change(12) * 100</code>으로 품목별 물가 상승률을 계산했습니다.</li>
+<li>2021년 9월 시점의 품목별 전년 동월 대비 데이터만 슬라이싱하여 상승률 기준 내림차순 정렬했습니다.</li>
+<li><code>sns.barplot()</code>을 사용하고 <code>y=&#39;품목별&#39;</code>, <code>x=&#39;전년동월대비&#39;</code>로 지정하여 품목별 상승률을 가로 막대그래프로 구현했습니다.</li>
+<li><code>order</code> 파라미터에 품목 리스트를 지정하여 달걀(43.4%), 상추(35.3%) 순으로 막대 순서를 정돈했습니다.</li>
+<li><code>palette=&#39;Oranges_r&#39;</code> 옵션을 설정하여 상승률이 높은 품목일수록 진한 오렌지색으로 표현되는 그라데이션을 적용했습니다.</li>
+<li><code>ax.patches</code> 개체를 순회하며 <code>ax.text()</code>로 막대 끝 지점 좌표(<code>width + 0.5</code>)에 해당 품목의 상승률 수치를 텍스트로 표기했습니다.</li>
+</ul>
+<hr>
+<h2>3.1 [2/3 연합뉴스 토픽 분석] DACON KLUE 텍스트 단어개수와 길이 분포 displot으로 시각화하기</h2>
+<ul>
+<li>연합뉴스 기사 제목 데이터에서 <code>df[&#39;title&#39;].apply(len)</code>을 적용하여 기사 제목의 문자 길이 파생변수(<code>leng</code>)를 생성했습니다.</li>
+<li><code>df[&#39;title&#39;].apply(lambda x: len(x.split()))</code>를 통해 띄어쓰기 기준 단어 개수 파생변수(<code>word_count</code>)를 생성했습니다.</li>
+<li><code>set(x.split())</code>으로 중복 단어를 제거한 후 길이를 세어 고유 단어 개수 파생변수(<code>unique_word_count</code>)를 추가했습니다.</li>
+<li><code>sns.histplot()</code>을 사용하여 문자 길이 분포를 히스토그램으로 출력하고 <code>bins=30</code>으로 구간 막대 개수를 조절했습니다.</li>
+<li><code>sns.displot()</code>을 활용해 <code>col=&#39;topic&#39;</code>, <code>hue=&#39;topic&#39;</code> 파라미터를 부여함으로써 7개 뉴스 카테고리별 제목 길이 분포 서브플롯을 작성했습니다.</li>
+<li><code>height=3</code>, <code>aspect=1.5</code>, <code>col_wrap=2</code> 파라미터로 서브플롯의 크기와 배치 레이아웃을 정돈하여 기사 제목 분포 특성을 분석했습니다.</li>
+</ul>
+<hr>
+<h2>[4/4] FacetGrid와 PairGrid를 통한 lmplot, pairplot 으로 서브플롯 그리기</h2>
+<ul>
+<li><code>sns.lmplot()</code> 내부에 FacetGrid가 구현되어 있어 코드 한 줄로 다변량 조건부 회귀선 서브플롯을 그릴 수 있음을 다뤘습니다.</li>
+<li><code>tips</code> 데이터셋에서 <code>x=&#39;total_bill&#39;</code>, <code>y=&#39;tip&#39;</code>, <code>hue=&#39;smoker&#39;</code>를 지정해 흡연 여부별 회귀선과 신뢰구간을 다르게 시각화했습니다.</li>
+<li><code>truncate=False</code> 옵션을 부여하여 회귀선이 데이터 영역에 끊기지 않고 차트 축 끝까지 확장되도록 설정했습니다.</li>
+<li><code>col=&#39;day&#39;</code>, <code>col_wrap=2</code> 파라미터를 설정하여 요일별 서브플롯을 2열 격자로 배치했습니다.</li>
+<li><code>row=&#39;time&#39;</code>, <code>col=&#39;smoker&#39;</code>를 동시에 지정하여 식사 시간대와 흡연 여부 조합에 따른 2차원 회귀선 격자를 구현했습니다.</li>
+<li><code>sns.jointplot(..., kind=&#39;reg&#39;)</code>를 통해 두 변수 간의 회귀선과 외부 축의 단일 변수 히스토그램을 결합 시각화했습니다.</li>
+</ul>
+<hr>
+<h2>[4/4] 수치형 vs 범주형 변수의 서브플롯 barplot, pointplot, countplot</h2>
+<ul>
+<li>타이타닉 데이터셋을 활용해 범주형 변수의 통계 추정 차트인 <code>barplot</code>, <code>pointplot</code>, <code>countplot</code>의 특징을 다뤘습니다.</li>
+<li><code>sns.barplot()</code>은 기본적으로 Y축 수치 변수의 평균값(<code>estimator=mean</code>)을 막대 높이로 그리고 95% 신뢰구간(<code>ci=95</code>)을 검은색 선으로 표시합니다.</li>
+<li><code>ci=None</code>으로 설정하면 신뢰구간 선을 숨겨 차트를 깔끔하게 정돈하고 연산 속도를 대폭 향상시킵니다.</li>
+<li><code>sns.countplot()</code>은 단순 데이터 빈도수(개수)를 세어 막대로 표현하며 단일 범주형 변수 탐색에 특화되어 있습니다.</li>
+<li><code>sns.pointplot()</code>은 점과 선으로 평균 추정치와 신뢰구간을 표현하여 범주 간 변화 기울기를 직관적으로 나타냅니다.</li>
+<li><code>sns.catplot()</code> 인터페이스를 사용하고 <code>kind=&#39;bar&#39;</code>, <code>kind=&#39;count&#39;</code>, <code>kind=&#39;point&#39;</code>를 지정하여 동일한 서브플롯 격자로 가공했습니다.</li>
+<li><code>log_scale=True</code> 옵션을 부여하여 수치 스케일 차이가 큰 요금(<code>fare</code>) 데이터를 로그 스케일 축으로 변환하여 분포를 탐색했습니다.</li>
+</ul>
+<hr>
+<h2>[5/6] seaborn으로시각화는 pandas plot과 시각화 할 때 어떤점이 다를까?</h2>
+<ul>
+<li>판다스 내장 <code>plot()</code>은 사용자가 GroupBy 연산이나 피봇 테이블로 수치를 미리 집계한 후 X축과 Y축을 지정해 그려야 합니다.</li>
+<li>Seaborn 시각화 라이브러리는 가공되지 않은 타이디 데이터(Tidy Data)를 그대로 입력받아 내부에서 통계 연산(평균, 신뢰구간)을 자동으로 처리합니다.</li>
+<li><code>sns.barplot(data=df, x=&#39;연도&#39;, y=&#39;출생아수&#39;)</code>를 실행하면 각 연도 내 1~12월 출생아 수의 평균값과 95% 신뢰구간을 알아서 연산해 출력합니다.</li>
+<li><code>sns.lineplot()</code>에 <code>hue=&#39;월&#39;</code>을 지정하는 것만으로 12개 월별 시계열 변화 추이 곡선을 개별 색상 그라데이션으로 분리 시각화합니다.</li>
+<li>복잡한 연산 코드를 직접 작성할 필요 없이 데이터프레임과 컬럼명 지정만으로 집계와 시각화가 동시에 완성되는 Seaborn의 편의성을 다뤘습니다.</li>
+</ul>
+<hr>
+<h2>[4/6] 통계청 출생아수 pandas plot으로 그리기</h2>
+<ul>
+<li>통계청 전국 출생아 수 데이터를 로드하여 <code>df.set_index([&#39;연도&#39;, &#39;월&#39;])[&#39;출생아수&#39;]</code>로 복합 인덱스를 설정했습니다.</li>
+<li>판다스 내장 <code>plot(figsize=(15, 4))</code> 메소드를 호출해 1997년부터 2017년까지 전체 기간의 출생아 수 추이를 선그래프로 나타냈습니다.</li>
+<li>전체 시계열 차트를 통해 연도별 출생아 수가 지속적으로 감소하는 가운데 매년 특정 주기로 상하 요동치는 계절성(Seasonality)이 존재함을 파악했습니다.</li>
+<li>판다스 슬라이싱(<code>df[-36:]</code>, <code>df[-48:]</code>)을 적용하여 최근 3년 및 4년간의 월별 출생아 수 데이터만 별도로 시각화했습니다.</li>
+<li>최근 데이터 슬라이싱 분석을 통해 매년 1월과 3월에 출생아 수가 가장 많고, 12월에 출생아 수가 가장 적게 나타나는 계절적 패턴을 입증했습니다.</li>
+</ul>
+<hr>
+<h2>다변량 데이터 시각화 - pairplot 으로 서브플롯 쉽게 그리기, iris, tips, mpg 다양한 데이터셋으로 그려보기</h2>
+<ul>
+<li><code>sns.pairplot()</code>은 데이터프레임 내 모든 수치형 컬럼 간의 대칭 산점도 매트릭스를 단 한 줄의 코드로 자동 생성합니다.</li>
+<li>아이리스(<code>iris</code>), 팁(<code>tips</code>), 연비(<code>mpg</code>) 등 다양한 데이터셋을 <code>pairplot()</code>에 전달하여 다변량 변수 간의 관계를 탐색했습니다.</li>
+<li><code>hue=&#39;origin&#39;</code> 파라미터를 추가하여 제조국(미국, 유럽, 일본) 범주별 데이터 포인트를 서로 다른 색상으로 분리 시각화했습니다.</li>
+<li><code>hue</code> 파라미터 적용 시 대각선 위치의 그래프가 기존 히스토그램에서 커널 밀도 추정(KDE) 곡선으로 자동 전환되었습니다.</li>
+<li><code>corner=True</code> 옵션을 부여하면 대각선 기준 상단 중복 영역을 제외하고 하단 삼각 행렬만 출력하여 가독성과 계산 속도를 높였습니다.</li>
+<li>결측치(<code>NaN</code>)가 존재할 경우 <code>pairplot</code> 실행 시 에러가 발생하므로 <code>dropna()</code> 전처리를 사전에 수행하는 원칙을 다뤘습니다.</li>
+</ul>
+<hr>
+<h2>다원변량 분산분석(MANOVA) three-way ANOVA,  catplot 으로 서브플롯 그리기 FacetGrid와의 차이점</h2>
+<ul>
+<li>3개 이상의 독립 범주형 변수가 종속 수치 변수에 미치는 영향을 분석하는 3원 분산분석(Three-way ANOVA) 개념을 설명했습니다.</li>
+<li>운동 데이터셋(<code>exercise</code>)을 로드하여 식습관(<code>diet</code>), 운동 종류(<code>kind</code>), 시간(<code>time</code>)에 따른 맥박수(<code>pulse</code>) 변화를 시각화했습니다.</li>
+<li><code>sns.catplot()</code> 인터페이스를 활용하여 <code>x=&#39;time&#39;</code>, <code>y=&#39;pulse&#39;</code>, <code>hue=&#39;kind&#39;</code>, <code>col=&#39;diet&#39;</code>를 지정해 3차원 범주 결합 서브플롯을 생성했습니다.</li>
+<li><code>kind=&#39;point&#39;</code>를 설정하여 시간 경과에 따른 맥박수 평균의 변화 기울기를 선과 점으로 표현했습니다.</li>
+<li><code>capsize=0.2</code> 파라미터를 부여하여 포인트 플롯 오차 범위 상하단에 모자 모양의 캡(Cap)을 씌워 표준편차 범위를 명확히 했습니다.</li>
+<li><code>sns.catplot()</code>은 내부적으로 FacetGrid를 가동하므로 <code>plt.gcf()</code> 스타일 지정 대신 <code>height</code>와 <code>aspect</code> 파라미터로 서브플롯 크기를 직접 조절합니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼] [7/15] 이변량 수치형 데이터 분석하기 - 상관계수를 구해보고 회귀선 그려보기</h2>
+<ul>
+<li>두 수치형 변수 간의 선형 관련성을 나타내는 피어슨 상관계수(Pearson Correlation Coefficient)의 수식적 원리와 해석 기준을 다뤘습니다.</li>
+<li><code>df.corr()</code> 메소드를 호출하여 위도, 경도, 건물본번지 등 전체 수치 컬럼 간의 상관계수 행렬을 산출했습니다.</li>
+<li><code>sns.heatmap(df.corr(), annot=True, cmap=&#39;Blues&#39;)</code>를 실행하여 수치 표기와 함께 파란색 그라데이션 히트맵을 생성했습니다.</li>
+<li><code>np.triu()</code> 마스크를 적용해 상대적으로 중복되는 상단 대각선 영역을 하얗게 가리고 하단 상관계수만 깔끔하게 출력했습니다.</li>
+<li><code>sns.scatterplot()</code>에 경도(<code>x</code>)와 위도(<code>y</code>)를 전달하고 데이터 1,000건 샘플링(<code>df.sample(1000)</code>)을 적용해 속도를 최적화했습니다.</li>
+<li><code>sns.regplot()</code> 및 <code>sns.lmplot(..., hue=&#39;시도명&#39;)</code>을 활용해 음의 상관관계(-0.99)를 갖는 위도·경도 데이터 위에 지도 회귀선을 추정했습니다.</li>
+</ul>
+<hr>
+<h2>[jointplot] 산점도+회귀+도수분포+밀도를 하나의 그래프로 표현하기 seaborn  reg kde hex</h2>
+<ul>
+<li><code>sns.jointplot()</code>은 두 수치 변수의 산점도와 외곽 축의 단일 변수 히스토그램을 단일 그래프로 결합 표현합니다.</li>
+<li><code>tips</code> 데이터셋의 전체 금액(<code>total_bill</code>)과 팁(<code>tip</code>) 데이터를 전달하여 기본 산점도와 히스토그램 축을 구성했습니다.</li>
+<li><code>kind=&#39;reg&#39;</code> 옵션을 부여하여 중앙 산점도 위에 선형 회귀선과 신뢰구간을 추가하고 외곽 축에 KDE 곡선을 결합했습니다.</li>
+<li><code>kind=&#39;kde&#39;</code>로 설정하면 중앙 영역을 2차원 밀도 등고선으로 변환하고 외곽 축에 부드러운 1차원 KDE 밀도 곡선을 출력했습니다.</li>
+<li><code>kind=&#39;hex&#39;</code>로 변경하면 육각형 벌집 모양(Hexbin) 그리드 그라데이션으로 데이터 점 밀집도를 표현하여 점 겹침을 방지했습니다.</li>
+<li><code>color=&#39;m&#39;</code> 파라미터를 부여해 차트 전체 색상을 자줏빛으로 커스텀하고 피어슨 상관계수를 상호 검증했습니다.</li>
+</ul>
+<hr>
+<h2>[4/13] 질문번호로 빈도수 그래프를 그려주는 함수를 만들어보자 - kaggle survey2020</h2>
+<ul>
+<li>캐글 설문조사 단일 선택 문항 번호(Q1, Q2, Q3 등)를 파라미터로 받아 빈도수 차트를 출력하는 <code>show_count_plot(qno)</code> 사용자 정의 함수를 제작했습니다.</li>
+<li><code>sns.countplot()</code>에 Y축 문항 컬럼을 지정하고 <code>df[qno].value_counts().index</code>를 <code>order</code>에 전달하여 최다 응답순 정렬을 자동화했습니다.</li>
+<li><code>question_dict[qno]</code> 딕셔너리 맵핑을 활용해 <code>ax.set_title()</code>로 설문 질문 원문 텍스트를 차트 상단 제목에 자동으로 표기했습니다.</li>
+<li><code>figsize=(10, 6)</code> 파라미터를 기본값으로 설정하고 필요한 경우 <code>figsize</code>를 인자로 전달받아 그래프 크기를 가변 조정하도록 구현했습니다.</li>
+<li><code>palette=&#39;Blues_r&#39;</code> 옵션을 적용하여 최다 응답 항목일수록 진한 색상이 칠해지도록 시각적 그라데이션을 적용했습니다.</li>
+<li>연령대(Q1), 성별(Q2), 거주국가(Q3), 학력(Q4), 직업(Q5), 코딩 경력(Q6) 문항에 만든 함수를 재사용하여 빠르게 빈도수를 탐색했습니다.</li>
+</ul>
+<hr>
+<h2>[5/5] plotly express를 통한 여러가지 시각화 하기</h2>
+<ul>
+<li>Plotly Express(<code>px</code>) 라이브러리를 활용해 마우스 호버, 확대/축소, 선택 필터링이 가능한 동적 차트를 구현했습니다.</li>
+<li>FAANG(페이스북, 아마존, 애플, 넷플릭스, 구글) 5개 종목의 주가 데이터를 로드하고 기준일 대비 일별 수익률(%) 변환을 수행했습니다.</li>
+<li><code>px.line()</code>에 일별 수익률 데이터프레임을 전달하여 5개 종목의 수익률 추이를 선그래프로 나타냈습니다.</li>
+<li><code>facet_col=&#39;company&#39;</code>, <code>facet_col_wrap=2</code> 파라미터를 설정해 종목별 수익률 추이를 동적 서브플롯으로 분할 시각화했습니다.</li>
+<li><code>px.scatter()</code>에 X·Y 종목을 지정하고 <code>marginal_x=&#39;histogram&#39;</code>, <code>marginal_y=&#39;violin&#39;</code>을 설정해 동적 조인트 플롯을 구현했습니다.</li>
+<li><code>px.box()</code> 및 <code>px.violin(..., points=&#39;all&#39;)</code>을 사용하여 범주별 분포와 전체 데이터 포인트를 대화형으로 탐색했습니다.</li>
+</ul>
+<hr>
+<h2>다양한 범주형 변수에 따라 생존률은 어떻게 달라질까? - seaborn PairGrid</h2>
+<ul>
+<li><code>sns.PairGrid()</code> 클래스를 범주형 데이터 시각화에 적용하여 다변량 조건별 생존율 차트를 구축했습니다.</li>
+<li>Y축 변수로 생존 여부(<code>survived</code>, 0 또는 1)를 지정하고, X축 변수 리스트(<code>x_vars</code>)에 객실 등급(<code>class</code>), 성별(<code>sex</code>), 탑승자 유형(<code>who</code>), 혼자 탑승 여부(<code>alone</code>)를 설정했습니다.</li>
+<li><code>g.map(sns.pointplot)</code>을 호출하여 각 범주별 평균 생존율과 신뢰구간을 점과 선으로 한눈에 비교 시각화했습니다.</li>
+<li><code>g.set(ylim=(0, 1))</code> 옵션을 설정해 모든 서브플롯의 Y축 범위를 0(0%)부터 1(100%)까지 동일하게 고정했습니다.</li>
+<li>1등급 객실, 여성, 어린이 그룹일수록 생존율이 높고, 3등급 객실 및 성인 남성 그룹은 생존율이 낮음을 다차원적으로 검증했습니다.</li>
+<li><code>g.map(sns.barplot)</code> 및 <code>g.map(sns.violinplot)</code>으로 매핑 함수만 변경하여 동일한 서브플롯 구조를 막대 및 바이올린 차트로 전환했습니다.</li>
+</ul>
+<hr>
+<h2>수치형 VS 수치형 데이터 표현에 적합한 seaborn scatterplot</h2>
+<ul>
+<li><code>sns.scatterplot()</code>은 X축과 Y축 데이터가 모두 수치형(Quantitative)일 때 데이터의 전체적 분포와 경향을 파악하기에 적합합니다.</li>
+<li>다이아몬드(<code>diamonds</code>) 데이터셋에서 캐럿(<code>carat</code>)과 가격(<code>price</code>) 수치 간의 관계를 산점도로 표현하여 수치적 비례 관계를 시각화했습니다.</li>
+<li><code>hue=&#39;clarity&#39;</code> 옵션을 지정하면 다이아몬드 투명도 범주에 따라 마커의 색상을 다르게 분리하여 세부 특성을 다차원 분석할 수 있습니다.</li>
+<li><code>hue_order</code> 파라미터를 사용하면 범주형 범례의 정렬 순서를 명시적으로 변경하여 원하는 차원 순서대로 색상을 매핑할 수 있습니다.</li>
+<li><code>size=&#39;depth&#39;</code> 파라미터로 다이아몬드 깊이 수치에 따라 마커 원의 크기를 조절하고 <code>sizes=(1, 8)</code>로 동적 마커 크기 범위를 제한했습니다.</li>
+<li><code>palette</code> 옵션으로 전체 마커 색상 그라데이션을 스타일링하고, <code>sns.despine()</code>을 적용해 테두리 선을 지워 깔끔한 차트를 구현했습니다.</li>
+<li>단일 산점도 그래프 위에 색상, 마커 크기 등 다양한 차원을 동시에 표현할 수 있으나, 너무 많은 변수를 시각화하면 가독성이 떨어지므로 적절한 데이터 선별이 중요합니다.</li>
+</ul>
+<hr>
+<h2>판다스 공식문서 시각화 튜토리얼 따라하기 pandas tutorial plotting</h2>
+<ul>
+<li>판다스(Pandas) 내장 시각화 기능은 internal API를 통해 매트플롯립(Matplotlib)을 엔진으로 사용하여 데이터프레임을 바로 시각화합니다.</li>
+<li>공기질(<code>air_quality</code>) 데이터셋의 웹 URL 데이터를 직접 로드하면서 <code>index_col=0</code> 및 <code>parse_dates=True</code>로 시계열 날짜 인덱스를 자동 구축했습니다.</li>
+<li>데이터프레임 전체에 <code>df.plot()</code>을 호출하면 각 위치별 측정값의 시계열 변화 곡선이 한 번에 그려집니다.</li>
+<li>특정 컬럼(예: 파리 측정소)만 지정하여 <code>df[&#39;station_paris&#39;].plot()</code>을 실행하면 해당 단일 시계열 데이터만 추출하여 시각화할 수 있습니다.</li>
+<li><code>df.plot.scatter(x=&#39;...&#39;, y=&#39;...&#39;)</code>로 파리와 런던의 공기질 수치 간 상관관계를 산점도로 표현하고 <code>alpha=0.5</code> 옵션으로 투명도를 조절해 점 겹침을 방지했습니다.</li>
+<li><code>df.plot.box()</code>를 호출해 사분위수 및 이상치를 상자수염그림으로 확인하고, <code>df.plot.hist(bins=50, alpha=0.5)</code>로 구간별 도수분포 히스토그램을 작성했습니다.</li>
+<li><code>subplots=True</code> 파라미터를 부여하면 컬럼별 시계열 및 분포 차트를 개별 서브플롯 격자로 분할하여 한눈에 비교할 수 있습니다.</li>
+<li><code>plt.subplots(nrows, ncols, figsize=...)</code>로 도화지 그리드를 먼저 생성한 뒤 <code>ax</code> 파라미터로 지정하여 원하는 위치에 판다스 차트를 자유롭게 매핑할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 시각화 -  씨본 자동차 사고 데이터로 음주운전과 전체사고를 비교해 보기, seaborn  sns barplot</h2>
+<ul>
+<li>Seaborn의 내장 데이터셋인 <code>car_crashes</code>를 활용하여 지역별 자동차 사고 건수와 음주운전 사고 비율을 비교 분석했습니다.</li>
+<li><code>sort_values(&#39;total&#39;, ascending=False)</code>를 적용하여 전체 사고 건수가 가장 많은 지역 순서대로 데이터프레임을 내림차순 정렬했습니다.</li>
+<li><code>sns.barplot()</code>의 <code>y=&#39;abbrev&#39;</code>, <code>x=&#39;total&#39;</code>을 설정해 사고 발생 건수를 횡방향(Horizontal) 막대그래프로 구현했습니다.</li>
+<li><code>color=&#39;b&#39;</code> 및 <code>sns.set_color_codes(&#39;pastel&#39;)</code>를 활용하여 파스텔 톤 파란색 막대로 전체 자동차 사고 건수를 먼저 시각화했습니다.</li>
+<li>동일한 X축 상에 <code>x=&#39;alcohol&#39;</code> 및 <code>sns.set_color_codes(&#39;muted&#39;)</code>를 적용해 진한 파란색 막대를 겹쳐 그려 전체 사고 중 음주운전 사고의 비중을 입체적으로 나타냈습니다.</li>
+<li><code>ax.legend()</code> 옵션으로 전체 사고와 음주운전 사고 범례를 우측 하단에 배치하고 <code>sns.despine()</code>으로 상단·우측 테두리를 제거했습니다.</li>
+<li>시각화를 통해 특정 지역(ND 등)이 전체 사고 발생 수 대비 음주운전 사고 비율이 상대적으로 매우 높다는 인사이트를 도출했습니다.</li>
+</ul>
+<hr>
+<h2>수치, 카테고리 데이터로 시각화 하기 - 행성 거리와 측정방법에 따라 box, swarm plot 그리기</h2>
+<ul>
+<li>외계 행성 데이터셋(<code>planets</code>)을 다루며 범주형 관측 방법(<code>method</code>)과 수치형 관측 거리(<code>distance</code>) 간의 관계를 시각화했습니다.</li>
+<li>관측 거리 수치의 편차가 매우 커서 차트 스케일이 왜곡되는 문제를 해결하기 위해 <code>ax.set_xscale(&#39;log&#39;)</code> 또는 <code>np.log()</code>를 적용해 로그 스케일로 정규화했습니다.</li>
+<li><code>sns.boxplot()</code>을 활용해 관측 방법별 관측 거리 데이터의 중앙값, 사분위수 및 이상치(Outlier) 분포를 횡방향 박스플롯으로 표현했습니다.</li>
+<li><code>sns.swarmplot()</code>을 박스플롯 위에 중첩(Overlay)하여 개별 행성 데이터 포인트의 실제 위치와 밀집도를 점으로 함께 나타냈습니다.</li>
+<li><code>size=3</code>, <code>color=&#39;.3&#39;</code>, <code>linewidth=0</code> 파라미터로 스웜 플롯 마커 점의 크기와 색상을 정밀하게 조절하여 박스플롯 가독성을 높였습니다.</li>
+<li>박스플롯의 요약 통계량과 스웜 플롯의 실제 점 분포를 결합함으로써 데이터 수염 구간 내부의 밀도와 이상치 패턴을 다각도로 검증했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 시각화 - tips 데이터 요일별,  시간대별 상자수염그림 boxplot 그리기</h2>
+<ul>
+<li><code>tips</code> 데이터셋을 활용해 요일(<code>day</code>) 및 식사 시간대별 전체 식사 금액(<code>total_bill</code>)의 분포를 상자수염그림(<code>boxplot</code>)으로 표현했습니다.</li>
+<li><code>sns.boxplot(x=&#39;day&#39;, y=&#39;total_bill&#39;, data=tips)</code>를 실행하여 요일별 중앙값(50%), 사분위수(25%, 75%) 및 이상치를 한눈에 파악했습니다.</li>
+<li><code>hue=&#39;smoker&#39;</code> 파라미터를 추가하여 흡연자와 비흡연자 그룹별 지출 금액 분포를 각각 다른 색상의 상자로 비교했습니다.</li>
+<li><code>palette</code> 옵션에 <code>m</code> 및 <code>g</code> 커스텀 컬러를 부여하거나 <code>set_theme(style=&#39;ticks&#39;)</code> 스타일을 지정해 박스플롯 분위기를 커스텀했습니다.</li>
+<li><code>hue=&#39;time&#39;</code>으로 변경하거나 <code>order=[&#39;Dinner&#39;, &#39;Lunch&#39;]</code>를 지정하여 점심과 저녁 식사 시간대별 팁 및 결제 금액 차이를 비교했습니다.</li>
+<li><code>sns.catplot(kind=&#39;box&#39;, col=&#39;time&#39;)</code> 인터페이스를 사용하여 점심과 저녁 시간대별 박스플롯을 서브플롯으로 깔끔하게 분할 시각화했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 데이터 시각화 -  막대그래프 python seaborn  grouped barplots</h2>
+<ul>
+<li><code>sns.catplot()</code> 인터페이스를 활용하여 범주형 데이터 시각화 도구인 막대그래프(Barplot)의 그룹화 및 서브플롯 생성을 실습했습니다.</li>
+<li>타이타닉(<code>titanic</code>) 데이터셋을 로드하여 객실 등급(<code>class</code>) 및 성별(<code>sex</code>)에 따른 생존율(<code>survived</code>) 변화를 그룹화 막대그래프로 나타냈습니다.</li>
+<li><code>kind=&#39;bar&#39;</code> 옵션을 부여하고 Y축에 이진 수치 변수(<code>survived</code>, 0 또는 1)를 입력하면 Seaborn이 내부에서 자동으로 평균 생존율을 연산해 막대 높이로 그립니다.</li>
+<li>막대 상단에 자동으로 생성되는 검은색 세로선은 95% 신뢰구간(<code>ci=95</code>)을 의미하며, <code>ci=None</code>으로 숨기거나 <code>ci=&#39;sd&#39;</code>로 표준편차 범위를 표기할 수 있습니다.</li>
+<li><code>palette</code> 파라미터에 <code>muted</code> 등 색상 팔레트를 부여하고 <code>sns.despine(left=True)</code>를 적용해 그래프 테두리 선을 말끔히 정리했습니다.</li>
+<li><code>sns.barplot()</code> 단독 함수로도 동일한 막대그래프를 그릴 수 있지만, <code>catplot()</code>을 사용하면 <code>col</code> 파라미터를 통해 다변량 서브플롯으로 수월하게 확장할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>시계열 데이터 시각화하기 [4/4] -statmodels</h2>
+<ul>
+<li>시계열 데이터의 추세(Trend), 계절성(Seasonality), 잔차(Residual) 분석을 위한 <code>statsmodels</code> 라이브러리의 시계열 분해(<code>seasonal_decompose</code>) 기법을 다뤘습니다.</li>
+<li>항공 승객 데이터셋(<code>flights</code>)의 <code>date</code> 컬럼을 판다스 인덱스로 설정(<code>set_index(&#39;date&#39;)</code>)하여 시계열 분석 전용 데이터프레임을 생성했습니다.</li>
+<li><code>from statsmodels.tsa.seasonal import seasonal_decompose</code> 모듈을 불러온 뒤 <code>seasonal_decompose(df[&#39;passengers&#39;])</code>를 실행했습니다.</li>
+<li>기본 모형인 가법 모형(<code>model=&#39;additive&#39;</code>)을 적용하면 관측 데이터, 연도별 지속 상승 추세, 매년 반복되는 계절성, 무작위 잔차 그래프를 4개 축으로 분할 출력합니다.</li>
+<li>승객 수가 시간이 지남에 따라 변동 폭이 커지는 데이터 특성에 맞추어 승법 모형(<code>model=&#39;multiplicative&#39;</code>)을 지정하여 정밀하게 분해했습니다.</li>
+<li>승법 모형 분석 결과 잔차(Residuals) 수치가 1 부근에 안정적으로 수렴함을 확인하고, 여름철 및 연말 성수기 승객 집중 현상을 통계적으로 검증했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 시각화 - 바이올린플롯을 그라데이션으로 숫자의 크기를 표현하고 싶다면?</h2>
+<ul>
+<li>바이올린 플롯(<code>violinplot</code>)에 그라데이션 색상을 적용하여 데이터 수치의 크기 변화를 시각적으로 강조하는 테크닉을 다뤘습니다.</li>
+<li><code>np.random.default_rng()</code> 기반의 난수 생성기로 다차원 배열 데이터를 생성하고 판다스 데이터프레임으로 변환했습니다.</li>
+<li><code>sns.cubehelix_palette()</code> 또는 커스텀 컬럼 팔레트를 사용해 수치가 커지거나 작아짐에 따라 점진적으로 옅어지거나 진해지는 그라데이션 컬러맵을 생성했습니다.</li>
+<li><code>sns.violinplot(data=df, palette=palette)</code>을 실행하여 컬럼별 수치 분포 밀도 곡선과 함께 그라데이션 색상을 다채롭게 출력했습니다.</li>
+<li><code>inner=&#39;quartiles&#39;</code> 파라미터를 설정하여 바이올린 내부 면적에 25%, 50%, 75% 사분위 지점을 점선으로 표기했습니다.</li>
+<li><code>inner=&#39;point&#39;</code> 또는 <code>inner=&#39;box&#39;</code>로 내부 요약 형태를 가공함으로써 데이터 밀도 모양과 사분위수 지표를 단일 차트에서 효과적으로 전달했습니다.</li>
+</ul>
+<hr>
+<h2>분산분석-분산과 표준편차 구하기, catplot 과 FacetGrid 의 차이점</h2>
+<ul>
+<li>3원 분산분석(Three-way ANOVA) 개념과 운동(<code>exercise</code>) 데이터셋의 조건별 맥박수(<code>pulse</code>) 분산(<code>var()</code>) 및 표준편차(<code>std()</code>, <code>np.sqrt()</code>) 계산을 실습했습니다.</li>
+<li>조건별(휴식 <code>rest</code>, 걷기 <code>walking</code>, 뛰기 <code>running</code>)로 데이터프레임을 쿼리(<code>query()</code>) 색인하여 운동 강도가 높아질수록 맥박수의 분산과 표준편차가 급격히 커짐을 확인했습니다.</li>
+<li><code>sns.kdeplot()</code>으로 휴식, 걷기, 뛰기 조건의 맥박수 밀도 곡선을 하나의 도화지에 겹쳐 그려 분포의 퍼짐 정도(분산)를 시각적으로 검증했습니다.</li>
+<li><code>sns.FacetGrid(df, col=&#39;diet&#39;)</code> 객체를 직접 생성하고 <code>.map(sns.kdeplot, &#39;pulse&#39;)</code>을 호출해 서브플롯을 수동으로 구성하는 방식을 다뤘습니다.</li>
+<li><code>sns.catplot(data=df, x=&#39;time&#39;, y=&#39;pulse&#39;, hue=&#39;kind&#39;, col=&#39;diet&#39;, kind=&#39;point&#39;)</code>를 사용하면 FacetGrid를 따로 선언하지 않고 단 한 줄로 범주형 서브플롯을 완성할 수 있습니다.</li>
+<li><code>FacetGrid</code>는 사용자가 매핑 함수를 자유롭게 커스텀할 때 유용하고, <code>catplot</code>은 완성된 시각화 함수를 빠르게 분할 생성할 때 유용함을 비교 정리했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬으로도 엑셀처럼 그래프에 값을 표시할 수 있다? 자동차 생산 데이터로 막대그래프를 그리고 값을 표현해 보기</h2>
+<ul>
+<li>엑셀 차트처럼 막대그래프 상단에 실제 수치 텍스트 라벨을 직접 표기하는 방법론을 다뤘습니다.</li>
+<li>자동차 데이터셋(<code>mpg</code>)에서 제조국(<code>origin</code>) 컬럼의 <code>value_counts()</code>를 산출하여 국가별 생산 대수(USA 249대, Japan 79대, Europe 70대)를 집계했습니다.</li>
+<li><code>sns.countplot(data=mpg, x=&#39;origin&#39;)</code>으로 막대그래프를 생성하고 해당 차트 객체를 <code>g</code> 변수에 할당했습니다.</li>
+<li><code>for</code> 반복문과 <code>mpg[&#39;origin&#39;].value_counts()</code> 집계 결과를 이용해 각 막대의 X축 인덱스와 Y축 수치 위치 좌표를 계산했습니다.</li>
+<li><code>g.text(x, y, s, ha=&#39;center&#39;)</code> 메소드를 호출하여 각 막대 중앙 상단 좌표에 실제 데이터 수치를 텍스트로 표기했습니다.</li>
+<li><code>ha=&#39;center&#39;</code>(Horizontal Alignment) 옵션을 부여하여 글자가 막대 중앙에 정렬되도록 조정하고 폰트 크기 및 색상을 커스텀 스타일링했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 데이터 시각화 막대그래프 서브플롯 그리기와 스타일 지정하기 seaborn - barplot subplot palette</h2>
+<ul>
+<li><code>sns.barplot()</code>과 커스텀 팔레트(<code>palette</code>) 옵션을 결합하여 막대그래프 서브플롯을 작성하는 기법을 다뤘습니다.</li>
+<li><code>np.arange()</code>와 문자열 배열을 생성하여 예제 수치 데이터를 구축하고 <code>plt.subplots(1, 3, figsize=...)</code>로 1행 3열 서브플롯 공간을 마련했습니다.</li>
+<li>첫 번째 서브플롯에는 연속형 색상 팔레트(<code>palette=&#39;Blues_d&#39;</code>)를 적용해 수치가 커질수록 진해지는 단색 막대그래프를 그렸습니다.</li>
+<li>두 번째 서브플롯에는 발산형 팔레트(<code>palette=&#39;vlag&#39;</code>)를 지정하고 기준선(<code>ax.axhline(0, color=&#39;k&#39;)</code>)을 그어 양수/음수 변화량을 대칭 색상으로 나타냈습니다.</li>
+<li>세 번째 서브플롯에는 범주형 팔레트(<code>palette=&#39;deep&#39;</code>)를 부여하고 <code>ax.set_ylabel()</code>로 축 라벨을 부여했습니다.</li>
+<li><code>sns.despine(bottom=True)</code>를 적용해 하단 축을 지우고 <code>plt.tight_layout()</code>을 실행해 서브플롯 간 여백 겹침을 정돈했습니다.</li>
+</ul>
+<hr>
+<h2>시계열데이터 시각화에 좋은 선그래프 lineplot  그리기</h2>
+<ul>
+<li>시계열 및 연속형 수치 변화 관찰에 최적화된 <code>sns.lineplot()</code>의 핵심 기능과 파라미터를 다뤘습니다.</li>
+<li>뇌파 측정 데이터셋(<code>fmri</code>)을 로드하여 시간 흐름(<code>timepoint</code>)에 따른 신호 변화량(<code>signal</code>) 추이를 선그래프로 시각화했습니다.</li>
+<li>동일한 시간대에 복수의 데이터 관측치가 존재할 경우 Seaborn이 자동으로 평균값을 중앙 선으로 그리고 95% 신뢰구간을 그림자 밴드로 표시합니다.</li>
+<li><code>hue=&#39;region&#39;</code> 파라미터를 지정하여 정수리 및 전두엽 등 측정 뇌 부위별 신호 변화 곡선을 다른 색상으로 분리 시각화했습니다.</li>
+<li><code>style=&#39;event&#39;</code> 옵션을 추가하여 자극 이벤트 종류에 따라 점선, 실선 등 선 스타일을 다르게 부여했습니다.</li>
+<li><code>sns.pointplot()</code>과 비교 실행하여 라인 플롯은 신뢰구간이 연속적인 면적 그림자로 표현되고 포인트 플롯은 점과 세로선으로 표기되는 차이를 확인했습니다.</li>
+</ul>
+<hr>
+<h2>회귀선의 잔차(residuals)를 시각화 하고 scatterplot vs regplot vs residplot 과 비교하기</h2>
+<ul>
+<li>선형 회귀 모형의 오차 및 적합성을 검증하기 위한 잔차 시각화 도구인 <code>sns.residplot()</code>을 다뤘습니다.</li>
+<li><code>sns.scatterplot()</code>은 순수 좌표점만 그리고, <code>sns.regplot()</code>은 좌표점 위에 추정된 선형 회귀선과 신뢰구간을 함께 그립니다.</li>
+<li><code>sns.residplot(x=x, y=y)</code>를 실행하면 각 데이터 지점이 선형 회귀선으로부터 떨어진 거리(잔차, \\(y - \hat{y}\\))를 Y=0 기준선 위에 산점도로 표시합니다.</li>
+<li><code>lowess=True</code> (LOESS) 옵션을 부여하면 잔차점들의 국소 가중 회귀 곡선을 빨간색 점선으로 표시하여 잔차의 무작위성 패턴을 검증합니다.</li>
+<li>잔차들이 Y=0 기준선을 중심으로 위아래에 무작위로 고르게 분포하면 선형 회귀 모형이 적합하고, 특정 곡선 패턴을 띠면 비선형 모형 도입이 필요함을 해석했습니다.</li>
+</ul>
+<hr>
+<h2>서브플롯으로 회귀선 그리기 seaborn iris lmplot - multiple regression</h2>
+<ul>
+<li><code>sns.lmplot()</code>을 사용하여 범주형 조건별 선형 회귀선 서브플롯을 구축하는 방법론을 다뤘습니다.</li>
+<li>붓꽃(<code>iris</code>) 데이터셋을 로드하고 <code>sns.regplot()</code> 단독 실행 시에는 전체 데이터를 통틀어 하나의 회귀선만 그려짐을 확인했습니다.</li>
+<li><code>sns.lmplot(x=&#39;sepal_length&#39;, y=&#39;sepal_width&#39;, hue=&#39;species&#39;, data=iris)</code>를 실행하여 3개 품종별로 분리된 회귀선과 신뢰구간 밴드를 구현했습니다.</li>
+<li>전체 데이터 회귀선과 품종별 회귀선의 기울기가 서로 반대로 나타나는 심프슨의 역설(Simpson&#39;s Paradox) 현상을 시각적으로 입증했습니다.</li>
+<li><code>col=&#39;species&#39;</code> 파라미터를 추가하여 품종별 회귀선 차트를 3개의 가로 서브플롯으로 깔끔하게 분할 시각화했습니다.</li>
+<li><code>ci=None</code>으로 신뢰구간 그림자를 지우거나 <code>truncate=False</code>로 회귀선을 축 끝까지 연장하는 맞춤 스타일링을 적용했습니다.</li>
+</ul>
+<hr>
+<h2>항공수송 인원 수 pivot 으로 표형태로 변환 뒤에 수치의 많고 적음에 따라 표현하기 seaborn heatmap airpassenger</h2>
+<ul>
+<li>2차원 표 형태 데이터를 색상 그라데이션으로 시각화하는 <code>sns.heatmap()</code> 기법을 다뤘습니다.</li>
+<li>항공 승객 데이터셋(<code>flights</code>)을 <code>df.pivot(index=&#39;month&#39;, columns=&#39;year&#39;, values=&#39;passengers&#39;)</code>로 재구조화하여 월x연도 2차원 매트릭스를 생성했습니다.</li>
+<li><code>sns.heatmap(df_pivot)</code>을 실행하여 승객 수가 많을수록 옅은 색, 적을수록 진한 색으로 표현되는 기본 히트맵을 생성했습니다.</li>
+<li><code>annot=True</code> 및 <code>fmt=&#39;d&#39;</code> 옵션을 설정하여 각 히트맵 셀 내부에 실제 정수 승객 수 수치를 명시적으로 출력했습니다.</li>
+<li><code>cmap=&#39;Blues&#39;</code> 파라미터를 지정하여 승객 수가 많을수록 파란색이 진해지는 직관적인 색상 스케일로 전환했습니다.</li>
+<li><code>linewidths=0.5</code>를 지정해 셀 간 경계선을 만들고, 연도가 지날수록 승객 수가 늘어남과 동시에 매년 7·8월에 승객이 집중되는 패턴을 파악했습니다.</li>
+</ul>
+<hr>
+<h2>카테고리 형태의 데이터를 산점도로 표현한다면? swarmplot 과 violinplot 비교하기</h2>
+<ul>
+<li>범주형 축 위에 수치 데이터를 표현하는 산점도 도구인 <code>sns.swarmplot()</code>과 <code>sns.violinplot()</code>의 특성을 비교했습니다.</li>
+<li>범주형 데이터에 일반 <code>scatterplot</code>을 적용하면 점들이 일직선상에 가려져 밀도를 파악할 수 없는 한계가 발생합니다.</li>
+<li><code>pd.melt()</code>로 가로형 데이터를 세로형 타이디 데이터로 변환한 후 <code>sns.swarmplot()</code>을 적용하여 데이터 포인트들이 겹치지 않게 옆으로 펼쳐지도록 시각화했습니다.</li>
+<li><code>sns.violinplot()</code>을 함께 그려 커널 밀도 추정 곡선 모양과 스웜 플롯 점들의 분포가 완벽히 일치함을 시각적으로 검증했습니다.</li>
+<li><code>sns.violinplot()</code> 차트 위에 <code>sns.swarmplot(color=&#39;k&#39;, alpha=0.5)</code>을 중첩해 그려 밀도 곡선과 개별 데이터 점 위치를 동시에 나타냈습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 Python으로 다양한 시각화 라이브러리 사용하기 - matplotlib, seaborn, pandas, ggplot, plotnine, plot.ly, Bokeh</h2>
+<ul>
+<li>파이썬 생태계의 다양한 데이터 시각화 라이브러리들의 특성과 장단점을 비교 정리했습니다.</li>
+<li><strong>Matplotlib</strong>: 가장 기초가 되는 저수준(Low-level) 라이브러리로 세밀한 커스텀이 가능하지만 코드 길이가 길고 문법이 복잡합니다.</li>
+<li><strong>Seaborn</strong>: Matplotlib 기반의 고수준(High-level) 라이브러리로 적은 코드로 아름다운 통계 차트와 자동 집계 기능을 제공합니다.</li>
+<li><strong>Pandas Plotting</strong>: 데이터프레임에서 <code>.plot()</code>으로 직접 호출하며 전처리 후 빠르고 간편하게 차트를 생성합니다.</li>
+<li><strong>Plotnine (ggplot)</strong>: R 언어의 <code>ggplot2</code> 그래픽 문법(Grammar of Graphics, <code>+</code> 연산자 체이닝)을 파이썬에 이식한 라이브러리입니다.</li>
+<li><strong>Plotly &amp; Bokeh</strong>: 자바스크립트 기반의 동적(Interactive) 시각화 도구로 마우스 호버, 확대, 필터링 기능을 지원합니다.</li>
+</ul>
+<hr>
+<h2>수치 데이터의 분포, 히스토그램 표현하기 - seaborn distplot subplots</h2>
+<ul>
+<li>수치형 단일 변수의 빈도 분포를 나타내는 <code>sns.distplot()</code>과 서브플롯 배치 기법을 다뤘습니다.</li>
+<li><code>np.random.default_rng()</code>로 정규분포 데이터셋을 생성하고 <code>sns.distplot(df)</code>을 실행하여 히스토그램과 커널 밀도 추정(KDE) 곡선을 동시에 표현했습니다.</li>
+<li><code>hist=False</code>로 설정해 부드러운 KDE 밀도 곡선만 남기거나, <code>kde=False</code>로 지정해 순수 도수분포 히스토그램만 출력했습니다.</li>
+<li><code>rug=True</code> 파라미터를 추가하여 데이터 포인트의 실제 위치를 바닥 축 위에 카페트 털 모양(Rug)으로 표시했습니다.</li>
+<li><code>bins=30</code> 옵션으로 막대 구간 개수를 조절하고, <code>plt.subplots(2, 2)</code> 도화지 공간에 <code>ax=axes</code> 형태로 4개의 분포 차트 서브플롯을 완성했습니다.</li>
+</ul>
+<hr>
+<h2>범주형 값에 따라 서브플롯그리기, pivot_table, crosstab 으로 시각화 내용 확인하기 seaborn fatcetgrid</h2>
+<ul>
+<li><code>sns.FacetGrid</code>를 활용하여 범주형 조건별 서브플롯 격자를 만들고 데이터 수치를 검증했습니다.</li>
+<li><code>g = sns.FacetGrid(tips, row=&#39;sex&#39;, col=&#39;time&#39;)</code> 객체를 생성하고 <code>.map(plt.hist, &#39;total_bill&#39;)</code>을 실행해 2x2 서브플롯 히스토그램을 구현했습니다.</li>
+<li><code>.map(sns.scatterplot, &#39;total_bill&#39;, &#39;tip&#39;)</code>으로 변경하여 성별 및 식사 시간대별 산점도 격자를 시각화했습니다.</li>
+<li>시각화 결과를 검증하기 위해 <code>pd.pivot_table(tips, index=&#39;sex&#39;, columns=&#39;time&#39;, values=&#39;total_bill&#39;, aggfunc=&#39;count&#39;)</code>를 실행했습니다.</li>
+<li><code>pd.crosstab(tips[&#39;sex&#39;], tips[&#39;time&#39;])</code> 및 <code>sns.heatmap()</code>을 결합하여 교차표 빈도 수치를 색상 히트맵으로 완벽히 상호 검증했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 시계열 데이터 시각화 [2/4] - pivot으로 형태 바꿔서 표현하기, heatmap, subplot 표현하기</h2>
+<ul>
+<li>시계열 데이터를 <code>pivot()</code>으로 피봇 변환하여 히트맵 및 서브플롯으로 시각화했습니다.</li>
+<li>항공 승객 데이터셋(<code>flights</code>)을 <code>df.pivot(index=&#39;month&#39;, columns=&#39;year&#39;, values=&#39;passengers&#39;)</code>으로 재구조화했습니다.</li>
+<li><code>sns.heatmap(df_pivot, annot=True, fmt=&#39;d&#39;, cmap=&#39;Blues&#39;)</code>를 실행하여 연도별·월별 승객 수의 가파른 증가 추세를 히트맵으로 한눈에 파악했습니다.</li>
+<li><code>sns.pairplot(df)</code>으로 시계열 변수 간 관계를 탐색하고, <code>sns.relplot(data=df, x=&#39;month&#39;, y=&#39;passengers&#39;, hue=&#39;year&#39;, kind=&#39;line&#39;)</code>을 구현했습니다.</li>
+<li><code>sns.relplot(..., col=&#39;year&#39;, col_wrap=4, kind=&#39;line&#39;)</code>을 적용하여 12개 연도별 승객 변화 곡선을 4열 격자 서브플롯으로 깔끔하게 분할 시각화했습니다.</li>
+</ul>
+<hr>
+<h2>수치vs수치형 데이터의 밀도함수 그래프 - seaborn iris kdeplot bivariable</h2>
+<ul>
+<li>두 개의 수치형 변수 간의 이변량(Bivariate) 밀도 분포를 나타내는 <code>sns.kdeplot()</code>을 다뤘습니다.</li>
+<li>붓꽃(<code>iris</code>) 데이터셋에서 <code>setosa</code> 및 <code>virginica</code> 품종 서브셋을 쿼리로 분리 추출했습니다.</li>
+<li><code>sns.kdeplot(x=df[&#39;sepal_width&#39;], y=df[&#39;sepal_length&#39;], shade=True)</code>를 실행하여 꽃받침 너비와 길이에 따른 2차원 밀도 등고선을 시각화했습니다.</li>
+<li><code>shade=True</code> (또는 <code>fill=True</code>) 옵션을 지정해 등고선 내부 면적을 색상 그라데이션으로 채우고 <code>cmap=&#39;Reds&#39;</code>, <code>cmap=&#39;Blues&#39;</code>를 적용했습니다.</li>
+<li>하나의 차트 위에 두 품종의 2D 밀도 등고선과 <code>sns.scatterplot()</code> 좌표를 중첩하여 등고선 중심축과 밀집 영역의 뚜렷한 차이를 검증했습니다.</li>
+</ul>
+<hr>
+<h2>시계열 데이터 시각화하기 [3/4] - 데이터를 datetime 으로 변환해서 보기</h2>
+<ul>
+<li>문자열로 분리된 연도(<code>year</code>)와 월(<code>month</code>) 컬럼을 판다스 날짜형(<code>datetime</code>)으로 통합 전환하여 시계열 차트를 그리는 기법을 다뤘습니다.</li>
+<li><code>datetime.strptime()</code> 또는 판다스 <code>apply()</code> 사용자 정의 함수를 작성하여 &#39;1949&#39; 연도와 &#39;January&#39; 월 문자열을 &#39;1949-01-01&#39; 형태 날짜 문자열로 변환했습니다.</li>
+<li><code>pd.to_datetime()</code>을 적용하여 오브젝트 타입을 <code>datetime64[ns]</code> 시계열 타입으로 완벽히 형변환했습니다.</li>
+<li><code>sns.lineplot(data=df, x=&#39;date&#39;, y=&#39;passengers&#39;)</code>를 실행하여 1949년부터 1960년까지 전체 12년 시계열 연속 변화 곡선을 구현했습니다.</li>
+<li><code>plt.figure(figsize=(15, 4))</code>로 도화지 크기를 확장하고, 매년 지속 상승하는 추세(Trend)와 여름 성수기에 폭발하는 계절성(Seasonality)을 직관적으로 시각화했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 데이터 시각화 도구 씨본의 변화들 seaborn - distplot이 없어졌다?!</h2>
+<ul>
+<li>Seaborn 버전 업데이트에 따른 주요 API 변경점과 신규 시각화 함수들을 비교 다뤘습니다.</li>
+<li>레거시 단일 함수였던 <code>sns.distplot()</code>이 향후 Deprecated(폐지) 예정임을 안내하고 이를 대체하는 전용 함수들을 소개했습니다.</li>
+<li><strong><code>sns.histplot()</code></strong>: 순수 히스토그램 전용 함수로 <code>kde=True</code> 옵션을 통해 밀도 곡선을 결합할 수 있습니다.</li>
+<li><strong><code>sns.displot()</code></strong>: Figure-level 고수준 분포 인터페이스로 <code>kind=&#39;hist&#39;</code>, <code>kind=&#39;kde&#39;</code>, <code>kind=&#39;ecdf&#39;</code> 및 <code>hue</code>, <code>col</code> 서브플롯 분할을 지원합니다.</li>
+<li><strong><code>sns.ecdfplot()</code></strong>: 누적 분포 함수(Empirical Cumulative Distribution Function)를 시각화하는 신규 함수입니다.</li>
+<li>신규 API 도입으로 <code>hue</code> 파라미터를 통해 여러 범주형 그룹의 분포를 단일 차트나 서브플롯에 손쉽게 비교 표현할 수 있게 되었음을 정리했습니다.</li>
+</ul>
+<hr>
+<h2>파이썬 시계열 데이터 시각화 [1/4] - 항공 수송 인원 데이터를 다양한 형태의 그래프로 표현하기</h2>
+<ul>
+<li>항공 승객 데이터셋(<code>flights</code>)을 활용해 동일한 시계열 데이터를 다채로운 Seaborn 차트 종류로 비교 탐색했습니다.</li>
+<li><code>sns.barplot(data=df, x=&#39;year&#39;, y=&#39;passengers&#39;)</code>로 연도별 평균 승객 수와 신뢰구간을 막대로 나타냈습니다.</li>
+<li><code>sns.lineplot()</code>으로 전환하여 연도별 연속 추이 곡선과 신뢰구간 밴드를 표현하고, <code>hue=&#39;month&#39;</code>를 추가해 12개 월별 곡선을 개별 분리했습니다.</li>
+<li><code>sns.boxplot(data=df, x=&#39;year&#39;, y=&#39;passengers&#39;)</code> 및 <code>sns.boxenplot()</code>을 적용해 연도별 승객 분포의 사분위수 범위를 구했습니다.</li>
+<li><code>sns.violinplot()</code>으로 밀도 모양을 확인하고, <code>sns.swarmplot()</code>을 실행해 연도별 12개 월 데이터 포인트의 실제 위치를 산점도로 검증했습니다.</li>
+</ul>
+<hr>
+<h2>피어슨 상관 계수(Pearson correlation coefficient)를 구하고 히트맵으로 표시하기</h2>
+<ul>
+<li>수치형 변수 간의 선형 관련성을 나타내는 피어슨 상관계수(Pearson Correlation)를 산출하고 히트맵으로 시각화했습니다.</li>
+<li>판다스 데이터프레임의 <code>df.corr()</code> 메소드를 호출하여 전체 수치 컬럼 간의 -1 ~ +1 상관계수 행렬을 계산했습니다.</li>
+<li><code>sns.heatmap(df.corr(), annot=True, fmt=&#39;.2f&#39;, cmap=&#39;coolwarm&#39;, vmin=-1, vmax=1)</code>을 실행하여 상관계수 수치가 적힌 히트맵을 생성했습니다.</li>
+<li><code>np.triu(np.ones_like(df.corr(), dtype=bool))</code> 마스크를 생성하고 <code>mask=mask</code> 옵션을 전달하여 중복되는 상단 대각선 영역을 깔끔하게 가렸습니다.</li>
+<li>자동차 데이터셋(<code>mpg</code>)에 적용하여 연비(<code>mpg</code>)와 차중(<code>weight</code>), 배기량(<code>displacement</code>) 간의 강한 음의 상관관계(-0.83)를 히트맵으로 시각 검증했습니다.</li>
+</ul>
+<hr>
+<h3>라벨 종합 정리</h3>
+<p><strong>파트 1/3 종합</strong></p>
+<p>단순한 요약 통계량(평균, 상관계수 등)만으로는 데이터의 숨겨진 분포와 패턴을 파악하기 어렵기 때문에 적절한 데이터 시각화 과정이 필수적입니다.</p>
+<p>Seaborn과 Pandas, Plotly를 활용하면 수치형·범주형 데이터의 빈도와 밀도, 선형/비선형 회귀선 및 다변량 관계를 단 한 줄의 고수준 코드와 격자형 서브플롯으로 손쉽게 구현할 수 있습니다.</p>
+<p>결측치 정제, 표준화(2축 그래프 및 수익률 변환), 형태소 분석(KoNLPy)과 워드클라우드를 결합하여 공공데이터·인구통계·금융 ETF 등 현실 데이터에 숨겨진 구조적 인사이트를 명확히 도출할 수 있습니다.</p>
+<p><strong>파트 2/3 종합</strong></p>
+<p>본 영상 모음은 파이썬 시각화의 핵심인 Matplotlib, Seaborn, Folium, Plotly, Mermaid 및 NumPy를 활용해 공공·금융·사회·텍스트 데이터를 다차원적으로 시각화하는 방법론을 다룹니다.</p>
+<p>Seaborn의 고수준 인터페이스(relplot, catplot, lmplot, pairplot, PairGrid)를 사용하면 가공되지 않은 타이디 데이터(Tidy Data)만으로 평균, 신뢰구간, 회귀선, 서브플롯 격자를 코드 한 줄로 자동 연산하고 구현할 수 있습니다.</p>
+<p>시계열 꺾은선 그래프, 수치·범주형 데이터의 빈도 및 밀도 분포(boxenplot, violinplot, jointplot), 공간 지리 마커(Folium), 동적 차트(Plotly), 프로젝트 타임라인(Mermaid Gantt)을 결합하여 데이터에 숨겨진 구조적 인사이트를 명확하게 도출할 수 있습니다.</p>
+<p><strong>파트 3/3 종합</strong></p>
+<p>본 영상 모음은 파이썬 시각화 라이브러리인 Seaborn과 Pandas, Matplotlib을 활용하여 수치형 및 범주형 데이터, 시계열, 상관계수를 다각도로 분석하는 실무 기법을 다룹니다.</p>
+<p><code>scatterplot</code>, <code>lineplot</code>, <code>barplot</code>, <code>boxplot</code>, <code>violinplot</code>, <code>swarmplot</code>, <code>kdeplot</code>, <code>heatmap</code> 등 데이터 타입과 목적에 알맞은 차트 선택 기준을 제시합니다.</p>
+<p><code>catplot</code>, <code>relplot</code>, <code>lmplot</code>, <code>displot</code>, <code>FacetGrid</code> 등 고수준 인터페이스를 통해 복잡한 다변량 데이터를 한 줄의 코드와 격자형 서브플롯으로 손쉽게 가공·시각화할 수 있습니다.</p>
+<p><code>pivot()</code> 변환, <code>datetime</code> 날짜 형변환, <code>statsmodels</code> 시계열 분해, 텍스트 라벨 표기(<code>text</code>), 상관계수 마스크(<code>np.triu()</code>) 정제를 결합하여 데이터에 숨겨진 구조적 인사이트를 정밀하게 추출합니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd81b3a789eb8a95e97b9c" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

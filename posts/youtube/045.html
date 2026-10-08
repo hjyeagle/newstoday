@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_판다스 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;판다스&amp;#39; (영상 32개, 중복 제외 32개) · 2026.10.05 생성 선택된 32개 영상을 2회로 나누어 요약한 결과를 합친 것입니다. (데이터톤 04) 파이썬 판다…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/045.html">
+<meta property="og:title" content="오늘코드todaycode_판다스 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 &amp;#39;판다스&amp;#39; (영상 32개, 중복 제외 32개) · 2026.10.05 생성 선택된 32개 영상을 2회로 나누어 요약한 결과를 합친 것입니다. (데이터톤 04) 파이썬 판다…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/045.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_판다스</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;판다스&#39; (영상 32개, 중복 제외 32개) · 2026.10.05 생성</p>
+<p>선택된 32개 영상을 2회로 나누어 요약한 결과를 합친 것입니다.</p>
+<hr>
+<h2>(데이터톤 04) 파이썬 판다스로 크롤링한 데이터 분석하기 01(정부혁신 국민포럼 페이지 분석)</h2>
+<ul>
+<li>정부혁신 국민포럼에서 크롤링한 데이터를 분석하기 위해 판다스(Pandas), 씨본(Seaborn), 매트플롯립(Matplotlib.pyplot) 라이브러리를 로드하고 한글 폰트 및 <code>ggplot</code> 스타일을 지정합니다.</li>
+<li><code>df.head()</code>, <code>df.tail()</code>, <code>df.info()</code>를 실행하여 171개 행과 8개 열로 구성된 데이터프레임의 전체 구조, 정수형/문자열 데이터 타입 및 인덱스 범위를 탐색합니다.</li>
+<li><code>df.describe()</code>로 투표수(<code>vote</code>) 수치 데이터의 평균(44회), 최댓값(2037회), 사분위수를 확인하고, <code>include=&#39;all&#39;</code> 옵션을 통해 보건복지 카테고리가 가장 제안이 많다는 점을 파악합니다.</li>
+<li><code>df[&#39;category&#39;].value_counts()</code>를 호출하여 보건복지, 일반행정, 기타, 안전 순으로 구성된 카테고리별 국민제안 건수 빈도를 집계합니다.</li>
+<li>매트플롯립의 <code>plt.subplots()</code>로 도화지를 나누어 카테고리별 제안 건수 막대그래프(<code>sns.countplot</code>)와 카테고리별 평균 투표수 차트 및 95% 신뢰구간을 나란히 시각화합니다.</li>
+<li><code>df.groupby(&#39;category&#39;)[&#39;vote&#39;].sum()</code> 연산과 <code>reset_index()</code>, <code>sort_values()</code> 메서드 체이닝을 통해 카테고리별 전체 누적 투표수 합계를 산출하고 보건복지 분야의 압도적 투표 참여율을 검증합니다.</li>
+</ul>
+<hr>
+<h2>1.2 [1/6 판다스로 텍스트 다루기]  파이썬 텍스트 분석을 위한 판다스 절대 기본 문자열 접근자</h2>
+<ul>
+<li>판다스(Pandas)는 뉴욕 증권가 퀀트에 의해 개발된 라이브러리로, 엑셀 대비 대용량 시계열 및 텍스트 데이터를 자유롭고 신속하게 처리할 수 있는 파이썬 핵심 분석 도구입니다.</li>
+<li>단 2장으로 구성된 판다스 치트시트(Pandas Cheat Sheet)를 참조하여 데이터프레임과 시리즈의 핵심 개념, 정규표현식(Regular Expression) 전처리 기초를 정립합니다.</li>
+<li><code>import pandas as pd</code> 로드 후 <code>pd.__version__</code>으로 버전을 점검하며, 텍스트 전처리 신기능 호환성을 위해 1.x 이상 최신 버전 사용을 권장합니다.</li>
+<li>판다스의 두 가지 핵심 자료구조인 2차원 표 형태의 <code>DataFrame</code>과 1차원 행/열 단위인 <code>Series</code>의 용어와 차이점을 다룹니다.</li>
+<li>파이썬 텍스트 리스트를 <code>pd.DataFrame(list, columns=[&#39;문서&#39;])</code>에 전달하여 자동 인덱스(0부터 시작)와 지정한 컬럼명을 갖는 표 형태 데이터로 변환합니다.</li>
+<li><code>df.shape</code>로 행·열 크기(6행 1열)를 확인하고, <code>df.info()</code>를 통해 결측치 유무와 문자열 데이터의 기본 타입인 <code>object</code> 타입을 파악합니다.</li>
+<li>스칼라 단일값 할당 방식(<code>df[&#39;날짜&#39;] = &#39;2022-05-01&#39;</code>)을 활용하여 전체 행에 일괄 적용되는 파생 컬럼을 손쉽게 추가합니다.</li>
+</ul>
+<hr>
+<h2>1.2 [2/6 판다스로 텍스트 다루기] 파이썬 텍스트 분석을 위한 판다스 행 열인덱싱 슬라이싱 loc iloc</h2>
+<ul>
+<li>데이터프레임에서 단일 컬럼(<code>df[&#39;문서&#39;]</code>)을 선택하면 시리즈 타입이 되고, 대괄호 리스트 형태(<code>df[[&#39;문서&#39;, &#39;날짜&#39;]]</code>)로 감싸 추출하면 데이터프레임 타입이 유지됩니다.</li>
+<li>행 인덱스명과 컬럼명을 기준으로 데이터를 색인할 때는 <code>loc</code> (Location) 속성을 사용하며, 단일 행 선택 시 시리즈, 리스트 지정(<code>loc[]</code>) 시 데이터프레임을 반환합니다.</li>
+<li><code>loc</code> 속성은 <code>df.loc[0, &#39;문서&#39;]</code> 또는 <code>df.loc[, [&#39;문서&#39;, &#39;날짜&#39;]]</code>처럼 <code>행_인덱스, 열_이름</code> 구성을 통해 행과 열을 동시에 정밀 색인합니다.</li>
+<li>정수 위치 순서를 기준으로 데이터를 색인할 때는 <code>iloc</code> (Integer Location) 속성을 사용하며, <code>df.iloc</code> 형태로 정수 인덱스 번호를 전달합니다.</li>
+<li><code>iloc</code> 속성은 파이썬 슬라이싱 문법(<code>df.iloc[:2, :]</code>)을 지원하므로 원하는 정수 범위의 행과 열을 자유롭게 잘라내어 추출할 수 있습니다.</li>
+<li><code>df.head()</code> 메서드의 내부 소스코드를 확인해 보면 지정한 개수만큼 상위 행을 추출하기 위해 내부적으로 <code>iloc</code> 슬라이싱을 호출하고 있음을 파악할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>1.2 [3/6 판다스로 텍스트 다루기] 문자열 대소문자 변경 공백 제거 어절 나누기 파생변수 만들기</h2>
+<ul>
+<li>판다스 시리즈 객체의 <code>.str</code> 문자열 접근자(String Accessor)를 사용하면 파이썬 내장 문자열 메서드들을 컬럼 전체 데이터에 일괄 적용할 수 있습니다.</li>
+<li><code>df[&#39;문서&#39;].str.lower()</code> 및 <code>.upper()</code>를 적용하여 텍스트의 대소문자를 일괄 통일하고 키워드 검색 및 전처리 편의성을 확보합니다.</li>
+<li><code>df[&#39;문서&#39;].str.strip()</code> 및 <code>.str.len()</code> 메서드 체이닝(Method Chaining)을 통해 문자열 양끝의 불필요한 공백을 제거하고 공백 제거 전후의 글자 수 수치 변화를 비교합니다.</li>
+<li><code>df[&#39;문서&#39;].str.split()</code>을 실행하면 공백이나 지정한 구분자를 기준으로 문장을 나눈 파이썬 단어 리스트 형태로 변환됩니다.</li>
+<li><code>str.split(expand=True)</code> 옵션을 부여하면 문자열 분할 결과가 단어별 개별 컬럼으로 분리된 데이터프레임 형태로 확장 반환됩니다.</li>
+<li><code>df[&#39;문서&#39;].str.contains(&#39;운행&#39;)</code>을 실행하면 특정 키워드 포함 여부를 불리언(True/False) 시리즈로 반환하여 원하는 텍스트 행만 불리언 인덱싱으로 추출할 수 있습니다.</li>
+<li>키워드 검색 결과 불리언 시리즈를 <code>df[&#39;문의&#39;] = ...</code> 와 같이 새로운 컬럼에 할당하여 불리언 파생변수를 유연하게 생성합니다.</li>
+</ul>
+<hr>
+<h2>1.2 [4/6 판다스로 텍스트 다루기] 파이썬 판다스 문자열 바꾸기 replace 와 str replace는 다른가?</h2>
+<ul>
+<li><code>df[&#39;문서&#39;].str.replace(&#39;운행&#39;, &#39;영업&#39;)</code>은 시리즈 내 텍스트 데이터의 일부 문자열만을 부분 치환할 때 활용됩니다.</li>
+<li><code>str.replace()</code>에 정규표현식 파이프 기호(<code>|</code>, OR 조건)를 전달하면 <code>str.replace(&#39;버스|지하철&#39;, &#39;대중교통&#39;, regex=True)</code>처럼 여러 단어를 한 번에 치환할 수 있습니다.</li>
+<li>최신 판다스 버전에서는 정규표현식을 사용해 일부 문자열을 바꾸는 경우 <code>regex=True</code> 옵션을 명시해야 경고 메시지 없이 작동합니다.</li>
+<li><code>df.replace()</code> 메서드는 시리즈뿐만 아니라 데이터프레임 전체에 적용 가능하지만, <code>regex=True</code> 옵션이 없으면 텍스트 전체가 완전 일치할 때만 치환되는 차이점이 있습니다.</li>
+<li><code>df.replace()</code>에 딕셔너리 형태(<code>{&#39;문의&#39;: &#39;질문&#39;, &#39;버스의&#39;: &#39;교통&#39;}</code>)를 전달하면 복수의 컬럼과 단어 매핑을 한꺼번에 치환할 수 있습니다.</li>
+<li><code>shift + tab</code> 키나 물음표(<code>?</code>) 도움말을 활용해 <code>replace</code> 메서드의 파라미터 옵션과 정규표현식 적용 여부를 점검합니다.</li>
+</ul>
+<hr>
+<h2>1.2 [5/6 판다스로 텍스트 다루기] 문자열 정규표현식으로 전처리하기, 문자길이와 단어개수, map apply</h2>
+<ul>
+<li>정규표현식(Regular Expression)은 특정한 규칙 패턴을 가진 문자열 집합을 검색·치환·정제하는 형식을 제공합니다.</li>
+<li>대괄호 패턴과 범위 지정(``, <code>[a-zA-Z]</code>, <code>[가-힣]</code>)을 활용해 숫자, 영문, 한글 문자를 선별 정제할 수 있습니다.</li>
+<li><code>df[&#39;문서&#39;].str.replace(&#39;&#39;, &#39;&#39;, regex=True)</code>를 적용해 문자열 내에 포함된 숫자 전체를 빈 문자열로 삭제합니다.</li>
+<li><code>df[&#39;문서&#39;].str.len()</code>으로 전체 문장 글자 수를 구하고, <code>.str.split().str.len()</code>을 조합하여 띄어쓰기 기준 단어 개수를 산출합니다.</li>
+<li>문자열 슬라이싱 접근자(<code>df[&#39;문서&#39;].str[:3]</code> 또는 <code>df[&#39;문서&#39;].str[-3:]</code>)를 사용해 문장의 앞글자/뒷글자 일부만 자르는 전처리가 가능합니다.</li>
+<li><code>df[&#39;문서&#39;].map(lambda x: len(x))</code> 또는 <code>.apply(lambda x: len(x.split()))</code>처럼 사용자 정의 익명 함수(lambda)를 연결해 세밀한 커스텀 전처리를 수행합니다.</li>
+<li><code>map</code>은 시리즈 객체에만 사용 가능하고, <code>apply</code>는 시리즈와 데이터프레임 축(<code>axis=0</code> 또는 <code>axis=1</code>)에 모두 적용할 수 있는 차이점을 이해합니다.</li>
+</ul>
+<hr>
+<h2>1.2 [6/6 판다스로 텍스트 다루기] 데이터프레임을 파일로 저장하고 싶다면? csv 파일 저장과 불러오기 string타입의 이해</h2>
+<ul>
+<li>메모리상의 데이터프레임을 로컬 파일로 저장하기 위해 <code>df.to_csv(&#39;filename.csv&#39;, index=False)</code>를 실행하며, <code>index=False</code>로 불필요한 인덱스 번호 저장을 방지합니다.</li>
+<li><code>pd.read_csv(&#39;filename.csv&#39;)</code>로 저장된 파일 데이터를 불러오며, 한글 윈도우 엑셀 호환성을 높이려면 <code>encoding=&#39;cp949&#39;</code> 옵션을 지정을 고려합니다.</li>
+<li>기본 UTF-8 인코딩 저장 시 주피터 노트북이나 타 OS 간 한글 깨짐 없는 데이터 이관이 가능합니다.</li>
+<li>판다스 1.0 버전에 신규 추가된 <code>string</code> 전용 데이터 타입(<code>df.astype(&#39;string&#39;)</code>)은 기존 <code>object</code> 타입의 모호성을 개선해 텍스트 데이터의 명확한 구분을 지원합니다.</li>
+<li><code>object</code> 타입 내에 정수와 텍스트가 혼용되어 있을 때, <code>string</code> 타입으로 형변환하면 모든 원소가 문자열로 가공되어 타입 비교 에러를 차단합니다.</li>
+<li>판다스 공식 문서의 &quot;Working with text data&quot; 섹션과 <code>str</code> 접근자 메서드 목록을 참고하여 다양한 실무 전처리 기법으로 확장합니다.</li>
+</ul>
+<hr>
+<h2>KRX분석 [2/13] 데이터 요약하기 - pandas describe, info</h2>
+<ul>
+<li>한국거래소(KRX) 상장 종목 데이터셋을 로드한 후 <code>df.info()</code>를 실행해 전체 2,612개 종목 행과 10개 컬럼의 데이터 타입, 메모리 용량(204KB)을 점검합니다.</li>
+<li>상장일(<code>ListingDate</code>) 컬럼이 문자열(<code>object</code>)로 불러와졌을 경우 시계열 분석을 위해 데이트타임(<code>datetime</code>)으로 형변환이 필요함을 파악합니다.</li>
+<li><code>df.describe()</code>를 호출해 범주형 컬럼의 기술통계량인 전체 개수(<code>count</code>), 유일값 개수(<code>unique</code>), 최다 등장 항목(<code>top</code>), 최다 빈도수(<code>freq</code>)를 요약 확인합니다.</li>
+<li><code>df.nunique()</code> 메서드를 통해 마켓(코스닥, 코스피, 코넥스 3개 유일값) 및 지역(21개 유일값) 등 범주형 컬럼별 유일값 개수를 스칼라 수치로 파악합니다.</li>
+<li><code>df.index</code>, <code>df.columns</code>, <code>df.values</code>, <code>df.shape</code> 속성(Attribute)은 괄호 <code>()</code> 없이 호출하며 데이터프레임의 구조적 메타데이터를 반환함을 구분합니다.</li>
+<li><code>df.info()</code> 및 <code>df.describe()</code>처럼 괄호 <code>()</code>를 붙여 호출하는 속성은 내부 연산을 수행해 결과를 반환하는 메서드(Method)임을 비교 이해합니다.</li>
+</ul>
+<hr>
+<h2>[1/2] 1G 이상의 파일을 여러 개 불러와야 하는데 메모리가 부족하다면?  판다스 다운캐스트</h2>
+<ul>
+<li>공공데이터포털의 국민건강보험공단 의약품 처방 정보처럼 1GB에 육박하는 대용량 CSV 파일(1,000만 건 이상)은 엑셀로 열리지 않지만 판다스로 로드할 수 있습니다.</li>
+<li>대용량 데이터 로드 시 한글 인코딩 에러를 방지하기 위해 <code>pd.read_csv(..., encoding=&#39;cp949&#39;)</code> 옵션을 지정합니다.</li>
+<li>판다스로 대용량 CSV를 불러오면 기본 수치 데이터 타입으로 <code>int64</code> 및 <code>float64</code>가 지정되어 로컬 메모리(RAM) 점유량(약 1.2GB)이 급증합니다.</li>
+<li><code>int64</code> 타입은 표현 범위가 커서 메모리 낭비가 심하므로, 데이터 표현 범위에 맞춰 더 작은 비트의 데이터 타입으로 바꾸는 다운캐스트(Downcast)가 필수적입니다.</li>
+<li><code>pd.to_numeric(df[&#39;컬럼&#39;], downcast=&#39;unsigned&#39;)</code> 또는 <code>downcast=&#39;float&#39;</code>를 실행하여 음수가 없는 정수 수치를 언사인드(<code>uint8</code>, <code>uint16</code> 등) 타입으로 압축 변환합니다.</li>
+<li>단가, 금액 컬럼 등 일부 수치 데이터에만 다운캐스트를 선제 적용해도 1.2GB에 달하던 메모리 사용량이 큰 폭으로 감소합니다.</li>
+</ul>
+<hr>
+<h2>[1/6] 통계청 출생아수 데이터를 Pandas의 melt로 tidydata만들기</h2>
+<ul>
+<li>통계청의 1997년부터 2018년까지의 월별·지역별·성별 출생아 수 통계표 데이터를 <code>pd.read_csv(..., encoding=&#39;cp949&#39;)</code>로 로드합니다.</li>
+<li><code>pd.options.display.max_columns = 793</code> 옵션을 지정해 가로로 나열된 793개 전체 컬럼이 주피터 노트북에 축약 없이 표시되도록 설정합니다.</li>
+<li>피봇 테이블 형태의 가로형 데이터는 분석과 시각화가 어려우므로, 컬럼에 나열된 연도·월·성별 수치를 행으로 녹여내는 타이디 데이터(Tidy Data) 재구조화가 필요합니다.</li>
+<li>판다스의 <code>pd.melt(df, id_vars=[&#39;시군구별&#39;])</code> 메서드를 사용하여 특정 기준 컬럼을 고정하고 나머지 컬럼을 <code>variable</code>과 <code>value</code> 행으로 유연하게 전환합니다.</li>
+<li>멜트(melt) 적용 결과 수평으로 나열되어 있던 97년 1월~18년 12월 출생아 수가 단일 수직 컬럼으로 일렬 재배치되는 구조적 전환을 완성합니다.</li>
+<li>불필요한 메타 헤더 행(&#39;시군구별&#39; 텍스트 행 등)을 불리언 색인(<code>df[&#39;시군구별&#39;] != &#39;시군구별&#39;</code>)으로 제거하고 <code>.copy()</code>로 정제된 서브셋 데이터프레임을 생성합니다.</li>
+</ul>
+<hr>
+<h2>[2/2] 데이터프레임의 전체에 다운캐스트를 하면 용량은 얼마나 줄어들까?</h2>
+<ul>
+<li><code>for col in df.columns:</code> 순회 문으로 전체 수치형 컬럼의 데이터 타입을 판별하고 <code>pd.to_numeric(..., downcast=&#39;unsigned&#39;)</code> 및 <code>downcast=&#39;float&#39;</code>를 일괄 적용합니다.</li>
+<li>전체 컬럼에 대한 일괄 다운캐스트 적용만으로 1,000만 건 데이터셋의 메모리 점유량이 기존 1.2GB에서 555MB로 절반 이상 감축됩니다.</li>
+<li>분석에 사용되지 않는 유일값 1개짜리 고정 컬럼(&#39;데이터공개일자&#39;)을 <code>df.drop(columns=[...])</code>으로 삭제하여 메모리를 479MB로 추가 축소합니다.</li>
+<li>유일값 개수(<code>nunique</code>)가 적은 수치/문자열 컬럼(&#39;요양개시일자&#39;, &#39;약품일반성분명코드&#39;)을 <code>astype(&#39;category&#39;)</code> 타입으로 변환하여 메모리를 346MB까지 획기적으로 줄입니다.</li>
+<li>메모리가 1.2GB에서 346MB로 약 70% 이상 대폭 절감되어 사양이 낮은 PC에서도 대용량 데이터의 고속 분석이 가능해집니다.</li>
+<li><code>pd.read_csv()</code> 실행 시 <code>dtype</code> 파라미터에 미리 정제된 타입을 매핑 전달하여 로드 시점부터 최적화된 메모리로 불러오는 실무 팁을 제시합니다.</li>
+</ul>
+<hr>
+<h2>[8/13]  두 개의 변수에 대한 빈도수는 어떻게 구할까?  pd.crosstab - 2020 kaggle survey</h2>
+<ul>
+<li>2020 캐글 설문조사 데이터셋에서 2개 범주형 변수 간의 복합 교차 빈도수를 집계하기 위해 <code>pd.crosstab(df[&#39;Q1&#39;], df[&#39;Q2&#39;])</code>을 사용합니다.</li>
+<li>연령대(<code>Q1</code>)와 성별(<code>Q2</code>) 컬럼에 대해 교차표를 생성하고, <code>ct[[&#39;Man&#39;, &#39;Woman&#39;]]</code> 색인으로 주요 성별 응답 데이터만 추출합니다.</li>
+<li>교차표 데이터프레임에 판다스 내장 시각화 메서드 <code>.plot.bar()</code> 또는 <code>.plot.barh(figsize=(10, 6))</code>를 호출하여 연령대별 성별 분포를 나란히 비교합니다.</li>
+<li>교차표를 인덱스 기준으로 정렬할 때는 <code>.sort_index(ascending=False)</code>를 적용합니다.</li>
+<li>Seaborn 라이브러리를 사용하는 경우 <code>sns.countplot(data=df, x=&#39;Q1&#39;, hue=&#39;Q2&#39;)</code>를 작성하여 교차표 연산과 범주별 차트 생성을 동시에 수행할 수 있습니다.</li>
+<li>성별 및 연령대별 분석 결과, 캐글 응답자는 20~30대 남성 비중이 가장 높으며 연령대가 높아질수록 여성 비중이 감소하는 경향을 확인합니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼] [14/21] 정보 마스킹 - 전화번호의 일부 마스크처리 하기</h2>
+<ul>
+<li>전화번호, 차 번호 등 민감 개인정보 보호를 위해 파이썬 정규표현식 그룹화 소괄호 <code>()</code> 문법과 <code>re.sub()</code>를 활용한 데이터 마스킹을 수행합니다.</li>
+<li>정규표현식 패턴에 그룹 괄호를 지정하고 <code>\1</code>, <code>\2</code>, <code>\3</code> 역참조 변수 및 <code>*</code> 문자를 조합하여 지정한 위치만 별표(<code>*</code>)로 마스킹합니다.</li>
+<li>전화번호 자릿수(3자리-3~4자리-4자리)에 가변 대응하기 위해 자릿수 슬라이싱 조건문과 사용자 정의 함수 <code>mask_phone_number(phone)</code>를 작성합니다.</li>
+<li>전화번호 데이터 내 결측치(<code>NaN</code>) 입력 시 에러가 발생하는 현상을 예외 처리하기 위해 <code>pd.isna(phone)</code> 조건 분기를 추가하여 안전성을 확보합니다.</li>
+<li>공공데이터(도시공원 표준 데이터 등) 컬럼 전체에 <code>.map(mask_phone_number)</code> 또는 <code>.apply()</code>를 전달하여 마스킹 처리된 파생 컬럼을 생성합니다.</li>
+<li>전화번호 원본 컬럼은 보존하고 <code>전화번호_마스킹</code> 파생 컬럼을 생성해 정제 결과를 대조·검증합니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼] [15/20] tidy data 를 이해하고 pandas 의 melt 로 두 개의 데이터셋을 같은 형태로 만들기</h2>
+<ul>
+<li>2015년 8월 이전과 이후로 분리된 두 아파트 분양가 데이터셋은 컬럼 구조가 서로 달라 직접 병합(<code>pd.concat</code>)이 불가능합니다.</li>
+<li>주피터 노트북에 가로 컬럼이 끊겨서 출력될 때 <code>pd.options.display.max_columns = 100</code>으로 설정하여 전체 컬럼을 노출합니다.</li>
+<li>해들리 위컴(Hadley Wickham)의 타이디 데이터(Tidy Data) 논문 개념을 바탕으로, 각 변수가 하나의 열이 되고 각 관측치가 하나의 행이 되도록 구조화해야 함을 파악합니다.</li>
+<li><code>df_first.melt(id_vars=[&#39;지역&#39;], var_name=&#39;기간&#39;, value_name=&#39;평당분양가격&#39;)</code>을 실행하여 2013~2015년 월별 컬럼들을 행 단위로 녹여냅니다.</li>
+<li>멜트 처리된 이전 데이터셋의 컬럼명(&#39;지역&#39; -&gt; &#39;지역명&#39;)을 최근 데이터셋의 컬럼 스키마와 정밀하게 일치하도록 변경합니다.</li>
+<li>전처리된 이전 데이터셋과 최근 데이터셋의 컬럼 구조가 동일해짐으로써 추후 두 시계열 데이터셋의 완전 통합 기반을 마련합니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼] [6/20] 규모구분 컬럼을 전용면적으로 변경하고 사용하지 않는 컬럼 제거로 메모리 용량 줄이기</h2>
+<ul>
+<li>&#39;규모구분&#39; 컬럼 내에 &#39;전용면적 60㎡이하&#39;, &#39;전용면적 60㎡초과 85㎡이하&#39; 등 상투적인 &#39;전용면적&#39; 텍스트가 중복 표기되어 메모리를 차지함을 확인합니다.</li>
+<li><code>df[&#39;규모구분&#39;].str.replace(&#39;전용면적&#39;, &#39;&#39;)</code> 및 <code>.str.replace(&#39;초과&#39;, &#39;~&#39;)</code>, <code>.str.replace(&#39;이하&#39;, &#39;&#39;)</code>를 체이닝 실행해 텍스트를 간결하게 가공합니다.</li>
+<li>문자열 양끝의 불필요한 공백을 <code>.str.strip()</code>으로 제거하고, 전처리된 결과를 &#39;전용면적&#39;이라는 직관적인 신규 파생 컬럼에 할당합니다.</li>
+<li>기존의 중복 컬럼인 &#39;규모구분&#39;과 쓰이지 않는 &#39;분양가격(㎡)&#39; 컬럼을 <code>df.drop(columns=[&#39;규모구분&#39;, &#39;분양가격(㎡)&#39;])</code>으로 삭제합니다.</li>
+<li><code>df.drop()</code> 사용 시 열 기준 삭제를 위해 <code>axis=1</code> 옵션을 지정하거나 <code>columns=[...]</code> 인자를 명시적으로 사용합니다.</li>
+<li>컬럼 삭제 및 텍스트 간소화 전후로 <code>df.info()</code>를 비교하여 메모리 점유량이 271KB에서 203KB로 절감됨을 확인합니다.</li>
+</ul>
+<hr>
+<h2>[인프런 리뉴얼] [9/15] 구별 음식점 분석으로 서브셋 만들기 - boolean Indexing 이해하기</h2>
+<ul>
+<li>57만 건의 상권 상가업소 데이터셋에서 조건식(<code>df[&#39;상권업소대분류명&#39;] == &#39;음식&#39;</code>)의 불리언(True/False) 시리즈를 생성합니다.</li>
+<li>불리언 시리즈를 데이터프레임 색인에 전달(<code>df[df[&#39;상권업소대분류명&#39;] == &#39;음식&#39;]</code>)하는 불리언 인덱싱(Boolean Indexing)으로 음식점 서브셋을 추출합니다.</li>
+<li>추출한 서브셋을 새로운 변수에 할당할 때 경고(SettingWithCopyWarning) 방지 및 독립적 객체 보존을 위해 <code>.copy()</code> 메서드를 사용합니다.</li>
+<li>앤드 연산자(<code>&amp;</code>)와 소괄호 <code>()</code>를 사용해 <code>(df[&#39;시도명&#39;] == &#39;서울특별시&#39;) &amp; (df[&#39;시군구명&#39;] == &#39;강남구&#39;) &amp; (df[&#39;상권업소대분류명&#39;] == &#39;음식&#39;)</code> 다중 조건 서브셋을 생성합니다.</li>
+<li><code>df.loc[조건식, &#39;상권업소중분류명&#39;].value_counts()</code> 형태로 <code>loc</code>을 결합 색인하면 속도가 훨씬 빠르고 효율적인 서브셋 연산이 가능합니다.</li>
+<li><code>df_seoul_food.groupby([&#39;시군구명&#39;, &#39;상권업소중분류명&#39;])[&#39;상호명&#39;].count()</code>로 구별·업종별 상점 수를 집계하고, <code>.unstack()</code> 및 <code>sns.barplot</code> / <code>catplot(kind=&#39;bar&#39;)</code>으로 서브플롯 시각화를 수행합니다.</li>
+</ul>
+<hr>
+<h2>KRX분석 [3/13] 시리즈와 데이터프레임의 이해와 색인</h2>
+<ul>
+<li>판다스 데이터프레임(<code>DataFrame</code>)은 행(Row)과 열(Column)로 구성된 2차원 표 형태의 핵심 자료구조입니다.</li>
+<li>데이터프레임에서 특정 단일 컬럼(예: 종목명 <code>Name</code>) 하나만 색인해 가져오면 인덱스와 값으로 구성된 1차원 <code>Series</code> 형태로 전환됩니다.</li>
+<li><code>.loc</code>과 같이 <code>loc</code> 속성을 사용해 특정 단일 행 하나만 가져올 때도 1차원 <code>Series</code> 자료구조가 반환됩니다.</li>
+<li>단일 대괄호 색인으로 2개 이상의 컬럼을 한꺼번에 가져오려면 <code>df[[&#39;Name&#39;, &#39;Symbol&#39;]]</code>처럼 리스트 형태로 감싸 전달해야 에러가 발생하지 않습니다.</li>
+<li><code>.loc</code> 속성을 활용해 2개 이상의 행을 선택할 때도 <code>df.loc[]</code>처럼 인덱스 리스트를 전달하여 2차원 데이터프레임 구조를 유지합니다.</li>
+<li>단일 컬럼을 색인하더라도 <code>df[[&#39;Name&#39;]]</code>과 같이 이중 대괄호(리스트)를 사용하면 <code>Series</code> 대신 2차원 <code>DataFrame</code> 형태로 반환받을 수 있습니다.</li>
+</ul>
+<hr>
+<h2>KRX분석 [4/13] loc와불리언인덱싱</h2>
+<ul>
+<li><code>df[&#39;Name&#39;]</code> 방식은 데이터프레임에 두 번 접근하지만, <code>df.loc[0, &#39;Name&#39;]</code> 속성을 사용하면 단 한 번의 접근으로 정밀하게 색인할 수 있어 권장됩니다.</li>
+<li><code>.loc</code> 속성은 항상 <code>df.loc[행, 열]</code> 순서로 사용하므로 판다스 데이터 조작 시 &#39;행-열&#39; 스키마를 일관되게 적용합니다.</li>
+<li><code>.loc</code> 속성에 여러 행과 여러 열을 동시에 색인할 때는 <code>df.loc[, [&#39;Name&#39;, &#39;Symbol&#39;]]</code>과 같이 행과 열 모두 리스트로 묶어 전달합니다.</li>
+<li>불리언 인덱싱(Boolean Indexing)은 조건 비교 결과가 참/거짓(True/False) 불(bool) 값으로 반환되는 원리를 활용하여 조건에 맞는 행만 추출합니다.</li>
+<li>판다스에서 다중 조건을 연결할 때 파이썬 일반 연산자인 <code>and</code> / <code>or</code> 대신 비트 단위 벡터 연산자인 <code>&amp;</code> (AND) 및 <code>|</code> (OR) 연산자를 사용합니다.</li>
+<li>다중 조건식을 작성할 때는 연산자 우선순위 오류를 방지하기 위해 각 조건식을 소괄호 <code>()</code>로 각각 감싸주어야 합니다.</li>
+<li><code>df.loc[(df[&#39;Region&#39;] == &#39;서울특별시&#39;) &amp; (df[&#39;Market&#39;] == &#39;KOSPI&#39;), [&#39;Name&#39;, &#39;Symbol&#39;]]</code> 형태로 조건식 행과 선택 열을 결합해 정밀 서브셋을 가져옵니다.</li>
+</ul>
+<hr>
+<h2>Pandas Cheat Sheet 강좌 인프런 이전 안내 - 파이썬 판다스 데이터 분석과 시각화 튜토리얼 강의</h2>
+<ul>
+<li>파이썬의 대표적인 데이터 분석 라이브러리인 판다스를 단 2장의 요약 문서(Cheat Sheet)로 다루는 강의를 소개합니다.</li>
+<li>기존 오늘코드 유튜브 채널에 공개되어 있던 판다스 치트시트 강좌가 인프런 플랫폼으로 이전 오픈되었습니다.</li>
+<li>인프런 이전 강좌의 정식 명칭은 &#39;파이썬 판다스 데이터 분석과 시각화 뽀개기&#39;입니다.</li>
+<li>유튜브 채널에서는 일부 강좌만 공개되어 있으며, 전체 연속 강의를 수강하려면 인프런 수강 신청을 통해 참여할 수 있습니다.</li>
+<li>단 두 장의 판다스 치트시트 요약 문서를 바탕으로 핵심 데이터 분석 및 시각화 기법을 효율적으로 학습할 수 있는 환경을 제공합니다.</li>
+</ul>
+<hr>
+<h2>Pandas가 증권가에서 일하는 퀀트에 의해 개발되었다는 사실 알고 계신가요?</h2>
+<ul>
+<li>판다스(Pandas)는 2008~2009년 뉴욕 증권가 헤지펀드(AQR)의 퀀트 개발자인 웨스 맥키니(Wes McKinney)에 의해 최초 개발되었습니다.</li>
+<li>금융 데이터 분석 및 포트폴리오 백테스팅, 시계열 데이터 처리, 통계 추정 작업을 효율화하기 위한 목적으로 탄생했습니다.</li>
+<li>판다스라는 명칭은 다차원 데이터 구조를 뜻하는 경제·통계 용어인 &#39;패널 데이터 시스템(Panel Data System)&#39;에서 유래했습니다.</li>
+<li>초기 판다스는 1차원(Series), 2차원(DataFrame), 3차원(Panel) 구조를 다루었으나, 현재 3차원 패널은 폐지(Deprecated)되어 1차원과 2차원에 집중합니다.</li>
+<li>수치 계산에 특화된 넘파이(NumPy)의 C 언어 기반 고속 연산 성능을 바탕으로 데이터프레임과 시계열 인덱스를 결합했습니다.</li>
+<li>주가 데이터(OHLC: 시가·고가·저가·종가) 처리, 결측치 채우기, 피봇 테이블 연산 등 금융·퀀트 분석 핵심 기능들이 내장되어 있습니다.</li>
+</ul>
+<hr>
+<h2>Q . Pandas GroupBy의 대괄호 &amp; 소괄호는 어떻게 구분해서 사용하나요?</h2>
+<ul>
+<li><code>groupby()</code> 메서드 바로 뒤의 소괄호 <code>()</code>는 메서드 자체를 호출하고 매개변수 옵션을 전달하기 위한 파이썬 함수 소괄호입니다.</li>
+<li><code>groupby(&#39;지역명&#39;)</code>에서 소괄호 내부의 대괄호 <code>[]</code>는 그룹화 기준 컬럼들을 리스트 형태로 묶어 바이(<code>by</code>) 파라미터에 전달할 때 사용됩니다.</li>
+<li><code>groupby()</code> 연산 결과 뒤에 붙는 대괄호 <code>[]</code>는 전체 컬럼 중 특정 수치 컬럼만 선택(인덱싱)하기 위한 데이터프레임/시리즈 인덱싱용 대괄호입니다.</li>
+<li>연산 메서드(예: <code>.mean()</code>)를 적용하기 전에 미리 수치 컬럼을 대괄호 <code>[]</code>로 인덱싱하면 불필요한 전체 컬럼 연산을 줄여 메모리 및 속도를 최적화합니다.</li>
+<li>단일 컬럼 기준 그룹화 시에는 대괄호 없이 <code>groupby(&#39;지역명&#39;)</code>으로 전달할 수 있으며, 2개 이상의 컬럼으로 그룹화할 때는 반드시 대괄호 리스트 <code>groupby([&#39;지역명&#39;, &#39;연도&#39;])</code>로 작성합니다.</li>
+</ul>
+<hr>
+<h2>Tiny Data로 만들고 시각화 할 때 unstack과 transpose, reset_index를 언제 사용해야 하나요?</h2>
+<ul>
+<li><code>pd.melt()</code>는 가로로 나열된 여러 컬럼(피봇 형태)을 세로 행 단위 데이터로 녹여내어 타이디 데이터(Tidy Data) 구조로 전환할 때 사용합니다.</li>
+<li><code>unstack()</code>은 <code>groupby()</code>나 멀티 인덱스(MultiIndex) 구조에서 가장 인접한 마지막 행 인덱스를 컬럼 위치로 올려 피봇 표 형태로 재구조화할 때 사용합니다.</li>
+<li><code>reset_index()</code>는 멀티 인덱스나 그룹화 결과를 평탄화하여 기존 인덱스를 일반 컬럼으로 변환하고 타이디 데이터프레임 형태로 되돌릴 때 활용합니다.</li>
+<li><code>transpose()</code> (또는 <code>.T</code>)는 데이터프레임의 행과 열 위치를 상호 교환(전치)할 때 사용합니다.</li>
+<li>씨본(Seaborn) 시각화 도구는 x축, y축, hue(색상) 컬럼을 지정하는 타이디 데이터 형태(<code>reset_index()</code> 결과)에 적합합니다.</li>
+<li>판다스 내장 <code>.plot()</code> 시각화 도구는 범주가 컬럼으로 나열된 피봇 형태(<code>unstack()</code> 또는 <code>transpose()</code> 결과)에서 그룹별 색상 차트 생성이 수월합니다.</li>
+</ul>
+<hr>
+<h2>나도 판다스 오픈소스 기여자?!</h2>
+<ul>
+<li>판다스 깃허브 저장소의 Issues 탭에서 &#39;good first issue&#39; 태그를 탐색하면 초심자가 도전하기 좋은 오타 수정 및 문서 업데이트 작업을 발견할 수 있습니다.</li>
+<li>원본 저장소를 본인 계정으로 포크(Fork)한 뒤 로컬 PC로 클론(Clone)받고, 별도의 작업 브랜치(Branch)를 생성해 수정을 진행합니다.</li>
+<li>파이썬 코딩 컨벤션 표준인 PEP 8 지침을 준수하기 위해 <code>pre-commit</code> 훅이나 에디터 플러그인을 가동하여 스타일 체크를 자동화합니다.</li>
+<li>작업 완료 후 커밋 메시지 가이드라인(말머리 태그 지정 등)을 준수하고, 본인 포크 저장소에 푸시(Push)한 뒤 원본 저장소로 풀 리퀘스트(Pull Request, PR)를 제출합니다.</li>
+<li>제출된 PR의 지속적 통합(CI) 녹색 통과 여부를 확인하고, 리뷰어의 피드백을 꾸준히 확인·수정하여 최종 머지(Merge)를 달성합니다.</li>
+</ul>
+<hr>
+<h2>의도치 않게 값이 변경되었다?! - Pandas 얕은 복사와 깊은 복사</h2>
+<ul>
+<li>얕은 복사(Shallow Copy)는 원본 객체의 메모리 주소 참조(Reference)만 공유하므로, 사본 데이터의 값을 변경하면 원본 데이터의 값도 함께 수정됩니다.</li>
+<li>데이터프레임 슬라이싱 후 단순 할당(<code>df2 = df[0:2]</code>) 시 얕은 복사가 일어날 수 있으며, 데이터 수정 시 <code>SettingWithCopyWarning</code> 경고 메시지가 발생합니다.</li>
+<li>깊은 복사(Deep Copy)는 원본 데이터와 독립된 새로운 메모리 공간에 데이터 전체 사본을 재귀적으로 생성합니다.</li>
+<li>판다스의 <code>df.copy()</code> 메서드는 기본값으로 깊은 복사(<code>deep=True</code>)를 수행하여 사본 수정 시 원본에 영향을 주지 않습니다.</li>
+<li>원본 데이터의 훼손을 차단하고 <code>SettingWithCopyWarning</code> 경고를 방지하려면 사본 생성 시 명시적으로 <code>df.copy()</code>를 호출해야 합니다.</li>
+</ul>
+<hr>
+<h2>코드 한 줄로 이 모든 기술 통계를 한 번에 볼 수 있다? - pandas profiling</h2>
+<ul>
+<li><code>pandas-profiling</code> 라이브러리를 사용하면 단 한 줄의 코드로 데이터셋의 탐색적 데이터 분석(EDA) 보고서를 자동 생성합니다.</li>
+<li>전체 데이터셋의 행·열 개수, 결측치 비율, 중복 행 수, 메모리 점유량 등 주요 기술통계 개요를 한눈에 요약 제공합니다.</li>
+<li>수치형 변수의 경우 평균, 중앙값, 사분위수, 표준편차, 외도, 첨도 및 분포 히스토그램 차트를 자동 작성합니다.</li>
+<li>범주형 변수의 경우 빈도수(Value Counts) 상위/하위 항목 및 비율 차트를 자동 시각화합니다.</li>
+<li>피어슨, 스피어만, 켄달 타우 등 변수 간 상관계수 히트맵과 결측치 패턴 매트릭스·덴드로그램 시각화를 종합 제공합니다.</li>
+</ul>
+<hr>
+<h2>파이썬 데이터 분석 Pandas tutorial time series</h2>
+<ul>
+<li><code>pd.read_csv()</code> 호출 시 <code>parse_dates=[&#39;컬럼명&#39;]</code> 파라미터를 지정하면 문자열 날짜 데이터를 <code>datetime64</code> 시계열 데이터 타입으로 자동 형변환합니다.</li>
+<li>문자열 날짜 컬럼을 <code>pd.to_datetime()</code>으로 변환하면 <code>.dt</code> 접근자를 활성화하여 연(<code>dt.year</code>), 월(<code>dt.month</code>), 요일(<code>dt.weekday</code>), 시간(<code>dt.hour</code>)을 추출할 수 있습니다.</li>
+<li><code>df.resample(&#39;M&#39;)</code> 또는 <code>df.resample(&#39;D&#39;)</code> 메서드를 사용하면 월별, 일별 등 특정 시간 주기 단위로 데이터를 그룹화하여 집계 연산을 적용합니다.</li>
+<li>시계열 인덱스가 설정된 데이터프레임은 <code>df[&#39;2019-05-20&#39;:&#39;2019-05-21&#39;]</code>과 같이 날짜 문자열 슬라이싱으로 구간 데이터를 손쉽게 추출합니다.</li>
+<li>시계열 데이터를 <code>pivot()</code>으로 가공한 후 <code>.plot()</code>을 호출하면 시간 흐름에 따른 그룹별 추이 곡선을 손쉽게 시각화할 수 있습니다.</li>
+<li>판다스는 본래 증권 및 금융 데이터를 분석하기 위해 탄생했기 때문에 시계열 다루기 기능이 매우 강력하게 설계되어 있습니다.</li>
+</ul>
+<hr>
+<h2>파이썬의 대표적인 데이터 분석도구 판다스 공식 문서 활용하기</h2>
+<ul>
+<li>판다스 공식 웹사이트의 &#39;Getting Started&#39; 튜토리얼 문서는 입문자가 기초 개념과 핵심 기능을 단계별로 익히기에 최적화되어 있습니다.</li>
+<li>&#39;10 Minutes to pandas&#39; 문서는 데이터프레임 생성, 색인, 결측치 처리, 그룹화, 병합, 시각화까지 핵심 API를 빠르게 가늠해보는 필수 가이드입니다.</li>
+<li>&#39;API Reference&#39; 섹션은 데이터프레임과 시리즈의 모든 내장 메서드와 파라미터 상세 사양을 검색하고 확인할 수 있는 공식 기술 사전입니다.</li>
+<li>&#39;Comparison with other tools&#39; 문서는 SQL, 엑셀(Excel), R 문법과의 1:1 대조 표를 제공하여 타 도구 사용자가 판다스로 전환하기 용이하게 지원합니다.</li>
+<li>최신 버전 업데이트에 따른 신기능 및 폐지(Deprecated) 예정 API 내역은 &#39;Release Notes&#39; 문서를 통해 점검할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>파일 용량을 1/10 로 줄이는 방법?! pandas 로 parquet 파일 포맷 다루기</h2>
+<ul>
+<li>파케이(Parquet)는 대용량 데이터의 효율적인 저장과 고속 조회를 위해 설계된 오픈소스 열 지향(Columnar) 바이너리 파일 포맷입니다.</li>
+<li>행(Row) 기반인 CSV와 달리 열(Column) 단위로 데이터를 저장하므로, 동일 데이터 타입끼리 묶여 압축률이 획기적으로 향상됩니다.</li>
+<li>1GB에 육박하는 대용량 CSV 파일을 <code>df.to_parquet(&#39;file.parquet&#39;, compression=&#39;gzip&#39;)</code>으로 저장하면 파일 용량이 약 10분의 1 수준으로 줄어듭니다.</li>
+<li><code>pd.read_parquet()</code>으로 파일을 로드할 때 CSV 파일 처리 속도 대비 약 2배 이상 빠른 로딩 속도를 나타냅니다.</li>
+<li>단, 데이터 건수가 매우 적은 소용량 파일의 경우 메타데이터 오버헤드로 인해 CSV보다 용량이 커질 수 있으므로 대용량 데이터에 적용하는 것이 효과적입니다.</li>
+</ul>
+<hr>
+<h2>판다스 공식 문서 함께 보기 - Pandas Getting Started   DataFrame Series</h2>
+<ul>
+<li>판다스의 두 가지 핵심 자료구조는 2차원 표 형태의 <code>DataFrame</code>과 1차원 배열 형태의 <code>Series</code>입니다.</li>
+<li>딕셔너리 형태(<code>{&#39;컬럼명&#39;: [리스트]}</code>)로 데이터를 전달하면 키(Key)는 컬럼명이 되고 값(Value) 리스트는 데이터 행이 되어 데이터프레임이 생성됩니다.</li>
+<li>데이터프레임에서 단일 열(Column)이나 단일 행(Row)을 추출하면 1차원 <code>Series</code> 객체로 자동 변환됩니다.</li>
+<li><code>df[&#39;Age&#39;].max()</code>처럼 시리즈나 데이터프레임에 집계 메서드를 직접 호출하여 최대값, 최소값, 평균값 등의 요약 통계를 바로 산출합니다.</li>
+<li><code>df.describe()</code> 메서드를 호출하면 데이터 개수(count), 평균(mean), 표준편차(std), 최소값(min), 사분위수(25%, 50%, 75%), 최대값(max) 기술통계량을 한 번에 확인합니다.</li>
+<li><code>df[&#39;Category&#39;].value_counts()</code>를 실행하면 범주형 데이터의 항목별 빈도수를 순위대로 집계합니다.</li>
+</ul>
+<hr>
+<h2>판다스의 판다가 그 곰이 아니었다?!</h2>
+<ul>
+<li>판다스(Pandas)의 이름은 동물이 아닌 &#39;패널 데이터 시스템(Panel Data System)&#39; 및 &#39;Python Data Analysis&#39;에서 유래했습니다.</li>
+<li>수학적 개념으로 데이터프레임(2차원)은 행렬(Matrix)에 대응하고, 시리즈(1차원)는 벡터(Vector)에 대응합니다.</li>
+<li>파이썬 리스트 구조로 표현할 때 데이터프레임은 이중 리스트(<code>[[]]</code>, 2차원) 형태이고, 시리즈는 단일 리스트(<code>[]</code>, 1차원) 형태입니다.</li>
+<li>데이터프레임 전체에서 특정 컬럼 하나를 선택하거나 행 하나를 추출하면 해당 데이터의 타입은 자동으로 시리즈로 전환됩니다.</li>
+<li>3차원 다차원 구조였던 패널(Panel) 타입은 최신 판다스 버전에서 제거되었으며, 다차원 데이터는 멀티 인덱스(MultiIndex)나 xarray 사용을 권장합니다.</li>
+</ul>
+<hr>
+<h2>판다스 개발자가 직접 쓰고 공개한 파이썬 데이터 분석 3판</h2>
+<ul>
+<li>판다스의 창시자인 웨스 맥키니(Wes McKinney)가 직접 집필한 서적 &quot;Python for Data Analysis&quot; 제3판의 온라인 무료 웹 개정본을 소개합니다.</li>
+<li>교재 전체 실습 소스코드가 저자의 깃허브(GitHub) 저장소에 공개되어 있으며, 구글 콜랩(Google Colab) 환경에서 즉시 실행이 가능합니다.</li>
+<li>파이썬 기초 및 주피터 노트북 사용법부터 넘파이, 판다스 기초, 데이터 적재·전처리, 시각화, 시계열 분석, 머신러닝 연동까지 종합 체계를 다룹니다.</li>
+<li>CSV, 엑셀, JSON, HTML 뿐만 아니라 최신 XML 포맷 로드 기능 및 대용량 전처리 테크닉이 세부 수록되어 있습니다.</li>
+<li><code>dropna()</code>, <code>fillna()</code>, <code>replace()</code>, <code>duplicated()</code> 등 실무 필수 데이터 정제 메서드와 기술통계·그룹화(<code>groupby</code>) 원리가 개발자의 시각에서 설명됩니다.</li>
+</ul>
+<hr>
+<h2>한번에 EDA 리포트 짱짱 pandas profiling 한글 폰트로 고통받는다면?</h2>
+<ul>
+<li><code>pandas-profiling</code> 라이브러리로 한글 데이터셋 보고서 생성 시 차트 내 한글 폰트가 깨지는 현상이 발생합니다.</li>
+<li>외부에서 Matplotlib 폰트를 설정하더라도 <code>pandas-profiling</code> 패키지 내부 시각화 소스코드(<code>context.py</code>)에 폰트(<code>sans-serif</code>)가 하드코딩되어 있어 적용되지 않는 원인을 다룹니다.</li>
+<li>이를 해결하기 위해 <code>pip show pandas-profiling</code>으로 설치 경로를 확인한 후, 비주얼라이제이션 내부 <code>context.py</code> 파일을 에디터로 직접 엽니다.</li>
+<li>소스코드 내 <code>sans-serif</code> 지정 부분 및 폰트 패밀리 설정 위치를 사용 중인 OS의 한글 폰트명(맥: &#39;AppleGothic&#39;, 윈도우: &#39;Malgun Gothic&#39;)으로 직접 수정 저장합니다.</li>
+<li>코드 수정 후 주피터 노트북 커널을 재시작(<code>Kernel Restart</code>)하고 프로파일링 리포트를 재생성하면 깨짐 없이 깨끗한 한글 차트 리포트가 완성됩니다.</li>
+</ul>
+<hr>
+<h3>라벨 종합 정리</h3>
+<p><strong>파트 1/2 종합</strong></p>
+<p>선택된 영상들은 데이터 분석의 핵심 도구인 판다스(Pandas)를 활용하여 대용량 수치 및 텍스트 데이터를 정제, 재구조화, 최적화하는 실무 테크닉을 종합적으로 다룹니다.</p>
+<p><code>loc</code>/<code>iloc</code> 색인, 정규표현식과 <code>.str</code> 접근자 기반 텍스트 마스킹·치환, 불리언 인덱싱 서브셋 생성, <code>pd.crosstab</code> 교차 분석을 통해 데이터를 정밀하게 가공할 수 있습니다.</p>
+<p>또한 피봇 형태의 가로형 데이터를 <code>melt</code>로 녹여 타이디 데이터(Tidy Data)를 만들고, 다운캐스트(Downcast)와 카테고리 형변환, 불필요한 컬럼 삭제를 적용해 대용량 데이터의 메모리 점유량을 70% 이상 획기적으로 다이어트시키는 최적화 노하우를 제공합니다.</p>
+<hr>
+<p>💡 <strong>추가 안내</strong>: 요약본 내용과 관련하여 추가 분석 리포트, 데이터 전처리 흐름도, 시각화 가이드 등이 필요하시면 언제든 말씀해 주세요!</p>
+<p><strong>파트 2/2 종합</strong></p>
+<p>본 영상 모음은 파이썬 핵심 데이터 분석 라이브러리인 판다스(Pandas)의 탄생 배경과 핵심 자료구조(DataFrame, Series), 정밀 색인(<code>loc</code>, 불리언 인덱싱) 및 고급 재구조화(<code>groupby</code>, <code>melt</code>, <code>unstack</code>, <code>copy</code>) 테크닉을 다룹니다.</p>
+<p>시계열 데이터 처리, 열 지향 파일 포맷인 Parquet 적용을 통한 용량·속도 최적화, 자동화 EDA 도구인 pandas-profiling 활용법과 커스텀 한글 폰트 적용법까지 실무 전반을 포괄합니다.</p>
+<p>창시자 웨스 맥키니의 원서 가이드와 공식 문서, 오픈소스 기여(PR) 프로세스를 접목하여 판다스를 깊이 있게 이해하고 효율적으로 데이터 분석 작업을 수행할 수 있도록 돕습니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd81e8b3b7ea1226d0ca5b" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

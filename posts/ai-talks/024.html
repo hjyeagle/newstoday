@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50시간 Hermes 사용기 - 이메일 자동화·카카오톡MCP·큐레이터 실전 활용법 (샘 호트만) | 뉴스투데이</title>
+<meta name="description" content="영상 정보 영상 URL: https://youtu.be/IfY912cF3zs?si=nCMIvvRoEcsyikWW 구분: AI창업 요약 [결론] 샘 호트만은 헤르메스를 50시간 이상 사용하며 구글 워크스페이스 CLI를 연동해 광고 메일 처리를 완전…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/ai-talks/024.html">
+<meta property="og:title" content="50시간 Hermes 사용기 - 이메일 자동화·카카오톡MCP·큐레이터 실전 활용법 (샘 호트만) | 뉴스투데이">
+<meta property="og:description" content="영상 정보 영상 URL: https://youtu.be/IfY912cF3zs?si=nCMIvvRoEcsyikWW 구분: AI창업 요약 [결론] 샘 호트만은 헤르메스를 50시간 이상 사용하며 구글 워크스페이스 CLI를 연동해 광고 메일 처리를 완전…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/ai-talks/024.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#card-ai-talks">목록으로</a></p>
+<p class="post-kicker">AI와 나눈 이야기 모음 · 2026.09.15</p>
+<h1>50시간 Hermes 사용기 - 이메일 자동화·카카오톡MCP·큐레이터 실전 활용법 (샘 호트만)</h1>
+<article class="prose">
+<h2>영상 정보</h2>
+<ul>
+<li>영상 URL: <a href="https://youtu.be/IfY912cF3zs?si=nCMIvvRoEcsyikWW" target="_blank" rel="noopener noreferrer">https://youtu.be/IfY912cF3zs?si=nCMIvvRoEcsyikWW</a></li>
+<li>구분: AI창업</li>
+</ul>
+<h2>요약</h2>
+<p>[결론] 샘 호트만은 헤르메스를 50시간 이상 사용하며 구글 워크스페이스 CLI를 연동해 광고 메일 처리를 완전 자동화했고, 카카오 Play MCP와도 연동해 누적 스킬을 정리해주는 &#39;큐레이터&#39; 기능까지 활용했습니다. 핵심은 자연어로 요구사항을 주면 헤르메스가 스스로 스킬/크론잡을 만들고 장기 기억에 개인 선호도를 저장해 점점 더 정교해지는 이메일 비서를 밑바닥부터 키울 수 있다는 점입니다.</p>
+<p>[핵심 근거]</p>
+<ol>
+<li>구글 워크스페이스 CLI 연동: 구글 클라우드 콘솔에서 Gmail·드라이브·시트·독스 API를 활성화하고 OAuth 데스크톱 클라이언트를 만들어 인증하면, 헤르메스가 이메일·시트·캘린더를 직접 읽고 쓰는 작업이 가능해짐.</li>
+<li>자연어 요구로 크론잡·이메일 초안 자동화: &#39;광고 메일 오면 관련 키워드를 스스로 정의해 구글시트에 적재&#39; 요청을 하자 헤르메스가 12시간마다 메일을 검색·적재하는 크론잡을 스스로 만들었으며, LLM/코딩 광고는 협의 의향(초기 단가 설정) 있음/이미지툴은 익스필드 이외 거절/현물광고는 IT기기 외 거절 등 개인 기준을 자연어로 지시하자 장기 기억에 기준을 저장하고 스포실십·트리아지 스킬을 자동 생성함.</li>
+<li>큐레이터로 스킬/메모리 과적합 방지: 자그마한 작업까지 과도하게 스킬화하는 자기증식을 방지하기 위해 기본 7일 주기 또는 2시간 미사용 시 백그라운드에서 &#39;큐레이터&#39;가 자동 작동해 오래된/안 쓰는 스킬을 아카이브화하고 불필요한 메모리를 정리함(hermes curator status/run 명령으로 수동 확인·실행·롤백 가능).</li>
+</ol>
+<p>[적용 절차 요약]</p>
+<ol>
+<li>구글 클라우드 콘솔에서 프로젝트 생성 → Gmail/드라이브/시트/독스 API 활성화 → OAuth 데스크톱 클라이언트 생성 후 JSON 키 다운로드(테스트 이메일 등록 필수).</li>
+<li>JSON 키를 슬랙 쓰레드에 첨부해 호스팅어(VPS) 경로에 전달, 인증 URL을 브라우저에서 승인해 연동 완료.</li>
+<li>구글 시트 읽기 테스트 후, &#39;광고 메일 키워드를 네가 스스로 정의해 구글시트에 적재&#39;를 요청해 크론잡 생성(이후 &#39;최근 단위&#39;를 &#39;하루 이내&#39;로 필터 명확화 등 검증·수정 반복).</li>
+<li>개인 선호도(수락/거절 기준, 영어 초안 시 번역본 함께 보고 등)를 자연어로 지시해 장기 기억에 저장하고, 스포신십 이메일 워크플로·트리아지 스킬로 자동 생성.</li>
+<li>카카오 Play MCP를 헤르메스 게이트웨이에 연결(/mcp 명령으로 재시작)해 나에게보내기 채팅 자동 전송 테스트.</li>
+<li>주기적으로 hermes curator status/run으로 스킬·메모리 상태 점검.</li>
+</ol>
+<p>[추가 활용 사례]</p>
+<ul>
+<li>해외 뉴스레터(레이턴트스페이스/레니팟캐스트 등) 수신 시간대를 지정하고 제목+2~3줄 요약 형식으로 가공해 정보 소화 부담 줄임.</li>
+<li>유료 구독 뉴스레터(하루 지나면 유료화)를 구글 독스에 적재·요약해 장기 축적(과거 n8n 워크플로를 헤르메스로 그대로 이관).</li>
+</ul>
+<p>[유의사항]</p>
+<ul>
+<li>큐레이터가 오래된 스킬을 자동 아카이브화해 토큰을 절감해주지만, 중요한 작업은 주기적으로 직접 점검하는 것을 권장.</li>
+<li>카카오 Play MCP로 본인에게 메모 보내기는 가능하나 특정 카톡방에 보내는 기능은 아직 제한적(로컬 카카오 CLI 설치 필요)임.</li>
+</ul>
+<h2>키워드</h2>
+<p>헤르메스, 구글워크스페이스CLI, 이메일자동화, 크론잡, 카카오Play MCP, 큐레이터</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3dcd5308c4dd815b84bff4bdbf5ffe45" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>
