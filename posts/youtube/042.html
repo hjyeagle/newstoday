@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_웹 크롤링 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '웹 크롤링' (영상 17개, 중복 제외 17개) · 2026.10.05 생성 (데이터톤 01) Python 파이썬 크롤링 - requests 로 html 파일 불러오기(정부혁신 국민포…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/042.html">
+<meta property="og:title" content="오늘코드todaycode_웹 크롤링 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '웹 크롤링' (영상 17개, 중복 제외 17개) · 2026.10.05 생성 (데이터톤 01) Python 파이썬 크롤링 - requests 로 html 파일 불러오기(정부혁신 국민포…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/042.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_웹 크롤링</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;웹 크롤링&#39; (영상 17개, 중복 제외 17개) · 2026.10.05 생성</p>
+<h2>(데이터톤 01) Python 파이썬 크롤링  - requests 로 html 파일 불러오기(정부혁신 국민포럼 페이지 가져오기)</h2>
+<ul>
+<li>정부혁신 국민포럼 제안 페이지 수집 목표 설명 및 로봇 배제 표준(<code>robots.txt</code>) 확인 절차를 안내합니다.</li>
+<li><code>robots.txt</code>에 명시된 지침을 준수하여 크롤링 가능 여부와 저작권(크라우드 소싱 운영단 허용)을 사전에 검증합니다.</li>
+<li>경량 브라우저 역할을 하는 <code>requests</code> 라이브러리를 사용해 웹 페이지의 HTML 소스코드를 호출하고 수집합니다.</li>
+<li>서버 트래픽 부담 완화 및 디도스 오인 방지를 위해 <code>random</code>과 <code>time.sleep</code>을 결합한 자연스러운 접근 간격을 설정합니다.</li>
+<li>데이터 수집 작업의 진행률(0%~100%)을 정량적으로 시각화하여 파악하기 위해 <code>tqdm</code> 라이브러리를 도입합니다.</li>
+<li>정규표현식(<code>re</code>) 및 판다스(<code>pandas</code>)를 함께 로드하여 수집된 HTML 데이터를 구조화된 데이터프레임으로 처리하는 기반을 마련합니다.</li>
+</ul>
+<hr>
+<h2>(데이터톤 02) Python 파이썬 크롤링  - BeautifulSoup 을 통해 html 태그에서 href의 링크만 추출(정부혁신 국민포럼 페이지 가져오기)</h2>
+<ul>
+<li>뷰티풀숲(BeautifulSoup)을 활용해 <code>requests</code>로 가져온 HTML 소스코드의 DOM 구조를 파싱합니다.</li>
+<li>크롬 개발자 도구의 &#39;인스펙트(Inspect)&#39; 및 &#39;셀렉터 복사(Copy Selector)&#39; 기능으로 제안 게시물 태그 위치를 파악합니다.</li>
+<li>게시물 목록 내의 제목 요소에서 게시물 상세 페이지로 이동하는 <code>href</code> 상대 경로 URL 링크 항목만 정확히 분리 및 추출합니다.</li>
+<li>추출한 <code>href</code> 링크를 리스트 배열에 담아두고, 게시물 목록 페이지를 순회하며 링크를 지속적으로 수집하는 재귀 함수를 구축합니다.</li>
+<li>HTTP 응답 상태 코드가 200(OK)일 때만 크롤링을 이어가고, 정상 응답이 아닐 경우 재귀 호출을 중단하여 안정성을 확보합니다.</li>
+<li>첫 번째 페이지부터 35번째 페이지까지 순회하며 전체 제안 게시물의 상세 링크 URL을 결합 리스트로 안전하게 완성합니다.</li>
+</ul>
+<hr>
+<h2>(데이터톤 03) Python 파이썬 크롤링  - BeautifulSoup 을 통해 html 태그를 파싱하기(정부혁신 국민포럼 페이지 가져오기)</h2>
+<ul>
+<li>앞서 수집한 상세 게시물 <code>href</code> 링크와 베이스 도메인 주소를 결합하여 상세 페이지 URL 접근 파이프라인을 구축합니다.</li>
+<li>상세 페이지의 HTML 태그에서 <code>get_text(strip=True)</code>를 적용해 공백을 정제하고 게시물 제목, 카테고리, 상세 내용을 추출합니다.</li>
+<li>제안 분야, 제안 시작일, 제안 마감일, 제안자, 추천 투표수 등 다양한 텍스트 정보를 개별 파생변수에 할당합니다.</li>
+<li>URL 문자열 내에 포함된 쿼리 스트링 파라미터를 <code>split()</code> 연산자로 분리하여 게시물 고유 ID 번호를 세부 추출합니다.</li>
+<li>연속적인 서버 요청 시 과부하를 막기 위해 <code>time.sleep(random.randint(1, 2))</code> 형태의 지연 시간을 적용하여 수집합니다.</li>
+<li>171개 제안 데이터를 리스트 및 판다스 데이터프레임으로 구조화한 후 CSV 파일(<code>to_csv</code>)로 안전하게 저장 및 보존합니다.</li>
+</ul>
+<hr>
+<h2>[1/25]  서울시 코로나19 사이트 Pandas 단 한 줄로 크롤링 하기</h2>
+<ul>
+<li>서울시 코로나19 발생 현황 웹페이지의 확진자 데이터 테이블 수집 파이프라인을 구성합니다.</li>
+<li>별도의 BeautifulSoup이나 Requests 호출 없이 판다스의 <code>pd.read_html(url)</code> 단 한 줄로 HTML 내 <code>&lt;table</code> 태그를 자동 파싱합니다.</li>
+<li><code>read_html()</code> 결과로 반환된 테이블 리스트에서 원하던 확진자 상세 정보 테이블 인덱스를 선택하여 데이터프레임으로 추출합니다.</li>
+<li>가장 최근 확진 발생 일자 수치를 추출하고 <code>.replace(&#39;.&#39;, &#39;_&#39;)</code> 정제를 거쳐 가독성 높은 파일명을 생성합니다.</li>
+<li><code>to_csv()</code> 저장 시 불필요한 인덱스 생성을 막기 위해 <code>index=False</code> 옵션을 부여하여 CSV 파일로 내보냅니다.</li>
+<li>한글 인코딩 에러 방지를 위해 기본 <code>utf-8</code> 및 엑셀 호환용 <code>cp949</code>/<code>ms949</code> 옵션 지정의 차이점과 활용법을 제시합니다.</li>
+</ul>
+<hr>
+<h2>[1/5]  판다스로 초간단 위키페이지 크롤링하기 - 1925년부터의 인구 통계 분석하기</h2>
+<ul>
+<li>위키피디아 &#39;대한민국의 인구&#39; 문서 내에 작성되어 있는 역사적 인구 통계 표 데이터를 수집합니다.</li>
+<li><code>pd.read_html()</code> 함수에 위키피디아 URL을 전달하여 페이지 내 모든 HTML 테이블 태그를 한 번에 불러옵니다.</li>
+<li>리스트 형태로 반환된 여러 표 중 1925년부터 2019년까지의 연도별 추계인구, 출생자 수, 사망자 수, 합계출산율 표를 색인합니다.</li>
+<li>수집된 데이터프레임의 <code>shape</code>, <code>head()</code>, <code>tail()</code>을 조회하여 데이터의 전체 행·열 크기와 정상 수집 여부를 검증합니다.</li>
+<li>별도의 복잡한 크롤링 코드 작성 없이 HTML 테이블을 판다스 데이터프레임으로 즉시 변환하는 파이프라인의 효율성을 입증합니다.</li>
+</ul>
+<hr>
+<h2>[1/5] 크롤링?! 일별시세를 직접 수집해보자!</h2>
+<ul>
+<li>파이낸스 데이터 리더(FinanceDataReader)를 사용하지 않고 네이버 금융 웹 페이지에서 직접 주식 일별 시세를 수집하는 접근법을 제시합니다.</li>
+<li>삼성전자 주가 시세 페이지 URL을 <code>pd.read_html()</code>에 전달했으나 기대했던 일별 시세 표가 불러와지지 않는 문제를 발견합니다.</li>
+<li>시가, 고가, 저가, 종가, 거래량 등 핵심 일별 시세 데이터가 메인 URL의 테이블 태그 내에 존재하지 않음을 확인합니다.</li>
+<li>크롤링 수행 전 네이버 금융의 이용 약관 및 <code>robots.txt</code> 규정을 점검하고 법적 면책 사항을 안내합니다.</li>
+<li>메인 주소 호출 시 일별 시세가 수집되지 않는 원인을 추적하기 위해 브라우저 개발자 도구를 통한 구조 분석의 필요성을 제기합니다.</li>
+</ul>
+<hr>
+<h2>[1/7] 데이터 수집 VS 크롤링 - 서울시 코로나19 발생현황 사이트 수집준비</h2>
+<ul>
+<li>데이터를 단순히 읽어오는 &#39;웹 데이터 수집/스크래핑&#39;과 하이퍼링크를 재귀 탐색하는 &#39;크롤링&#39; 개념의 명확한 차이점을 정의합니다.</li>
+<li>서울시 코로나19 발생 현황 웹사이트의 개편으로 인해 기존 <code>pd.read_html()</code> 한 줄 수집 방식이 작동하지 않는 한계를 파악합니다.</li>
+<li>데이터 수집 환경 구축을 위해 <code>requests</code>, <code>BeautifulSoup</code>, <code>tqdm</code> 라이브러리 설치 및 아나콘다 프롬프트/터미널 가상환경 설정을 안내합니다.</li>
+<li><code>requests</code>는 브라우저처럼 웹 페이지 소스를 가져오고, <code>BeautifulSoup</code>은 HTML을 해석하며, <code>tqdm</code>은 진행률을 나타냄을 정리합니다.</li>
+<li>웹사이트 개편 및 데이터 공개 방식 변화에 따라 수집 코드가 유연하게 대응되어야 함을 설명합니다.</li>
+</ul>
+<hr>
+<h2>[2/5] 분명 그 URL 맞는데 왜 데이터를 못 가져올까? 답은 브라우저에 있다?!</h2>
+<ul>
+<li>메인 페이지 URL 호출 시 일별 시세를 가져오지 못한 원인을 크롬 개발자 도구의 &#39;네트워크(Network)&#39; 탭으로 분석합니다.</li>
+<li>네트워크 탭의 JS, XHR, Doc 등 세부 필터를 활용해 백그라운드 비동기 통신으로 호출되는 실제 데이터 패킷을 탐색합니다.</li>
+<li>일별 시세 표가 메인 URL이 아닌 <code>sise_day.nhn</code>이라는 별도의 비동기 프레이밍 URL을 통해 로드됨을 찾아냅니다.</li>
+<li>찾아낸 실제 데이터 호출 URL(<code>sise_day.nhn?code=...&amp;page=1</code>)을 <code>pd.read_html()</code>에 입력하여 일별 시세를 성공적으로 로드합니다.</li>
+<li><code>dropna(how=&#39;all&#39;)</code> 전처리를 적용하여 네이버 금융 표의 구분선 공백 행(결측치)을 제거하고 깔끔한 데이터프레임으로 정제합니다.</li>
+<li>F-String 문법을 적용하여 종목코드(<code>item_code</code>)와 페이지 번호를 파라미터 변수로 받는 가변 수집 구조를 설계합니다.</li>
+</ul>
+<hr>
+<h2>[2/7] 데이터 수집 전 로봇배제표준, 저작권, 무리한 네트워크 요청 확인하기</h2>
+<ul>
+<li>웹 데이터 수집 시작 전 필수 점검 사항인 로봇 배제 표준(<code>robots.txt</code>), 저작권, 네트워크 요청 매너를 안내합니다.</li>
+<li><code>robots.txt</code> 내 <code>Disallow</code> 및 <code>Allow</code> 항목을 점검하여 검색 로봇 수집 허용 범위를 확인하는 프로토콜을 강조합니다.</li>
+<li>국가 및 공공기관 사이트의 공공누리 저작권 라이선스 정책 및 출처 표기 의무 사항을 확인합니다.</li>
+<li>반복적인 무리한 HTTP 요청은 서버 과부하 및 디도스(DDoS) 공격으로 오인될 수 있음을 경고합니다.</li>
+<li><code>time.sleep()</code> 지연 시간을 코드에 반드시 포함하여 일정 시간 간격을 두고 요청을 전달하는 매너 있는 데이터 수집을 강조합니다.</li>
+</ul>
+<hr>
+<h2>[3/25] 크롤링한 csv파일 판다스로 로드하기</h2>
+<ul>
+<li>수집된 코로나19 CSV 파일 로드 및 탐색적 데이터 분석(EDA) 준비 과정을 다룹니다.</li>
+<li><code>pd.read_csv()</code> 호출 시 인코딩 문제(<code>utf-8</code> vs <code>cp949</code>)로 인한 <code>UnicodeDecodeError</code> 해결법을 실습합니다.</li>
+<li>주피터 노트북 파일(<code>.ipynb</code>)과 동일한 디렉토리에 CSV 파일 위치 설정 또는 파일 경로 지정 방법을 안내합니다.</li>
+<li>수집된 데이터프레임의 연번 컬럼을 기준으로 <code>sort_values(ascending=False)</code>를 적용해 최신순으로 정렬합니다.</li>
+<li><code>df.shape</code>, <code>head()</code>, <code>tail()</code>을 통해 전체 1,321건의 발생 데이터 수치 및 초기 1호 확진자 발생 시점(1월 24일)을 확인합니다.</li>
+</ul>
+<hr>
+<h2>[3/7] 소스코드에서 보였던 데이터 어디에 있을까?! 브라우저의 네트워크탭과 JSON형식 이해하기</h2>
+<ul>
+<li>개편된 서울시 코로나19 웹사이트의 데이터 위치를 브라우저 네트워크 탭(XHR/JS)으로 탐색합니다.</li>
+<li>백엔드가 프론트엔드로 비동기 데이터를 전달할 때 사용하는 표준 포맷인 JSON(JavaScript Object Notation)을 이해합니다.</li>
+<li>JSON 포맷은 키-값(Key-Value) 쌍 방식의 개방형 데이터 포맷으로, 판다스에서 <code>pd.DataFrame()</code>으로 즉시 변환 가능함을 확인합니다.</li>
+<li>네트워크 탭의 프리뷰(Preview) 메뉴를 통해 비동기 통신 응답 패킷 구조를 사전에 가시적으로 확인합니다.</li>
+<li>페이지 번호에 따라 비동기 요청 URL의 쿼리 스트링 파라미터가 변경되는 구조를 파악하고 자동화 수집을 설계합니다.</li>
+</ul>
+<hr>
+<h2>[4/7] read html로데이터를읽어올수없는이유와기존의수집방법</h2>
+<ul>
+<li>기존 <code>pd.read_html()</code> 방식이 개편된 사이트에서 동작하지 않는 기술적 원인을 분석합니다.</li>
+<li>사이트가 서버 측 렌더링에서 프론트엔드 자바스크립트 기반 동적 비동기 렌더링 방식으로 전환되었음을 확인합니다.</li>
+<li><code>read_html()</code>은 초기 수신된 정적 HTML 소스 내의 <code>&lt;table</code> 태그만 읽기 때문에 자바스크립트로 늦게 생성되는 표는 읽지 못합니다.</li>
+<li>웹사이트 개편이나 자바스크립트 동적 렌더링 도입 시 기존 HTML 스크래핑 방식 대신 네트워크 탭을 통한 API 분석이 필요함을 도출합니다.</li>
+<li>수집 목적과 사이트 구조 변화에 따라 적절한 데이터 수집 방식을 다르게 선택해야 함을 강조합니다.</li>
+</ul>
+<hr>
+<h2>[5/7] 네트워크탭보는방법과수집할URL찾고요청하는함수만들기</h2>
+<ul>
+<li>네트워크 탭에서 찾은 비동기 API 요청 URL의 <code>draw</code>, <code>start</code>, <code>length</code> 쿼리 파라미터 구조를 분석합니다.</li>
+<li><code>requests.get()</code> 함수를 사용해 비동기 API 패킷을 호출하고 <code>.json()</code> 메소드로 JSON 응답 데이터를 변환합니다.</li>
+<li>JSON 내부의 <code>data</code> 키 데이터 리스트를 <code>pd.DataFrame()</code>에 전달하여 깔끔한 데이터프레임으로 구축합니다.</li>
+<li>전체 데이터 개수를 받아 100개씩 나눠 페이지 수를 연산하고, 전체 페이지를 순회하는 수집 함수를 제작합니다.</li>
+<li>수집 함수를 통해 전체 페이지의 확진자 JSON 데이터를 받아 모은 뒤 <code>pd.concat()</code>으로 단일 데이터프레임으로 병합합니다.</li>
+</ul>
+<hr>
+<h2>[책 리뷰] (크롤링) 파이썬으로 웹 크롤러 만들기(2판) : 초간단 나만의 웹 크롤러로 원하는 데이터를 가져오는 방법</h2>
+<ul>
+<li>라이언 미첼 저, &#39;파이썬으로 웹 크롤러 만들기(2판)&#39; 실무 가이드북을 리뷰합니다.</li>
+<li>교재 실습 코드가 <code>.ipynb</code> 주피터 노트북 파일로 제공되어 구글 콜랩(Google Colab) 환경에서 즉시 실행 가능함을 설명합니다.</li>
+<li>저자가 웹 크롤링 실습 전용 테스트 웹사이트를 직접 구축하여 사이트 개편이나 구조 변경 없이 안정적으로 크롤링 실습을 지원합니다.</li>
+<li>BeautifulSoup 기초, 예외 처리(<code>try-except</code>), 정규표현식, 자연어 처리(NLP) 및 데이터 윤리·합법성 챕터를 포함합니다.</li>
+<li>크롤링 수행 시 저작권 준수, <code>robots.txt</code> 확인 및 웹 스크래핑의 법적 가이드라인 준수의 중요성을 강조합니다.</li>
+</ul>
+<hr>
+<h2>[책 리뷰] 파이썬 코딩 도장[2/2]  - unit64 기상청 도시별 현재날씨 Python requests로 크롤링해서 분석하기</h2>
+<ul>
+<li>온라인에 전면 무료 공개되어 있는 대표적 파이썬 입문 교재 &#39;파이썬 코딩 도장&#39; 유닛 64 실습을 리뷰합니다.</li>
+<li><code>requests</code>와 <code>BeautifulSoup</code>을 활용해 기상청 도시별 날씨 웹 페이지 데이터를 수집하는 전체 과정을 다룹니다.</li>
+<li>기상청 웹사이트의 HTML 소스 변경으로 인한 코드 에러를 방지하기 위해 정적 기상청 테스트 표 페이지를 불러와 파싱합니다.</li>
+<li>뷰티풀숲의 <code>find_all(&#39;tr&#39;)</code> 및 <code>find(&#39;td&#39;)</code>를 순회하며 각 도시명, 현재 날씨, 기온, 습도 데이터를 리스트로 정제합니다.</li>
+<li>수집된 날씨 데이터를 데이터프레임으로 가공하고 <code>to_csv()</code> 저장 후 Matplotlib/Seaborn 한글 폰트 설정으로 기온 시각화를 수행합니다.</li>
+</ul>
+<hr>
+<h2>댓글 수백 수천개 분석하기?! [1/5] 이벤트 데이터 크롤링 feat. 인프런 새해 다짐 이벤트</h2>
+<ul>
+<li>인프런 새해 다짐 이벤트 페이지의 수백~수천 개 댓글 데이터를 마케팅 분석 목적으로 수집합니다.</li>
+<li>인프런 사이트의 <code>robots.txt</code>를 확인하여 이벤트 페이지 경로가 수집 금지(<code>Disallow</code>) 목록에 없음을 사전에 검증합니다.</li>
+<li><code>requests.get()</code>으로 이벤트 페이지 소스를 수집하고 <code>BeautifulSoup(..., &#39;html.parser&#39;)</code>로 HTML 객체로 전환합니다.</li>
+<li>개발자 도구를 통해 댓글 요소 태그의 클래스명 및 ID 셀렉터를 확인하고 <code>select()</code> 메소드로 댓글 텍스트를 추출합니다.</li>
+<li><code>tqdm</code> 진행률 표시바를 연동하여 1,600여 개 댓글 수집 상태를 정량 확인하고 <code>to_csv()</code>로 파일을 저장합니다.</li>
+</ul>
+<hr>
+<h2>인프런 강의 소개 - 딸깍! AI로 전문가처럼 웹 크롤링 &amp; 데이터 분석(w. GEMINI CLI)</h2>
+<ul>
+<li>VS Code, 제미나이 CLI(GEMINI CLI), UV 기반 가상환경을 활용한 생성형 AI 기반 차세대 웹 크롤링 &amp; 데이터 분석 강의를 소개합니다.</li>
+<li>초고속 파이썬 패키지 매니저인 <code>uv</code>를 사용해 라이브러리 가상환경을 신속하게 구축합니다.</li>
+<li>예스24, 교보문고 등 실제 도서 쇼핑몰 웹사이트를 대상으로 HTML 구조 및 비동기 패킷 패턴을 분석하여 AI에게 프롬프트를 전달합니다.</li>
+<li>AI가 자동 생성해 준 크롤링 코드를 그대로 복사·붙여넣기 하는 것에 그치지 않고, 코드의 동작 원리를 해석하고 필요한 주석 및 예외 처리를 직접 보완합니다.</li>
+<li>셀레니움(Selenium) 등 무거운 브라우저 제어 도구 없이도 비동기 패킷 파악으로 더 가볍고 빠르게 데이터를 자동 수집하는 핵심 노하우를 제시합니다.</li>
+<li>데이터 수집부터 분석, 스트림릿 대시보드 시각화, 파워포인트 보고서 자동 생성까지 AI 에이전트와 결합된 통합 데이터 워크플로우를 완성합니다.</li>
+</ul>
+<hr>
+<h2>라벨 종합 정리</h2>
+<p>웹 데이터 수집 시 사전에 <code>robots.txt</code>와 저작권, 공공누리 라이선스를 확인하고 <code>time.sleep()</code> 지연 시간을 두어 서버에 무리를 주지 않는 매너가 필수적입니다.</p>
+<p>정적 HTML 표 구조는 <code>pandas.read_html()</code>이나 <code>requests</code>와 <code>BeautifulSoup</code> 조합으로 다루고, 동적 비동기 렌더링 사이트는 브라우저 네트워크 탭(XHR/JS)을 통해 숨겨진 JSON API 패킷 주소를 찾아 수집합니다.</p>
+<p>수집된 데이터는 결측치 정제와 F-String 파라미터 변수화, <code>pd.concat()</code> 병합을 거쳐 CSV 파일로 저장하며, 최신 제미나이 CLI와 같은 AI 에이전트를 결합하여 크롤링부터 대시보드 시각화 및 자동 보고서 생성까지 실무 워크플로우를 완성할 수 있습니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd81d3a5fffa277b6ea11d" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

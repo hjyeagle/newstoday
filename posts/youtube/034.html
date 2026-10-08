@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_개발 환경 및 도구 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '개발 환경 및 도구' (영상 13개, 중복 제외 13개) · 2026.10.05 생성 RDBMS vs 벡터 데이터베이스, 무엇이 다를까? RDBMS는 정형 데이터를 정교한 스키마 기반…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/034.html">
+<meta property="og:title" content="오늘코드todaycode_개발 환경 및 도구 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '개발 환경 및 도구' (영상 13개, 중복 제외 13개) · 2026.10.05 생성 RDBMS vs 벡터 데이터베이스, 무엇이 다를까? RDBMS는 정형 데이터를 정교한 스키마 기반…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/034.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_개발 환경 및 도구</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;개발 환경 및 도구&#39; (영상 13개, 중복 제외 13개) · 2026.10.05 생성</p>
+<h2>RDBMS vs 벡터 데이터베이스, 무엇이 다를까?</h2>
+<ul>
+<li>RDBMS는 정형 데이터를 정교한 스키마 기반의 테이블(행과 열)로 관리하며, ACID 원칙을 준수해 데이터 무결성과 트랜잭션 일관성을 보장합니다.</li>
+<li>벡터 데이터베이스(Vector DB)는 텍스트·이미지 등 비정형 데이터를 밀집 벡터(Vector Embedding) 형태의 고차원 배열로 저장하고 유사도 검색(코사인, 유클리드 거리)에 특화되어 있습니다.</li>
+<li>RDBMS는 정확한 키워드 및 조건 필터링(SQL)에 강하지만, 벡터 DB는 ANN(Approximate Nearest Neighbor) 알고리즘을 사용해 고속 유사도 검색을 수행합니다.</li>
+<li>파이스(FAISS)는 메타 AI가 만든 고성능 인메모리 벡터 검색 라이브러리로, 데이터 영속성이나 트랜잭션 기능이 없어 별도의 벡터 DB(크로마, 파인콘 등)와 구분됩니다.</li>
+<li>생성형 AI의 환각(Hallucination) 현상을 극복하고 최신 정보를 제공하기 위한 RAG(검색 증강 생성) 파이프라인에서 벡터 DB는 핵심 의미 검색 엔진 역할을 수행합니다.</li>
+<li>실무에서는 정확한 조건과 메타데이터 필터링은 RDBMS가 담당하고 의미 기반 문맥 검색은 벡터 DB가 담당하는 하이브리드(Hybrid) 접근 방식이 유용합니다.</li>
+<li>안드레이 카파시 자막 번역 예시처럼 긴 API 호출 결과를 SQLite 등 RDBMS에 실시간 저장·업데이트하면 API 끊김 시 과금 방지 및 중단 시점 재개 관리가 효율적입니다.</li>
+</ul>
+<hr>
+<h2>[1/2] 데이터 필터링, 정렬 코드 한 줄로 이렇게 쉽게? colab data table</h2>
+<ul>
+<li>구글 코랩(Google Colab)에서 제공하는 <code>data_table</code> 코드 스니펫(<code>pandas.display_data_table_with_interactive_table</code>)을 사용하면 대화형 데이터 프레임 보기가 가능합니다.</li>
+<li>기존 판다스의 정적 표 스타일과 달리 웹사이트 게시판처럼 페이지당 출력 개수(10개, 25개, 50개, 100개 등)를 손쉽게 조정할 수 있습니다.</li>
+<li>각 컬럼 상단의 필터(Filter) 창을 통해 인덱스 범위를 지정하거나 원하는 특정 텍스트 키워드를 입력해 대화식으로 빠르게 조회할 수 있습니다.</li>
+<li>대소문자를 엄격히 구분하는 일반 판다스 쿼리와 달리 대소문자 구분 없이 소문자로만 입력해도 대문자 데이터(예: USA)까지 통합 검색해 줍니다.</li>
+<li>수치형 데이터 컬럼의 경우 최소값과 최대값 범위를 지정하여 해당 범위 내의 조건부 데이터만 즉시 색인해 볼 수 있습니다.</li>
+<li>인터랙티브 테이블 표시 기능을 해제하고 원래의 판다스 정적 데이터프레임 스타일로 복원하는 방법도 간편하게 지원됩니다.</li>
+</ul>
+<hr>
+<h2>[2/2] 데이터 필터링, 정렬 코드 한 줄로 이렇게 쉽게? colab data table</h2>
+<ul>
+<li><code>google.colab.data_table</code> 확장 기능(extension)을 <code>%load_ext</code>로 로드하거나 <code>unload</code>하여 코랩 환경에서 자유롭게 켜고 끌 수 있습니다.</li>
+<li>대용량 데이터셋(예: 3,000건 이상의 로우)을 다룰 때 판다스의 <code>head()</code>, <code>tail()</code> 생략 기호 없이 전체 행을 페이지 넘김으로 탐색할 수 있습니다.</li>
+<li>인터랙티브 테이블의 각 컬럼 헤더를 클릭하는 것만으로 오름차순 및 내림차순 정렬을 빠르게 실행할 수 있습니다.</li>
+<li>범주형/문자열 데이터는 단일 키워드로 필터링하고, 수치 데이터는 슬라이더 또는 범위 입력 방식으로 빠르게 조건 검색할 수 있습니다.</li>
+<li><code>DataTable</code> 모듈을 직접 호출하면서 <code>num_rows_per_page</code> 등의 파라미터를 설정해 페이지당 표시 로우 수를 맞춤 지정할 수 있습니다.</li>
+<li>코드를 추가 작성하지 않고도 시각적으로 빠르게 데이터를 탐색(EDA) 및 필터링할 수 있어 데이터 분석 초기 단계에서 생산성을 높여줍니다.</li>
+</ul>
+<hr>
+<h2>아나콘다 소개와 주피터 확장 설치방법 소개</h2>
+<ul>
+<li>아나콘다(Anaconda)는 파이썬 언어와 주피터 노트북, 다양한 데이터 분석·시각화·머신러닝 라이브러리를 한 번에 설치해 주는 통합 가상환경 배포판입니다.</li>
+<li>복잡한 환경 설정 절차와 라이브러리 간 의존성 충돌 문제를 깔끔하게 해결해 주어 입문자들의 환경 설정 부담을 크게 줄여줍니다.</li>
+<li>윈도우 OS 사용 시 계정명이 한글로 되어 있으면 인코딩 경로 에러가 발생할 수 있으므로 &#39;All Users&#39;로 설치하거나 영문 계정 사용을 권장합니다.</li>
+<li>설치 과정 중 &#39;Add Anaconda to my PATH environment variable&#39; 패스 설정 체크박스를 반드시 선택해야 터미널에서 명령어가 정상 작동합니다.</li>
+<li>추가 패키지 설치 시 아나콘다 프롬프트나 터미널에서 반드시 <code>(base)</code> 가상환경 표시가 떠 있는지 확인 후 <code>conda install</code> 명령을 실행해야 합니다.</li>
+<li>주피터 익스텐션(<code>jupyter_contrib_nbextensions</code>)을 설치하면 목차(Table of Contents, TOC) 생성 등 주피터 노트북의 편의 기능을 대폭 확장할 수 있습니다.</li>
+<li>설치 후 익스텐션 탭이 보이지 않을 경우 검은색 터미널 서버 창을 완전히 종료하고 주피터 노트북을 재시작하거나 pip 명령어로 재설치해 조치합니다.</li>
+</ul>
+<hr>
+<h2>개인에게는 무료지만 기업에서 유료인 아나콘다 대신 파이썬 직접 설치하고 주피터와 라이브러리도 내 입맛대로 관리하기</h2>
+<ul>
+<li>아나콘다는 기업 유료 라이선스 정책 변경으로 인해, 기업 환경에서는 파이썬 공식 사이트(<code>python.org</code>)에서 직접 설치하여 관리하는 방식이 권장됩니다.</li>
+<li>윈도우 설치 시 &#39;Add python.exe to PATH&#39; 체크박스를 반드시 선택해야 커맨드 창에서 파이썬 명령어 인식 오류가 발생하지 않습니다.</li>
+<li>맥OS 환경에서는 설치 후 <code>Install Certificates.command</code> 파일을 더블 클릭하여 SSL 인증서를 등록해야 웹 스크래핑이나 pip 다운로드 오류를 방지할 수 있습니다.</li>
+<li>프로젝트별 라이브러리 꼬임을 방지하기 위해 파이썬 내장 모듈인 <code>venv</code>를 활용해 독립된 가상환경(<code>python -m venv &lt;가상환경이름&gt;</code>)을 생성합니다.</li>
+<li>가상환경을 활성화(<code>source bin/activate</code> 또는 <code>Scripts\activate</code>)한 후 <code>pip install jupyterlab</code>으로 가벼운 주피터 랩 환경을 구축합니다.</li>
+<li>필요한 핵심 라이브러리(pandas, numpy, matplotlib, seaborn, koreanize-matplotlib)를 pip 한 줄 명령어로 한꺼번에 설치하고 독립적으로 관리할 수 있습니다.</li>
+<li>주피터 랩(JupyterLab)은 <code>.ipynb</code> 파일 외에도 <code>.py</code> 파이썬 스크립트 직접 편집 기능을 지원하므로 주피터 노트북보다 향상된 실무 환경을 제공합니다.</li>
+</ul>
+<hr>
+<h2>단순함이란 궁극의 정교함이다 –DuckDB 인 액션 도서 리뷰</h2>
+<ul>
+<li>덕디비(DuckDB)는 SQLite처럼 별도 서버 설치 없이 파이썬/코랩/주피터 환경에서 단일 파일이나 인메모리로 실행되는 경량 컬럼 기반(Columnar) OLAP 데이터베이스입니다.</li>
+<li>기존 CSV 파일에 비해 컬럼 기반 압축 방식을 사용하여 용량을 대폭 줄여주고, 메타데이터를 활용해 필요한 컬럼만 읽어오는 스트리밍 처리로 대용량 탐색이 매우 빠릅니다.</li>
+<li>판다스는 메모리 상한으로 인해 5~10GB 이상 데이터 처리 시 속도가 크게 느려지거나 멈추지만, DuckDB는 단일 머신에서 수십~수백 GB 대용량 데이터 쿼리를 거뜬히 수행합니다.</li>
+<li>표준 SQL 문법을 지원하여 기존 SQL 사용자나 DB 엔지니어가 추가적인 복잡한 프레임워크 학습 없이 즉시 대용량 분석에 적용할 수 있습니다.</li>
+<li>복잡하고 무거운 아파치 스파크(Apache Spark) 클러스터 구축 없이 로컬 파일(CSV, Parquet, JSON 등)이나 S3 버킷 데이터를 즉시 SQL로 조회할 수 있습니다.</li>
+<li>스트림릿(Streamlit)을 결합한 실시간 데이터 애플리케이션 구축 및 아파치 슈퍼셋(Apache Superset)과의 대시보드 연동 예제까지 실무 적용 범위를 제시합니다.</li>
+</ul>
+<hr>
+<h2>📂 생성형AI도 잘 알려주지 못하는 구글 드라이브 나만의 경로 마운트 하기 🚀</h2>
+<ul>
+<li>코랩에 직접 파일(예: 200MB 이상의 대용량 CSV/ZIP)을 업로드하면 세션이 끊길 때마다 소실되므로, Google Drive 마운트(<code>drive.mount(&#39;/content/drive&#39;)</code>)를 활용하는 것이 효율적입니다.</li>
+<li>마운트 후 <code>%cd</code> 매직 커맨드로 구글 드라이브 내 작업 폴더(<code>/content/drive/MyDrive/data</code>)로 이동하면 로컬 파일 경로처럼 손쉽게 접근할 수 있습니다.</li>
+<li>리눅스 <code>unzip</code> 명령을 통해 구글 드라이브 폴더 내 압축 파일(ZIP)을 코랩 세션 끊김 없이 한 번에 해제하고 디렉토리를 구조화할 수 있습니다.</li>
+<li>폴더명이나 파일명에 공백이 포함된 경우 신택스 에러가 발생할 수 있으므로 따옴표(<code>&quot;&quot;</code>)로 경로 전체를 묶어주어 에러를 방지합니다.</li>
+<li>운영체제/한글 인코딩 차이로 파일명 텍스트 비교 시 파이썬 조건문에서 파일이 인식되지 않는 경우, 실제 파일명을 그대로 복사해 오면 정확히 로드됩니다.</li>
+<li>한글이 포함된 공공데이터 수집 시 <code>encoding=&#39;utf-8&#39;</code> 또는 <code>encoding=&#39;cp949&#39;</code> 옵션을 상황에 맞게 지정하여 데이터프레임 로드 오류를 해결합니다.</li>
+<li>코랩의 내장 생성형 AI 코드 작성 기능을 접목하여 드라이브 내 여러 CSV 파일을 자동으로 병합하고 기본 EDA 및 시각화를 빠르게 수행할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[2/3] Visual Studio Code 설치하고 파이썬 실행이 가장 어려웠다면? Copilot 설정하고 파이썬 실행해 보기</h2>
+<ul>
+<li>VS Code는 기본 파이썬 IDLE보다 우수한 개발 환경을 제공하며, 각 OS에 맞는 설치 후 파이썬 확장을 필수적으로 등록해야 합니다.</li>
+<li>마이크로소프트 공식 익스텐션 패키지(Python, Pylance, Jupyter, Python Debugger)를 설치해야 코드 자동 완성, 타입 체킹, 문법 오류 감지가 정상 작동합니다.</li>
+<li><code>.py</code> 파이썬 스크립트 작성 후 우측 상단의 플레이(Play) 버튼을 누르거나 터미널에서 <code>python &lt;파일명.py&gt;</code>를 입력해 즉시 실행합니다.</li>
+<li>코드 자동 포매팅(Autopep8, Black 등)과 플레이크8(Flake8) 스타일 검사기를 통합하여 코드 컨벤션 준수와 품질 유지를 돕습니다.</li>
+<li>깃허브 코파일럿(GitHub Copilot)을 연결하면 코드 자동 완성, 주석 기반 코드 생성, 구구단 출력 등 기초 코딩 작성을 손쉽게 자동화할 수 있습니다.</li>
+<li>코파일럿 인라인 챗(<code>Cmd+I</code> 또는 <code>Ctrl+I</code>) 기능으로 기존 코드를 함수로 리팩토링(Refactoring)하거나 영문 주석을 한글 독스트링(Docstring)으로 변환할 수 있습니다.</li>
+</ul>
+<hr>
+<h2>우울할 때 코기, 아기고양이 모드 - google colaboratory</h2>
+<ul>
+<li>구글 코랩(Google Colab) 환경의 [도구] - [설정] - [기타(Miscellaneous)] 메뉴에서 &#39;코기 모드(Corgi Mode)&#39;와 &#39;아기고양이 모드(Kitty Mode)&#39;를 활성화할 수 있습니다.</li>
+<li>모드를 켜면 웰시코기 강아지와 아기고양이 캐릭터가 코랩 상단 바 위를 귀엽게 지속적으로 걸어 다닙니다.</li>
+<li>연말 크리스마스 시즌 등의 이벤트 시기에는 캐릭터가 산타 모자를 쓰는 등 소소한 시각적 재미를 제공합니다.</li>
+<li>코딩 중 지치거나 슬럼프·우울감이 느껴질 때 귀여운 동물 캐릭터를 보며 기분 전환을 하고 즐겁게 학습을 지속할 수 있도록 돕는 유쾌한 보조 기능입니다.</li>
+<li>별도의 코드 실행이나 분석 성능에 영향을 주지 않으면서 코랩 사용 환경을 취향에 맞게 꾸밀 수 있습니다.</li>
+</ul>
+<hr>
+<h2>[3/3] VSCode 에서 주피터 실행이 잘 안 되었다면? Visual Studio Code 에서 Jupyter Notebook 사용하기</h2>
+<ul>
+<li>VS Code 및 Cursor 에디터에서 <code>.ipynb</code> 주피터 노트북 파일을 생성하고 편집하기 위해서는 Jupyter 익스텐션과 IPyKernel 설치가 필수적입니다.</li>
+<li>프로젝트별 의존성 충돌과 라이브러리 꼬임을 방지하기 위해 터미널에서 <code>python -m venv venv</code>로 독립 가상환경을 구축하고 사용합니다.</li>
+<li>가상환경 활성화 후 <code>pip install jupyter notebook ipykernel pandas matplotlib seaborn koreanize-matplotlib</code>를 한 줄로 설치합니다.</li>
+<li>VS Code 우측 상단 &#39;커널 선택(Select Kernel)&#39; 메뉴에서 작성한 가상환경의 파이썬 인터프리터를 정확히 지정해야 노트북 셀이 정상 작동합니다.</li>
+<li>VS Code가 백그라운드에서 주피터 서버를 자동으로 가동해 주므로 수동으로 터미널에서 <code>jupyter notebook</code> 서버를 띄울 필요 없이 편리합니다.</li>
+<li>코파일럿(Copilot) 또는 외부 AI(구글 AI 스튜디오 등)를 활용하여 시본(Seaborn) 펭귄 데이터셋 로드, 상관계수 마스크 처리, 히트맵 시각화 코드를 빠르게 작성하고 리팩토링할 수 있습니다.</li>
+<li><code>numeric_only=True</code> 옵션 등 판다스 버전에 따른 파라미터 에러가 발생할 경우 AI 지원이나 오류 메시지 점검을 통해 코드를 즉시 수정·검증합니다.</li>
+</ul>
+<hr>
+<h2>주피터 노트북 사용법과 단축키 jupyter notebook shortcut</h2>
+<ul>
+<li>주피터 노트북은 코딩과 결과 확인, 마크다운(Markdown) 문서화를 브라우저 인터페이스 상에서 동시에 수행할 수 있는 인터랙티브 개발 도구입니다.</li>
+<li>아나콘다 설치 시 포함되며, 프로젝트 관리를 위해 루트 디렉토리 대신 전용 작업 폴더를 생성해 관리하는 것이 파일 분실을 예방합니다.</li>
+<li>셀 선택 상태에서 <code>Enter</code>키를 누르면 편집 모드(Green/Edit), <code>ESC</code>키를 누르면 명령 모드(Blue/Command)로 전환됩니다.</li>
+<li>핵심 단축키: <code>Shift + Enter</code>(셀 실행 후 다음 셀 이동), <code>A</code>(위 셀 추가), <code>B</code>(아래 셀 추가), <code>DD</code>(셀 삭제), <code>Z</code>(삭제 셀 복원), <code>M</code>(마크다운 셀 변환), <code>Y</code>(코드 셀 변환).</li>
+<li>마크다운 문법에서 <code>#</code>(제목 1~6), <code>-</code>(불릿 리스트), <code>**텍스트**</code>(강조) 등을 활용해 시각화 차트와 코드에 설명 문서를 체계적으로 덧붙일 수 있습니다.</li>
+<li>무한 루프나 오래 걸리는 실행 셀은 상단의 멈춤(Stop/Interrupt) 버튼을 누르고, 결과 초기화 필요 시 <code>Kernel -&gt; Restart &amp; Clear Output</code>을 실행합니다.</li>
+<li>목차 익스텐션(Table of Contents, TOC)을 활성화하면 마크다운 제목 기준의 자동 인덱스를 생성하여 수백 줄의 긴 분석 노트북 탐색을 용이하게 해줍니다.</li>
+</ul>
+<hr>
+<h2>[1/3] (왕초보를 위한) 맥에서 혹은 윈도우에서 파이썬 설치할 때 이거? 빼 먹으면 안 된다?! - 파이썬 설치 실수 없이 끝내기</h2>
+<ul>
+<li>파이썬 공식 홈페이지(<code>python.org</code>)에서 본인 OS 및 64비트에 맞는 최신 안정 버전을 다운로드하여 설치합니다.</li>
+<li>윈도우(Windows) 사용자는 인스톨러 첫 화면 하단의 &#39;Add python.exe to PATH&#39; 옵션을 반드시 체크해야 터미널 명령 프롬프트에서 파이썬 명령어가 작동합니다.</li>
+<li>맥OS(macOS) 사용자는 설치 완료 후 폴더 내 <code>Install Certificates.command</code> 커맨드 파일을 더블 클릭해 실행해야 SSL/TLS 통신 및 pip 다운로드 오류를 방지할 수 있습니다.</li>
+<li>설치 완료 시 함께 제공되는 기본 IDLE을 통해 간단한 연산 및 <code>print(&quot;Hello World&quot;)</code> 코드를 즉시 테스트해 볼 수 있습니다.</li>
+<li>터미널에서 <code>python</code> 입력 시 실행되지 않고 <code>python3</code>로만 인식될 경우, 쉘 설정 파일(<code>.zshrc</code> 등)에 <code>alias python=python3</code> 별칭을 등록해 단축 실행을 설정합니다.</li>
+</ul>
+<hr>
+<h2>[4/25] 판다스 시각화를 위한 한글 폰트 설정</h2>
+<ul>
+<li>판다스 데이터프레임의 <code>plot()</code> 기능이나 매트플롯립(Matplotlib) 차트 작성 시 한글 제목/라벨을 넣으면 폰트 깨짐(네모 뭄모 형태 에러) 현상이 발생합니다.</li>
+<li>매트플롯립의 폰트 설정(<code>plt.rc(&#39;font&#39;, family=&#39;...&#39;)</code>)을 통해 맥OS는 <code>AppleGothic</code>, 윈도우는 <code>Malgun Gothic</code>으로 각각 OS 환경에 맞추어 설정해야 합니다.</li>
+<li>차트 축에 음수(-, 마이너스) 기호가 포함될 때 네모로 깨지는 현상을 막기 위해 <code>plt.rc(&#39;axes&#39;, unicode_minus=False)</code> 옵션을 반드시 설정합니다.</li>
+<li><code>IPython.display</code>에서 <code>set_matplotlib_formats(&#39;retina&#39;)</code>를 설정하면 고해상도 레티나 디스플레이 환경에서 차트와 글꼴을 훨씬 선명하게 출력할 수 있습니다.</li>
+<li>판다스 플롯은 내부적으로 매트플롯립을 기반으로 작동하므로 매트플롯립 폰트 설정을 완료하면 판다스 자체 <code>plot()</code> 명령어에서도 한글이 정상 출력됩니다.</li>
+</ul>
+<hr>
+<h2>라벨 종합 정리</h2>
+<p>파이썬 프로그래밍 및 데이터 분석 입문 시, OS별 공식 파이썬 설치(PATH 및 SSL 인증서 설정)와 독립 가상환경(venv) 구축이 안정적인 개발 환경의 출발점입니다.</p>
+<p>대용량 데이터 처리와 효율적인 조회를 위해 Colab 대화형 테이블, DuckDB 기반 고속 SQL 쿼리, RDBMS와 Vector DB의 하이브리드 조합 등 최적의 데이터 저장·검색 도구를 상황에 맞춰 활용해야 합니다.</p>
+<p>주피터 노트북, VS Code, Google Colab과 같은 인프라 환경에서 한글 폰트 및 레티나 설정, AI 도구(Copilot) 연동, 단축키 및 디버그 팁을 익힘으로써 실무 데이터 분석 생산성을 대폭 극대화할 수 있습니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd814cb88cff48444cfe6c" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

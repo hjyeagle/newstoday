@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newstoday.co.kr/sitemap.xml

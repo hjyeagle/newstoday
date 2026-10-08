@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헤르메스 멀티에이전트 팀 구축 - Delegate Task vs 칸반 방식 (후츠릿) | 뉴스투데이</title>
+<meta name="description" content="영상 정보 영상 URL: https://youtu.be/7XW_O_lS6C4?si=5qs-tY6u7ZGx9iDt 구분: AI창업 요약 [결론] 하나의 에이전트가 리서치부터 글쓰기·배포까지 다 맡는 '가짜 팀'은 매번 비슷한 품질의 결과물과 토큰…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/ai-talks/022.html">
+<meta property="og:title" content="헤르메스 멀티에이전트 팀 구축 - Delegate Task vs 칸반 방식 (후츠릿) | 뉴스투데이">
+<meta property="og:description" content="영상 정보 영상 URL: https://youtu.be/7XW_O_lS6C4?si=5qs-tY6u7ZGx9iDt 구분: AI창업 요약 [결론] 하나의 에이전트가 리서치부터 글쓰기·배포까지 다 맡는 '가짜 팀'은 매번 비슷한 품질의 결과물과 토큰…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/ai-talks/022.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#card-ai-talks">목록으로</a></p>
+<p class="post-kicker">AI와 나눈 이야기 모음 · 2026.09.15</p>
+<h1>헤르메스 멀티에이전트 팀 구축 - Delegate Task vs 칸반 방식 (후츠릿)</h1>
+<article class="prose">
+<h2>영상 정보</h2>
+<ul>
+<li>영상 URL: <a href="https://youtu.be/7XW_O_lS6C4?si=5qs-tY6u7ZGx9iDt" target="_blank" rel="noopener noreferrer">https://youtu.be/7XW_O_lS6C4?si=5qs-tY6u7ZGx9iDt</a></li>
+<li>구분: AI창업</li>
+</ul>
+<h2>요약</h2>
+<p>[결론] 하나의 에이전트가 리서치부터 글쓰기·배포까지 다 맡는 &#39;가짜 팀&#39;은 매번 비슷한 품질의 결과물과 토큰 낝비를 낳습니다. 해결책은 역할별 전문 프로필(상주 직원)을 따로 두고 공유보드(DB)로 연결하는 &#39;칸반 방식&#39; 멀티에이전트이며, 데스크톱 앱 + 디스코드를 함께 연동해야 실용적입니다.</p>
+<p>[핵심 근거]</p>
+<ol>
+<li>기존 방식(Delegate Task)의 한계: 메인 에이전트가 임시 서브 에이전트를 생성·위임하는 방식은 사람 개입 없이 빠르지만, 서브에이전트가 작업 후 사라지며 이전 맥락을 기억하지 못해 매번 일반적인 결과만 내놓으며, 리서치가 잘못되어도 글쓰기/배포까지 끝까지 돌아가 토큰을 낭비합니다.</li>
+<li>칸반 방식의 장점: 각 프로필(리서치/글쓰기/배포 등)이 모두 공유 데이터베이스(보드)를 바라보며 결과물을 저장/열람하는 구조로, 상주하는 독립 직원이라 전문성이 축적되고, 중간에 사람이 개입해 리서치 결과를 검토·반려할 수 있어 불필요한 후속 작업(글쓰기·배포)의 토큰 낙비를 막습니다.</li>
+<li>데스크톱 앱 vs 디스코드 역할 분담: 디스코드는 메시지 800자 제한·긴 답변 분할·스레드 혼잡으로 복잡한 작업에 불리하지만 외출 중 간단한 지시/알림수신에 강하고, 데스크톱 앱은 클로드/코덱스와 동일한 UI로 작업흐름을 직관적으로 볼 수 있어 스킬 생성·자동화 구축에 적합합니다(디스코드 대화로그는 데스크톱 앱에 읽기 전용으로 미러링되지만 역방향은 안 됨).</li>
+</ol>
+<p>[구축 절차 요약]</p>
+<ol>
+<li>VPS의 기존 헤르메스와 데스크톱 앱을 연동.</li>
+<li>역할별 프로필(샘플: 김비서/소식통/김튜브)을 생성하고 각각 디스코드 봇 토큰을 .env에 등록.</li>
+<li>Hermes profile list로 등록 확인 후, 컨테이너 재시작 시 기본적으로 active 프로필의 Gateway만 자동 실행되는 문제를 해결하기 위해 &#39;모든 프로필 Gateway를 자동 실행하는 스크립트&#39;를 헤르메스에 직접 만들게 함.</li>
+<li>스크립트를 한 번 실행한 후 컨테이너를 재시작하면 모든 프로필의 Gateway가 running 상태로 유지됨(이후 재실행 불필요).</li>
+<li>데스크톱 앱에서 프로필을 오가면서 각 전문 직원과 직접 대화, 디스코드에서는 mention으로 특정 팀원을 호출해 협업 진행.</li>
+</ol>
+<p>[현재 한계 및 유의사항]</p>
+<ul>
+<li>default 프로필을 모든 채널의 기본 응답자로 설정해 두면 mention 없이도 계속 답변해 중복 응답이 발생하므로 설정 수정이 필요.</li>
+<li>현재 리서치 팀은 일반적인 검색 결과(예: &#39;2026년 키워드는 에이전트형 AI&#39;) 위주로 가져와 인사이트가 반복되고 실제 최신 이슈(페이블 5 논란 등)를 놓치므로, 개발자 커뮤니티 반응 기반 트렌드를 가져오는 전용 스킬 개발이 향후 과제로 남아 있음.</li>
+<li>현 단계는 팀원들이 서로 직접 협업하는 것이 아니라 사용자와 각각 따로 대화하는 방식으로, 팀간 자동 협업 파이프라인은 후속 영상에서 다룰 예정임.</li>
+</ul>
+<h2>키워드</h2>
+<p>헤르메스, 멀티에이전트, 델리게이트태스크, 칸반보드, 프로필, 디스코드연동</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3dcd5308c4dd811aa9f8c71705dab61c" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

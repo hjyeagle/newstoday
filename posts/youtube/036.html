@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘코드todaycode_금융 및 주식 | 뉴스투데이</title>
+<meta name="description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '금융 및 주식' (영상 11개, 중복 제외 11개) · 2026.10.05 생성 [1/3] 일별 주식 시세도 이거 하나면 코드 한줄로 전기간 수집이 가능하다?! FinanceDataR…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/036.html">
+<meta property="og:title" content="오늘코드todaycode_금융 및 주식 | 뉴스투데이">
+<meta property="og:description" content="출처: NotebookLM 「오늘코드todaycode」 라벨 '금융 및 주식' (영상 11개, 중복 제외 11개) · 2026.10.05 생성 [1/3] 일별 주식 시세도 이거 하나면 코드 한줄로 전기간 수집이 가능하다?! FinanceDataR…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/036.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.05</p>
+<h1>오늘코드todaycode_금융 및 주식</h1>
+<article class="prose">
+<p>출처: NotebookLM 「오늘코드todaycode」 라벨 &#39;금융 및 주식&#39; (영상 11개, 중복 제외 11개) · 2026.10.05 생성</p>
+<h2>[1/3] 일별 주식 시세도 이거 하나면 코드 한줄로 전기간 수집이 가능하다?!</h2>
+<ul>
+<li>FinanceDataReader 라이브러리의 <code>fdr.DataReader()</code> 함수를 사용하면 단 한 줄의 코드로 개별 종목의 전기간 일별 시세를 손쉽게 수집할 수 있습니다.</li>
+<li>삼성전자 종목코드(&#39;005930&#39;)를 문자열 형태로 전달하여 1997년부터 현재까지의 일별 주가 데이터를 받아왔습니다.</li>
+<li><code>start</code> 및 <code>end</code> 옵션 파라미터를 사용하면 원하는 특정 연도 및 날짜 범위를 지정하여 선택 수집할 수 있습니다.</li>
+<li>수집된 데이터는 판다스 데이터프레임 구조로 변환되며 시가(Open), 고가(High), 저가(Low), 종가(Close), 거래량(Volume), 변동률(Change) 컬럼을 제공합니다.</li>
+<li>종가(Close) 컬럼을 선택하여 판다스 내장 <code>plot()</code> 기능을 실행하면 날짜 인덱스를 X축으로 하는 주가 추이 그래프를 즉시 시각화할 수 있습니다.</li>
+<li>종목코드를 모르는 상태에서 종목명(예: &#39;삼성전자&#39;)만으로 시세를 수집하려면 거래소 전체 상장 목록과의 맵핑 작업이 추가로 필요합니다.</li>
+</ul>
+<hr>
+<h2>[2/2] ETF 전종목 수집 JSON 타입도 판다스로?!</h2>
+<ul>
+<li>JSON(JavaScript Object Notation)은 키-값(Key-Value) 쌍으로 구성된 개방형 표준 텍스트 데이터 포맷입니다.</li>
+<li>네이버 금융 ETF 페이지의 비동기 통신(XHR/JS) URL을 통해 전체 ETF 목록 데이터를 JSON 형식으로 수집하였습니다.</li>
+<li>파이썬 <code>requests.get()</code> 함수로 API 요청을 보내고, 응답받은 <code>.json()</code> 구조에서 &#39;result&#39; 및 &#39;etfItemList&#39; 키 항목에 접근하였습니다.</li>
+<li>추출한 JSON 데이터를 <code>pd.DataFrame()</code>에 전달하면 단 한 줄로 깔끔한 판다스 데이터프레임으로 변환됩니다.</li>
+<li><code>datetime.today()</code> 및 <code>strftime()</code>을 활용하여 수집 시점의 연월일 날짜를 파일명에 자동 반영하는 로직을 구축하였습니다.</li>
+<li>수집된 데이터프레임을 CSV 파일로 저장할 때 <code>index=False</code>를 지정하여 불필요한 인덱스 저장을 방지하였습니다.</li>
+<li>저장한 CSV를 읽어올 때 6자리 종목코드의 앞자리 &#39;0&#39;이 누락되지 않도록 <code>dtype={&#39;itemcode&#39;: np.object_}</code> 옵션을 부여하였습니다.</li>
+</ul>
+<hr>
+<h2>[1/2] ETF 전종목 브라우저의 네트워크 탭을 이해하면 코드 한 줄로 가능하다?!</h2>
+<ul>
+<li>ETF(상장지수펀드)는 소액으로 여러 종목에 분산 투자할 수 있는 인덱스 펀드로 거래소에서 주식처럼 거래됩니다.</li>
+<li>네이버 금융 ETF 웹 페이지 주소로 <code>pd.read_html()</code>을 요청하면 테이블 데이터가 직접 수집되지 않는 현상이 발생합니다.</li>
+<li>크롬 개발자 도구의 검사(Inspect) 및 네트워크(Network) 탭을 활용해 웹 페이지 내부의 비동기 통신 구조를 분석하였습니다.</li>
+<li>네트워크 탭의 JS/XHR 항목에서 실질적인 ETF 데이터 리스트를 내려주는 API 패킷 주소(<code>etfItemList.nhn</code>)를 찾아냈습니다.</li>
+<li>웹 브라우저가 화면을 띄우기 위해 백그라운드에서 호출하는 숨겨진 JSON API URL을 파악하는 스크래핑 핵심 기법을 제시하였습니다.</li>
+</ul>
+<hr>
+<h2>[1/3] 여러 종목의 수익률 어떻게 비교할까?!</h2>
+<ul>
+<li>FinanceDataReader 튜토리얼을 바탕으로 삼성전자, SK하이닉스, 현대차, 셀트리온, LG화학 등 다수 종목의 주가 데이터를 수집하였습니다.</li>
+<li>반복문과 딕셔너리(Key-Value) 구조를 활용하여 각 종목별 종가(Close) 시리즈 데이터를 안전하게 취합하였습니다.</li>
+<li>판다스 <code>pd.concat(..., axis=1)</code> 함수를 사용해 개별 종목들의 종가 데이터를 열(Column) 방향으로 병합하였습니다.</li>
+<li>종가 금액 차이가 큰 종목들을 단일 축 그래프로 그릴 경우 금액 스케일 차이로 인해 주가 변동 추이 비교가 어려운 한계가 있습니다.</li>
+<li>Matplotlib/Seaborn의 2축 그래프(<code>secondary_y</code>) 옵션을 적용하여 스케일이 서로 다른 두 종목의 주가 흐름을 수월하게 비교하였습니다.</li>
+<li>데이터의 첫 번째 날 종가 가격으로 모든 행을 나누어 주는 방식을 통해 기간별 수익률 변화를 손쉽게 표준화하여 시각화하였습니다.</li>
+</ul>
+<hr>
+<h2>[1/3] ETF 전종목 전처리 - 종목코드가 제대로 표시되지 않는다면?!</h2>
+<ul>
+<li>CSV 파일 로드 시 <code>pd.read_csv()</code>의 <code>dtype</code> 옵션에 <code>np.object_</code>를 지정하여 종목코드 앞자리의 &#39;0&#39;이 사라지는 현상을 방지하였습니다.</li>
+<li>수집된 ETF 데이터의 숫자 컬럼명을 직관적인 한글 컬럼명(종목명, 현재가, 전일대비, 등락률, 순자산가치 등)으로 매핑하여 정제하였습니다.</li>
+<li><code>df.info()</code> 및 <code>df.describe()</code>를 실행하여 결측치 존재 여부, 데이터 타입, 메모리 점유량을 종합 확인하였습니다.</li>
+<li>거래량(quant) 및 거래대금(amount) 컬럼을 기준으로 <code>sort_values(ascending=False)</code> 정렬을 수행하여 상위 거래 종목을 추출하였습니다.</li>
+<li>ETF 탭 코드(1~7번)가 국내 시장지수, 국내 업종/테마, 파생, 해외주식, 원자재, 채권, 기타 등 각 카테고리 항목을 의미함을 검증하였습니다.</li>
+<li>불리언 인덱싱(Boolean Indexing)을 활용해 특정 탭 코드 항목만 서브셋으로 추출하고 분석하는 기법을 실습하였습니다.</li>
+</ul>
+<hr>
+<h2>[1/20] ETF분석 시작하기 - 데이터로드 폰트와 스타일 설정</h2>
+<ul>
+<li>수집 및 전처리가 완료된 ETF 분석 파일을 로드하고 분석 환경을 설정하는 기초 작업을 다루었습니다.</li>
+<li>OS 환경(Windows의 Malgun Gothic, Mac의 AppleGothic)에 알맞게 매트플롯립 한글 폰트를 자동 설정하는 <code>get_font_family()</code> 함수를 정의하였습니다.</li>
+<li>차트 축의 음수(-, 마이너스) 기호 깨짐을 방지하기 위해 <code>plt.rc(&#39;axes&#39;, unicode_minus=False)</code> 옵션을 부여하였습니다.</li>
+<li><code>set_matplotlib_formats(&#39;retina&#39;)</code>를 설정하여 고해상도 디스플레이 환경에서 선명한 차트를 출력하도록 지정하였습니다.</li>
+<li>Seaborn의 시각화 스타일(<code>sns.set_theme(style=&#39;whitegrid&#39;)</code>) 적용 시 한글 폰트 설정보다 먼저 선언해야 폰트 초기화를 막을 수 있습니다.</li>
+<li>Seaborn의 범주형 데이터 시각화 도구인 <code>catplot</code> 계열(barplot, boxplot, violinplot)과 서브플롯 도구인 <code>PairGrid</code>, <code>FacetGrid</code>의 차이를 안내하였습니다.</li>
+</ul>
+<hr>
+<h2>KRX분석 [1/13] 한국거래소 전체 종목분석 강좌소개와 데이터로드 미리보기</h2>
+<ul>
+<li>단 2장의 문서로 판다스 핵심 기능을 한눈에 파악할 수 있는 &#39;Pandas Cheat Sheet&#39; 가이드를 기반으로 실습을 진행하였습니다.</li>
+<li>표 형태의 2차원 데이터를 다루는 &#39;데이터프레임(DataFrame)&#39;과 단일 행/열로 구성된 &#39;시리즈(Series)&#39; 자료구조의 개념을 정리하였습니다.</li>
+<li><code>pd.read_csv()</code>로 상장 종목 파일을 불러오고 <code>df.shape</code>를 통해 전체 행과 열의 크기를 확인하였습니다.</li>
+<li><code>df.head()</code>, <code>df.tail()</code>, <code>df.sample()</code> 함수를 활용해 상단, 하단, 임의의 샘플 데이터를 미리보기 하였습니다.</li>
+<li><code>df.info()</code> 및 <code>df.describe()</code>를 사용해 데이터 타입, 결측치 개수, 수치형/범주형 데이터의 기술통계량을 요약 분석하였습니다.</li>
+<li>수집 시점에 따라 신규 상장이나 상장 폐지로 인해 종목 수 및 분석 결과 수치가 차이 날 수 있음을 안내하였습니다.</li>
+</ul>
+<hr>
+<h2>KRX 한국 거래소 전체 주식 종목 리스트 이거 하나면 코드 한 줄로 수집 가능하다?! - FinanceDataReader</h2>
+<ul>
+<li>오픈소스 라이브러리인 FinanceDataReader(<code>fdr</code>)의 개념과 깃허브 오픈소스 배경을 소개하였습니다.</li>
+<li>주피터 노트북 환경에서 <code>pip install finance-datareader</code> 명령어로 라이브러리를 간편하게 설치하는 방법을 안내하였습니다.</li>
+<li><code>fdr.StockListing(&#39;KRX&#39;)</code> 함수 단 한 줄로 코스피, 코스닥, 코넥스를 포함한 한국거래소 상장 전체 종목 리스트를 로드하였습니다.</li>
+<li>상장 종목 데이터프레임은 종목코드(Symbol), 시장 구분(Market), 종목명(Name), 섹터(Sector), 산업군(Industry), 상장일(ListingDate) 등의 컬럼으로 구성됩니다.</li>
+<li><code>df.describe()</code>를 통해 시장별 종목 수, 가장 비중이 높은 섹터(특수목적용 기계 제조업) 및 산업군(기업인수합병) 등 기술통계량을 확인하였습니다.</li>
+<li>수집한 상장 목록 데이터를 <code>to_csv(&#39;krx.csv&#39;, index=False)</code>로 저장을 수행하여 파일로 관리하고, <code>pd.read_csv()</code>로 다시 로드하는 과정을 실습하였습니다.</li>
+</ul>
+<hr>
+<h2>🌱 인프런 📈 증권 데이터 수집과 분석으로 신호와 소음 찾기⚡️ 강좌가 오픈되었습니다.</h2>
+<ul>
+<li>유튜브 파이썬 증권 데이터 분석 강좌의 피드백을 반영하여 보완·출시된 인프런 실무 교육 과정을 소개하였습니다.</li>
+<li>FinanceDataReader, Requests, BeautifulSoup, tqdm을 활용한 데이터 수집 및 크롤링 파이프라인 구축 기법을 안내하였습니다.</li>
+<li>판다스의 <code>melt()</code>, <code>groupby()</code>, <code>pivot_table()</code>, <code>crosstab()</code> 및 <code>merge()</code>를 활용한 데이터 정제 및 통계 분석 기법을 다루었습니다.</li>
+<li>Matplotlib, Seaborn(정적 시각화) 및 Plotly, Cufflinks(동적 시각화)를 결합하여 입체적인 시각화 도구를 활용합니다.</li>
+<li>코스피 200, 테마주, ETF 전체 종목 및 기업 투자정보(시가총액, 배당수익률, PER, 52주 최고가 대비 손실률) 분석 실습을 포함하였습니다.</li>
+<li>HTS/MTS에서 실제 사용하는 이동평균선 등 다양한 보조지표와 기술적 분석 지표를 파이썬 코드로 직접 구현해 봅니다.</li>
+<li>코드가 작성된 실습 파일과 비어있는 실습용 파일을 함께 제공하여 효과적인 반복 학습을 지원합니다.</li>
+</ul>
+<hr>
+<h2>[2/3] 종목명으로 종목코드를 찾아 일별 시세를 수집하자</h2>
+<ul>
+<li>KRX 상장 종목 데이터프레임에서 종목명(<code>Name</code>)으로 검색하여 해당 종목의 6자리 심볼 코드를 추출하였습니다.</li>
+<li><code>df_krx.loc[df_krx[&#39;Name&#39;] == item_name, &#39;Symbol&#39;]</code> 조건식과 <code>.tolist()</code>를 활용해 심볼 문자열을 가져왔습니다.</li>
+<li>종목명을 입력받아 종목코드를 반환하는 <code>item_code_by_item_name()</code> 사용자 정의 함수를 정의하였습니다.</li>
+<li>입력한 종목명이 존재하지 않거나 오타가 발생할 때 <code>IndexError</code>가 나지 않도록 <code>if len(...) &gt; 0:</code> 조건식으로 예외 처리를 적용하였습니다.</li>
+<li>대소문자를 엄격히 구분하는 영문 종목명(예: &#39;NAVER&#39;) 검색 시 정확한 알파벳 입력이 필요함을 확인하였습니다.</li>
+<li>추출한 종목코드를 <code>fdr.DataReader()</code>에 자동 전달하여 종목명 입력만으로 일별 시세를 즉시 수집하는 자동화 함수를 제작하였습니다.</li>
+</ul>
+<hr>
+<h2>도서리뷰 파이썬을 활용한 금융분석 2판 -파이썬의 기초부터 금융공학, 머신러닝, 퀀트 분석, 매매 시스템 구현까지</h2>
+<ul>
+<li>이브스 힐피쉬(Yves Hilpisch) 저, 김도형 박사 번역의 파이썬 금융 분석 분야 대표 실무 가이드북을 리뷰하였습니다.</li>
+<li>파이썬 기초 문법부터 넘파이, 판다스, 확률통계, 머신러닝, 알고리즘 트레이딩, 매매 시스템 자동화까지 폭넓은 스펙트럼을 다룹니다.</li>
+<li>판다스 라이브러리가 본래 금융 퀀트 분석용으로 개발되었음을 밝히며, 금융 데이터를 통해 판다스의 진가를 깊이 있게 이해할 수 있음을 강조합니다.</li>
+<li>아나콘다, 도커 컨테이너, 클라우드 환경 구축 및 대용량 실시간 금융 데이터 처리를 위한 성능 최적화 기법을 다룹니다.</li>
+<li>어려운 수학 공식과 확률 통계 이론을 실제 금융 데이터 연산 및 볼린저 밴드, RSI 차트 구현에 적용하면서 실용적으로 학습할 수 있습니다.</li>
+<li>해외 대형 투자은행들의 파이썬 기반 리스크 관리 및 트레이딩 시스템 구축 트렌드와 국내 금융권의 파이썬 도입 변화를 설명합니다.</li>
+</ul>
+<hr>
+<h2>라벨 종합 정리</h2>
+<p>FinanceDataReader, Requests, 크롬 개발자 도구 네트워크 탭 분석을 활용하면 KRX 전체 상장 종목, 개별 주가, ETF 전종목 데이터를 단 한 줄 또는 API 요청으로 손쉽게 수집할 수 있습니다.</p>
+<p>수집한 주식 및 ETF 데이터는 판다스의 문자열 타입 지정(<code>object</code>), <code>concat()</code>, <code>melt()</code>, 2축 시각화(<code>secondary_y</code>), 수익률 표준화를 통해 체계적으로 정제 및 분석됩니다.</p>
+<p>종목명 기반 종목코드 자동 검색 함수 및 예외 처리 로직을 구축하고, Matplotlib/Seaborn/Plotly 시각화와 금융공학·퀀트 매매 전략을 접목하여 파이썬 증권 데이터 분석 생산성을 크게 극대화할 수 있습니다.</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3f0d5308c4dd81c0a602dfa0654ebae7" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

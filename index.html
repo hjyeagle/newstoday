@@ -4,7 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>뉴스투데이 | newstoday.co.kr</title>
-<meta name="description" content="뉴스투데이 — 실버세대가 AI와 소통하며 만들어 가는 이야기들. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료 모음을 한 곳에서 만나보세요.">
+<meta name="description" content="뉴스투데이는 실버세대가 AI와 소통하며 만들어 가는 이야기들을 공유하는 개인미디어입니다. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료 모음을 한 곳에서 만나보세요.">
+<link rel="canonical" href="https://newstoday.co.kr/">
+<meta property="og:title" content="뉴스투데이 | newstoday.co.kr">
+<meta property="og:description" content="뉴스투데이는 실버세대가 AI와 소통하며 만들어 가는 이야기들을 공유하는 개인미디어입니다. 저서, 사이버 동방예술관, 오피니언 기고문, AI 대화 기록, 자료 모음을 한 곳에서 만나보세요.">
+<meta property="og:url" content="https://newstoday.co.kr/">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
@@ -209,10 +214,25 @@ margin-top:20px;
 background:var(--surface);
 }
 .footer-inner{
-max-width:1120px; margin:0 auto; padding:22px 24px;
+max-width:1120px; margin:0 auto; padding:22px 24px 26px;
 color:var(--ink-soft);
 font-size:0.85rem;
+line-height:1.6;
 text-align:center;
+}
+.footer-inner p{margin:0 0 4px;}
+.footer-links{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:6px 16px;
+margin:10px 0 12px;
+}
+.footer-links a{font-weight:700;}
+.footer-note{margin-top:2px;}
+.footer-copy{margin-top:8px;}
+@media (max-width:600px){
+.footer-inner{padding:18px 16px 22px; font-size:0.82rem;}
 }
 </style>
 </head>
@@ -229,7 +249,7 @@ text-align:center;
 
 <main id="main-content">
 <div class="hero">
-<h1>실버세대가 AI와 소통하며<br>만들어 가는 이야기들…</h1>
+<h1>실버세대가 AI와 소통하며<br>만들어 가는 이야기들을 공유하는 개인미디어임</h1>
 <div class="hero-covers" id="hero-covers" aria-label="POD(종이책) 대표 도서"></div>
 </div>
 
@@ -264,14 +284,14 @@ text-align:center;
 <!-- 05 -->
 <li><section class="card" id="card-ai-talks" aria-labelledby="h-ai-talks">
 <h2 id="h-ai-talks">AI와 나눈 이야기 모음</h2>
-<p class="card-desc">노션에 공유된 대화 기록입니다. 링크는 새 창에서 열립니다.</p>
+<p class="card-desc">노션에 정리한 대화 기록입니다. 이 사이트에서 전체 글을 읽을 수 있습니다.</p>
 <div class="card-body"><ol class="item-list"></ol></div>
 <div class="pager"></div>
 </section></li>
 <!-- 06 -->
 <li><section class="card" id="card-senior" aria-labelledby="h-senior">
 <h2 id="h-senior">시니어 수익창출 방법</h2>
-<p class="card-desc">시니어 온라인·AI 수익창출 자료입니다. 노션·드라이브 링크는 새 창에서 열립니다.</p>
+<p class="card-desc">시니어 온라인·AI 수익창출 자료입니다. 글은 이 사이트에서 읽고, 가이드북 PDF는 새 창에서 열립니다.</p>
 <div class="card-body"><ol class="item-list"></ol></div>
 <div class="pager"></div>
 </section></li>
@@ -292,7 +312,7 @@ text-align:center;
 <!-- 09 -->
 <li><section class="card" id="card-etc" aria-labelledby="h-etc">
 <h2 id="h-etc">기타 모음</h2>
-<p class="card-desc">기타 참고자료들을 모아 놓은 자료입니다. 링크는 새 창에서 열립니다.</p>
+<p class="card-desc">기타 참고자료입니다. 이 사이트에서 전체 글을 읽을 수 있습니다.</p>
 <div class="card-body"><ol class="item-list"></ol></div>
 <div class="pager"></div>
 </section></li>
@@ -300,7 +320,16 @@ text-align:center;
 </main>
 
 <footer>
-<div class="footer-inner">Copyright 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</div>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="privacy.html">개인정보처리방침</a>
+<a href="terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
 </footer>
 
 <script>
@@ -388,32 +417,32 @@ const opinionData = [
 
 // 05 매일 AI와 나눈 이야기와 참고 유튜브 영상 요약 모음 (노션 공유 링크, 누적)
 const aiTalksData = [
-{ date: "2026.10.01", title: "뉴스투데이 메인화면 리뉴얼 작업 정리", url: "https://newstoday.notion.site/2026-10-01-3ecd5308c4dd8193a1d7edb648791ccb?source=copy_link" },
-{ date: "2026.10.01", title: "클로드 코드 풀코스 2시간: 설치부터 AI 직원 만들기까지 (태오의 실행 비즈니스)", url: "https://app.notion.com/p/3ecd5308c4dd81e7a1abdd73700dd47d" },
-{ date: "2026.09.20", title: "그록봇 실전｜AI 직원과 시장조사부터 시제품까지", url: "https://app.notion.com/p/3e1d5308c4dd8190b089f78adf99f8a1" },
-{ date: "2026.09.18", title: "그록봇 활용 방법 10가지 : 일상업무, 시연학습, 에이전트 협업까지!! (유훈식 교수)", url: "https://app.notion.com/p/3dfd5308c4dd8135b685c4b9af5771d7" },
-{ date: "2026.09.17", title: "30일 안에 클로드코드로 1인 사업을 시작하는 방법 (그랜트)", url: "https://app.notion.com/p/3ded5308c4dd8104a607cab22459daa7" },
-{ date: "2026.08.18", title: "동방예술관 도록 제작 프로젝트 — 업무 인수인계 보고서", url: "https://app.notion.com/p/newstoday/2026-08-18-3c0d5308c4dd8160a983c201b14afcd3?source=copy_link" },
-{ date: "2026.09.06", title: "동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리", url: "https://app.notion.com/p/3d3d5308c4dd810ba3cced40d007018d" },
-{ date: "2026.09.10", title: "클로드 코드 API 케이스 스터디 자료 모음", url: "https://app.notion.com/p/3d7d5308c4dd81c584ecf0cd7243f357?pvs=204" },
-{ date: "2026.09.10", title: "공중전화부스 → 전기이륜차 배터리교환소(BSS) 전환 사업 제안", url: "https://app.notion.com/p/newstoday/BSS-3d7d5308c4dd81168fdfd55841eac15e" },
-{ date: "2026.09.13", title: "빌더조쉬 - 클로드 코드로 마케팅 12단계 자동화 (김영태 대표 인터뷰)", url: "https://app.notion.com/p/20260913_-_-12-_-3dad5308c4dd81b19d36efb2b22bd29e" },
-{ date: "2026.09.13", title: "빌더조쉬 - 카드뉴스 에이전트 팀 만들기 라이브 실습 (오르카+힉스필드)", url: "https://app.notion.com/p/20260913_-_-_-3dad5308c4dd8129a84dedf3444e00c1" },
-{ date: "2026.09.13", title: "빌더조쉬 - 클로드 디자인 초보자 가이드 (디자인 시스템 활용법)", url: "https://app.notion.com/p/20260913_-_-_-3dad5308c4dd81a0b864d7733eb1c7ff" },
-{ date: "2026.09.13", title: "Eric Park - 브랜드 디자인 시스템으로 앱부터 피칭덱까지 제작", url: "https://app.notion.com/p/20260913_EricPark_-_-3dad5308c4dd81c6b512dc1ff91f18a0" },
-{ date: "2026.09.13", title: "빌더조쉬 - AI 세일즈 GTM 사례 (AB180 최현종)", url: "https://app.notion.com/p/20260913_-_AI-GTM-_-3dad5308c4dd813eb622d5a9b325b6f5" },
-{ date: "2026.09.13", title: "빌더조쉬 - 클로드 코드 마케팅 에이전트 팀 100% 자동화", url: "https://app.notion.com/p/20260913_-_-_-3dad5308c4dd815d8ed4dde07a4df2a0" },
-{ date: "2026.09.15", title: "AI 상품소싱 자동화 (Codex 활용)", url: "https://app.notion.com/p/3dcd5308c4dd81429c1cff864af4183e" },
-{ date: "2026.09.15", title: "헤르메스 잘 쓰는 방법 (AI 에이전트 업무 자동화)", url: "https://app.notion.com/p/3dcd5308c4dd817d9cf8dd5b0bb56c1e" },
-{ date: "2026.09.15", title: "자율형 AI에이전트 실전 활용법 (헤르메스 - 김민정 HRX랩 부대표)", url: "https://app.notion.com/p/3dcd5308c4dd8193a0b9cd406347596b" },
-{ date: "2026.09.15", title: "헤르메스 에이전트 개념·설치·활용 총정리 (진한별의 AI연구소)", url: "https://app.notion.com/p/3dcd5308c4dd815f8b61e5fcfc0db1a4" },
-{ date: "2026.09.15", title: "24시간 AI비서 만들기 - Hermes Agent VPS 설치 실전 가이드 (시민개발자 구씨)", url: "https://app.notion.com/p/3dcd5308c4dd81a8a00ccc0c0af3bd59" },
-{ date: "2026.09.15", title: "헤르메스 에이전트 5개로 뉴스큐레이션부터 주식매매까지 개인 자동화 (AI엔지니어 샘호트만)", url: "https://app.notion.com/p/3dcd5308c4dd81ae9f6fd6de6ef6e0c9" },
-{ date: "2026.09.15", title: "헤르메스 멀티에이전트 팀 구축 - Delegate Task vs 칸반 방식 (후츠릿)", url: "https://app.notion.com/p/3dcd5308c4dd811aa9f8c71705dab61c" },
-{ date: "2026.09.15", title: "헤르메스 에이전트 - 노트북 꺼도 24시간 일하는 AI팀 만들기 (실배개발자)", url: "https://app.notion.com/p/3dcd5308c4dd818580cdfc674672b521" },
-{ date: "2026.09.15", title: "50시간 Hermes 사용기 - 이메일 자동화·카카오톡MCP·큐레이터 실전 활용법 (샘 호트만)", url: "https://app.notion.com/p/3dcd5308c4dd815b84bff4bdbf5ffe45" },
-{ date: "2026.09.15", title: "노트북LM 무료 활용법 - 핵심 기능 + 크롬 확장프로그램 7가지 (어나더 AI)", url: "https://app.notion.com/p/3dcd5308c4dd812bade2dd1164ef21ab" },
-{ date: "2026.09.15", title: "구글 노트북LM 활용법 - 딥리서치·마크다운 문서·클로드코드 MCP 연동 (조현정 교사, KEIDA)", url: "https://app.notion.com/p/3dcd5308c4dd817593e1ccdc7d013114" }
+{ date: "2026.10.01", title: "뉴스투데이 메인화면 리뉴얼 작업 정리", url: "posts/ai-talks/001.html" },
+{ date: "2026.10.01", title: "클로드 코드 풀코스 2시간: 설치부터 AI 직원 만들기까지 (태오의 실행 비즈니스)", url: "posts/ai-talks/002.html" },
+{ date: "2026.09.20", title: "그록봇 실전｜AI 직원과 시장조사부터 시제품까지", url: "posts/ai-talks/003.html" },
+{ date: "2026.09.18", title: "그록봇 활용 방법 10가지 : 일상업무, 시연학습, 에이전트 협업까지!! (유훈식 교수)", url: "posts/ai-talks/004.html" },
+{ date: "2026.09.17", title: "30일 안에 클로드코드로 1인 사업을 시작하는 방법 (그랜트)", url: "posts/ai-talks/005.html" },
+{ date: "2026.08.18", title: "동방예술관 도록 제작 프로젝트 — 업무 인수인계 보고서", url: "posts/ai-talks/006.html" },
+{ date: "2026.09.06", title: "동방예술관·뉴스투데이 홈페이지 제작 및 GitHub Pages 배포 — 대화 정리", url: "posts/ai-talks/007.html" },
+{ date: "2026.09.10", title: "클로드 코드 API 케이스 스터디 자료 모음", url: "posts/ai-talks/008.html" },
+{ date: "2026.09.10", title: "공중전화부스 → 전기이륜차 배터리교환소(BSS) 전환 사업 제안", url: "posts/ai-talks/009.html" },
+{ date: "2026.09.13", title: "빌더조쉬 - 클로드 코드로 마케팅 12단계 자동화 (김영태 대표 인터뷰)", url: "posts/ai-talks/010.html" },
+{ date: "2026.09.13", title: "빌더조쉬 - 카드뉴스 에이전트 팀 만들기 라이브 실습 (오르카+힉스필드)", url: "posts/ai-talks/011.html" },
+{ date: "2026.09.13", title: "빌더조쉬 - 클로드 디자인 초보자 가이드 (디자인 시스템 활용법)", url: "posts/ai-talks/012.html" },
+{ date: "2026.09.13", title: "Eric Park - 브랜드 디자인 시스템으로 앱부터 피칭덱까지 제작", url: "posts/ai-talks/013.html" },
+{ date: "2026.09.13", title: "빌더조쉬 - AI 세일즈 GTM 사례 (AB180 최현종)", url: "posts/ai-talks/014.html" },
+{ date: "2026.09.13", title: "빌더조쉬 - 클로드 코드 마케팅 에이전트 팀 100% 자동화", url: "posts/ai-talks/015.html" },
+{ date: "2026.09.15", title: "AI 상품소싱 자동화 (Codex 활용)", url: "posts/ai-talks/016.html" },
+{ date: "2026.09.15", title: "헤르메스 잘 쓰는 방법 (AI 에이전트 업무 자동화)", url: "posts/ai-talks/017.html" },
+{ date: "2026.09.15", title: "자율형 AI에이전트 실전 활용법 (헤르메스 - 김민정 HRX랩 부대표)", url: "posts/ai-talks/018.html" },
+{ date: "2026.09.15", title: "헤르메스 에이전트 개념·설치·활용 총정리 (진한별의 AI연구소)", url: "posts/ai-talks/019.html" },
+{ date: "2026.09.15", title: "24시간 AI비서 만들기 - Hermes Agent VPS 설치 실전 가이드 (시민개발자 구씨)", url: "posts/ai-talks/020.html" },
+{ date: "2026.09.15", title: "헤르메스 에이전트 5개로 뉴스큐레이션부터 주식매매까지 개인 자동화 (AI엔지니어 샘호트만)", url: "posts/ai-talks/021.html" },
+{ date: "2026.09.15", title: "헤르메스 멀티에이전트 팀 구축 - Delegate Task vs 칸반 방식 (후츠릿)", url: "posts/ai-talks/022.html" },
+{ date: "2026.09.15", title: "헤르메스 에이전트 - 노트북 꺼도 24시간 일하는 AI팀 만들기 (실배개발자)", url: "posts/ai-talks/023.html" },
+{ date: "2026.09.15", title: "50시간 Hermes 사용기 - 이메일 자동화·카카오톡MCP·큐레이터 실전 활용법 (샘 호트만)", url: "posts/ai-talks/024.html" },
+{ date: "2026.09.15", title: "노트북LM 무료 활용법 - 핵심 기능 + 크롬 확장프로그램 7가지 (어나더 AI)", url: "posts/ai-talks/025.html" },
+{ date: "2026.09.15", title: "구글 노트북LM 활용법 - 딥리서치·마크다운 문서·클로드코드 MCP 연동 (조현정 교사, KEIDA)", url: "posts/ai-talks/026.html" }
 
 // ↓ 새 기록 등록 시 아래에 한 줄 추가 (title에는 대화 주제를 간단히 적어주세요)
 // , { date: "YYYY.MM.DD", title: "대화 제목", url: "https://app.notion.com/..." }
@@ -421,8 +450,8 @@ const aiTalksData = [
 
 // 06 시니어수익 (노션·드라이브 공유 링크, 누적)
 const seniorData = [
-{ date: "2026.09.20", title: "우리가 눈여겨 봐야 할 일본의 실버사업 7가지 (아재썰전)", url: "https://app.notion.com/p/3e1d5308c4dd81538cf7e6673dcfe3a7" },
-{ date: "2026.09.18", title: "시니어수익 — 65세·단안·온라인 AI 반복수익 분야 30선", url: "https://app.notion.com/p/3dfd5308c4dd8190bc75ee0b64279823" },
+{ date: "2026.09.20", title: "우리가 눈여겨 봐야 할 일본의 실버사업 7가지 (아재썰전)", url: "posts/senior/001.html" },
+{ date: "2026.09.18", title: "시니어수익 — 65세·단안·온라인 AI 반복수익 분야 30선", url: "posts/senior/002.html" },
 { date: "2024.06.15", title: "중장년을 위한 디지털 & AI도구 가이드북", url: "https://drive.google.com/file/d/1BsnPP64sSNJDw5xDGHF2p0Y2ThmfrdZq/view?usp=drive_link" }
 // ↓ 새 자료 등록 시 위에 한 줄 추가 (최신 항목이 위에 오도록)
 // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
@@ -430,51 +459,51 @@ const seniorData = [
 
 // 07 유튜브채널 요약정보 (채널별 묶음: 빌더 조쉬, 오토코더, 시민개발자 구씨, 오늘코드todaycode)
 const diabetesData = [
-{ date: "2026.10.04", title: "빌더 조쉬_AI 고객 응대", url: "https://app.notion.com/p/3efd5308c4dd8167affbe0776902b4da" },
-{ date: "2026.10.04", title: "빌더 조쉬_AI 미디어 제작", url: "https://app.notion.com/p/3efd5308c4dd81dbb971f4c3cf743db8" },
-{ date: "2026.10.04", title: "빌더 조쉬_AI 수익화 및 마케팅", url: "https://app.notion.com/p/3efd5308c4dd8193b069c4329b10d697" },
-{ date: "2026.10.04", title: "빌더 조쉬_AI 코딩 및 개발", url: "https://app.notion.com/p/3efd5308c4dd8197aaeef60c643da102" },
-{ date: "2026.10.04", title: "빌더 조쉬_LLM 기술 활용", url: "https://app.notion.com/p/3efd5308c4dd817cb50ad716e50612a2" },
-{ date: "2026.10.04", title: "빌더 조쉬_기업 AI 도입 전략", url: "https://app.notion.com/p/3efd5308c4dd817994b2ea6688e2d147" },
-{ date: "2026.10.04", title: "빌더 조쉬_노션 및 도구", url: "https://app.notion.com/p/3efd5308c4dd81f1ae8deab357666391" },
-{ date: "2026.10.04", title: "빌더 조쉬_디자인 및 UI", url: "https://app.notion.com/p/3efd5308c4dd81c9b944c5887e10dbda" },
-{ date: "2026.10.04", title: "빌더 조쉬_업무 자동화 에이전트", url: "https://app.notion.com/p/3efd5308c4dd81509fc4c414dea09eea" },
-{ date: "2026.10.04", title: "빌더 조쉬_자기계발 및 교육", url: "https://app.notion.com/p/3efd5308c4dd81a58176f2d29c5b47d2" },
-{ date: "2026.10.04", title: "빌더 조쉬_제미나이 디자인", url: "https://app.notion.com/p/3efd5308c4dd81e8941dd51a1bd55c2e" },
-{ date: "2026.10.04", title: "빌더 조쉬_클로드 코드 활용", url: "https://app.notion.com/p/3efd5308c4dd8113b58af95d053af1b8" },
-{ date: "2026.10.04", title: "빌더 조쉬_미분류", url: "https://app.notion.com/p/3efd5308c4dd815bb64dd1816667ec58" },
-{ date: "2026.10.04", title: "오토코더_AI 번역 비교", url: "https://app.notion.com/p/3efd5308c4dd81a69a9cca4135d52813" },
-{ date: "2026.10.04", title: "오토코더_AI 챗봇 개발", url: "https://app.notion.com/p/3efd5308c4dd8197b00ad5e588ab29ac" },
-{ date: "2026.10.04", title: "오토코더_AI 학습 및 교육", url: "https://app.notion.com/p/3efd5308c4dd81ae8ab2c069902973de" },
-{ date: "2026.10.04", title: "오토코더_Claude 및 Gemini", url: "https://app.notion.com/p/3efd5308c4dd8141bc5cfbcb12f9dfa7" },
-{ date: "2026.10.04", title: "오토코더_MCP 및 에이전트", url: "https://app.notion.com/p/3efd5308c4dd81069451d750ffb3964d" },
-{ date: "2026.10.04", title: "오토코더_RPA 및 업무자동화", url: "https://app.notion.com/p/3efd5308c4dd81a0ae16c22b24872bfc" },
-{ date: "2026.10.04", title: "오토코더_기타 도구 및 모델", url: "https://app.notion.com/p/3efd5308c4dd816aaef1cfe8900e7243" },
-{ date: "2026.10.04", title: "오토코더_데이터 추출 및 크롤링", url: "https://app.notion.com/p/3efd5308c4dd81b3bc1df02e164141c2" },
-{ date: "2026.10.04", title: "오토코더_멀티미디어 처리", url: "https://app.notion.com/p/3efd5308c4dd81df97c6ea7f2de01166" },
-{ date: "2026.10.04", title: "오토코더_바이브코딩 및 개발", url: "https://app.notion.com/p/3efd5308c4dd815d9e8ad051d0af3dc8" },
-{ date: "2026.10.04", title: "시민개발자 구씨_AI 업무 툴", url: "https://app.notion.com/p/3efd5308c4dd8161985ce888fadb86a4" },
-{ date: "2026.10.04", title: "시민개발자 구씨_ChatGPT & OpenAI", url: "https://app.notion.com/p/3efd5308c4dd81358017fbeda435b067" },
-{ date: "2026.10.04", title: "시민개발자 구씨_Claude 활용", url: "https://app.notion.com/p/3efd5308c4dd8117b47fe917ef85a5a1" },
-{ date: "2026.10.04", title: "시민개발자 구씨_Google 및 기타", url: "https://app.notion.com/p/3efd5308c4dd819fadb0f3451dc06f62" },
-{ date: "2026.10.04", title: "시민개발자 구씨_MAKE 자동화", url: "https://app.notion.com/p/3efd5308c4dd8137bae5c3575ae8d505" },
-{ date: "2026.10.04", title: "시민개발자 구씨_n8n 자동화", url: "https://app.notion.com/p/3efd5308c4dd817d8fe3c8a2dc73a29e" },
-{ date: "2026.10.04", title: "시민개발자 구씨_리서치 도구", url: "https://app.notion.com/p/3efd5308c4dd8166a387e915bf75d873" },
-{ date: "2026.10.04", title: "시민개발자 구씨_스프레드시트 & 데이터", url: "https://app.notion.com/p/3efd5308c4dd817bbf53cb4ef8ab1047" },
-{ date: "2026.10.04", title: "시민개발자 구씨_앱시트 (AppSheet)", url: "https://app.notion.com/p/3efd5308c4dd81d195f6fd2d2c0f05c6" },
-{ date: "2026.10.05", title: "오늘코드todaycode_Miscellaneous", url: "https://app.notion.com/p/3f0d5308c4dd819bac12d0c29788e41f" },
-{ date: "2026.10.05", title: "오늘코드todaycode_개발 환경 및 도구", url: "https://app.notion.com/p/3f0d5308c4dd814cb88cff48444cfe6c" },
-{ date: "2026.10.05", title: "오늘코드todaycode_공공 데이터", url: "https://app.notion.com/p/3f0d5308c4dd818eb97ae56f03219e86" },
-{ date: "2026.10.05", title: "오늘코드todaycode_금융 및 주식", url: "https://app.notion.com/p/3f0d5308c4dd81c0a602dfa0654ebae7" },
-{ date: "2026.10.05", title: "오늘코드todaycode_넘파이", url: "https://app.notion.com/p/3f0d5308c4dd81fea72ac7a5f933b86a" },
-{ date: "2026.10.05", title: "오늘코드todaycode_데이터 시각화", url: "https://app.notion.com/p/3f0d5308c4dd81b3a789eb8a95e97b9c" },
-{ date: "2026.10.05", title: "오늘코드todaycode_머신러닝·딥러닝", url: "https://app.notion.com/p/3f0d5308c4dd816f999ae2f485d035ef" },
-{ date: "2026.10.05", title: "오늘코드todaycode_비즈니스 데이터", url: "https://app.notion.com/p/3f0d5308c4dd814da5aef62e7b8e42df" },
-{ date: "2026.10.05", title: "오늘코드todaycode_생성형 AI", url: "https://app.notion.com/p/3f0d5308c4dd81daabd6daae9c88159f" },
-{ date: "2026.10.05", title: "오늘코드todaycode_웹 크롤링", url: "https://app.notion.com/p/3f0d5308c4dd81d3a5fffa277b6ea11d" },
-{ date: "2026.10.05", title: "오늘코드todaycode_자연어 처리", url: "https://app.notion.com/p/3f0d5308c4dd81b58174c866c43b492d" },
-{ date: "2026.10.05", title: "오늘코드todaycode_캐글 분석", url: "https://app.notion.com/p/3f0d5308c4dd817986cff4e3856162c2" },
-{ date: "2026.10.05", title: "오늘코드todaycode_판다스", url: "https://app.notion.com/p/3f0d5308c4dd81e8b3b7ea1226d0ca5b" }
+{ date: "2026.10.04", title: "빌더 조쉬_AI 고객 응대", url: "posts/youtube/001.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_AI 미디어 제작", url: "posts/youtube/002.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_AI 수익화 및 마케팅", url: "posts/youtube/003.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_AI 코딩 및 개발", url: "posts/youtube/004.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_LLM 기술 활용", url: "posts/youtube/005.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_기업 AI 도입 전략", url: "posts/youtube/006.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_노션 및 도구", url: "posts/youtube/007.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_디자인 및 UI", url: "posts/youtube/008.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_업무 자동화 에이전트", url: "posts/youtube/009.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_자기계발 및 교육", url: "posts/youtube/010.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_제미나이 디자인", url: "posts/youtube/011.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_클로드 코드 활용", url: "posts/youtube/012.html" },
+{ date: "2026.10.04", title: "빌더 조쉬_미분류", url: "posts/youtube/013.html" },
+{ date: "2026.10.04", title: "오토코더_AI 번역 비교", url: "posts/youtube/014.html" },
+{ date: "2026.10.04", title: "오토코더_AI 챗봇 개발", url: "posts/youtube/015.html" },
+{ date: "2026.10.04", title: "오토코더_AI 학습 및 교육", url: "posts/youtube/016.html" },
+{ date: "2026.10.04", title: "오토코더_Claude 및 Gemini", url: "posts/youtube/017.html" },
+{ date: "2026.10.04", title: "오토코더_MCP 및 에이전트", url: "posts/youtube/018.html" },
+{ date: "2026.10.04", title: "오토코더_RPA 및 업무자동화", url: "posts/youtube/019.html" },
+{ date: "2026.10.04", title: "오토코더_기타 도구 및 모델", url: "posts/youtube/020.html" },
+{ date: "2026.10.04", title: "오토코더_데이터 추출 및 크롤링", url: "posts/youtube/021.html" },
+{ date: "2026.10.04", title: "오토코더_멀티미디어 처리", url: "posts/youtube/022.html" },
+{ date: "2026.10.04", title: "오토코더_바이브코딩 및 개발", url: "posts/youtube/023.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_AI 업무 툴", url: "posts/youtube/024.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_ChatGPT & OpenAI", url: "posts/youtube/025.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_Claude 활용", url: "posts/youtube/026.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_Google 및 기타", url: "posts/youtube/027.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_MAKE 자동화", url: "posts/youtube/028.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_n8n 자동화", url: "posts/youtube/029.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_리서치 도구", url: "posts/youtube/030.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_스프레드시트 & 데이터", url: "posts/youtube/031.html" },
+{ date: "2026.10.04", title: "시민개발자 구씨_앱시트 (AppSheet)", url: "posts/youtube/032.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_Miscellaneous", url: "posts/youtube/033.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_개발 환경 및 도구", url: "posts/youtube/034.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_공공 데이터", url: "posts/youtube/035.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_금융 및 주식", url: "posts/youtube/036.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_넘파이", url: "posts/youtube/037.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_데이터 시각화", url: "posts/youtube/038.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_머신러닝·딥러닝", url: "posts/youtube/039.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_비즈니스 데이터", url: "posts/youtube/040.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_생성형 AI", url: "posts/youtube/041.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_웹 크롤링", url: "posts/youtube/042.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_자연어 처리", url: "posts/youtube/043.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_캐글 분석", url: "posts/youtube/044.html" },
+{ date: "2026.10.05", title: "오늘코드todaycode_판다스", url: "posts/youtube/045.html" }
 // ↓ 새 자료 등록 시 아래에 한 줄 추가
 // , { date: "YYYY.MM.DD", title: "채널명_라벨명", url: "https://app.notion.com/..." }
 ];
@@ -502,13 +531,13 @@ const blogData = [
 const etcData = [
 // ↓ 새 자료 등록 시 아래에 한 줄 추가
 // { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
-{ date: "2026.10.07", title: "김재우의 구동사 100 — 영한 병행 영어학습 노트 (DAY 001~020, 영어독립)", url: "https://app.notion.com/p/3f2d5308c4dd81e881bec5ba60e73fe7" },
-{ date: "2026.10.07", title: "30년 약사가 검증한 혈당 낮추는 최고의 음식 — 모시조개 마늘탕·초콩·과일 (한형선 약사 1부, 지식의 맛)", url: "https://app.notion.com/p/3f2d5308c4dd8170824bda8d908640a6" },
-{ date: "2026.10.04", title: "xAI 그록 A to Z — 왕초보 사용법부터 그록 자동화(Grok Automation)까지 (돈되는 AI+SNS, 이든)", url: "https://app.notion.com/p/3efd5308c4dd8112962be3bb357d84a2" },
-{ date: "2026.10.04", title: "아무도 에이전트를 제대로 쓰지 못하고 있다 — 진짜 경쟁력은 '실행 환경' (Swit 이주환 대표 1부, Tony's 테이블)", url: "https://app.notion.com/p/3efd5308c4dd81e2ac14e7c4f9a283da" },
-{ date: "2026.10.04", title: "봇을 만드는 봇까지 — 그록봇(Grok Bot) 팀이 AI를 나눠 쓰는 법 (평범한 사업가)", url: "https://app.notion.com/p/3efd5308c4dd81fcb0c3c4b2d4f06611" },
-{ date: "2026.10.03", title: "프롬프트 쓰던 시대는 갔다 — AI 천재들이 올인 중인 '월드 모델' (Swit 이주환 대표 2부, Tony's 테이블)", url: "https://app.notion.com/p/3eed5308c4dd8147b2fbd759bbb5e266" },
-{ date: "2026.09.20", title: "당뇨가 무섭다면 이 음식 10가지 (건강 노트) — 요점 정리", url: "https://app.notion.com/p/3e1d5308c4dd8147a0d3e83e87da7a28" }
+{ date: "2026.10.07", title: "김재우의 구동사 100 — 영한 병행 영어학습 노트 (DAY 001~020, 영어독립)", url: "posts/etc/001.html" },
+{ date: "2026.10.07", title: "30년 약사가 검증한 혈당 낮추는 최고의 음식 — 모시조개 마늘탕·초콩·과일 (한형선 약사 1부, 지식의 맛)", url: "posts/etc/002.html" },
+{ date: "2026.10.04", title: "xAI 그록 A to Z — 왕초보 사용법부터 그록 자동화(Grok Automation)까지 (돈되는 AI+SNS, 이든)", url: "posts/etc/003.html" },
+{ date: "2026.10.04", title: "아무도 에이전트를 제대로 쓰지 못하고 있다 — 진짜 경쟁력은 '실행 환경' (Swit 이주환 대표 1부, Tony's 테이블)", url: "posts/etc/004.html" },
+{ date: "2026.10.04", title: "봇을 만드는 봇까지 — 그록봇(Grok Bot) 팀이 AI를 나눠 쓰는 법 (평범한 사업가)", url: "posts/etc/005.html" },
+{ date: "2026.10.03", title: "프롬프트 쓰던 시대는 갔다 — AI 천재들이 올인 중인 '월드 모델' (Swit 이주환 대표 2부, Tony's 테이블)", url: "posts/etc/006.html" },
+{ date: "2026.09.20", title: "당뇨가 무섭다면 이 음식 10가지 (건강 노트) — 요점 정리", url: "posts/etc/007.html" }
 ];
 
 /* -------------------------- 렌더링 -------------------------- */
@@ -557,11 +586,15 @@ list.setAttribute("start", start + 1);
 if (items.length === 0){
 list.innerHTML = `<li><p class="empty-note">${emptyText || "등록된 항목이 없습니다."}</p></li>`;
 } else {
-list.innerHTML = items.slice(start, start + pageSize).map((it, i) => `
-<li><a href="${esc(it.url)}" target="_blank" rel="noopener noreferrer">
+list.innerHTML = items.slice(start, start + pageSize).map((it, i) => {
+const external = /^https?:/i.test(it.url);
+const extra = external ? ' target="_blank" rel="noopener noreferrer"' : '';
+return `
+<li><a href="${esc(it.url)}"${extra}>
 <span class="item-no">${start + i + 1}.</span>
 <span class="item-text">${esc(it.title)}${it.date ? `<span class="item-date">${esc(it.date)}</span>` : ""}</span>
-</a></li>`).join("");
+</a></li>`;
+}).join("");
 }
 if (totalPages <= 1){
 pager.innerHTML = "";

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>헤르메스 에이전트 - 노트북 꺼도 24시간 일하는 AI팀 만들기 (실배개발자) | 뉴스투데이</title>
+<meta name="description" content="영상 정보 영상 URL: https://youtu.be/h_6jRAkMATI?si=AWRid0U-be7ia2-g 구분: AI창업 요약 [결론] 헤르메스 에이전트는 노스리서치가 만든 오픈소스(MIT, 스타 19만 개+) 자율 에이전트로, VPS+도…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/ai-talks/023.html">
+<meta property="og:title" content="헤르메스 에이전트 - 노트북 꺼도 24시간 일하는 AI팀 만들기 (실배개발자) | 뉴스투데이">
+<meta property="og:description" content="영상 정보 영상 URL: https://youtu.be/h_6jRAkMATI?si=AWRid0U-be7ia2-g 구분: AI창업 요약 [결론] 헤르메스 에이전트는 노스리서치가 만든 오픈소스(MIT, 스타 19만 개+) 자율 에이전트로, VPS+도…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/ai-talks/023.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#card-ai-talks">목록으로</a></p>
+<p class="post-kicker">AI와 나눈 이야기 모음 · 2026.09.15</p>
+<h1>헤르메스 에이전트 - 노트북 꺼도 24시간 일하는 AI팀 만들기 (실배개발자)</h1>
+<article class="prose">
+<h2>영상 정보</h2>
+<ul>
+<li>영상 URL: <a href="https://youtu.be/h_6jRAkMATI?si=AWRid0U-be7ia2-g" target="_blank" rel="noopener noreferrer">https://youtu.be/h_6jRAkMATI?si=AWRid0U-be7ia2-g</a></li>
+<li>구분: AI창업</li>
+</ul>
+<h2>요약</h2>
+<p>[결론] 헤르메스 에이전트는 노스리서치가 만든 오픈소스(MIT, 스타 19만 개+) 자율 에이전트로, VPS+도커에 설치하면 노트북을 꺼도 24시간 대기하며 스스로 학습·진화하는 &#39;AI 직원&#39;이 됩니다. 오픈클로와 달리 멀티에이전트 오케스트레이션보다 자가개선(학습 루프)에 집중하며, 칸반보드로 목표 하나만 던지면 알아서 팀을 꾸려 작업을 완수합니다.</p>
+<p>[핵심 근거]</p>
+<ol>
+<li>닫힌 학습 루프: 복잡한 문제를 풀면 그 해결 과정을 SKILL.md로 자동 저장해 재사용하며, 사용자가 따로 저장하라고 하지 않아도 스스로 기록·정리(메모리 파일 글자수 제한 도달 시 자동 통합)합니다.</li>
+<li>오픈클로 대비 차별점: 오픈클로는 여러 채널·멀티프로필을 연결하는 중앙 관제탑형 오케스트레이션에 강한 반면, 헤르메스는 작업 실행과 자가개선에 초점을 맞춰 갈수록 더 잘하는 에이전트를 지향합니다(오픈클로→헤르메스 마이그레이션 스크립트도 공식 제공).</li>
+<li>칸반보드로 팀 자동 구성: 칸반에 목표(예: &#39;랜딩페이지 만들어줘&#39;)를 카드 하나로 던지면 에이전트가 스스로 To-do·In-progress·Done으로 일을 쪼개고(UI 설계→구현→반응형/접근성→SEO→최종 QA) 순차 실행해 결과물을 완성합니다.</li>
+</ol>
+<p>[설치 방법(3가지 중 추천안)]</p>
+<ol>
+<li>로컬 메인 랩탑: 개인정보 전체 접근 권한을 주게 되어 보안 위험 - 비추천.</li>
+<li>맥미니 등 전용 서버 구매: 개인정보와 격리되나 초기 비용 부담(약 100만 원대).</li>
+<li>호스팅어 등 클라우드 VPS(추천): 월 8.99달러 수준, 아시아 리전(인도네시아 등) 선택, 우분투+도커로 원클릭 설치, 서버 관리 부담 없음.</li>
+</ol>
+<p>[설치 후 핵심 단계]</p>
+<ol>
+<li>&#39;hermes setup&#39;에서 퀵셋업이 아닌 풀셋업을 선택.</li>
+<li>소울MD·유저MD·메모리MD 등 정체성/기억 파일 생성을 위해 에이전트가 딥 인터뷰 형식으로 질문 -&gt; 답변.</li>
+<li>디스코드 등 메시징 채널을 게이트웨이로 연결(텔레그램/슬랙도 지원, 카카오톡은 아직 미지원).</li>
+<li>대시보드에서 크론잡(예: 매일 아침 8시 메일·캘린더 브리핑), 프로필, 모델(GPT-5.5 등) 설정 가능.</li>
+<li>칸반 카드나 디스코드 명령으로 목표를 주면 이후 개입 없이 자동 진행.</li>
+</ol>
+<p>[유의사항]</p>
+<ul>
+<li>VPS 도커 컨테이너 안에서 작업하므로 권한 위임 자체는 비교적 안전하지만, 학습 루프가 스킬/메모리를 어떻게 바꾸는지는 별도 승인 절차 없이 진행되므로 주기적으로 직접 점검하는 것을 권장.</li>
+<li>학습 루프가 만능은 아니며, 의도(인텐트)만 주고 방치하면 결과물이 마음에 들지 않을 확률이 높아 스펙을 구체적으로 쓰고 중간중간 사람이 확인하는 이터레이션이 필요.</li>
+</ul>
+<h2>키워드</h2>
+<p>헤르메스, 오픈클로비교, 호스팅어VPS, 칸반스킬, 자가개선, 스킬자동생성</p>
+
+</article>
+<p class="source"><a href="https://app.notion.com/p/3dcd5308c4dd818580cdfc674672b521" target="_blank" rel="noopener noreferrer">원문(노션) 보기</a></p>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>
