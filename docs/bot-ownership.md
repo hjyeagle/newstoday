@@ -1,7 +1,7 @@
 # 뉴스투데이 섹션 ↔ 봇 연계
 
 저장소: `hjyeagle/newstoday`  
-공개 페이지: https://hjyeagle.github.io/newstoday/  
+공개 페이지: https://newstoday.co.kr
 기준일: 2026-09-18
 
 | 번호 | 섹션 | 해시 | 담당 봇 | 연계 |
