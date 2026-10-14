@@ -344,15 +344,17 @@ margin:10px 0 12px;
   POD(종이책), 전자책, 사이버 동방예술관은 적힌 순서를 그대로 둡니다.
 ▶ AI와 나눈 이야기, 시니어 수익창출 방법, 유튜브채널 요약정보, 기타 모음은
   노션으로 보내지 않습니다. 전체 글을 posts/ 상세 페이지에 넣고 그 주소로 연결합니다.
-▶ POD(종이책)·전자책 박스는 한 화면에 5개, 나머지 박스는 3개씩 표시되며
+▶ POD(종이책)·전자책 박스와 유튜브채널 요약정보는 한 화면에 5개,
+  나머지 박스는 3개씩 표시되며
   초과분은 박스 하단의 ‹ › 화살표로 이전/다음 페이지를 볼 수 있습니다.
-   (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_LIST 값으로 조절)
+   (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_YOUTUBE / PAGE_SIZE_LIST 값으로 조절)
 ▶ 08번(네이버 블로그) blogData 배열은 손으로 수정하지 않습니다.
   scripts/sync-naver-blog.mjs 를 GitHub Actions가 주기 실행하여 이 배열 전체를 자동 갱신·커밋합니다.
 ========================================================================= */
 
 const PAGE_SIZE_BOOK = 5;
 const PAGE_SIZE_LIST = 3;
+const PAGE_SIZE_YOUTUBE = 5;
 
 // 01/02 공통 도서 제목 (번호순)
 const bookTitles = [
@@ -462,7 +464,7 @@ const seniorData = [
 // , { date: "YYYY.MM.DD", title: "자료 제목", url: "https://..." }
 ];
 
-// 07 유튜브채널 요약정보 (채널별 묶음: 빌더 조쉬, 오토코더, 시민개발자 구씨, 오늘코드todaycode, 글천개)
+// 07 유튜브채널 요약정보 (채널별 묶음: 빌더 조쉬, 오토코더, 시민개발자 구씨, 오늘코드todaycode, 글천개, 필로소피 AI 교육)
 const diabetesData = [
 { date: "2026.10.04", title: "빌더 조쉬_AI 고객 응대", url: "posts/youtube/001.html" },
 { date: "2026.10.04", title: "빌더 조쉬_AI 미디어 제작", url: "posts/youtube/002.html" },
@@ -513,7 +515,13 @@ const diabetesData = [
 { date: "2026.10.12", title: "글천개_전자책 및 지식창업", url: "posts/youtube/047.html" },
 { date: "2026.10.12", title: "글천개_부업 및 수입원", url: "posts/youtube/048.html" },
 { date: "2026.10.12", title: "글천개_마케팅 및 매출", url: "posts/youtube/049.html" },
-{ date: "2026.10.12", title: "글천개_돈 버는 글쓰기", url: "posts/youtube/050.html" }
+{ date: "2026.10.12", title: "글천개_돈 버는 글쓰기", url: "posts/youtube/050.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_AI 외국어 학습", url: "posts/youtube/056.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_AI 에이전트 및 자동화", url: "posts/youtube/055.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_AI 교육 및 학습", url: "posts/youtube/054.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_이미지 및 영상 생성", url: "posts/youtube/053.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_오픈소스 및 파인튜닝", url: "posts/youtube/052.html" },
+{ date: "2026.10.14", title: "필로소피 AI 교육_개발 및 바이브코딩", url: "posts/youtube/051.html" }
 // ↓ 새 자료 등록 시 아래에 한 줄 추가
 // , { date: "YYYY.MM.DD", title: "채널명_라벨명", url: "https://app.notion.com/..." }
 ];
@@ -635,7 +643,7 @@ renderCard("card-ebook", bookItems(ebookLinks), PAGE_SIZE_BOOK);
 renderCard("card-opinion", opinionData, PAGE_SIZE_LIST);
 renderCard("card-ai-talks", aiTalksData, PAGE_SIZE_LIST);
 renderCard("card-senior", seniorData, PAGE_SIZE_LIST);
-renderCard("card-diabetes", diabetesData, PAGE_SIZE_LIST);
+renderCard("card-diabetes", diabetesData, PAGE_SIZE_YOUTUBE);
 renderCard("card-etc", etcData, PAGE_SIZE_LIST);
 
 // 08 네이버 블로그 전체 글 (blogData는 GitHub Actions가 자동 갱신)

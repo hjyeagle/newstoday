@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>필로소피 AI 교육_오픈소스 및 파인튜닝 | 뉴스투데이</title>
+<meta name="description" content="1. (Gemma4) 무료로 로컬에서 사용 가능한 구글 딥마인드의 오픈소스 모델 핵심 요약 및 개요: 구글 딥마인드가 공개한 멀티모달 오픈소스 AI 모델인 Gemma 4의 특징과 설치법을 배우고, Ollama 및 AntiGravity를 통해 인터…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/052.html">
+<meta property="og:title" content="필로소피 AI 교육_오픈소스 및 파인튜닝 | 뉴스투데이">
+<meta property="og:description" content="1. (Gemma4) 무료로 로컬에서 사용 가능한 구글 딥마인드의 오픈소스 모델 핵심 요약 및 개요: 구글 딥마인드가 공개한 멀티모달 오픈소스 AI 모델인 Gemma 4의 특징과 설치법을 배우고, Ollama 및 AntiGravity를 통해 인터…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/052.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.14</p>
+<h1>필로소피 AI 교육_오픈소스 및 파인튜닝</h1>
+<article class="prose">
+<h3>1. (Gemma4) 무료로 로컬에서 사용 가능한 구글 딥마인드의 오픈소스 모델</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글 딥마인드가 공개한 멀티모달 오픈소스 AI 모델인 Gemma 4의 특징과 설치법을 배우고, Ollama 및 AntiGravity를 통해 인터넷 연결 없이 로컬 환경에서 구동되는 스트림릿(Streamlit) 웹앱을 구축하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Gemma 4 (E2B / E4B / 26B 등)</strong>, <strong>Ollama</strong>, <strong>AntiGravity</strong>, <strong>Streamlit</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 공식 사이트에 접속하여 Ollama 프로그램을 다운로드 및 설치합니다.</li>
+<li>시작 메뉴에서 CMD 명령 프롬프트를 열고 <code>ollama run gemma4:e4b</code> 명령어를 입력하여 Gemma 4 모델을 다운로드 및 구동합니다.</li>
+<li>AntiGravity에서 새 작업 폴더를 열고 <code>Gemini 3.1 Pro / Flash</code> 모델을 선택한 후 대화창을 엽니다.</li>
+<li>Ollama와 Gemma 4 E4B 모델을 연동하여 작동하는 교육용 스트림릿 웹사이트 제작 프롬프트를 입력해 파이썬 코드를 생성합니다.</li>
+<li><code>requirements.txt</code> 패키지 설치 후 <code>streamlit run app.py</code> 명령어로 웹 앱을 실행하여 로컬 브라우저에서 이미지(수학 문제, 영어 수능 문제 등) 분석 및 교안 작성 기능을 테스트합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 사용자 PC의 하드웨어 사양(RAM 및 VRAM)에 맞는 적절한 모델 크기(E2B, E4B, 26B 등)를 선택해야 속도 지연이나 다운 현상 없이 안정적으로 작동합니다.
+</li>
+<li><strong>활용 팁</strong>: 인터넷 연결 없이 완벽한 오프라인 환경에서 작동하므로 API 비용이나 월 구독료 부담이 없으며, 학생 개인정보나 시험 문제 유출 걱정 없는 보안 채봇으로 활용할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. (실습) AI가 암세포 치유에 도움을 주는 시대 (Cell to Sentence Scale Gemma 2 2b)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 유전자 발현 데이터를 문장(Sentence) 형태로 변환하는 Cell to Sentence (C2S) 기술과 Gemma 2 모델을 결합하여, 세포 타입을 자동 예측하고 신약 개발 가설을 세우는 생물정보학 AI 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>C2S Scale Gemma 2 (2B / 27B)</strong>, <strong>Google Colab</strong>, <strong>Hugging Face (<code>han-daker-lab</code>)</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>제공된 구글 코랩(Google Colab) 링크로 접속하여 드라이브 사본 저장을 진행합니다.</li>
+<li>첫 번째 셀을 실행하여 C2S 분석에 필요한 라이브러리를 설치합니다.</li>
+<li>유전자 정보(CD3D, CD5E 등 발현량순 나열)가 담긴 세포 문장 형태의 샘플 데이터를 생성합니다.</li>
+<li>Hugging Face에서 C2S Scale Gemma 2 2B 모델 및 최적화된 프롬프트를 로드합니다.</li>
+<li>예측 함수를 실행하여 샘플 데이터의 세포 타입(T-세포, B-세포 등)을 분류하고 정확도(62.5% 등) 및 시각화 그래프 결과를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 코랩 무료 GPU 환경 제약으로 소형 2B 모델을 주로 실습에 사용하지만, 실제 연구 수준의 정밀한 예측 능력을 확보하려면 27B 모델을 사용하는 것이 권장되며, AI의 제안은 임상실험을 통한 검증이 필수적입니다.
+</li>
+<li><strong>활용 팁</strong>: 면역세포가 암세포를 찾기 어려운 차가운 종양(Cold Tumor)을 치료가 쉬운 뜨거운 종양(Hot Tumor)으로 변환할 약물을 AI 패턴 탐색으로 빠르게 스크리닝할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>3. [내 PC에서 로컬 파인튜닝] Unsloth Docker 설치법</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글 코랩의 사용 시간 및 자원 한계를 극복하기 위해, 내 PC에 Docker와 WSL2 환경을 구축하여 Unsloth 기반의 독립적인 로컬 파인튜닝 환경을 세팅하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Unsloth</strong>, <strong>Docker Desktop</strong>, <strong>WSL2 (Linux용 Windows 서브시스템)</strong>, <strong>NVIDIA GPU Drivers</strong>, <strong>PowerShell</strong>, <strong>Jupyter Notebook (<code>localhost:8888</code>)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>PowerShell을 관리자 권한으로 열고 <code>wsl --install</code> 명령어로 WSL2를 설치한 뒤 재부팅합니다.</li>
+<li>도커 데스크탑(Docker Desktop)을 설치하고, 설정에서 &#39;Use the WSL 2 based engine&#39; 및 Ubuntu 연동을 활성화합니다.</li>
+<li>관리자 파워셸에서 지정 폴더로 이동한 후, 언슬로스 도커 실행 명령어와 함께 로그인 접속 비밀번호를 설정하여 실행합니다.</li>
+<li>7GB 분량의 도커 컨테이너 이미지 다운로드가 완료될 때까지 5~10분간 대기합니다.</li>
+<li>웹 브라우저 주소창에 <code>localhost:8888</code>을 입력하고 설정한 비밀번호를 입력해 주피터 노트북 내 언슬로스 파인튜닝 템플릿에 접속합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: NVIDIA GPU(VRAM 8GB 이상)가 탑재된 윈도우/리눅스 PC 환경이 필수적이며, Mac 사용자는 NVIDIA GPU 부재로 도커 설치 대신 구글 코랩이나 클라우드 GPU 사용이 권장됩니다.
+</li>
+<li><strong>활용 팁</strong>: 도커 컨테이너 방식으로 설치하면 라이브러리 간 버전 충돌 및 환경 재설정 번거로움 없이 안전하고 동일한 파인튜닝 작업 공간을 언제든 오프라인으로 이용할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. [올라마 클라우드] 선생님들 이제 큰 사이즈의 오픈소스 AI도 써볼 수 있습니다!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 고성능 그래픽 카드가 없는 개인 컴퓨터에서도 올라마 클라우드(Ollama Cloud) 인프라를 연결하여 600B급 이상의 초대형 오픈소스 AI 모델을 빠르게 구동하고 테스트하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Ollama Cloud</strong>, <strong>Terminal / CMD</strong>, <strong>DeepSeek V3.1 (671B)</strong>, <strong>GPT-OSS (120B)</strong>, <strong>Qwen 3 Coder (480B)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 웹사이트에 접속하여 회원가입 및 구글 계정 로그인을 마칩니다.</li>
+<li>터미널 또는 CMD 창을 열고 <code>ollama signin</code> 명령어를 입력해 클라우드 계정을 인증합니다.</li>
+<li>대형 클라우드 전용 모델 명령어(예: <code>ollama run deepseek-v3.1:671b-cloud</code>)를 입력합니다.</li>
+<li>클라우드 서버 세션이 연결되면 터미널상에서 대형 AI 모델 로딩 완료를 확인합니다.</li>
+<li>양자역학 개념 설명, AI 에이전트 동작 원리, 테트리스 게임 코드 작성 등을 입력하여 압도적인 응답 속도와 완성도를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 현재 프리뷰 단계로 무료 이용이 가능하지만 시간당/일일 사용량 제한이 존재하며, 추후 유료 과금 요금제로 전환될 수 있으므로 한도를 확인하며 사용해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 개인 노트북 사양의 한계로 다운로드조차 불가능했던 초대형 오픈소스 AI 모델들을 PC 배터리 소모나 발열 없이 클라우드 파워를 빌려 즉시 수업 준비나 코딩 연구에 활용할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>5. [임베딩 젬마] 100개 언어 지원하는 구글의 새로운 임베딩 모델</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글의 초경량 다구어 임베딩 모델인 Embedding Gemma와 Qwen 3 (4B) 추론 모델을 연동하여, PDF 문서를 100개 이상의 언어로 빠르게 벡터화하고 고성능 로컬 RAG 검색 시스템을 구축하는 기법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Embedding Gemma (308M)</strong>, <strong>Qwen 3 (4B)</strong>, <strong>Ollama</strong>, <strong>Python</strong>, <strong>Streamlit</strong>, <strong>Cursor / Code Editor</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>CMD/터미널에서 <code>ollama pull embedding-gemma</code> 및 <code>ollama run qwen3:4b</code> 명령어로 두 모델을 설치합니다.</li>
+<li>파이썬 코드(<code>app.py</code>)와 <code>requirements.txt</code> 패키지 파일을 준비하고 터미널에서 라이브러리를 설치합니다.</li>
+<li><code>streamlit run app.py</code> 명령어로 로컬 브라우저에서 RAG 전용 분석 웹사이트를 구동합니다.</li>
+<li>PDF 문서(예: 미국 CPI 관련 증권사 분석 보고서)를 업로드하여 텍스트 추출 및 청크(Chunk) 단위 분할을 진행합니다.</li>
+<li>Embedding Gemma가 문서를 숫자 벡터로 전환한 뒤 질문을 입력하면, 코사인 유사도가 높은 청크를 찾아 Qwen 3 추론 모델이 깔끔한 한글 요약 답변을 도출하도록 합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: RAG 시스템 구축 시 텍스트를 벡터로 변환하는 임베딩 모델(Embedding Gemma)과 검색된 결과를 종합해 답을 쓰는 LLM 추론 모델(Qwen 3 등) 두 가지가 모두 준비되어 있어야 정상 작동합니다.
+</li>
+<li><strong>활용 팁</strong>: 200MB 미만의 매우 적은 RAM 메모리만으로 구동 가능하므로, 논문이나 보고서를 많이 읽는 연구자 및 교사가 인터넷이 끊긴 상태에서도 민감한 문서를 최고 수준의 보안으로 빠르게 임베딩 및 요약 분석할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>6. Fine Tuning 실습 (AI로 만든 합성 데이터로 AI 학습시키기)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 연구 논문 PDF 파일만 제공하면 Meta Synthetic Data Kit가 Q&amp;A 학습 데이터를 자동으로 추출해 합성 데이터(Synthetic Data)를 구성하고, 이를 Unsloth로 Llama 3.2 3B 모델에 파인튜닝시키는 자동화 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Unsloth</strong>, <strong>Meta Synthetic Data Kit</strong>, <strong>Llama 3.2 3B</strong>, <strong>Google Colab (GPU / T4 or A100)</strong>, <strong>Hugging Face</strong>, <strong>Ollama / LM Studio</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>제공된 구글 코랩 사본을 저장하고 GPU 런타임(T4 또는 A100)을 설정합니다.</li>
+<li>Unsloth 및 Meta Synthetic Data Kit 패키지를 설치합니다.</li>
+<li>원본 논문 PDF 주소를 불러와 청크로 분할한 후 Synthetic Data Kit를 실행해 질문과 답변(Q&amp;A) 쌍의 합성 데이터셋을 자동 생성합니다.</li>
+<li>정제된 데이터를 제이슨(JSON) 형식으로 변환하여 Llama 3.2 3B 모델과 LoRA 어댑터 환경에 로드합니다.</li>
+<li><code>SFTTrainer</code>로 파인튜닝을 진행한 후, 학습된 모델을 GGUF 포맷으로 변환하여 본인의 Hugging Face 레포지토리에 자동 올립니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Hugging Face 저장소 업로드 시 반드시 쓰기(Write) 권한이 있는 Access Token을 입력해야 하며, 훈련 단계 설정값(Epochs)을 적절히 조절해야 오버피팅을 예방할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 사람이 일일이 수백~수천 개의 Q&amp;A 수작업 데이터를 만들 필요 없이 전문 학술 논문 하나만 넣어주면 합성 데이터 구성부터 파인튜닝 모델 추출까지 일괄 자동 처리할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. Gemma 4, 나만의 로컬 법무팀</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 내 PC에 Gemma 4 (26B) 모델을 설치하고 에이전트 지침 및 경찰청 양식을 부여하여, 외부 클라우드 유출 없이 안전하게 고소장이나 계약서 초안을 작성해 주는 오프라인 법무 전용 시스템을 구축합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Gemma 4 (E4B / 26B)</strong>, <strong>Ollama</strong>, <strong>AntiGravity</strong>, <strong>Streamlit</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 설치 후 CMD 창에서 <code>ollama run gemma4:26b</code> 명령어로 모델을 다운로드 및 구동합니다.</li>
+<li>Ollama 앱 인터페이스에서 법무 전용 에이전트 워크플로우 지침(프롬프트)을 입력합니다.</li>
+<li>경찰청 민원 포털의 표준 고소장 양식 템플릿과 중고거래 피해 등의 사실관계 데이터를 제공합니다.</li>
+<li>Gemma 4 모델이 양식 규격에 맞춰 사건 경위, 고소 취지, 관련 날짜가 정리된 고소장 초고를 자동 생성하도록 합니다.</li>
+<li>AntiGravity로 생성한 스트림릿 웹사이트를 통해 사실관계를 입력하고 수정된 결과를 워드 문서(.docx) 파일로 다운로드합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI는 정식 법률 전문가가 아니므로 존재하지 않는 법조항이나 판례를 만들어내는 환각(Hallucination) 현상이 발생할 수 있습니다. 반드시 생성된 내용을 사람이 검증하고 초안 작성 목적으로만 활용해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 민감한 기밀 서류나 개인 사생활 관련 법률 문서를 외부 AI 서버로 전송하지 않고 내 컴퓨터 안에서 완벽한 프라이버시 보호 하에 24시간 무료로 검토하고 서식을 작성할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>8. Gemma 4, 나만의 로컬 재무팀</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Gemma 4 (26B) 모델에 알렉스·미아·크리스 등으로 구성된 재무 분석 에이전트 워크플로우를 탑재하고, 엑셀 재무제표 원본 데이터를 입력받아 자동 손익 분석 및 보고서를 생성하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Gemma 4 (E4B / 26B)</strong>, <strong>Ollama</strong>, <strong>AntiGravity</strong>, <strong>Streamlit</strong>, <strong>Python (Pandas / openpyxl)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 사이트에서 Gemma 4 모델을 다운로드합니다.</li>
+<li>AntiGravity에서 고정 댓글의 GitHub 레포지토리 주소를 참조시켜 엑셀 업로드용 재무 분석 스트림릿 웹앱 코드를 생성합니다.</li>
+<li><code>streamlit run app.py</code> 명령어로 재무 전용 로컬 웹 사이트를 실행합니다.</li>
+<li>손익계산서, 월별 매출 현황, 현금흐름 시트가 포함된 엑셀 데이터 파일(<code>*.xlsx</code>)을 웹 화면에 업로드합니다.</li>
+<li>Gemma 4 26B 모델이 엑셀 시트 데이터를 읽고 전년 대비 매출 증감율, 비용 구조, 종합 인사이트가 포함된 재무 분석 보고서를 자동 도출합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI가 수식을 계산하는 과정에서 환각으로 인해 수치 오류가 일부 나타날 수 있으므로 최종 경영 의사결정 전 수치를 재확인해야 하며, 최신 세법 변동 사항은 포함되지 않을 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 회사 내부 기밀 매출 원장이나 손익 현황 등 외부 유출이 불가능한 보안 재무 엑셀 파일을 오프라인 및 사내 단독 환경에서 안전하게 다루며 일관된 보고서를 빠르게 작성할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. gpt-oss 파인튜닝! 한국어 데이터셋 학습시키기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI가 전격 공개한 강력한 오픈소스 추론 모델 gpt-oss (20B)를 Unsloth 환경에서 한국어 교과서 합성 데이터셋으로 파인튜닝하여 나만의 맞춤형 한국어 모델로 제작하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI gpt-oss (20B)</strong>, <strong>Unsloth</strong>, <strong>Google Colab (T4 / A100 GPU)</strong>, <strong>Hugging Face (<code>Maywell/korean_textbooks</code>)</strong>, <strong>LoRA</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글 코랩 사본을 저장하고 GPU 런타임을 설정합니다.</li>
+<li>Unsloth 설치 후 gpt-oss 20B 모델을 로드하고, 전체 파라미터의 1%만 효율적으로 학습시키는 LoRA 어댑터를 추가합니다.</li>
+<li>모델의 추론 노력 수준(Reasoning Effort) 및 토큰 제한값을 세팅합니다.</li>
+<li>Hugging Face에 공개된 한국어 교과서 품질 합성 데이터셋(<code>Maywell/korean_textbooks</code>)을 불러와 포매팅을 거칩니다.</li>
+<li><code>SFTTrainer</code>로 30단계 파인튜닝을 진행한 후 &#39;2의 거듭제곱&#39; 등의 주제로 추론 성능을 테스트하고, 결과 LoRA 어댑터 파일을 본인의 Hugging Face 레포지토리에 업로드합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: gpt-oss 모델의 추론 강도(Effort)를 높게 설정할 경우 답변 품질은 대폭 향상되나, Max New Tokens 한도값을 함께 늘려주어야 하며 응답 소요 시간이 길어질 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 상업적 배포 및 개조가 자유로운 라이선스를 가진 gpt-oss를 사내 지식이나 특정 분야 데이터셋으로 파인튜닝하여, 특수 목적용 보안 한국어 AI 서비스로 폭넓게 비즈니스화할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>10. Llama 3.1 Fine Tuning + 저장 후 실행까지!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Llama 3.1 8B 모델을 윤리적 한국어 대화 데이터셋으로 파인튜닝하고, 이를 GGUF 양자화 파일로 변환 및 다운로드하여 내 PC의 Mestic 앱에서 오프라인 AI로 구동하는 전 과정 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.1 8B</strong>, <strong>Unsloth</strong>, <strong>Google Colab (T4 / L4 GPU)</strong>, <strong>Hugging Face (<code>Korean Safe Conversation</code>)</strong>, <strong>GGUF</strong>, <strong>Mestic App / Ollama</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글 코랩 사본 저장 후 T4 GPU를 연결하고 Unsloth 및 필수 라이브러리를 설치합니다.</li>
+<li>Llama 3.1 8B 모델을 불러온 뒤 LoRA 어댑터 및 알파카 프롬프트 템플릿을 설정합니다.</li>
+<li>성균관대 윤리 대화 데이터셋(<code>Korean Safe Conversation</code>)을 로드하여 <code>SFTTrainer</code>로 60단계 모델 학습을 진행합니다.</li>
+<li>학습 완료 후 진로 상담사 페르소나 지침을 부여해 추론 동작 및 대화 생성 상태를 검증합니다.</li>
+<li>학습된 모델을 GGUF(q8_0 등) 포맷으로 변환해 Hugging Face 저장소로 올린 뒤 파일(약 8.5GB)을 내 PC로 다운로드합니다.</li>
+<li>내 PC에 미스티(Mestic) 앱을 설치하고 &#39;Import GGUF Model&#39; 메뉴를 통해 다운로드한 파일 및 인스트럭션을 등록하여 인터넷 없이 대화를 실행합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: T4 무료 GPU 사용 시 메모리 한계로 Hugging Face 업로드 과정이 멈출 수 있으므로 경량화된 GGUF 양자화 옵션을 선택해야 하며, 실패 시 코랩 유료 GPU(L4 등) 활용을 검토합니다.
+</li>
+<li><strong>활용 팁</strong>: 파인튜닝된 라마 모델을 단일 GGUF 파일로 변환하여 보관해 두면, 인터넷이 차단된 비행기 안이나 보안 연구실에서도 나만의 특화 AI 비서로 자유롭게 불러와 실행할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>1. Llama 3.2 11b Vison 써보기 (나만의 인테리어 전문가)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 시각 정보를 인식하는 멀티모달 모델인 Llama 3.2 11B Vision을 허깅 챗 어시스턴트(Hugging Chat Assistant)에서 에이전트 워크플로우 방식으로 활용하여, 공간 이미지를 분석하고 인테리어 개선안을 추천받는 시스템 구축법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Meta Llama 3.2 11B Vision Instruct</strong>, <strong>Hugging Chat Assistant</strong>, <strong>Naver Cafe (프롬프트 템플릿)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글에 Hugging Chat Assistant를 검색하여 접속 후 로그인하고 어시스턴트 메뉴로 이동합니다.</li>
+<li><code>Create New Assistant</code>를 누르고 모델로 &#39;Meta Llama 3.2 11B Vision Instruct&#39;를 선택합니다.</li>
+<li>세 개 역할(샘: 이미지 분석, 제니: 테마 제안, 윌리엄: 종합 보고서)로 구성된 에이전트 워크플로우 지침을 시스템 프롬프트에 입력하고 저장합니다.</li>
+<li>질문 입력창 옆의 파일 업로드 버튼을 사용해 변경하고자 하는 거실 또는 방 사진을 업로드합니다.</li>
+<li>샘의 컬러/가구 배치 분석, 제니의 식물·조명·미술품 배치 제안, 윌리엄의 종합 보고서까지 순차적으로 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 무료 이용 시 대화 횟수에 일부 한도가 있을 수 있으며, 어시스턴트 첫 생성 직후에는 파일 업로드 버튼이 보이지 않을 수 있으므로 기재된 스타트 질문을 클릭해 대화를 연 후에 사진을 올려야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순히 이미지 묘사만 받는 것이 아니라, 에이전트 역할을 분담(샘-제니-윌리엄)시키는 프롬프트를 적용하면 색상 분석부터 분위기 변경을 위한 구체적인 소품 제안까지 종합 리포트 형태로 받을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. Llama 3.2 Fine Tuning (+RAG) : 나만의 고객 응대팀</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Llama 3.2 3B 모델에 고객 응대 데이터를 학습(파인튜닝)시키고, 이를 오프라인 실행 앱(Mestic)의 널리지 스택(RAG) 기능과 결합하여 보안과 답변 정확도가 뛰어난 맞춤형 CS 지원 에이전트를 구축하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.2 3B Instruct</strong>, <strong>Google Colab (T4 GPU)</strong>, <strong>Hugging Face</strong>, <strong>Unsloth</strong>, <strong>Mestic App</strong>, <strong>CSV / JSONL 데이터셋</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>인스트럭션, 인풋, 리스폰스로 구성된 고객 응대 Q&amp;A 엑셀 데이터를 작성하고 CSV 파일로 저장합니다.</li>
+<li>구글 코랩에서 CSV 파일을 JSONL 포맷으로 자동 변환하여 본인의 Hugging Face 데이터셋 저장소에 업로드합니다.</li>
+<li>Unsloth 환경에서 Llama 3.2 3B 모델을 불러오고 LoRA 기술을 적용하여 고객 응대 데이터셋을 파인튜닝합니다.</li>
+<li>파인튜닝된 결과물을 GGUF 양자화 파일로 변환하여 Hugging Face에 세이브 후 내 PC로 다운로드합니다.</li>
+<li>Mestic 앱을 설치하고 GGUF 모델을 로드한 뒤, 텍스트 기반 널리지 스택(RAG)과 고객 응대 가이드라인 지침을 연동하여 오프라인 답변을 테스트합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: CSV 작성 시 열 사이에 빈칸이 있으면 변환 에러가 발생하므로 데이터를 빽빽하게 정제해야 하며, 코랩 파인튜닝 시 API 키 관련 경고로 프로세스가 멈추면 세션을 재시작해 실행해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 파인튜닝만 단독 적용하는 것보다 Mestic의 널리지 스택(RAG) 및 지침 프롬프트를 함께 병용하면 최신 변경 규정과 고유 답변 스타일이 모두 반영된 완성도 높은 CS 에이전트를 얻을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>3. Llama 3.2 Vision 11B (멀티모달 기능 : 나만의 총무팀)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 이미지 텍스트 추출이 가능한 Llama 3.2 Vision 11B 모델을 로컬 PC의 Ollama로 구동하여, 영수증이나 지출 증빙 이미지를 판독하고 항목과 금액을 자동 정돈해 주는 총무 보조 시스템을 만듭니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.2 Vision 11B</strong>, <strong>Ollama</strong>, <strong>CMD / Terminal</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 공식 웹사이트에서 프로그램을 다운로드하여 설치합니다.</li>
+<li>모델 스토어에서 <code>llama3.2-vision:11b</code> 명령어를 확인하고 복사합니다.</li>
+<li>CMD 터미널에서 <code>ollama run llama3.2-vision:11b</code>를 입력하여 모델을 로컬로 받아서 실행합니다.</li>
+<li>프롬프트 명령어 창에 내 PC에 저장된 영수증 이미지 경로를 입력하거나, 영수증 이미지 파일을 터미널 창 안으로 직접 드래그 앤 드롭합니다.</li>
+<li>&quot;영수증 품목과 금액을 분석해 줘&quot;라고 지시하여 영수증 내 텍스트 및 수치 데이터 판독 결과를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 인쇄가 흐릿하거나 손상된 영수증의 경우 일부 수치 오차가 나타날 수 있으므로 최종 회계 처리 전 원본 영수증과 AI 판독값을 재확인해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 약어로 단축 표기된 영수증 품목의 스펠링을 스스로 완성해 가며 읽어내는 성능이 매우 뛰어나므로, 영문 영수증 정리 업무 시 시간을 대폭 단축할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. Llama 3.3 70b 한국어 잘 하네요 :)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 경량화되었음에도 기존 405B 모델급 성능을 내는 Llama 3.3 70B 모델의 뛰어난 한국어 처리 능력을 확인하고, 이를 Hugging Chat Assistant 환경에서 맞춤형 한국어 교육 튜터로 세팅해 활용하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Meta Llama 3.3 70B Instruct</strong>, <strong>Ollama</strong>, <strong>Hugging Chat Assistant</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Hugging Chat Assistant 웹사이트 접속 및 로그인 후 <code>Create New Assistant</code>를 누릅니다.</li>
+<li>적용 모델로 <code>Meta Llama 3.3 70B Instruct</code>를 선택합니다.</li>
+<li>한국어 대화 및 학습 보조 전용 튜터 페르소나 지침을 시스템 프롬프트에 기입해 생성합니다.</li>
+<li>대화창에 &quot;고급 한국어 회화를 원해&quot;와 같이 입력하고 수능 제도, 교육 문제 등 논리적 토론 주제를 전달합니다.</li>
+<li>답변 문맥, 어휘 수준, 한글 깨짐 여부 등을 점검하며 토론 대화를 진행합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 70B 크기의 대형 파라미터 모델이므로 일반 개인 PC 로컬 환경에서 직접 구동할 경우 고성능 그래픽 카드가 요구되므로, 웹 버전인 Hugging Chat Assistant를 통해 무료로 이용하는 것이 편리합니다.
+</li>
+<li><strong>활용 팁</strong>: 이전 라마 시리즈들에서 빈번하게 발생하던 한글 깨짐이나 영문/한문 혼용 현상이 거의 사라져, 별도의 파인튜닝 과정 없이도 자연스러운 한국어 상담 및 교육용 챗봇으로 곧바로 활용 가능합니다.
+</li>
+</ul>
+<hr>
+<h3>5. Llama 라마 3.1 405B 온라인에서 무료로 써보기 (나만의 글로벌 정치 분석팀)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 오픈소스 최고 수준의 지능을 갖춘 초대형 Llama 3.1 405B 모델을 허깅 챗 어시스턴트에서 무료로 연동하고, 심층 국제 정치 및 정세 분석을 수행하는 전문 에이전트 팀을 구성하는 기법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Meta Llama 3.1 405B</strong>, <strong>Hugging Chat Assistant</strong>, <strong>Wikipedia Domain Search</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Hugging Chat Assistant에 접속하여 <code>Create New Assistant</code>를 클릭합니다.</li>
+<li>모델 선택 항목에서 가장 거대한 &#39;Llama 3.1 405B&#39;를 지정합니다.</li>
+<li>인터넷 도메인 검색 옵션으로 <code>wikipedia.org</code>를 설정하거나 무설정 상태로 둡니다.</li>
+<li>리더 사라 킴과 분야별 전문가들로 구성된 글로벌 정치 분석 에이전트 프롬프트를 입력해 생성합니다.</li>
+<li>대화창에 국제 정세(예: 미국 대선 여파, 국제 관계 분석) 관련 질의를 넣고 종합 보고서 형태의 답변을 출력받습니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 도메인 검색(위키피디아 등) 옵션을 켜두면 오히려 답변 범위가 해당 사이트로 제한될 수 있으므로, 405B 자체의 방대한 지식과 추론 능력을 극대화하려면 검색을 끄고 질의하는 것이 나을 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 한국어로 질의할 때보다 영문으로 보고서 생성을 요청했을 때 405B 특유의 정교한 시나리오 분석 및 세부 논리 구성 능력이 더욱 유려하게 발휘됩니다.
+</li>
+</ul>
+<hr>
+<h3>6. Meta AI, 나만의 법무팀</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 메타의 무료 웹 AI 서비스인 Meta AI (<code>meta.ai</code>)를 활용하여, 개인정보 유출 없이 안전하게 경찰청 규격 양식에 맞춘 고소장 및 법률 서면 초안을 생성하는 워크플로우를 설명합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Meta AI (<code>meta.ai</code>)</strong>, <strong>법무팀 에이전트 워크플로우 프롬프트</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>웹 브라우저 주소창에 <code>meta.ai</code>를 입력하여 접속 후 로그인합니다.</li>
+<li>채팅창에 법률 문서 작성을 돕는 법무팀 에이전트 프롬프트 지침을 복사해 넣습니다.</li>
+<li>이름, 전화번호 등 실시간 개인 식별 정보는 모두 제외한 채, 사건 날짜와 피해 피해액 등 핵심 사실관계만 기입합니다.</li>
+<li>경찰청 양식 구조에 맞춰 정리된 고소장 초안 텍스트 답변이 생성되면 내용을 확인합니다.</li>
+<li>작성된 초고를 복사하여 개인 에디터로 옮긴 뒤, 제외했던 실제 인적 사항을 직접 입력해 마감합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Meta AI는 외부 클라우드 기반 무료 서비스이므로, 민감한 개인정보나 실명, 계좌번호 등은 절대 입력하지 말고 사건의 개요만 제공하여 초안을 잡아야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 텍스트 및 한글 문장 구성력이 뛰어나므로, 개인 식별 정보를 뺀 사실관계 텍스트만 깔끔히 정리해 주면 규격에 들어맞는 완결성 높은 법률 초고를 순식간에 만들어낼 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. OpenAI는 도대체 왜 오픈소스 AI, gpt-oss를 공개했을까? (gpt-oss 사용법, gpt-open source software)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI가 공개한 추론 오픈소스 모델 gpt-oss (20B)의 출시 배경을 파악하고, Ollama를 통해 내 PC에 다운로드하여 보안 걱정 없는 오프라인 에이전트 및 교육 자료 작성용으로 구동하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI gpt-oss (20B / 120B)</strong>, <strong>Ollama</strong>, <strong>CMD / Terminal</strong>, <strong>Ollama Desktop UI</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 사이트에서 설치 프로그램을 받아서 PC에 설치합니다.</li>
+<li>모델 페이지에서 <code>gpt-oss:20b</code> 명령어를 복사합니다.</li>
+<li>터미널/CMD를 열고 <code>ollama run gpt-oss:20b</code>를 실행해 모델을 다운로드받습니다.</li>
+<li>Ollama 데스크톱 UI를 열고 <code>gpt-oss 20B</code> 모델을 선택합니다.</li>
+<li>PPT 발표 개요, 학생용 활동지, 형성 평가 퀴즈 5문항 자동 작성을 요청하고 오프라인 상태에서 즉시 결과물을 받아봅니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 로컬 PC의 하드웨어(RAM/GPU) 자원으로 추론을 수행하므로 질의 후 응답 시작까지 약 20~30초가량의 로딩 소요 시간이 발생합니다.
+</li>
+<li><strong>활용 팁</strong>: 20B 모델은 16GB 시스템 메모리 환경에서도 충분히 동작하며, 상업적 이용 및 파인튜닝 자유도가 보장된 라이선스이므로 기업의 보안 문서 작성에 가장 적합합니다.
+</li>
+</ul>
+<hr>
+<h3>8. Qwen3로 로컬에서 고소장 작성해보기 (한국어 성능 테스트)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 알리바바의 Qwen3 오픈소스 모델을 로컬 환경에 설치하고 ChatBox AI 인터페이스와 연동하여, 다양한 파라미터 크기별 한국어 문서 작성 성능을 테스트하고 고소장을 자동 생성해 봅니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Qwen3 (0.6B / 1.7B / 4B / 8B / 14B)</strong>, <strong>Ollama</strong>, <strong>ChatBox AI</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 설치 후 CMD/터미널에서 내 PC 사양에 맞는 Qwen3 모델(예: <code>ollama run qwen3:8b</code>)을 설치합니다.</li>
+<li>ChatBox AI 앱을 다운로드 및 실행한 뒤 모델 공급처를 &#39;Ollama API&#39;로 선택하고 해당 Qwen3 모델을 연결합니다.</li>
+<li>대화창에 경찰청 고소장 표준 양식과 에이전트 3명(민수, 지연, 승호)의 역할 분담 프롬프트를 입력합니다.</li>
+<li>피해 사실관계(일시, 장소, 정황 등)를 대화 형식으로 전달합니다.</li>
+<li>Qwen3가 스스로 사고(Thinking) 과정을 거쳐 작성해 준 사실관계 정리 및 법적 검토 기반의 고소장 완본을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI가 제시하는 특정 법률 조항이나 죄목 적용 등은 환각 오류가 포함될 수 있으므로, 최종 제출 전 작성된 초안을 법률 전문가에게 반드시 검증받아야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 가장 작은 0.6B 초경량 모델조차 한글 깨짐이 전혀 없을 정도로 한국어 구사력이 훌륭하며, 8B 이상 모델을 활용하면 서식에 완벽히 부합하는 고품질 문서를 얻을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. RAG 첫걸음 with Llama 3.1</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Llama 3.1 8B 모델과 Nomic Embed 임베딩 모델, 그리고 LangChain 파이썬 코드를 결합하여 영문 PDF 문서를 분석하고 정확히 검색해 답변해 주는 로컬 RAG 시스템을 제작합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.1 8B</strong>, <strong>Nomic Embed Text</strong>, <strong>Ollama</strong>, <strong>Python</strong>, <strong>LangChain</strong>, <strong><code>upload3.py</code></strong>, <strong><code>local_rag3.py</code></strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Python과 Ollama를 설치하고 터미널에서 <code>ollama pull llama3.1</code> 및 <code>ollama pull nomic-embed-text</code>를 실행합니다.</li>
+<li>프로젝트 폴더로 이동해 <code>pip install -r requirements.txt</code>로 의존성 라이브러리를 설치합니다.</li>
+<li><code>python upload3.py</code>를 실행해 분석할 영문 PDF 파일(예: Attention is all you need 논문)을 업로드하여 텍스트 파일로 변환 저장합니다.</li>
+<li><code>python local_rag3.py</code>를 실행하여 쿼리 재작성(Query Rewriting) 및 코사인 유사도 기준 상위 7개 청크를 추출하는 RAG 세션을 구동합니다.</li>
+<li>영문 질의를 입력하고 문서 내 핵심 구절을 탐색하여 도출된 요약 답변을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 실행 시 파이썬 패키지 간 버전 충돌 에러가 발생할 수 있으므로, 에러 로그 문구를 AI 에디터에 전달하여 라이브러리 설정을 교정해 주어야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 사용자의 질의를 그대로 검색하지 않고 쿼리 재작성(Query Rewriting) 프로세스를 거치도록 설계되어 있어, 한층 정밀하고 연관성 높은 텍스트 청크를 찾아내어 답변 품질이 향상됩니다.
+</li>
+</ul>
+<hr>
+<h3>10. 구글이 만든 로컬 &#39;의료 특화 AI&#39; (MedGemma &quot;나만의 의사 선생님&quot;)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글이 만든 의료 특화 오픈소스 AI인 MedGemma 모델의 승인을 받아 로컬 PC에 세팅하고, Streamlit 웹앱을 통해 흉부 X-ray 등 의료 이미지를 유출 없이 오프라인에서 분석·학습하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google MedGemma (4B Multimodal / 27B)</strong>, <strong>Hugging Face</strong>, <strong>Python</strong>, <strong>Streamlit</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Hugging Face에 로그인한 후 Google MedGemma 모델 페이지에서 접근 권한(Gated Model)을 신청하여 몇 분 내로 승인받습니다.</li>
+<li>Hugging Face 계정 설정에서 Read 권한의 Access Token을 발급받습니다.</li>
+<li>스트림릿 기반 파이썬 코드(<code>app.py</code>)를 실행하고 화면에 발급받은 Hugging Face 토큰을 입력합니다.</li>
+<li>의료 영상 샘플 이미지(예: 흉부 X-ray 사진)를 웹 화면에 업로드하고 분석을 요청합니다.</li>
+<li>MedGemma 4B 멀티모달 모델이 이미지를 판독하여 정상 범위 여부 및 소견에 대한 교육적 분석 리포트를 생성하도록 합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: MedGemma가 판독해 준 결과는 연구 및 교육 목적으로만 참고해야 하며, 절대 병원의 실제 의학적 임상 진단을 대신할 수 없습니다.
+</li>
+<li><strong>활용 팁</strong>: 로컬 PC의 하드웨어 파워로만 이미지를 판독하므로, 환자의 민감한 의료 데이터나 X-ray 사진이 외부 클라우드 서버로 유출되지 않아 완벽한 프라이버시를 보장받을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>1. 내 PC에서 로컬로 딥시크 (deep seek) 구동하기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 중국의 딥시크(DeepSeek R1) 모델을 외부 클라우드 전송 없이 내 PC 로컬 환경에서 구동하는 방법 및 Open WebUI 연결 가이드를 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Ollama</strong>, <strong>Docker Desktop</strong>, <strong>Open WebUI</strong>, <strong>Cursor / Claude 3.5 Sonnet</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 사이트에서 다운로드 후 CMD/터미널에서 <code>ollama run deepseek-r1:1.5b</code> (또는 7b) 실행.</li>
+<li>Cursor 에디터에서 <code>Open WebUI</code> 문서를 참조시켜 필요한 Docker 연동 명령어 도출.</li>
+<li>Docker Desktop을 설치 및 실행.</li>
+<li>Docker 명령어로 Open WebUI 컨테이너를 구동 후 <code>localhost:3000</code>으로 접속.</li>
+<li>Ollama가 구동 중인 상태에서 Open WebUI 화면을 열어 DeepSeek 모델 선택 후 오프라인 대화 진행.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Open WebUI를 웹 브라우저에서 실행하려면 백그라운드에 Ollama 및 Docker Desktop 프로세스가 모두 켜져 있어야 접속이 가능합니다.
+</li>
+<li><strong>활용 팁</strong>: 1.5b 등 소형 모델보다 7b 이상 모델을 선택해야 환각이나 엉뚱한 언어(중국어 등) 출력을 줄이고 높은 품질의 답변을 얻을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. 내 데이터 분석하기 with Llama 라마 3.1</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Ollama로 로컬에 다운로드한 Llama 3.1 (8B) 모델을 VS Code 및 파이썬 Pandas 코드와 연동하여, 내 컴퓨터 안의 CSV 데이터를 보안 유출 없이 분석하는 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.1 8B</strong>, <strong>Ollama</strong>, <strong>VS Code (Visual Studio Code)</strong>, <strong>Python (Pandas, Matplotlib, Jupyter/IPYNB)</strong>, <strong>Claude Projects (에이전트 워크플로우)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 설치 후 CMD/터미널에서 <code>ollama run llama3.1:8b</code> 명령어로 모델 다운로드.</li>
+<li>VS Code 설치 후 <code>ollama</code>, <code>pandas</code> 라이브러리를 설치하고 <code>.ipynb</code> 주피터 노트북 파일 생성.</li>
+<li>Claude Projects 프롬프트 팀의 도움을 받아 CSV 판독 및 라마 3.1 연동 분석 파이썬 코드를 생성.</li>
+<li>코드 내 CSV 파일 경로(<code>*.csv</code>) 및 분석 질의 프롬프트를 지정하고 셀을 실행.</li>
+<li>라마 3.1이 CSV의 기본 통계 및 히스토그램 생성과 인사이트 제안을 출력하도록 설정.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 대용량 데이터셋 분석 시 8B 모델은 맥락을 놓치거나 처리가 지연될 수 있으므로, 컴퓨터 사양이 받쳐준다면 70B 모델 적용을 고려해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 외부 AI 서비스에 올리기 민감한 환율, 매출, 사내 비밀 데이터 엑셀/CSV 파일을 인터넷이 끊긴 상태에서 오프라인 분석하는 데 최적입니다.
+</li>
+</ul>
+<hr>
+<h3>3. 딥시크 vs 라마, 로컬 RAG 성능 비교 !</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 동일한 영문 논문(Attention Is All You Need) PDF 문서를 대상으로 소형 추론 모델인 DeepSeek R1 (1.5B)과 일반 언어 모델인 Llama 3.2 (1B/3B)의 로컬 RAG 답변 성능 및 속도를 비교하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>DeepSeek R1 (1.5B)</strong>, <strong>Llama 3.2 (1B / 3B)</strong>, <strong>Nomic Embed Text</strong>, <strong>Ollama</strong>, <strong>Cursor</strong>, <strong>LangChain / Streamlit</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama로 <code>deepseek-r1:1.5b</code>, <code>llama3.2:1b</code>, <code>llama3.2:3b</code>, <code>nomic-embed-text</code> 모델을 다운로드.</li>
+<li>Cursor에서 세 모델별로 각각 연동되는 RAG 파이썬 스트림릿 파일 3개를 작성.</li>
+<li><code>streamlit run</code> 명령어로 각 스트림릿 웹을 띄우고 동일한 논문 PDF 파일을 업로드하여 임베딩 진행.</li>
+<li>&quot;트랜스포머에 대해 설명해 줘&quot; 등의 동일 질문을 세 앱에 각각 입력.</li>
+<li>모델별 쿼리 처리 시간, 사고(Thinking) 과정 유무, 최종 답변의 구체성을 비교 관찰.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: RAG 구동을 위해서는 LLM 모델뿐만 아니라 임베딩을 전담할 <code>nomic-embed-text</code> 모델이 Ollama 목록에 함께 설치되어 있어야 에러가 나지 않습니다.
+</li>
+<li><strong>활용 팁</strong>: DeepSeek R1 1.5B는 추론(Thinking) 단계로 인해 시간은 다소 소요되지만 Llama 소형 모델 대비 훨씬 정교하고 논리적인 RAG 요약 답변을 제공합니다.
+</li>
+</ul>
+<hr>
+<h3>4. 딥시크, 더 쉬운 로컬 구동법 (Chat box AI, gradio)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 터미널의 검은 화면 대신 ChatBox AI 인터페이스 및 파이썬 Gradio UI 라이브러리를 연동하여, 로컬 DeepSeek R1 모델을 훨씬 직관적이고 편리한 웹 UI로 구동하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>DeepSeek R1</strong>, <strong>Ollama</strong>, <strong>ChatBox AI</strong>, <strong>Gradio</strong>, <strong>Cursor</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama로 DeepSeek R1 모델을 받아서 실행 상태로 설정.</li>
+<li><strong>방법 1 (ChatBox AI)</strong>: ChatBox AI 앱 설치 -&gt; 설정에서 모델 공급자를 &#39;Ollama API&#39;로 고르고 <code>deepseek-r1:7b</code> 선택 후 오프라인 대화 진행.</li>
+<li><strong>방법 2 (Gradio)</strong>: Cursor에서 Gradio 연동 파이썬 웹 코드(<code>app.py</code>)를 생성하고 <code>pip install gradio ollama</code> 설치.</li>
+<li><code>python app.py</code>를 실행하여 생성된 로컬 URL 웹 화면에서 대화창 인터페이스 이용.</li>
+<li>파일 첨부나 시스템 프롬프트 수정을 UI상에서 편하게 다루며 로컬 AI 동작 확인.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: ChatBox AI나 Gradio 앱이 제대로 구동하려면 바탕에서 Ollama 서비스 프로세스가 활성화되어 있어야 모델 목록이 정상적으로 불러와집니다.
+</li>
+<li><strong>활용 팁</strong>: ChatBox AI의 사용자 정의 기능을 활용하면 클로드(Claude)처럼 아티팩트 자동 미리보기나 파일 첨부 분석 기능을 로컬 환경에서 손쉽게 구축할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>5. 딥시크, 파인튜닝 해보기 (deep seek-r1, fine tuning)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: DeepSeek R1의 증류(Distill) 모델인 Qwen 1.5B 기반 R1 모델에 의료 Q&amp;A 추론 데이터셋을 학습(파인튜닝)시키고, 생성된 GGUF 파일을 Mestic 오프라인 앱으로 구동하는 전 과정 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>DeepSeek R1 Distill Qwen 1.5B</strong>, <strong>Unsloth</strong>, <strong>Google Colab (GPU)</strong>, <strong>Hugging Face (<code>FreedomIntelligence/medical-o1-reasoning-sft</code>)</strong>, <strong>Mestic App</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글 코랩 사본 저장 후 GPU 런타임을 연결하고 Unsloth 및 라이브러리를 설치.</li>
+<li>Hugging Face 토큰을 입력하고 Unsloth의 DeepSeek R1 Distill Qwen 1.5B 4bit 모델 로드.</li>
+<li>의료 추론 데이터셋(<code>medical-o1-reasoning-sft</code>)을 불러와 포매팅 후 LoRA 어댑터로 파인튜닝 학습 실행.</li>
+<li>파인튜닝 전후의 55세 비만 환자 진단 질의 답변 성능 변화를 비교 및 검증.</li>
+<li>GGUF 포맷으로 변환해 본인 Hugging Face 레포지토리에 저장한 뒤 파일 다운로드, Mestic 앱에서 오프라인 로드하여 구동.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 구글 코랩 실행 시 반드시 파일 메뉴의 &#39;드라이브에 사본 저장&#39;을 거쳐야 본인의 토큰 정보 및 파라미터 수정 사항이 안전하게 반영됩니다.
+</li>
+<li><strong>활용 팁</strong>: 증류(Distill) 모델을 사용하면 적은 컴퓨터 자원으로도 딥시크 특유의 생각하는 추론(Thinking) 능력이 유지된 고성능 오프라인 전문 AI를 만들어낼 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>6. 법률 전문가를 위한 Llama 라마 3.1 활용법</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 외부 클라우드 전송 시 보안 유출 우려가 큰 법률 업무의 특성을 감안해, 내 PC의 오프라인 Llama 3.1 8B 모델에 법률 전용 에이전트 팀 지침을 탑재하여 내용증명 및 법률 문서 초안을 안전하게 작성하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.1 8B</strong>, <strong>Ollama</strong>, <strong>CMD / Terminal</strong>, <strong>에이전트 워크플로우 프롬프트 (샘, 제니, 탐, 리사)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 설치 후 CMD/터미널에서 <code>ollama run llama3.1:8b</code> 명령어로 로컬에 세팅.</li>
+<li>샘(초안), 제니(검토), 탐(포맷), 리사(총괄)로 구성된 법률 전용 에이전트 프롬프트 지침을 복사하여 입력.</li>
+<li>Llama 3.1이 지침을 숙지하고 내용증명 작성에 필요한 정보(수신자, 발신자, 일시, 사건 요지)를 역으로 물어보도록 유도.</li>
+<li>채무 불이행 등 가상의 사건 정보를 대화창에 제공.</li>
+<li>오프라인 상태에서 수신인/발신인 서식이 완비된 내용증명 한글 초안 생성을 확인.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Llama 3.1 8B 모델은 법률 조항 거절 반응을 간혹 일으킬 수 있으므로, 단호한 정식 법적 조치 어조보다는 완곡하고 객관적인 사실관계 작성 방향으로 달래어 지시하는 것이 좋습니다.
+</li>
+<li><strong>활용 팁</strong>: 개인 정보나 사건 기밀이 외부 AI 서버로 전혀 전송되지 않으므로, 법조인이나 기업 법무 담당자가 내용증명 및 계약서 초안을 오프라인으로 다루기에 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>7. 오픈소스 AI 쓰는 방법을 배우면 좋은 3가지 이유 (필로소피 AI 인사이트 #2)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 상용 클로즈드 AI(ChatGPT, Claude 등)의 한계를 보완하기 위해 오픈소스 AI(Gemma, Llama, DeepSeek 등) 활용법을 익혀야 하는 3가지 핵심 이유(데이터 보안, 구독료 절감, 미래 비즈니스 가능성)를 제시합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Gemma 4</strong>, <strong>Meta Llama</strong>, <strong>DeepSeek</strong>, <strong>Qwen</strong>, <strong>Ollama</strong>, <strong>AWS</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><strong>이유 1 (데이터 보안)</strong>: 인터넷 연결 없이 내 노드/PC 오프라인에서 구동되므로 사내 기밀 및 고객 개인정보의 외부 클라우드 유출을 100% 방지.</li>
+<li><strong>이유 2 (AI 구독료 절감)</strong>: 매월 치솟는 AI 월 구독료(디지털 월세) 부담 대신, 로컬 PC 하드웨어를 활용해 지속 가능한 무료 AI 인프라 구축.</li>
+<li><strong>이유 3 (비즈니스 가능성)</strong>: 아파치 2.0 등 라이선스를 활용해 자유로운 파인튜닝 및 개조 후 나만의 독립된 AI 서비스를 만들어 배포 및 상업화 가능.</li>
+<li>Gemma 4 등 최신 소형/대형 멀티모달 오픈소스 AI를 PC에 설치하여 비행기 안 등 무선 인터넷 불통 환경에서 오프라인 작업 실습.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 오픈소스 AI 구동 시 초기에 고성능 PC/GPU 하드웨어 투자 비용이 일부 발생할 수 있으며, 현재로서는 상용 서비스보다 다소 답변 품질이 미흡할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 오픈소스 AI는 다이아몬드 원석과 같아서, 바이브 코딩 및 파인튜닝 기술을 결합하면 남들과 차별화된 나만의 특화 AI 비즈니스를 개척할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>8. 오픈소스 AI 활용법 (Qwen 3 VL, 땅 위에 떨어진 다이아몬드)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 시각 정보를 읽는 오픈소스 비전 모델 Qwen 3 VL (4B)을 로컬에 다운로드하고, Cursor와 파인튜닝 프롬프트를 활용해 손글씨 이미지를 텍스트로 인식·변환하는 오프라인 OCR 웹사이트를 제작합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Qwen 3 VL (4B)</strong>, <strong>Ollama</strong>, <strong>Cursor</strong>, <strong>Claude Projects (프롬프트 전문가 팀)</strong>, <strong>Streamlit</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 사이트에서 <code>ollama run qwen3-vl:4b</code> 명령어로 비전 오픈소스 모델 설치.</li>
+<li>Claude Projects 프롬프트 제작팀에 Qwen 3 VL 연동 손글씨 OCR 스트림릿 웹사이트용 프롬프트 입력을 통한 정교한 코드 추출.</li>
+<li>Cursor에서 빈 폴더를 열고 복사한 프롬프트를 넣어 파인튜닝된 스트림릿 파이썬 코드(<code>app.py</code>) 자동 생성.</li>
+<li>터미널에서 <code>streamlit run app.py</code> 명령어로 로컬 브라우저 웹 UI 실행.</li>
+<li>영어 필기체 이미지를 웹 화면에 업로드하여 60초 만에 오프라인으로 정확히 텍스트가 변환·추출되는 결과 확인.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 손글씨 이미지를 인식시킬 때 멀티모달 전용 비전 모델(Qwen 3 VL 등)을 선택해야 하며, 일반 텍스트 전용 LLM 모델에서는 이미지 판독이 불가능합니다.
+</li>
+<li><strong>활용 팁</strong>: 오프라인 단독 서버로 작동하므로 외부에 공개되면 안 되는 연구 노트, 필기 서류, 민감한 보안 문서 이미지를 안전하게 OCR 텍스트화할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. 작은거인, Llama 3.2 1B (Edge AI, 크기 : 581 MB)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 용량이 581MB에 불과한 초경량 Llama 3.2 1B 모델의 특징을 알아보고, 스마트폰·스마트 가전 등 엣지 디바이스(Edge AI) 오프라인 환경에서의 실행 속도와 기본 성능을 실습합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Llama 3.2 1B (581 MB)</strong>, <strong>Ollama</strong>, <strong>CMD / Terminal</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 사이트에 접속하여 모델 목록 중 <code>llama3.2:1b</code> 모델 명령어를 확인 및 복사.</li>
+<li>CMD 터미널을 열고 <code>ollama run llama3.2:1b</code> 입력 (581MB 용량으로 1분 미만 만에 설치 완료).</li>
+<li>질의 대화를 시작하여 단어 공부, 문장 생성 등 영문 질문 입력.</li>
+<li>기존 대형 모델 대비 압도적으로 빠른 초고속 응답 출력 속도를 확인.</li>
+<li>오프라인 상태에서 상식 질의 및 영어 대화 응답의 한계점과 정확도를 테스트.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 파라미터 크기가 1B 수준으로 매우 작아 정밀한 논리 추론이나 복잡한 질의에는 환각이나 어색한 답변이 나올 수 있으므로, 범용 대화보다는 특정 목적용 파인튜닝이 필요합니다.
+</li>
+<li><strong>활용 팁</strong>: 용량이 매우 적고 인터넷 연결이 불필요하여 시계, 전자렌지, 스마트폰 단말 등 초소형 엣지 디바이스 내부 온디바이스 AI 탑재용으로 최적의 가능성을 지닙니다.
+</li>
+</ul>
+<hr>
+<h3>10. 지식증류 쉬운 설명+실습 자료 제공 (Knowledge Distillation)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 대형 티처(Teacher) AI 모델의 지식과 사물 간 유기적 확률 분포(소프트 레이블/다크 날리지)를 소형 스튜던트(Student) AI 모델로 전수하는 지식 증류(Knowledge Distillation) 개념과 구글 코랩 실습 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Knowledge Distillation</strong>, <strong>PyTorch</strong>, <strong>Google Colab (T4 / A100 GPU)</strong>, <strong>CIFAR-10 Dataset</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>제공된 구글 코랩 사본을 저장하고 GPU 런타임 환경을 연결.</li>
+<li>이미지 교재 데이터셋(CIFAR-10) 및 똑똑한 티처 모델 클래스, 경량 스튜던트 모델 클래스 정의.</li>
+<li>티처 모델을 먼저 학습시켜 높은 정확도(74.77%)를 확보.</li>
+<li>스튜던트 단독 학습(70.66%)과 지식 증류 기법(소프트 레이블 및 템퍼러처 \\(T\\) 설정)을 적용한 스튜던트 학습 진행.</li>
+<li>템퍼러처(\\(T=2\sim5\\)) 및 소프트 레이블 지식 비율(25%~75%)을 조절하며 스튜던트 모델의 정확도가 상승(70.88%)하는 효과를 관찰.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 지식 증류 시 템퍼러처(\\(T\\)) 값을 적절히 높여야 오답 선택지들 간의 유의미한 확률 정보(다크 날리지)가 소실되지 않고 스튜던트에게 전달됩니다.
+</li>
+<li><strong>활용 팁</strong>: 젬마(Gemma)나 라마(Llama) 소형 모델 제작처럼, 돈이 많이 드는 대형 AI의 지능을 모바일 단말기용 소형 AI로 이식할 때 핵심적으로 활용되는 딥러닝 기법입니다.
+</li>
+</ul>
+<hr>
+<h3>11. 파인튜닝 GRPO 실습 (AI가 제시하는 여러 답변에 보상을 제공하며 학습시키기)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 기존의 절대점수 방식(PPO)과 달리, AI가 4~8개의 답변을 동시 생성하도록 한 뒤 그룹 내 상대적 우위 순위에 보상(Reward)을 부여해 추론 능력을 획기적으로 올리는 GRPO(Group Relative Policy Optimization) 파인튜닝 기법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>GRPO (Group Relative Policy Optimization)</strong>, <strong>Qwen 3 4B</strong>, <strong>Unsloth</strong>, <strong>Google Colab (A100/T4 GPU)</strong>, <strong>Hugging Face (<code>open-r1/OpenR1-Math-220k</code>)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글 코랩 사본 저장 후 GPU를 연결하고 Unsloth 및 GRPO 관련 패키지를 설치.</li>
+<li>1단계: Qwen 3 4B 모델에 추론 시작/끝(<code>start working out</code>, <code>end working out</code>, <code>solution</code>)의 표준 답변 형식을 선행 파인튜닝.</li>
+<li>2단계: 수학 데이터셋(<code>OpenR1-Math</code>)을 로드하고 정답/형식 일치 여부를 검증하는 4가지 보상 함수(Reward Functions)를 설정.</li>
+<li>질문 1개당 4개 답변을 동시 생성시켜 보상 점수를 매기는 GRPO 강화학습 100 스텝 진행.</li>
+<li>학습 진행에 따라 리워드(Reward) 점수 변화를 확인하고, 파인튜닝된 어댑터를 GGUF로 변환하여 Hugging Face 업로드.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: GRPO 학습 초기(1~100 스텝)에는 보상 점수가 오르내리며 진동하므로, 안정적인 우상향 성능을 얻으려면 최소 150~200 스텝 이상의 학습 유지가 권장됩니다.
+</li>
+<li><strong>활용 팁</strong>: 정답이 단 하나로 고정되지 않은 복잡한 스케줄링, 수학 문제, 추론 작업에서 AI의 답변 품질과 창의적인 해법 도출 능력을 비약적으로 끌어올릴 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>12. 한국어 끝판왕 오픈 소스 AI, 엑사원 써보기 (2.4b, 7.8b, 32b 비교)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: LG AI 연구원에서 만든 국산 대표 오픈소스 AI인 엑사원(EXAONE 3.5)의 모델 크기별(2.4B, 7.8B, 32B) 한국어 구사 능력과 로컬 처리 속도를 비교 검증하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>EXAONE 3.5 (2.4B / 7.8B / 32B)</strong>, <strong>Ollama</strong>, <strong>ChatBox AI</strong>, <strong>CMD / Terminal</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Ollama 설치 후 <code>ollama pull exaone3.5:2.4b</code>, <code>exaone3.5:7.8b</code>, <code>exaone3.5:32b</code> 명령어 입력.</li>
+<li>ChatBox AI 앱을 구동하고 모델 공급처를 Ollama API로 설정한 뒤 엑사원 모델 선택.</li>
+<li>각 모델별로 &quot;청년들에게 희망을 주는 단편 소설 작성&quot;, &quot;무역/환율 보고서 작성&quot; 질의를 동일하게 전달.</li>
+<li>2.4B, 7.8B, 32B 모델별 답변 생성 소요 시간과 문맥의 어휘 품질을 비교 관찰.</li>
+<li>한국어 깨짐이나 영문 혼용 없는 완성도 높은 한글 소설 및 보고서 출력 결과를 확인.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 32B 대형 모델은 텍스트 품질이 압도적이지만 로컬 PC의 VRAM/RAM 성능에 따라 응답까지 수 분의 시간이 소요될 수 있으므로 사양에 맞게 선택해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 7.8B 모델이 속도와 문장 품질 면에서 가장 균형 잡힌 가성비를 보여주며, 한국어 표현력이 매우 자연스러워 오프라인 보고서나 서식 작성용으로 강력히 추천됩니다.
+</li>
+</ul>
+<hr>
+<h3>13. 한국어 끝판왕의 귀환, Exaone 4.0 사용해보기!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: LG AI 연구원이 공개한 최신 EXAONE 4.0 모델의 특징인 비추론(Rapid) / 추론(Reasoning) 이중 모드와 에이전틱 도구(Tool Calling) 연동 능력을 구글 코랩 및 로컬 UI로 확인하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>EXAONE 4.0 (1.2B / 32B)</strong>, <strong>Google Colab (GPU)</strong>, <strong>Hugging Face</strong>, <strong>Gradio / Chat UI</strong>, <strong>Python</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글 코랩 사본 저장 후 GPU 런타임을 연동하고 EXAONE 4.0 라이브러리 설치.</li>
+<li>비추론(Non-reasoning) 모드 파이프라인으로 빠르게 &quot;3.1과 3.9 중 더 큰 수&quot; 질의 및 일상 대화 테스트.</li>
+<li>추론(Reasoning) 모드를 켜서 3.9를 3.90으로 변환해 비교하는 사고 과정(Thinking) 기반의 정밀 답변을 확인.</li>
+<li>에이전틱 툴(주사위 굴리기 등 외부 함수 호출)을 스스로 다루어 다단계 임무를 완수하는 워크플로우 실행.</li>
+<li>1.2B 온디바이스용 초경량 모델로 대화형 파이썬 Gradio UI를 구동하여 완벽한 한국어 문장 구사력 점검.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 32B 모델의 경우 코랩 무료 T4 GPU 메모리 용량을 초과할 수 있으므로 1.2B 소형 모델을 우선적으로 실습하는 것이 원활합니다.
+</li>
+<li><strong>활용 팁</strong>: 1.2B 초경량 모델임에도 한글 깨짐이나 외계어 출력 현상이 완전히 사라져, 오프라인 모바일 단말이나 사물인터넷(IoT) 장비에 이식할 완벽한 한국어 온디바이스 AI로 활용 가능합니다.
+</li>
+</ul>
+</article>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>
