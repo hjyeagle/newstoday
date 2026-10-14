@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>필로소피 AI 교육_AI 에이전트 및 자동화 | 뉴스투데이</title>
+<meta name="description" content="1. (쉬운 실습) 클로드 코드, Agent들을 내 마음대로 지휘하다! (에이전트 오케스트레이션, AI Agent Orchestration) 핵심 요약 및 개요: 클로드 코드를 활용해 여러 AI 에이전트를 오케스트라 지휘자처럼 제어·조정하는 &#39;에…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/055.html">
+<meta property="og:title" content="필로소피 AI 교육_AI 에이전트 및 자동화 | 뉴스투데이">
+<meta property="og:description" content="1. (쉬운 실습) 클로드 코드, Agent들을 내 마음대로 지휘하다! (에이전트 오케스트레이션, AI Agent Orchestration) 핵심 요약 및 개요: 클로드 코드를 활용해 여러 AI 에이전트를 오케스트라 지휘자처럼 제어·조정하는 &#39;에…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/055.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.14</p>
+<h1>필로소피 AI 교육_AI 에이전트 및 자동화</h1>
+<article class="prose">
+<h3>1. (쉬운 실습) 클로드 코드, Agent들을 내 마음대로 지휘하다! (에이전트 오케스트레이션, AI Agent Orchestration)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드 코드를 활용해 여러 AI 에이전트를 오케스트라 지휘자처럼 제어·조정하는 &#39;에이전트 오케스트레이션(AI Agent Orchestration)&#39; 시스템을 구축하고, 수업 자료 생성을 자동화하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Projects / Gems / GPTs (스타트 프롬프트 제작)</strong>, <strong>Claude Desktop App (Code 기능)</strong>, <strong>VS Code</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects에 전용 지침을 입력해 에이전트와 스킬 구조가 포함된 &#39;스타트 프롬프트&#39;를 생성합니다.</li>
+<li>스타트 프롬프트를 복사해 Claude 데스크톱 앱의 Code 탭(로컬 폴더 지정)에 입력합니다.</li>
+<li>클로드 코드가 오케스트레이터 및 서브 에이전트 5개와 6개의 스킬 파일을 지정 폴더에 자동 생성합니다.</li>
+<li>대화창에서 &quot;중학교 과학 광합성 수업 자료를 만들어줘&quot;라고 지시합니다.</li>
+<li>에이전트들이 병렬로 작동하여 수업 계획서, 워크시트, 퀴즈 등을 동시에 생성하는 것을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 초기 설계도 역할을 하는 &#39;스타트 프롬프트&#39;가 구체적이어야 에이전트와 스킬 파일이 오차 없이 정확하게 구성됩니다.
+</li>
+<li><strong>활용 팁</strong>: 개별 에이전트를 따로 불러올 필요 없이 오케스트레이터가 요청을 분석해 일괄 병렬 처리해주므로, 단 한 번의 질문으로 다양한 형태의 산출물을 한눈에 도출할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. (실습) Agent Builder 배포하는 방법 (n8n, make, zapier 대체 서비스 등장!)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI의 노코드 자동화 도구인 <strong>Agent Builder</strong>의 연동법을 익히고, 이를 바이브 코딩 및 OpenAI API 키와 결합하여 셰익스피어 시험 문제 생성 웹앱으로 배포하는 전체 과정을 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI Agent Builder (<code>platform.openai.com/agent-builder</code>)</strong>, <strong>Project Gutenberg (원문 자료)</strong>, <strong>OpenAI API Key</strong>, <strong>Cursor (바이브 코딩)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><code>platform.openai.com/agent-builder</code>에 접속하여 새 워크플로우를 만듭니다.</li>
+<li>&#39;자료 수집 에이전트&#39; 노드를 가져와 지침과 Project Gutenberg 파일 검색(File Search) 툴을 등록합니다.</li>
+<li>&#39;문항 생성 에이전트&#39;와 &#39;User Approval&#39; 노드를 순서대로 연결하고 워크플로우를 게시(Publish)합니다.</li>
+<li>추출된 에이전트 SDK 코드를 복사해 Cursor 등 바이브 코딩 툴에 전달하고 웹 사이트 코드를 생성합니다.</li>
+<li>배포된 웹 사이트에 OpenAI API 키를 입력해 학생용 시험지, 답안지, 교사용 가이드가 포함된 시험 문제를 자동 출력합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Agent Builder 웹 화면의 프리뷰나 임베드를 이용하려면 조직 신분증 인증(Verification) 절차가 요구될 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: n8n이나 Make 같은 외부 서비스 없이 OpenAI 플랫폼 내에서 노드로 연결된 에이전트 워크플로우를 구축할 수 있어 개발 체계가 정돈됩니다.
+</li>
+</ul>
+<hr>
+<h3>3. [클로드 Cowork] 매일 같은 시각에 뉴스레터 자동 생성하는 법 (작업 예약 기능)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude 데스크톱 앱의 <strong>Cowork</strong> 기능과 작업 예약(Schedule) 설정을 결합하여, 폴더 내 부동산 엑셀 데이터를 분석하고 매일 오전 9시 최신 뉴스 기반 뉴스레터를 자동 발행하는 시스템을 구축합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Desktop App (Cowork)</strong>, <strong>한국은행/KB 부동산 CSV 데이터 (12개)</strong>, <strong>인터넷 웹 검색</strong>, <strong>작업 예약 기능 (<code>/schedule</code>)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>부동산 관련 CSV 데이터 파일 12개가 담긴 로컬 폴더를 만든 후 Claude Cowork에서 작업 폴더로 지정합니다.</li>
+<li>Cowork에게 해당 폴더 데이터를 분석하여 &#39;원페이지 보고서 및 뉴스레터 스킬&#39;을 자율 생성하도록 지시합니다.</li>
+<li>스킬을 통해 12개 CSV 각각의 요약 보고서와 한국 부동산 종합 분석 보고서를 도출합니다.</li>
+<li>매일 아침 최신 부동산 뉴스를 검색해 보유 엑셀 데이터와 대조·분석하는 뉴스레터 프롬프트를 테스트합니다.</li>
+<li>&quot;매일 오전 9시에 자동 실행 스케줄을 설정해줘&quot;라고 요청하여 예약 작업을 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 정해진 시각에 예약 작업이 실행되려면 해당 컴퓨터가 켜져 있어야 하며, Cowork가 폴더 내부 파일을 수정/삭제할 수 있으므로 원본 데이터 백업이 필수적입니다.
+</li>
+<li><strong>활용 팁</strong>: 매일 실시간 검색된 뉴스 트렌드와 사전에 넣어둔 정량적 데이터 통계를 대조 분석하여 인사이트를 도출하므로, 시황 보고서 작성 자동화에 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>4. [클로드 Skills] 나만의 AI 직원에게 업무 인수인계 하는 법</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드의 <strong>스킬(Skills)</strong> 기능을 활용하여 내 업무 스타일에 맞춘 재사용 가능 지침서(.zip 모듈)를 만들고, AI 인수인계서 형태로 등록하여 대화창에서 자유롭게 불러와 사용하는 기법을 소개합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude (Projects / Skills / Profile Settings)</strong>, <strong>스킬 제작 전문팀 프롬프트 (.txt)</strong>, <strong>.zip 모듈 파일</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude에서 &#39;스킬스 제작 전문팀&#39; 프로젝트를 생성하고 전용 지침(.txt)을 세팅합니다.</li>
+<li>기존에 만들어둔 PPT 파일이나 유튜브 대본 자막 예시 파일 3개를 첨부하여 내 스타일을 분석하게 합니다.</li>
+<li>프로젝트 팀이 가이드라인(어조, 금지사항 등)을 적용해 생성해 준 <code>.zip</code> 스킬 파일을 다운로드합니다.</li>
+<li>Claude 프로필 -&gt; 설정 -&gt; 기능 -&gt; 스킬 업로드 메뉴로 이동하여 다운로드한 <code>.zip</code> 스킬을 등록합니다.</li>
+<li>새 대화창에서 &quot;필로소피 스타일로 대본을 써줘&quot;라고 요청하면 등록된 스킬을 자동 인식하여 맞춤형 대본을 생성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 너무 많은 스킬을 동시에 활성화해 두면 클로드가 작업 시 혼란을 겪을 수 있으므로 사용하지 않는 스킬은 설정의 토글 스위치로 꺼두어야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 커스텀 인스트럭션이 모든 대화에 일률 적용되는 것과 달리, 스킬은 대화 중 필요할 때만 명칭이나 맥락으로 불러와 일관된 업무 품질을 유지할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>5. AI Agent 이메일 자동화 (Flowise AI)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 오픈소스 AI 에이전트 빌더인 Flowise AI를 이용해 Claude 3.5 Sonnet, Serp API(구글 검색), Gmail 연동(Composio)을 결합하고 실시간 검색 기반 이메일 자동 전송 에이전트를 구축하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Flowise AI</strong>, <strong>Claude 3.5 Sonnet (Anthropic Console API Key)</strong>, <strong>Serp API</strong>, <strong>Composio (Gmail Integration)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Flowise AI에 접속하여 &#39;AgentFlow&#39; 새 프로젝트를 생성하고 시작 노드를 배치합니다.</li>
+<li>AI 모델로 Anthropic Claude 3.5 Sonnet을 선택하고 API 키 크리덴셜을 등록합니다.</li>
+<li>구글 검색용 Serp API 노드를 추가하고 계정 API 키를 연동합니다.</li>
+<li>Composio 서비스를 통해 Gmail 커넥터를 승인(Connect)하고 &#39;Send Gmail&#39; 툴 노드로 플로우와이즈와 연결합니다.</li>
+<li>채팅창에 &quot;손흥민 선수의 커리어를 검색해서 내 이메일로 작성해 보내줘&quot;라고 요청 후 이메일 수신을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Composio 연동 시 Gmail 계정 접근 권한 승인을 빠짐없이 체크해야 하며, 최신 3.5 Sonnet 모델 등 사용 시 API 비용이 발생할 수 있어 한도를 확인해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순 문장 생성을 넘어 웹 실시간 정보 검색과 이메일 실제 발송 툴이 직관적인 노드로 연결되어 있어, 정기 리포트 발송 업무를 손쉽게 오토메이션할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>6. AI Agent, Operator 진짜 놀랍네요..</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI가 공개한 CUA(Computer Using Agent) 기반 웹 자동화 에이전트 <strong>Operator(운영자)</strong>의 주요 기능, 시각적 브라우저 제어 시연, &#39;Take Control&#39; 기능 및 파급력을 분석합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI Operator (ChatGPT Pro Plan 전용)</strong>, <strong>야놀자 / 아고다 / 오픈테이블 / 인스타카트</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>ChatGPT Pro 요금제 계정에서 &#39;운영자(Operator)&#39; 모드를 선택하여 실행합니다.</li>
+<li>야놀자 등의 예약 사이트를 고르고 &quot;경주 2박 3일 오션뷰 숙소를 찾아줘&quot;라고 요구사항을 입력합니다.</li>
+<li>Operator가 시각적 브라우저 화면을 직접 보며 새로고침, 날짜 선택, 오션뷰 필터링을 자율 수행하는 과정을 관찰합니다.</li>
+<li>중간에 사람이 직접 개입할 때 &#39;Take Control&#39; 버튼을 눌러 로그인을 수행한 뒤 &#39;Return Control&#39;로 업무 인수인계를 전달하여 재개합니다.</li>
+<li>최종 결정 단계에서 승인(Allow)을 받아 결제 전 단계까지 예약을 대행 완료시킵니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 아직 리서치 초기 단계로 웹 요소 인식에 다소 시간이 걸리거나 오류가 날 수 있으며, 로그인/결제 등 중요 개인정보는 사람이 직접 입력해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: AI가 시각적으로 브라우저를 마우스와 키보드로 제어하므로, 사용자는 자리를 비우고 알림(Notification)이 올 때만 접속해 승인해주면 되는 개인 비서 서비스를 경험할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. AI Agent가 내 자료를 참고해서 이메일을 보내줍니다! (Flowise AI Document store)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Flowise AI의 <strong>Document Store</strong> 기능과 Supabase(PostgreSQL Vector DB) 및 Google Embedding Gemma를 연동하여, 내 사내 보도자료/PDF 데이터를 RAG 방식으로 읽어 정돈된 요약 이메일을 자동 발송하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Flowise AI (Document Store)</strong>, <strong>Supabase (PostgreSQL)</strong>, <strong>Google AI Studio (Gemini Embedding)</strong>, <strong>Composio (Gmail API)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Flowise AI 메뉴에서 &#39;Document Store&#39;를 생성하고 한국은행 기업경기조사 보도자료(PDF)를 업로드합니다.</li>
+<li>Text Splitter로 청크(Chunk Size 1000) 분할 후 Google Gemini Embedding 모델과 Supabase 데이터베이스 연결 정보를 입력합니다.</li>
+<li>업서트(Upsert)를 실행하여 PDF 문서 내용을 벡터 수치로 분할·저장합니다.</li>
+<li>에이전트 플로우로 돌아와 해당 Document Store를 널리지(Knowledge) 노드로 연결합니다.</li>
+<li>대화창에 &quot;Document Store에 넣은 자료를 요약해서 이메일로 보내줘&quot;라고 명령하여 메일 수신을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Supabase 커넥션 세팅 시 DB 비밀번호 및 포트번호(6543 등)를 정확히 기입해야 하며, 문서 분할 청크 크기와 오버랩 설정을 적절히 해주어야 답변 누락이 없습니다.
+</li>
+<li><strong>활용 팁</strong>: 챗봇 형태의 RAG를 넘어, 내 문서 원본을 바탕으로 핵심 인사이트를 요약해 즉시 Gmail로 발송하는 고도화된 업무 자동화 파이프라인을 구축할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>8. AI의 생산성을 높이는 방법 (Agentic Workflow)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 앤드류 응(Andrew Ng) 교수의 강연을 바탕으로, 단판 답변(Zero-shot) 대신 성찰·도구사용·기획·협업으로 구성된 반복 개선 구조 <strong>Agentic Workflow</strong>의 개념과 적용 효과를 파악하고 GPTs 실습을 진행합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Agentic Workflow (Reflection, Tool Use, Planning, Multi-Agent Collaboration)</strong>, <strong>ChatGPT (GPTs)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>앤드류 응 교수의 4가지 에이전틱 디자인 패턴(Reflection, Tool Use, Planning, Multi-Agent Collaboration) 이론을 분석합니다.</li>
+<li>GPTs 생성 화면에서 김태호(가이드), 이미린(리뷰), 최진수(완성) 등 멀티 에이전트 역할을 하나의 인스트럭션으로 설정합니다.</li>
+<li>주제(예: AI 교육 영향 콘텐츠 기획)를 던지면 초고 작성 -&gt; 비판적 검토 -&gt; 개선안 제시 프로세스를 단계별로 거치게 합니다.</li>
+<li>팀원 간 대화 및 검토 과정을 통해 초안보다 정교하고 논리적인 최종 산출물 및 출처 링크를 도출합니다.</li>
+<li>GPT 3.5 모델에 에이전틱 워크플로우를 적용하는 것만으로도 Zero-shot GPT-4의 답변 품질을 능가함을 실험 결과로 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 한 번의 질의응답으로 완료되지 않고 여러 번의 추론 및 수정 루프를 거치므로 토큰 소모량과 응답 대기 시간이 늘어날 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 더 비싼 모델을 쓰기보다 저렴한 모델이라도 스스로 검토(Reflection)하고 도구를 쓰도록 프롬프트를 설계하면 AI 답변의 신뢰도와 깊이를 비약적으로 올릴 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. Google Gemini API와 OpneAI Assistants API 비교! (Gemini Structured prompt 추천)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Google AI Studio의 제미나이 API 3가지 모드(Freeform, Chat, Structured)와 OpenAI Assistants API의 구조를 비교하고, 지도학습 개념이 접목되어 답변 정확도가 극대화되는 <strong>Structured Prompt</strong>의 특징을 분석합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google AI Studio (Gemini Pro/Vision, Structured Prompt)</strong>, <strong>OpenAI Assistants API (Playground)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Google AI Studio에서 새 프롬프트 열기 후 Freeform, Chat, Structured Prompt 메뉴 세 가지 차이점을 비교합니다.</li>
+<li>Structured Prompt를 선택하고 인스트럭션(레스토랑 리뷰 응대)과 컬럼(Input/Output)을 설정합니다.</li>
+<li>&quot;샌드위치가 맛있어요&quot; -&gt; &quot;감사합니다&quot;, &quot;서비스가 별로예요&quot; -&gt; &quot;죄송합니다&quot; 등 인풋-아웃풋 정답 쌍 예시 데이터를 입력합니다.</li>
+<li>테스트 인풋창에 &quot;맛있어요 두 그릇 먹었어요&quot; 입력 후 실행하여 지도학습 데이터 패턴 기반의 고품질 응답을 도출합니다.</li>
+<li>&#39;Get Code&#39;를 눌러 작성된 프롬프트를 파이썬/자바스크립트 코드로 추출하고 OpenAI Assistants API와의 특징을 비교합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Temperature, Top-K, Top-P 값을 높게 설정하면 응답이 다양해지나 일관성이 떨어지므로, 서비스 응대용 Structured Prompt에서는 낮게 유지하는 것이 안전합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순히 긴 지시문만 넣는 것보다 입출력 정답 예시를 표 형태로 학습시키는 Structured Prompt 방식을 활용하면 환각 현상을 대폭 줄이고 원하는 어조와 규격의 답변을 안정적으로 얻을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>10. OpenAI Assistants API 활용법 (나만의 교육팀 만들기)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI Assistants API의 어시스턴트 ID와 파이썬 Streamlit, GitHub, Streamlit Cloud를 연동하여, 사용자가 직접 본인의 API 키를 입력해 작동하는 교육 지원 웹사이트를 제작·배포합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI Assistants API</strong>, <strong>Claude (파이썬 코드 생성)</strong>, <strong>VS Code</strong>, <strong>Python (Streamlit)</strong>, <strong>GitHub</strong>, <strong>Streamlit Cloud</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>OpenAI 플랫폼에서 어시스턴트(교육팀 챗봇)를 생성하고 발급된 Assistant ID를 복사합니다.</li>
+<li>Claude에게 &quot;Assistants API와 Streamlit을 사용하되 사용자가 웹에서 API 키를 입력하도록 파이썬 코드를 짜줘&quot;라고 요청합니다.</li>
+<li>VS Code에서 생성된 파이썬 코드(<code>app.py</code>)와 <code>requirements.txt</code> 파일 두 개를 작성합니다.</li>
+<li>두 파일을 GitHub 신규 레포지토리에 커밋 및 업로드합니다.</li>
+<li>Streamlit Cloud에 접속하여 해당 저장소를 연동 배포 후, 웹 UI에서 자신의 OpenAI API 키를 입력하고 교육팀 챗봇 대화를 수행합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 코드 안에 API 키를 직접 하드코딩하여 공개 저장소에 올리면 과금 남용 위험이 크므로, 사용자 입력 방식(<code>st.text_input</code>)을 적용하거나 환경 변수 세팅을 해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 개발 지식 없이도 Assistants API에 저장해 둔 인스트럭션과 파일 검색(File Search) 기능을 웹 인터페이스 형태로 변환해 사내 및 외부 사용자들에게 공유할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>1. OpenAI 첫 에이전트, Operator 출시! (AGI로 가는 여정, Lv3)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: OpenAI가 첫 번째로 선보인 AI 에이전트인 <strong>Operator(운영자)</strong>의 핵심 개념과 AGI 5단계 레벨 중 Lv.3(에이전트) 진입의 의미, 그리고 CUA(Computer Using Agent) 시각적 제어 기술을 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>OpenAI Operator (ChatGPT Pro Plan 전용)</strong>, <strong>CUA (Computer Using Agent)</strong>, <strong>OpenTable / Instacart / Agoda</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>ChatGPT Pro 요금제 계정에서 &#39;운영자(Operator)&#39; 모드를 실행합니다.</li>
+<li>에이전트가 작동할 웹 서비스 앱(오픈테이블, 인스타카트, 아고다 등)을 선택합니다.</li>
+<li>&quot;저녁 7시 오션뷰 식당 예약해 줘&quot; 또는 &quot;인스타카트에서 식재료 구매해 줘&quot;라고 자연어 명령을 입력합니다.</li>
+<li>Operator가 브라우저 상에서 마우스 커서와 키보드를 스스로 움직이며 검색 및 필터링을 진행하는 과정을 확인합니다.</li>
+<li>&#39;Take Control&#39;을 눌러 사용자 로그인 및 결제 정보를 직접 입력한 후 &#39;Return Control&#39;로 인수인계하여 예약을 마칩니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: CUA 기술 기반으로 작동하여 AI가 브라우저 요소를 잘못 클릭하거나 주문을 착오할 위험이 있으므로 결제 전 최종 내역을 점검해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순 텍스트 답변이 아닌 AI가 사람을 대신해 실제 마우스와 키보드로 웹사이트를 조작해 주므로, 여행 예약이나 쇼핑 몰 장보기 등 개인 비서 업무에 최적화되어 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. 교육자분들을 위한 업무 자동화 프로그램 만드는 방법 (클로드 데스크탑앱)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Projects 지침에서 교사용 자동화 프롬프트를 추출하고 Claude 데스크톱 앱의 Code 탭(로컬 환경)을 구동하여, 인터넷 연결 없이 윈도우에서 실행 가능한 성적 관리 도구 프로그램(.exe)을 만듭니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Projects (업무 자동화 팀)</strong>, <strong>Claude Desktop App (Code 모드)</strong>, <strong>Python</strong>, <strong>PyInstaller (.exe 변환)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects에 업무 자동화 프롬프트 제작 지침을 넣고 교사용 프로젝트를 구성합니다.</li>
+<li>성적 처리 및 출결 관리에 필요한 질문 답변을 진행하여 맞춤형 개발 프롬프트를 생성합니다.</li>
+<li>Claude 데스크톱 앱을 열고 상단 메뉴 중 &#39;Code&#39; 탭을 선택한 뒤 로컬 세팅 폴더를 지정합니다.</li>
+<li>복사한 프롬프트를 입력해 클로드 코드가 해당 로컬 폴더에 파이썬 및 응용 프로그램을 자동 작성하게 합니다.</li>
+<li>배포(Publish) 폴더 내 생성된 응용 프로그램(<code>*.exe</code>)을 클릭해 윈도우 환경에서 프로그램을 작동 및 테스트합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 클로드 코드가 작업을 진행할 때 로컬 파일 작성 허용(Allow) 권한을 지정해 주어야 코딩이 멈추지 않고 완료됩니다.
+</li>
+<li><strong>활용 팁</strong>: 웹 브라우저 접속 없이 오프라인 PC 단독 실행 파일(.exe)로 만들어지므로, 학교나 회사 동료 교사들에게 파일째 공유하여 활용하기 좋습니다.
+</li>
+</ul>
+<hr>
+<h3>3. 구글의 최신 AI 모델로 나만의 건강검진 분석팀 만들기 (Gemini 2.5 Flash Preview 05-20)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 일일 무료 호출 한도가 높은 구글 Gemini 2.5 Flash Preview 모델과 Cursor AI, Netlify 서비스를 연동하여, PDF 건강검진 결과지를 오프라인/온라인으로 분석해 주는 사이트를 제작하고 웹으로 배포합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google AI Studio (Gemini 2.5 Flash Preview API Key)</strong>, <strong>Cursor AI</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>, <strong>HTML/JS/CSS</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Cursor AI 에이전트 모드에서 &quot;Gemini 2.5 Flash API가 연동된 건강검진 분석 웹 사이트를 작성해 줘&quot;라고 요청해 HTML, JS, CSS 파일 3개를 생성합니다.</li>
+<li>생성된 파일 3개를 본인의 GitHub 레포지토리에 업로드합니다.</li>
+<li>Netlify 사이트에 가입 후 해당 GitHub 저장소를 지정하여 무료 퍼블릭 웹 주소로 배포(Deploy)합니다.</li>
+<li>구글 AI 스튜디오에서 발급받은 Gemini API 키를 배포된 웹사이트에 등록합니다.</li>
+<li>건강검진 결과 PDF 파일이나 수치를 업로드하여 Gemini 2.5 Flash가 도출하는 건강 종합 분석 결과를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI가 분석해 주는 건강검진 보고서는 교육용 참고 자료이며, 절대 정식 의사의 임상적 진단과 치료를 대신할 수 없습니다.
+</li>
+<li><strong>활용 팁</strong>: Gemini 2.5 Flash Preview 모델은 하루 500회, 1분당 10회까지 무료 이용이 가능하므로 API 비용 부담 없이 나만의 특화 웹앱을 자유롭게 만들어 공유할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. 구독자분이 깃헙에 올려주신 코드를 써봤습니다! (Skillful Agent System Builder)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구독자가 제작해 GitHub에 공개한 &#39;Skillful Agent System Builder&#39; 오픈소스 프로젝트를 복제(<code>git clone</code>)하여, 샘-제니-윌리 3단계 에이전트와 스킬을 자율 생성하고 고품질 수업 교안 및 PPT 슬라이드를 구축합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Skillful Agent System Builder (GitHub Repository)</strong>, <strong>AntiGravity</strong>, <strong>Claude Code</strong>, <strong>Git</strong>, <strong>NotebookLM (Slide Deck)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>AntiGravity 또는 터미널(CMD)에서 <code>git clone &lt;저장소 주소&gt;</code> 명령어를 실행해 프로젝트를 다운로드합니다.</li>
+<li><code>cd</code> 명령어로 복제된 해당 프로젝트 폴더 경로로 이동합니다.</li>
+<li>&quot;고등학교 역사 교사를 위한 고려 시대 학습 에이전트 시스템을 만들어 줘&quot;라고 지시합니다.</li>
+<li>샘(요구사항 분석) - 제니(설계) - 윌리(검토) 에이전트가 협업하여 에이전트 3개와 스킬 4개를 자동 구축합니다.</li>
+<li>생성된 고품질 수업 대본을 복사해 PPT/슬라이드 덱 생성기에 입력하고 내보내기를 진행합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 터미널 실행 시 반드시 <code>git clone</code>으로 다운로드받은 해당 프로젝트 폴더 위치 내부로 이동(<code>cd</code>)한 상태에서 명령을 내려야 오류가 나지 않습니다.
+</li>
+<li><strong>활용 팁</strong>: 긴 프롬프트를 일일이 작성할 필요 없이, 3단계 시스템 빌더가 내 요구사항에 들어맞는 전문 에이전트와 스킬 구성을 자동으로 완성해 줍니다.
+</li>
+</ul>
+<hr>
+<h3>5. 나만의 건축•인테리어 디자이너 만들기 (나노 바나나 프로 + Veo 3.1 활용)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 나노 바나나 Pro(Gemini 3 Pro Image)로 2D 아파트 도면을 입체 3D로 변환하고 손스케치·마감재·가구 배치·낮밤 분위기를 시각화한 뒤, Veo 3.1을 연결해 시네마틱 건축 홍보 동영상을 연쇄 제작하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google AI Studio (Gemini 3 Pro / Nano Banana Pro API)</strong>, <strong>Google Veo 3.1 (Flow / Frames to Video)</strong>, <strong>Claude Projects (인테리어 프롬프트 팀)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects 지침에 인테리어 프롬프트 생성 팀 템플릿을 등록해 프롬프트를 추출합니다.</li>
+<li>2D 아파트 평면도나 손스케치 이미지를 나노 바나나 Pro에 업로드하고 입체 3D 변환을 요청합니다.</li>
+<li>대리석 마감재 교체, 빈 공간 가구 배치, 낮과 밤 조명 연출, 건물 외관 리노베이션 이미지를 연속 도출합니다.</li>
+<li>생성된 고화질 3D 이미지를 Google Flow의 Veo 3.1(Frames to Video)에 업로드합니다.</li>
+<li>카메라 움직임과 빛 그림자가 사실적으로 표현되는 시네마틱 건축 홍보 비디오를 렌더링합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Google AI Studio에서 나노 바나나 Pro 모델 이용 시 호출량에 따라 Billing 비용이 청구될 수 있으므로 요금 상태를 수시로 점검해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순 평면 도면이나 투박한 손스케치만 있어도 손쉽게 정교한 3D 인테리어 시안과 움직이는 비디오로 즉시 변환할 수 있어 고객 제안용으로 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>6. 나만의 컨텐츠팀 만들기 (유튜브, 블로그, 인스타그램)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude 3.5 Sonnet 무료 버전에 기존 채널 정보 PDF를 첨부하고 폴-제시-줄리아-테드로 구성된 에이전트 워크플로우 프롬프트를 입력하여, 월 구독료 없이 나만의 AI 콘텐츠 제작팀을 구동하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude 3.5 Sonnet (무료 플랜)</strong>, <strong>Agentic Workflow Prompt</strong>, <strong>PDF 첨부파일 (채널 가이드 / 대표 대본)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>내 유튜브/블로그/인스타그램 채널 개요 및 우수 대본 예시가 정리된 PDF 문서를 준비합니다.</li>
+<li>폴(초안) - 제시(수정) - 줄리아(대본) - 테드(품질검토)로 이루어진 에이전트 팀 프롬프트를 작성합니다.</li>
+<li>Claude 3.5 Sonnet 대화창에 준비한 PDF 문서와 프롬프트 지침을 한 번에 올립니다.</li>
+<li>&quot;부부 관계 개선을 위한 인스타그램/유튜브 콘텐츠 아이디어를 추천해 줘&quot;라고 요청합니다.</li>
+<li>에이전트 팀원들이 단계별 협업을 거쳐 도출한 대본 및 PPT 미리보기 아티팩트를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Claude 3.5 Sonnet 무료 버전은 대화 횟수 한도가 있으므로 한 번 질문할 때 명확하고 정교한 지침을 전달하는 것이 효율적입니다.
+</li>
+<li><strong>활용 팁</strong>: 채널 정보와 과거 대본을 PDF로 함께 넣어주면 AI가 채널 고유의 어조와 특성을 정확히 학습하여 어색함 없는 맞춤형 대본을 생성해 줍니다.
+</li>
+</ul>
+<hr>
+<h3>7. 알리바바의 Web Sailor 사용해보기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 알리바바의 오픈소스 심층 웹 자율 탐색 모델인 Web Sailor (3B)의 개념을 파악하고, Cursor 및 Streamlit 파이썬 코드를 이용해 오프라인 웹 에이전트 검색 시스템을 구축·테스트하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Alibaba Web Sailor (3B Model / Hugging Face)</strong>, <strong>Cursor AI</strong>, <strong>Python</strong>, <strong>Streamlit</strong>, <strong>GPU / PyTorch</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>허깅페이스에서 알리바바 Web Sailor 3B 모델 파일 구조를 파악합니다.</li>
+<li>Cursor AI를 열어 Web Sailor 연동 파이썬 스트림릿 코드(<code>app.py</code>)와 <code>requirements.txt</code>를 만듭니다.</li>
+<li>터미널에서 <code>streamlit run app.py</code> 명령어로 오프라인 웹 에이전트 UI 사이트를 로컬 구동합니다.</li>
+<li>대화창에 &quot;AI가 교육 분야에 미치는 영향에 대해 웹을 심층 탐색해 정리해 줘&quot;라고 질의를 전달합니다.</li>
+<li>Web Sailor가 자율적으로 기획을 세우고 웹사이트를 다단계 항해(Sailor)하며 도출한 한글 보고서를 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 3B 경량 모델 특성상 문장 중간에 간혹 한자가 섞여 나올 수 있으며, PC에 GPU가 없는 경우 CPU 전환 코드로 교정해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순 단답형 검색을 넘어 AI가 직접 웹을 항해하며 정보를 수집·종합해 주므로, 복잡한 주제의 딥 리서치 및 보고서 자료 수집 시 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>8. 업무 문서 AI로 각색하기 (네이버 뉴스 API 연동, 필로소피의 AI 고민 상담소 #2)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 매년 반복 작성하는 공문서를 다채롭게 각색하기 위해, 샘-스테파니-윌리엄 에이전트팀과 네이버 뉴스 API(Serp API/스킴 코드)를 GPTs에 연동하여 최신 시사 이슈가 반영된 보고서를 자동 생성합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>ChatGPT (GPTs)</strong>, <strong>Serp API (<code>serpapi.com</code>)</strong>, <strong>Naver News API</strong>, <strong>Claude</strong>, <strong>Custom Actions Schema</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><code>serpapi.com</code> 사이트에 가입하여 개인 API 키를 발급받아 메모장에 저장합니다.</li>
+<li>GPTs 설정 화면에서 지침으로 샘-스테파니-윌리엄 공문서 각색 에이전트 팀 프롬프트를 기입합니다.</li>
+<li>Custom Actions 항목에 네이버 뉴스 연동 스키마 코드를 추가하고 발급받은 API 키를 세팅합니다.</li>
+<li>대화창에 전년도 공문서 텍스트(예: 탄소 중립 실현 방안)를 넣고 &quot;네이버 뉴스 API와 연동해 최신 동향에 맞춰 각색해 줘&quot;라고 지시합니다.</li>
+<li>에이전트 팀이 최신 뉴스를 자동 검색·반영한 신규 공문서와 하단 참조 뉴스 링크 목록을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 스키마 코드 등록 시 API 키 입력란에 본인의 Serp API 키를 명확히 기입해야 네이버 뉴스 실시간 연동 에러를 방지할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 기존 공문서틀은 유지하면서 네이버 뉴스의 최신 시사 동향과 정확한 레퍼런스 URL 링크가 자동으로 결합되어 문서의 신뢰도가 크게 상승합니다.
+</li>
+</ul>
+<hr>
+<h3>9. 이제 AI Agent가 데이터 수집, 분석까지 해주는 시대 (Genspark AI)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: AI 에이전트 기반 검색 서비스인 Genspark AI의 <strong>AI Sheet</strong> 기능을 활용해, 프롬프트 한 줄 입력만으로 데이터 수집, 자율 검증, 셀 업데이트 및 엑셀(.xlsx) 파일 다운로드까지 자동화하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Genspark AI (<code>genspark.ai</code>)</strong>, <strong>AI Sheet Agent</strong>, <strong>Super Agent</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><code>genspark.ai</code> 웹사이트 접속 후 구글 계정으로 로그인합니다.</li>
+<li>고급 에이전트 메뉴에서 &#39;AI Sheet&#39; 아이콘을 클릭합니다.</li>
+<li>대화창에 &quot;한국의 저출산 고령화 통계 및 현황 데이터를 정리해 줘&quot;라고 요구사항을 전달합니다.</li>
+<li>AI Sheet 에이전트가 자율 판단으로 통계청 지표를 실시간 검색하고 헤더/컬럼 시트 테이블을 자동 구성합니다.</li>
+<li>수집된 데이터를 바탕으로 셀을 일괄 업데이트하고 완성된 테이블을 &#39;엑셀 파일 내보내기&#39;로 저장합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 무료 이용 분량 한도가 설정되어 있으므로 대용량 데이터 시트 작업을 자주 수행할 경우 크레딧 잔여량을 체크해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순히 텍스트 답변을 읽는 데서 나아가 수치별로 깔끔하게 정리된 엑셀 파일 형태로 바로 내려받을 수 있어 데이터 분석 업무 속도가 대폭 향상됩니다.
+</li>
+</ul>
+<hr>
+<h3>10. 클로드 Agent View 쉬운 설명 :)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Code에서 구동 중인 여러 멀티 에이전트들의 작업 진행 상황을 한 화면에서 관제탑처럼 실시간 모니터링하고 제어할 수 있는 <strong>Agent View</strong> 기능의 메커니즘과 활용법을 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>CMD / Terminal (<code>claude agents</code>)</strong>, <strong>Agent View (Dashboard)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>터미널(CMD)을 열고 <code>claude --version</code> 명령어로 버전을 확인한 뒤 필요시 <code>claude update</code>를 실행합니다.</li>
+<li>터미널에 <code>claude agents</code> 명령어를 입력해 에이전트 뷰 관제탑 화면을 실행합니다.</li>
+<li>병렬 구동 중인 수많은 에이전트 세션 목록과 실행 상태(색상 표시)를 한눈에 모니터링합니다.</li>
+<li>&#39;Need Input&#39;(노란색) 상태인 에이전트로 키보드 방향키를 이용해 진입(Enter)한 뒤 승인/답변을 전달합니다.</li>
+<li>왼쪽 방향키를 눌러 다시 관제탑(Agent View) 화면으로 돌아오거나, 터미널 창을 꺼도 백그라운드에서 작업이 유지되는 것을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Agent View 명령어가 정상 구동하려면 반드시 Claude Code가 최신 버전으로 업데이트되어 있어야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 여러 터미널 창을 번거롭게 따로 띄울 필요 없이 하나의 관제 화면에서 노란색(입력 필요), 녹색(완료), 빨간색(오류)으로 구분해 복수의 에이전트 작업을 손쉽게 관리할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드 Cowork 윈도우 버전 출시! AI와 일하기 더 쉬워졌습니다!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 앤트로픽에서 클로드 코워크(Cowork) 윈도우 버전을 정식 출시함에 따라, 비개발자도 클로드 데스크톱 앱을 통해 내 PC의 로컬 파일에 직접 접근하여 파일 읽기, 수정, 생성, 자동화 작업을 수행할 수 있게 되었습니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Desktop App (Windows 버전, Cowork 기능)</strong>, <strong>구글 AI 스튜디오/통계청 국가통계포털(KOSIS) CSV 데이터</strong>, <strong>MS Word</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글에서 클로드 데스크톱 앱 다운로드 페이지로 이동하여 윈도우용 클로드 데스크톱 앱을 설치 및 구동합니다.</li>
+<li>코워크 탭을 선택하고 플러그인(데이터 분석 등)을 활성화합니다.</li>
+<li>통계청에서 다운로드받은 출산율 및 인구 관련 CSV 엑셀 파일들을 작업 폴더에 세팅합니다.</li>
+<li>대화창에 &quot;해당 자료를 바탕으로 한국의 출산율에 대한 데이터 분석 보고서를 작성해 줘&quot;라고 요구합니다.</li>
+<li>코워크가 CSV 로드, 인코딩 수정, 목차/지역별/연령별 분석을 거쳐 완성된 워드 보고서(.docx) 파일로 자동 도출합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 코워크는 로컬 폴더에 직접 접근하여 파일을 수정·삭제하므로 백업이 필수적이며, 현재 Pro/Team/Enterprise/Max 유료 요금제 사용자에게 제공됩니다.
+</li>
+<li><strong>활용 팁</strong>: 어렵고 복잡한 CLI 터미널 환경(Claude Code) 대신 익숙한 데스크톱 GUI 환경에서 데이터 분석 및 문서 자동화 작업을 완결할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드 Dispatch 기능! 이제 길거리에서 Claude에게 일을 시킬 수 있는 시대</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 모바일 클로드 앱에서 명령을 내리면 데스크톱 PC의 클로드 데스크톱(Cowork)을 원격으로 제어하여 파일 수정, 문서 작성, 작업 수행을 진행하는 Dispatch(디스패치) 원격 제어 기능 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Desktop App (Cowork - Dispatch 기능)</strong>, <strong>Claude Mobile App (iOS/Android)</strong>, <strong>PPT / MS Office</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>PC에서 클로드 데스크톱 앱을 켜고 코워크 탭에서 Dispatch 기능을 활성화 및 QR코드 연동을 마칩니다.</li>
+<li>스마트폰 클로드 모바일 앱에서 Dispatch에 접속하여 PC와 연동합니다.</li>
+<li>스마트폰 대화창에 &quot;PPT 스킬을 활용해 디스패치와 오픈클로 비교 PPT 자료를 만들어줘&quot;라고 입력합니다.</li>
+<li>PC에 저장된 PPT 파일 위치(바탕화면 등)를 모바일로 대답하여 파일을 찾고 원격으로 수정을 지시합니다.</li>
+<li>PC 로컬의 PPT 파일에 모바일로 요청한 슬라이드 내용이 자동으로 반영 및 저장된 것을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 모바일에서 PC의 전체 권한에 접근하므로 피싱 링크나 중요 파일 훼손에 주의해야 하며, 데스크톱 PC가 켜져 있고 앱이 작동 중이어야 실행 가능합니다.
+</li>
+<li><strong>활용 팁</strong>: 외출 중이거나 이동 중에도 스마트폰으로 사무실/집 PC에 있는 문서를 탐색하고 작업을 완료시킬 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드 Projects 기능 : 나만의 AI 팀원 만들기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Pro/Team 플랜에서 지원하는 Projects 기능을 활용하여 사내 자료나 PDF/텍스트 파일을 등록하고, 에이전틱 워크플로우(Agentic Workflow) 프롬프트를 세팅하여 나만의 전담 AI 팀원을 구축하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude 3.5 Sonnet (Projects 기능)</strong>, <strong>PDF/텍스트 자료</strong>, <strong>Custom Instructions</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 좌측 메뉴에서 &#39;Projects&#39;를 누르고 &#39;Create Project&#39;를 선택하여 프로젝트 이름과 목표를 기입합니다.</li>
+<li>&#39;Project Knowledge&#39; 영역에 보유 중인 PDF 논문, 대본, 도큐먼트 텍스트 자료들을 업로드합니다.</li>
+<li>&#39;Custom Instructions&#39;에 폴-샘-제시카-제니-제임스로 구성된 에이전틱 워크플로우 역할을 영문/한글로 기입합니다.</li>
+<li>대화창에 &quot;클로드 3.5 Sonnet 프로젝트 기능을 소개하는 유튜브 대본을 짜줘&quot;라고 질의합니다.</li>
+<li>팀원별(초안-검토-수정-스크립트-총괄) 티키타카 협업을 거쳐 우측 아티팩트(Artifacts) 창에서 고품질 대본을 완성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 유료 요금제(Pro 이상의 구독)에서 사용 가능하며, 엑셀 파일은 바로 지원되지 않으므로 PDF, 도큐먼트, 텍스트 포맷으로 변환 후 연동해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 대화 세션이 바뀌어도 사전에 세팅된 프로젝트 지침과 소스 자료를 그대로 유지하므로, 유튜브 콘텐츠 기획/딥러닝 연구 등 정형화된 업무 튜닝에 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>클로드 Prompt Caching (RAG의 대체재가 될 것인가 : API 비용 감소, 속도 증가)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 반복 조회되는 대용량 프롬프트 및 문서 데이터를 클로드 서버에 임시 저장(캐싱)하여, API 호출 비용을 최대 90% 절감하고 응답 지연 시간을 85% 감축시키는 Prompt Caching 기술의 원리와 파이썬 연동 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude API (Anthropic Console / Claude 3.5 Sonnet / Haiku)</strong>, <strong>Python</strong>, <strong>VS Code</strong>, <strong><code>.env</code> 파일</strong>, <strong>헌법재판소 판례 텍스트</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>앤트로픽 콘솔에서 API 키를 발급받아 프로젝트 폴더 내 <code>.env</code> 파일에 안전하게 세팅합니다.</li>
+<li>파이썬 코드(<code>caching.py</code>)에 엔트로픽 베타 헤더(<code>prompt_caching-2024-07-31</code>) 및 캐시 컨트롤 매개변수를 등록합니다.</li>
+<li>동일 경로에 분석할 헌법재판소 판례 텍스트 파일(<code>law.txt</code>)을 세팅합니다.</li>
+<li>첫 번째 API 호출을 실행하여 판례 요약 및 캐시 생성(Cache Creation Input Tokens: 10,234)을 수행합니다 (약 7.7초 소요).</li>
+<li>동일 세션에서 두 번째 질의를 보냈을 때 <code>cache_read_input_tokens</code>로 전환되며 인풋 토큰 추가 생성 0, 비용 절감 및 응답 속도 대폭 향상을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 캐시 생성(Write) 시 첫 인풋 가격은 약 25% 비싸지만, 생성된 캐시를 읽을 때(Read)는 10% 가격만 적용되므로 대용량·반복 질의 환경에서 극적인 비용 절감 효과가 발생합니다.
+</li>
+<li><strong>활용 팁</strong>: 대용량 법률 문서, 코드베이스, 매뉴얼을 반복 참조하는 엔터프라이즈 RAG 시스템이나 멀티턴 대화형 아키텍처에 적용 시 속도와 비용 효율을 대폭 높일 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드 prompt caching with PDF</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 14페이지 분량의 한국은행 경제 보고서 PDF 파일을 파이썬 PyPDF/pypdf 라이브러리로 읽어들여 클로드 Prompt Caching을 적용하고, 캐시의 라이프사이클(약 5분 휘발성) 특성을 분석하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude API (Claude 3.5 Sonnet / Prompt Caching Beta)</strong>, <strong>Python</strong>, <strong>VS Code</strong>, <strong><code>pypdf</code></strong>, <strong><code>.env</code></strong>, <strong>한국은행 BOK 이슈노트 PDF</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><code>pypdf</code> 패키지를 설치하고 PDF 파일에서 텍스트를 자동 추출하는 파이썬 함수(<code>open_pdf_file</code>)를 정의합니다.</li>
+<li>2차 베이비부머 은퇴 경제 보고서 PDF(<code>BOK.pdf</code>)를 파이썬 스크립트와 동일 폴더에 배치합니다.</li>
+<li>첫 호출 시 16,116개 토큰의 캐시가 생성되며 한국은행 요약 보고서 답변을 도출합니다 (약 12초 소요).</li>
+<li>5분 이내에 연이어 추가 질문(&quot;AI 활용 정책 대응 방안은?&quot;)을 보냈을 때 <code>input_tokens: 0</code>으로 캐시를 즉시 재사용함을 확인합니다.</li>
+<li>5분 경과 후 캐시 데이터가 휘발(Expiring)되면 다시 16,116개 인풋 토큰이 차감되는 라이프사이클 동작 메커니즘을 점검합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 200페이지가 넘는 초대형 PDF는 API 타임아웃이 발생할 수 있으므로 적절한 분량(10~50페이지 내외)으로 시도해야 하며, 5분간 질문이 없으면 캐시가 자동 삭제됨에 유의해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단발성 질문보다는 5분 이내에 보고서나 규정집 PDF에 대해 다각도의 연속 질의응답을 이어나갈 때 캐싱 효율이 극대화됩니다.
+</li>
+</ul>
+<hr>
+<h3>클로드를 좋아하는 네 번째 이유 : AI Agent 오케스트레이션</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 지휘자 역할을 하는 오케스트레이터(Orchestrator) 에이전트와 분야별 서브 에이전트(리서치, 스크립트, 썸네일, SNS)를 클로드 프로젝트 및 클로드 데스크톱 앱(Code)으로 구축하여, 한 번의 명령으로 수업/콘텐츠 자산을 병렬 처리로 제작하는 기법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Projects (Start Prompt 팀)</strong>, <strong>Claude Desktop App (Code 모드 / 로컬 환경)</strong>, <strong>Cursor / VS Code</strong>, <strong>Markdown / Text Output</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 Projects 지침에 스킬풀 에이전트 프롬프트 제작 지침(.txt)을 입력합니다.</li>
+<li>&quot;AI 교육 유튜브 채널 운영자를 위한 에이전트 오케스트레이션 시스템을 짜줘&quot;라고 요청하여 스타트 프롬프트(Start Prompt)를 생성합니다.</li>
+<li>복사한 스타트 프롬프트를 클로드 데스크톱 앱의 Code 탭(로컬 지정 폴더)에 입력합니다.</li>
+<li>클로드 코드가 5개 에이전트 파일과 5개 스킬 파일을 로컬 폴더에 병렬로 자동 생성합니다.</li>
+<li>&quot;바둑 기사의 AI 학습 원리를 교육에 적용하는 콘텐츠를 만들어줘&quot;라고 지시하면 오케스트레이터가 리서치-&gt;스크립트-&gt;썸네일-&gt;SNS 글을 병렬로 완성해 <code>out/</code> 폴더에 저장합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 시작점인 스타트 프롬프트(Start Prompt)의 설계가 구체적이고 정교해야 오케스트레이터가 하위 에이전트와 스킬을 오류 없이 올바르게 생성합니다.
+</li>
+<li><strong>활용 팁</strong>: 수동으로 에이전트를 하나씩 호출할 필요 없이 단 한 번의 자연어 지시만으로 다양한 형태의 연관 콘텐츠들을 병렬로 수 분 만에 한곳에 도출할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드를 좋아하는 다섯 번째 이유 : 코워크 Cowork</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드 데스크톱 앱의 Cowork 기능을 통해 지정된 내 로컬 폴더 내 다수의 워드/엑셀 문서를 클로드가 자율적으로 읽고, 분석하고, 문체를 리라이팅(Rewriting)하거나 파일들을 병렬 수정하는 에이전틱 작업 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Desktop App (Cowork 모드)</strong>, <strong>Local Work Folder</strong>, <strong>MS Word (.docx)</strong>, <strong>Projects Context / Skills</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 데스크톱 앱 실행 후 사이드바에서 &#39;Cowork&#39;를 고르고 로컬 작업 폴더를 지정합니다.</li>
+<li>작업 폴더에 책 원고 챕터 1~8 워드 파일들(.docx)을 세팅합니다.</li>
+<li>&quot;이 폴더 내 원고들을 분석하고 전문가 어조로 챕터 전체를 업로드 및 리라이팅해줘&quot;라고 명령합니다.</li>
+<li>Cowork가 폴더 구조를 파악하고 챕터별 분석 후 서브 에이전트들을 동시 구동해 병렬로 리라이팅 작업을 수행합니다.</li>
+<li>작업 폴더 내에 완성된 V2 버전의 업그레이드 원고 파일들이 새로 생성되었음을 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 코워크는 지정된 로컬 폴더 내 기존 파일을 직접 수정하거나 변경할 수 있으므로, 실행 전 중요한 원본 파일은 반드시 백업 폴더로 복사해 두어야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 엑셀 데이터 원장 정리, 여러 워드 보고서 통합, 대량 파일 이름 변경 등 번거롭고 정형화된 파일 처리 작업을 알아서 처리해 주는 AI 전담 직원으로 활용 가능합니다.
+</li>
+</ul>
+<hr>
+<h3>클로드를 좋아하는 세 번째 이유 : Skills 스킬즈</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 내가 자주 수행하는 업무 규칙, 가이드라인, 템플릿 양식을 클로드 스킬(.zip) 모듈로 가공하여 업로드하고, 어떤 대화 세션에서든 불러와 일관된 품질로 반복 업무를 처리하게 만드는 인수인계 시스템입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude (Projects / Settings / Skills Upload)</strong>, <strong>스킬 제작 전문팀 프롬프트 (.txt)</strong>, <strong><code>.zip</code> 모듈 파일</strong>, <strong>유튜브 대본 텍스트/PPT</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 Projects에 스킬 제작 전문팀 지침(.txt)을 입력해 프로젝트를 생성합니다.</li>
+<li>내 유튜브 우수 대본 샘플 3개를 제공하고 &quot;내 스타일을 분석해 스킬로 만들어줘&quot;라고 요청합니다.</li>
+<li>프로젝트 팀이 금기사항(딱딱한 문어체 금지 등)과 톤앤매너가 담긴 <code>.zip</code> 스킬 파일을 도출합니다.</li>
+<li>클로드 프로필 -&gt; 설정 -&gt; 기능 -&gt; &#39;스킬 업로드&#39; 메뉴에서 다운로드한 <code>.zip</code> 파일을 연동합니다.</li>
+<li>새 대화창에서 &quot;필로소피 스타일로 C댄스 2.0 대본을 작성해줘&quot;라고 지시하면 등록된 스킬을 자동 탐색해 인수인계받은 대로 대본을 완성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 필요 이상의 너무 많은 스킬을 한 번에 활성화해 두면 클로드가 지침 간 혼선을 겪을 수 있으므로 사용하지 않는 스킬은 토글 버튼으로 비활성화해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 대화 세션마다 긴 가이드라인을 반복 입력할 필요 없이 스킬로 한 번 업로드해 두면 언제든 동일한 서식과 스타일로 산출물을 얻을 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드를 좋아하는 일곱 번째 이유 : 리모트 컨트롤 Remote Control</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 내 PC에서 클로드 코드를 구동한 상태에서 생성된 QR코드를 스마트폰으로 스캔하여, 외부에서도 로컬 PC의 파일과 코드를 원격으로 조작하고 생성시키는 Remote Control 기능 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code (Remote Control)</strong>, <strong>Terminal / CMD (<code>claude remote-control</code>)</strong>, <strong>Claude Mobile App</strong>, <strong>Max/Pro Plan</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>PC의 CMD 터미널에서 작업할 로컬 폴더로 이동(<code>cd remote-control</code>)합니다.</li>
+<li>터미널에 <code>claude remote-control</code> 명령어 입력 후 스페이스바를 눌러 QR코드를 출력시킵니다.</li>
+<li>스마트폰의 카메라나 클로드 앱으로 터미널의 QR코드를 스캔하여 세션을 연결합니다.</li>
+<li>스마트폰 대화창에 &quot;영어 학습 웹앱을 만들어줘&quot;라고 자연어로 지시합니다.</li>
+<li>외부에서 산책하며 스마트폰으로 응답 및 승인을 진행하면, PC의 로컬 폴더에 완성된 <code>index.html</code> 웹 사이트 파일이 자동 생성됩니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Remote Control 세션이 유지되려면 내 PC가 켜져 있고 클로드 코드가 백그라운드에서 구동 중이어야 하며, Max/Pro 요금제 계정이 요구됩니다.
+</li>
+<li><strong>활용 팁</strong>: PC 앞을 비우더라도 산책이나 이동 중에 스마트폰으로 로컬 개발 세션을 원격 조작하고 결과를 실시간 점검할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>클로드를 좋아하는 첫 번째 이유 : 나만의 프로젝트</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드 유료 플랜의 Projects 기능을 활용해 전용 지침(Custom Instructions)과 지식 자료(Knowledge)를 세팅하고, 에이전틱 워크플로우를 탑재하여 나만의 프롬프트 생성 전담 AI 팀을 만드는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude 3.5 Sonnet / Opus 4.6 (Projects 기능)</strong>, <strong>에이전틱 워크플로우 프롬프트 (.txt)</strong>, <strong>Project Knowledge</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 좌측 메뉴에서 Projects로 진입해 &#39;Set Project&#39;를 누르고 &#39;에이전틱 워크플로우 프롬프트 팀&#39; 프로젝트를 작성합니다.</li>
+<li>지침(Instructions) 편집창에 5단계 역할(요청분석-팀구성-초안-리뷰-파이널) 프롬프트 지침(.txt)을 등록합니다.</li>
+<li>&quot;물리 교육과 교수를 위한 수업 준비 팀 프롬프트를 만들어줘&quot;라고 요구합니다.</li>
+<li>프롬프트 팀이 도출해 준 완벽한 지침 코드를 복사하여 새 프로젝트 &#39;물리 수업 준비 팀&#39; 지침에 이식합니다.</li>
+<li>생성된 전담 프로젝트에서 &quot;만유인력의 법칙 수업 자료를 만들어줘&quot;라고 질의하면 사전에 세팅된 전문가 팀 페르소나들이 작동해 정교한 수업 지도안을 도출합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 프로젝트 기능을 사용하려면 Pro 이상 요금제가 필요하며, 지침에 구체적인 업무 프로세스와 룰을 적어둘수록 더 일관성 높은 답변을 얻을 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 매번 새로운 대화를 시작할 때마다 인적사항이나 배경지식을 설명할 필요 없이, 주제별(물리 수업, 코딩 프롬프트, 영상 대본 등) 전담 프로젝트 팀을 세팅해 두면 업무 속도가 획기적으로 개선됩니다.
+</li>
+</ul>
+</article>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>

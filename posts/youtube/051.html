@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>필로소피 AI 교육_개발 및 바이브코딩 | 뉴스투데이</title>
+<meta name="description" content="1. (Channels) 길에서 디스코드 앱으로 클로드 코드에게 일을 시키는 시대 핵심 요약 및 개요: 모바일 디스코드 앱이나 텔레그램을 통해 외부에서도 Claude Code에 명령을 내려 원격으로 개발 작업을 진행할 수 있는 Channels M…">
+<link rel="canonical" href="https://newstoday.co.kr/posts/youtube/051.html">
+<meta property="og:title" content="필로소피 AI 교육_개발 및 바이브코딩 | 뉴스투데이">
+<meta property="og:description" content="1. (Channels) 길에서 디스코드 앱으로 클로드 코드에게 일을 시키는 시대 핵심 요약 및 개요: 모바일 디스코드 앱이나 텔레그램을 통해 외부에서도 Claude Code에 명령을 내려 원격으로 개발 작업을 진행할 수 있는 Channels M…">
+<meta property="og:url" content="https://newstoday.co.kr/posts/youtube/051.html">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/post.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">본문 바로가기</a>
+<header class="masthead">
+<div class="masthead-inner">
+<div class="brand">
+<a href="../../index.html">
+<span class="brand-mark">뉴스투데이</span>
+<span class="brand-url">newstoday.co.kr</span>
+</a>
+</div>
+</div>
+</header>
+<main id="main-content">
+<p class="back"><a href="../../index.html#temp">목록으로</a></p>
+<p class="post-kicker">유튜브채널 요약정보 · 2026.10.14</p>
+<h1>필로소피 AI 교육_개발 및 바이브코딩</h1>
+<article class="prose">
+<h3>1. (Channels) 길에서 디스코드 앱으로 클로드 코드에게 일을 시키는 시대</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 모바일 디스코드 앱이나 텔레그램을 통해 외부에서도 <strong>Claude Code</strong>에 명령을 내려 원격으로 개발 작업을 진행할 수 있는 <strong>Channels MCP</strong> 연동법을 설명합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>Discord App / Bot</strong>, <strong>Claude Code Channels MCP Server</strong>, <strong>Node.js (bun)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li><strong>디스코드 개발자 포털</strong>에서 신규 애플리케이션 및 봇을 생성한 뒤 토큰을 발급받아 메모장에 저장합니다.</li>
+<li>봇 권한(메시지 전송, 채널 보기 등)과 <strong>Message Content Intent</strong>를 활성화하고, 생성된 URL로 디스코드 개인 서버에 봇을 초대합니다.</li>
+<li>클로드 코드 터미널에서 디스코드 플러그인 설치 및 디스코드 토큰 등록 명령어를 실행합니다.</li>
+<li>터미널에서 <code>claude channels</code> 명령으로 채널 모드를 켜고 디스코드 봇에게 DM을 보내 6자리 페어링 코드를 받아 페어링을 완료합니다.</li>
+<li>정책을 <code>all</code>로 설정한 후 모바일 디스코드 앱에서 봇에게 자연어로 웹 개발이나 코드 수정을 지시합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 디스코드 봇 설정 시 <strong>Message Content Intent</strong> 항목을 반드시 활성화해야 메시지를 정상 수신하며, 채널 모드가 실행된 상태의 터미널 세션이 유효해야 모바일에서 원격 제어가 가능합니다.
+</li>
+<li><strong>활용 팁</strong>: 외부 이동 중에도 모바일 디스코드 앱을 이용해 웹사이트 생성, 버그 수정, 작업 권한 승인(Allow) 등을 실시간으로 처리할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. (Sittch + Nano Banana) 나노 바나나가 웹사이트 디자인까지 하는 시대!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: AI 코딩 도구의 시각적 디자인 한계를 극복하기 위해 <strong>구글 스티치(Stitch)</strong>의 <strong>나노 바나나(Nano Banana)</strong> 모델로 디자인을 재구성한 뒤, 이를 코드로 변환하여 웹사이트에 적용하는 워크플로우를 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Stitch</strong>, <strong>Nano Banana (Gemini 2.5 Flash Image / Redesign 모델)</strong>, <strong>Gemini 3.0 Pro</strong>, <strong>AntiGravity</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>AntiGravity 또는 Claude Code로 기본 웹사이트를 코딩하고 Netlify로 1차 배포합니다.</li>
+<li>1차 배포된 웹사이트 화면을 캡처하여 구글 스티치에 업로드합니다.</li>
+<li>스티치의 모델을 <strong>Redesign(나노 바나나)</strong>으로 설정한 뒤 감각적이고 전문적인 디자인 재구성을 요청합니다.</li>
+<li>생성된 이미지 시안을 다운로드한 후, 스티치 모델을 <strong>Gemini 3.0 Pro</strong>로 바꾸고 다운로드한 이미지를 첨부하여 HTML 코드로 변환을 요청합니다.</li>
+<li>추출된 HTML 코드를 AntiGravity 프로젝트에 복사·적용하여 디자인을 업데이트하고 GitHub 연동을 통해 Netlify에 자동 반영합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 나노 바나나 모델은 순수 디자인 이미지 생성용이므로 코드 직접 추출이 불가능합니다. 반드시 <strong>Gemini 3.0 Pro 모델로 전환한 뒤 이미지를 코드로 변환하는 2단계 과정</strong>을 거쳐야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 디자인 전용 AI와 코드 생성 AI의 역할을 분리하여 조합하면 한 줄의 코드 직접 작성 없이도 수준 높은 UI/UX 디자인의 웹사이트를 제작할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>3. (Stitch + Google AI Studio) 디자인, 로직 구현, 배포까지! 이제는 필요한 툴은 직접 만들 수 있습니다!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글 스티치로 프론트엔드 UI 디자인을 잡고, 이를 구글 AI 스튜디오로 내보내 실제 백엔드 로직과 대시보드 기능을 손쉽게 결합·배포하는 제작법을 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Stitch</strong>, <strong>Google AI Studio</strong>, <strong>Claude Projects (프롬프트 제작팀)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects에 프롬프트 지침을 설정하고 원하는 서비스(예: AI 구독 관리자 대시보드) 아이디어를 대화로 전달하여 스티치 및 AI 스튜디오용 전용 프롬프트를 생성합니다.</li>
+<li>구글 스티치에 스티치용 프롬프트를 입력하여 시각적 대시보드 UI 디자인을 생성합니다.</li>
+<li>스티치의 <strong>Export to AI Studio</strong> 기능을 사용하여 디자인과 HTML 구조를 구글 AI 스튜디오로 바로 내보냅니다.</li>
+<li>구글 AI 스튜디오에서 백엔드 기능 프롬프트를 추가 입력하여 실제 동작하는 로직(Gemini API 키 입력, 서비스 추천 및 구독 분석 등)을 결합합니다.</li>
+<li>우측 상단의 <strong>Deploy App</strong> 로켓 버튼을 클릭하여 웹사이트 배포 URL을 생성하고 즉시 테스트합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI 스튜디오에서 Gemini API 키가 필요한 기능을 구현할 때 사용자의 개인 API 키가 브라우저 로컬 저장소에만 저장되도록 설계해야 비용 남용 및 보안 문제를 방지할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 디자인 툴(Stitch)과 로직·배포 툴(Google AI Studio) 간의 원클릭 연동 기능을 활용하면 코딩 지식이 없는 사용자도 자신에게 필요한 개인 맞춤형 대시보드 웹앱을 직접 만들 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. (입문자용) 클로드 코드로 웹사이트 만들고 배포하기!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 코딩 초보자를 위한 과정으로, 클로드 코드로 생성한 HTML 웹사이트를 GitHub와 Netlify, 그리고 커스텀 도메인까지 연동하여 실제 서비스로 완성하는 배포 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>, <strong>가비아 (Gabia)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>클로드 코드를 실행하고 프롬프트를 입력하여 프로젝트 폴더 내 랜딩 페이지 HTML 파일(<code>index.html</code>)을 생성합니다.</li>
+<li>GitHub에 접속하여 새 저장소(Repository)를 만들고 <code>uploading an existing file</code> 옵션으로 HTML 파일을 업로드 및 커밋합니다.</li>
+<li>Netlify에 GitHub 계정으로 연동 로그인한 뒤 <code>Import an existing project</code>로 해당 저장소를 선택해 즉시 배포합니다.</li>
+<li>가비아 등 도메인 구매 사이트에서 원하는 웹 주소를 구매합니다.</li>
+<li>Netlify의 Domain Management 설정에서 구매한 커스텀 도메인을 등록하고 DNS 연결을 마무리합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 아무리 코드를 잘 짜도 실제 도메인과 서빙 환경에 배포하지 않으면 활용할 수 없으므로, 생성부터 배포까지 연결되는 전 과정을 파악하는 것이 가장 중요합니다.
+</li>
+<li><strong>활용 팁</strong>: 프로젝트 시작 시 클로드 코드에게 먼저 전용 작업 폴더를 생성하게 한 뒤 그 안에 <code>index.html</code> 파일을 만들도록 지시하면 파일 관리가 훨씬 정돈됩니다.
+</li>
+</ul>
+<hr>
+<h3>5. [클로드 코드] Git Hub MCP 서버 추가 + Agent 기능 사용법</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드 코드에 Docker 기반 <strong>GitHub MCP 서버</strong>를 설치하고, 개발·테스트·보안·배포 등 역할별 <strong>서브 에이전트 팀</strong>을 구성하여 개발부터 배포까지 자동화하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code (Sub-Agents / Agent Team)</strong>, <strong>Docker Desktop</strong>, <strong>GitHub MCP Server</strong>, <strong>PowerShell / WSL2</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>GitHub 세팅에서 Personal Access Token (Classic)을 발급받아 스코프 권한을 설정하고 저장합니다.</li>
+<li>PowerShell을 관리자 권한으로 열어 WSL2를 활성화하고, Docker Desktop을 설치 및 실행합니다.</li>
+<li>발급받은 토큰을 포함한 Docker 실행 명령어를 CLI에 입력하여 클로드 코드에 GitHub MCP 서버를 연동합니다.</li>
+<li>클로드 코드 내에서 <code>/agents</code> 명령을 통해 역할별 서브 에이전트(미노: 개발, 준노: 테스트, 진수: 보안, 유민: GitHub 배포 등)를 생성합니다.</li>
+<li>에이전트 팀에 작업을 부여하여 앱 개발부터 코드 검토, GitHub 저장소 자동 생성 및 GitHub Pages 배포까지 순차 진행합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Docker 설치 시 <strong>Use the WSL 2 based engine</strong> 옵션이 반드시 체크되어 있어야 하며, 토큰 발급 시 필요한 권한(repo, user, project 등)을 누락 없이 부여해야 정상 동작합니다.
+</li>
+<li><strong>활용 팁</strong>: 각 서브 에이전트에 서로 다른 구별 색상(Purple, Orange 등)을 지정해두면 터미널상에서 현재 어떤 에이전트가 수행 중인지 한눈에 파악할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>6. Antigravity + Supabase MCP 연동 방법</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 안티그래비티(AntiGravity)에 <strong>Supabase MCP</strong>를 연동하여 백엔드 서버 구축 없이 자연어 명령만으로 데이터베이스 및 사용자 인증 테이블을 연결하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>AntiGravity</strong>, <strong>Supabase</strong>, <strong>Supabase MCP Server</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Supabase 웹사이트 회원가입 후 신규 조직 및 프로젝트를 생성하고, 계정 설정에서 Personal Access Token을 발급받습니다.</li>
+<li>AntiGravity 우측 상단 에이전트 메뉴의 MCP Servers -&gt; MCP Store로 이동합니다.</li>
+<li>Supabase MCP를 검색하여 설치하고, 발급받은 Access Token을 입력하여 연동을 완료합니다.</li>
+<li>채팅창에서 <code>@index.html</code> 등의 작업 코드를 참조하고, 데이터베이스 연동 및 테이블 작성을 요청합니다.</li>
+<li>AI 에이전트가 제시하는 RLS(Row Level Security) 보안 정책 및 테이블 생성 실행 계획을 승인하여 데이터베이스 구축을 마무리합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Access Token 발급 시 만료 기간을 &#39;Never&#39;로 설정하면 유출 위험이 있으므로 30일 등 제한된 기간으로 설정하는 것이 안전합니다.
+</li>
+<li><strong>활용 팁</strong>: 복잡한 백엔드 설정 과정 없이도 MCP 연동을 통해 데이터 저장 및 회원가입/로그인 기능이 탑재된 완성형 웹사이트를 빠르게 빌드할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. AntiGravity 2.0 , 본격적인 Agent 코딩의 시대</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 에이전트 중심 인터페이스로 전면 개편된 <strong>AntiGravity 2.0</strong>과 <strong>Gemini 3.5 Flash</strong> 모델을 활용하여 최소한의 프롬프트만으로 고품질 앱을 제작하는 방식을 소개합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>AntiGravity 2.0</strong>, <strong>Gemini 3.5 Flash</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>AntiGravity 2.0을 설치 및 실행한 후 작업할 새 프로젝트 폴더를 지정합니다.</li>
+<li>모델을 Gemini 3.5 Flash로 지정하고, 구현할 앱(예: 교육자용 투두리스트 앱) 핵심 요구사항을 한 줄의 자연어로 입력합니다.</li>
+<li>에이전트가 스스로 세운 전체 실행 계획(Plan)을 확인하고 승인(Allow)하여 자동 생성을 진행합니다.</li>
+<li>생성된 결과물 확인 후, GitHub 저장소 URL을 제공하여 해당 레포지토리에 코드를 자동 올리도록 지시합니다.</li>
+<li>Netlify에서 커밋된 저장소를 불러와 웹 배포를 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 기존 코딩 툴 UI와 달리 에이전트 대화창이 메인을 차지하므로, 에이전트가 세운 작업 계획을 사전에 확인하는 습관이 필요합니다.
+</li>
+<li><strong>활용 팁</strong>: Gemini 3.5 Flash 모델은 매우 짧은 프롬프트를 입력해도 집중 타이머, 소음기 등 세부 편의 기능을 스스로 판단하여 고도화된 완성본을 만들어냅니다.
+</li>
+</ul>
+<hr>
+<h3>8. Claude Code를 활용한 바이브 코딩 (무더위쉼터 찾는 사이트 만들기)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 윈도우 환경에 클로드 코드를 설치하고, 이를 Cursor 에디터와 연동하여 공공데이터 포털 자료 기반의 실용적인 무더위쉼터 안내 웹사이트를 구축 및 배포합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>Node.js</strong>, <strong>공공데이터포털 CSV/API</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Node.js(18 버전 이상)를 설치한 후 명령 프롬프트에서 <code>npm install -g @anthropic-ai/claude-code</code>로 클로드 코드를 설치합니다.</li>
+<li>Cursor 에디터 실행 후 클로드 코드 익스텐션을 설치하고 터미널에서 <code>claude</code>를 불러옵니다.</li>
+<li>공공데이터포털에서 다운로드받은 무더위쉼터 CSV 데이터 파일을 프로젝트 폴더에 위치시킵니다.</li>
+<li>클로드 코드에게 기존 웹사이트 코드를 분석하여 UI를 고급스럽게 다듬고 기능을 고도화하도록 요청합니다.</li>
+<li>수정이 완료된 파일(HTML, JS, CSS, CSV)을 GitHub에 커밋하고 Netlify를 통해 배포합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 윈도우 환경 설치 시 반드시 Node.js 18 버전 이상이 먼저 구동 환경으로 준비되어 있어야 클로드 코드가 정상 실행됩니다.
+</li>
+<li><strong>활용 팁</strong>: Cursor 유료 구독 없이도 클로드 유료 사용자가 Cursor 터미널 내에서 Claude Code를 불러와 사용하면 익숙한 에디터 환경에서 효율적으로 작업할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. Claude Fable5로 월드컵 게임 만들기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 클로드의 최신 모델 <strong>Fable5</strong>와 Claude Desktop, 그리고 구글 Gemini API를 결합하여 전술 설정과 AI 코치 조언 기능이 탑재된 월드컵 축구 시뮬레이션 게임을 제작합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude (Fable5 모델 / Desktop App)</strong>, <strong>Claude Projects (코딩 프롬프트 팀)</strong>, <strong>Google AI Studio (Gemini API)</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects의 프롬프트 제작팀 지침을 활용해 축구 시뮬레이션 게임에 필요한 상세 프롬프트를 구성합니다.</li>
+<li>GitHub에 빈 레포지토리를 만들고 클로드 코드 클라우드 환경과 저장소를 연결합니다.</li>
+<li>Fable5 모델을 선택하고 생성된 프롬프트를 입력하여 축구 경영 시뮬레이터 코드를 생성시킵니다.</li>
+<li>구글 AI 스튜디오에서 발급받은 Gemini API 키를 게임 내 AI 수석코치 기능에 연동합니다.</li>
+<li>작성된 코드를 Netlify에 배포한 후 선수 컨디션 관리, AI 코치의 전술 조언 수용, 경기 진행 등을 직접 테스트합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 최신 모델(Fable5 등) 활용 시 사용 한도(Limit)가 존재하므로 한도 내에서 효율적으로 질문을 구성하고 진행해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 게임 로직 내에 외부 LLM API(Gemini API)를 결합하면 상대팀 전력에 맞춰 실시간으로 전술 변경 가이드를 제공하는 똑똑한 AI 수석코치 요소를 추가할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>10. Cursor AI 쉬운 활용법 (+Gemini API, Streamlit) : 나만의 논문 리뷰팀</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Cursor AI 에디터를 활용하여 파이썬 기반의 <strong>Streamlit</strong> 웹앱을 작성하고, <strong>Gemini API</strong>를 연동하여 PDF 논문을 분석·리뷰해주는 전문 연구팀 웹서비스를 제작·배포합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Cursor AI</strong>, <strong>Python</strong>, <strong>Google AI Studio (Gemini API)</strong>, <strong>Streamlit</strong>, <strong>GitHub</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>파이썬 및 Cursor AI를 설치하고 구글 AI 스튜디오에서 Gemini API 키를 발급받습니다.</li>
+<li>Cursor AI에서 <code>Ctrl + L</code> (또는 <code>Cmd + L</code>)로 AI 채팅을 열어 Streamlit과 Gemini API 연동 파이썬 코드(<code>app.py</code>) 작성을 요청합니다.</li>
+<li>라이브러리 정보를 담은 <code>requirements.txt</code>와 앱 설명용 <code>README.md</code> 파일을 생성합니다.</li>
+<li>작성된 파일들을 GitHub 저장소에 업로드합니다.</li>
+<li>Streamlit Cloud에 GitHub 계정으로 로그인한 뒤 해당 저장소를 지정하여 웹앱 배포를 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Streamlit Cloud 배포 시 <code>requirements.txt</code> 내 패키지 버전(예: <code>streamlit</code>, <code>google-generativeai</code> 등)을 명확히 기재해야 배포 에러를 방지할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: Cursor의 <code>@</code> 멘션 기능을 활용해 프롬프트 지침 파일(<code>instructions.txt</code>)을 참조하게 하면, 다단계 역할(샘: 초기분석, 제니: 단순화, 윌: 최종보고)을 수행하는 논문 리뷰 에이전트팀 웹앱을 손쉽게 구성할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>1. Cursor로 Gemini API 연동된 Streamlit 사이트 만들기 (나만의 교육용 웹사이트 만들기)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Cursor AI와 Gemini API, Streamlit을 활용하여 장애 학생이나 맞춤형 학습자를 위한 교육용 웹사이트를 제작하고, 이를 GitHub 및 Streamlit Cloud로 배포하는 전체 워크플로우를 설명합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Cursor AI</strong>, <strong>Google AI Studio (Gemini API / Gemini 3 Pro)</strong>, <strong>Claude Projects (코딩 프롬프트 팀)</strong>, <strong>Streamlit</strong>, <strong>GitHub</strong>, <strong>Streamlit Cloud</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects의 프롬프트 전문가 팀 지침을 활용해 만들고자 하는 학습 앱(예: 지적장애인용 학습 앱) 아이디어를 바탕으로 구체적인 프롬프트를 생성합니다.</li>
+<li>Cursor AI에서 Gemini 3 Pro 모델을 선택하고 생성된 프롬프트를 입력하여 Streamlit 기반 파이썬 코드(<code>app.py</code>) 및 설정 환경을 작성합니다.</li>
+<li>로컬 환경에서 <code>streamlit run app.py</code> 명령어로 웹사이트 정상 작동 여부를 테스트합니다.</li>
+<li>프로젝트 폴더 내 파일들을 GitHub 저장소(Repository)에 업로드 및 커밋합니다.</li>
+<li>Streamlit Cloud에 GitHub 계정으로 연결 로그인한 뒤 해당 저장소와 메인 파일(<code>app.py</code>)을 지정하여 최종 웹 배포를 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Cursor 무료 요금제 사용 시 오토(Auto) 설정 모델은 성능이 다소 떨어질 수 있으며, Streamlit Cloud 배포 시 메인 파일 경로(<code>app.py</code>)를 정확히 지정해야 오류가 발생하지 않습니다.
+</li>
+<li><strong>활용 팁</strong>: 웹앱 내에서 사용자가 직접 본인의 Gemini API 키를 입력하도록 설계하면, 타인이 서비스를 이용하더라도 작성자 본인의 API 과금 부담을 방지할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. Gemini CLI에 깃헙 MCP 연동하기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글의 제미나이 CLI(Gemini CLI)에 GitHub MCP 서버를 연결하여, 터미널 환경에서 내 GitHub 저장소 목록 조회, 파일 검색 및 수정 작업을 에이전트 방식으로 자동 처리하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Gemini CLI</strong>, <strong>GitHub</strong>, <strong>GitHub MCP Server (<code>@modelcontextprotocol/server-github</code>)</strong>, <strong>Node.js (npm)</strong>, <strong>VS Code / Cursor / 메모장</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>GitHub의 Developer settings -&gt; Personal Access Token (Classic)에서 30일 만료 토큰을 생성하고 필요한 권한을 체크한 뒤 토큰을 발급받아 복사합니다.</li>
+<li>CMD 터미널에서 <code>npm install</code> 명령어로 GitHub MCP 서버 패키지를 설치합니다.</li>
+<li>CLI 세팅 경로에 <code>.gemini</code> 폴더를 만들고 <code>settings.json</code> 설정 파일을 생성합니다.</li>
+<li><code>settings.json</code> 파일에 GitHub MCP 서버 실행 경로와 발급받은 토큰값을 기입하고 저장합니다.</li>
+<li><code>gemini</code> 명령어로 로그인 후 &quot;내가 소유한 저장소 목록을 최근 업데이트순으로 보여줘&quot;와 같이 자연어로 저장소 관리를 지시합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI 에이전트가 사용자의 지시를 수행하기 위해 연속적으로 API 호출을 진행하므로, 자리를 비울 경우 무료 사용 한도를 초과해 자동 과금될 수 있으니 주의해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 연동 중 저장소 정보를 불러오지 못하는 에러가 발생하면 GitHub 토큰을 새로 생성하여 <code>settings.json</code>에 재등록하고 저장하면 정상 동작합니다.
+</li>
+</ul>
+<hr>
+<h3>3. Gemma 4 + Claude Code 연동 방법!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글의 로컬 오픈소스 AI 모델인 Gemma 4 (E4B)를 LM Studio를 통해 내 PC에서 구동하고, 이를 Claude Code의 백엔드 모델로 연동하여 구독료 없이 로컬 환경에서 코딩 에이전트를 사용하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>LM Studio</strong>, <strong>Gemma 4 (E4B / 로컬 오픈소스 모델)</strong>, <strong>Claude Code</strong>, <strong>AntiGravity / Cursor</strong>, <strong>GitHub Pages</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>LM Studio 프로그램을 설치하고 Gemma 4 E4B 모델을 검색하여 로컬 PC에 다운로드합니다.</li>
+<li>LM Studio의 Developer 탭에서 모델을 로드(Load)하여 로컬 서버 포트 및 모델명을 준비합니다.</li>
+<li>작업할 프로젝트 폴더 내에 <code>.claude</code> 폴더를 만들고 <code>settings.json</code> 파일에 LM Studio 로컬 URL과 Gemma 4 모델명을 설정합니다.</li>
+<li>터미널에서 <code>claude</code> 명령어를 입력해 Gemma 4가 적용된 Claude Code 세션을 구동합니다.</li>
+<li>코드 수정 및 제작을 지시한 뒤, 완성된 웹사이트 결과물(<code>index.html</code>)을 GitHub Pages로 배포 및 확인합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Gemma 4 오픈소스 모델은 무료 로컬 사용이 가능하다는 장점이 있지만, 클로드(Claude) 상용 모델에 비해 응답 속도가 느리고 복잡한 추론 능력이 다소 부족할 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: AI 서비스들의 유료 구독료가 비싸지는 상황에서 로컬 오픈소스 AI 연동법을 익혀두면 비용 부담을 대폭 줄이고 개인정보 보호 환경에서 코딩 작업을 진행할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. Genspark AI에 노션 MCP 더하기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: AI 에이전트 검색 서비스인 Genspark AI에 노션(Notion) MCP를 연동하여 특정 주제에 대한 심층 조사 및 웹페이지 형태 보고서를 생성하고, 그 결과를 노션에 자동으로 저장하는 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Genspark AI (Super Agent)</strong>, <strong>Notion</strong>, <strong>Notion MCP</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Genspark AI 사이트에 접속하여 도구 선택/추가 메뉴에서 노션(Notion) MCP를 연동합니다.</li>
+<li>대화창에 &quot;유발 하라리의 AI 관련 관점을 조사해서 노션에 올릴 수 있도록 도와줘&quot;와 같이 조사 목표와 노션 저장을 요청합니다.</li>
+<li>Genspark AI가 유튜브, 뉴스 기사, 최근 인터뷰 등 다양한 출처를 심층 검색하고 분석합니다.</li>
+<li>정보가 종합 정리된 고품질 웹페이지 형태의 보고서를 생성하고 검토합니다.</li>
+<li>보고서 하단의 &#39;노션에 저장하기&#39; 버튼을 눌러 연동된 노션 페이지로 요약 내용과 웹페이지 링크를 자동 기입합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Genspark AI가 수집·정리한 외부 정보 중 일부 내용에 오류나 왜곡이 포함될 수 있으므로 중요한 사실관계는 첨부된 원본 출처 링크를 통해 검증해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순히 대화 답변으로 끝나지 않고 완성도 높은 웹페이지 보고서와 노션 데이터베이스 생성이 동시에 이루어지므로, 조사 보고서 작성 및 자료 공유 시간을 극적으로 단축할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>5. Grok Studio로 나만의 사이트 만들기!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: xAI의 Grok Studio(그록 스튜디오) 기능을 활용하여 사이트 UI 미리보기와 코드 생성을 실시간으로 확인하며 웹사이트를 제작하고 GitHub/Netlify로 배포하는 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Grok Studio</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Grok에 접속하여 제작하고자 하는 웹사이트(예: AI 뉴스 소식 정리 및 유튜브 연동 사이트) 요구사항을 입력합니다.</li>
+<li>Grok Studio 우측의 미리보기(Preview) 창을 통해 즉시 생성되는 화면 디자인 및 동작 상태를 관찰합니다.</li>
+<li>미리보기에서 렌더링 에러가 발생하거나 디자인 변경이 필요하면 대화창에 보정 요청을 전달하여 코드를 수정합니다.</li>
+<li>완성된 코드를 파일(<code>index.html</code>)로 다운로드합니다.</li>
+<li>GitHub에 새 저장소를 만들어 HTML 파일을 업로드하고 Netlify와 연동하여 웹사이트로 디플로이(Deploy)합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 미리보기 창에서 순간적인 자바스크립트 에러가 발생할 수 있으므로, 에러 문구를 Grok에게 그대로 전달하여 수정된 코드를 다시 받아 적용해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: Grok Studio는 현재 무료로 이용 가능하며, ChatGPT Canvas나 Claude Artifacts처럼 시각적 미리보기와 이미지 생성을 한 공간에서 다룰 수 있어 입문자에게 유용합니다.
+</li>
+</ul>
+<hr>
+<h3>6. Obsidian + Claude Code 활용법 (나만의 디지털 연구실)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 개인 지식 관리 툴인 옵시디언(Obsidian)의 마크다운 메모 체계에 Claude Code 서브 에이전트 팀을 결합하여 강의 노트 및 연구 자료를 자동 생성하고 시각적으로 연결·관리하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Obsidian (.md / Vault)</strong>, <strong>Claude Code (Sub-Agents)</strong>, <strong>Claude Projects</strong>, <strong>CMD / Terminal</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>옵시디언(Obsidian)을 다운로드하여 설치하고 작업 폴더 역할을 하는 새 볼트(Vault)를 만듭니다.</li>
+<li>Claude Projects에지침을 입력하여 연구/교수 지원 전용 서브 에이전트 팀 프롬프트를 생성합니다.</li>
+<li>CMD 명령 프롬프트를 열어 옵시디언 볼트 폴더 위치로 이동(<code>cd</code>)한 후 <code>claude</code> 명령어로 Claude Code를 구동합니다.</li>
+<li>에이전트 팀 프롬프트를 입력하여 한 학기 분량(1~15주차)의 강의 노트, 기말고사 시험 문제, 연구 메모를 마크다운 파일로 자동 생성시킵니다.</li>
+<li>옵시디언 화면으로 돌아와 마크다운 파일들과 거미줄 형태의 그래픽 연결망(Graph View)을 확인하고 지식을 체계화합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 옵시디언의 &#39;볼트(Vault)&#39;는 컴퓨터의 &#39;폴더&#39;와 동일하므로, 터미널에서 Claude Code 실행 시 반드시 해당 볼트 폴더 위치로 이동한 뒤 실행해야 파일이 제대로 쌓입니다.
+</li>
+<li><strong>활용 팁</strong>: Claude Code가 만들어준 체계적인 마크다운 문서들이 옵시디언의 그래픽 연결망으로 이어져 방대한 연구 자료나 강의 교안을 한눈에 파악하고 지속적으로 업데이트할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. Opal 쉬운 사용법! 구글의 정말 쉬운 노코드 AI 앱 빌더!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글의 노코드 AI 미니 앱 빌더인 Opal(오팔)을 활용해 코딩 한 줄 없이 프롬프트 입력만으로 비주얼 워크플로우를 구성하고 멀티미디어 앱을 제작·배포하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Opal (<code>opal.google</code>)</strong>, <strong>Claude Projects (Opal 프롬프트 팀)</strong>, <strong>Gemini 2.5 Flash / Imagen / Veo 3.1 / Nano Banana</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects에 지침을 넣고 만들고자 하는 노코드 자동화 서비스 아이디어를 전달하여 Opal 전용 프롬프트를 생성합니다.</li>
+<li><code>opal.google</code> 사이트에 접속하여 &#39;Create New&#39;를 클릭하고 복사한 프롬프트를 입력합니다.</li>
+<li>Opal이 사용자 입력(Input), AI 모델 처리(Gemini/Imagen/Veo 등), 최종 출력(Output) 노드로 구성된 시각적 워크플로우를 자동 구성합니다.</li>
+<li>완성된 워크플로우 내부 블록들을 점검하고 &#39;Start&#39;를 눌러 테스트 실행을 진행합니다.</li>
+<li>&#39;Share App&#39; 메뉴에서 퍼블릭(Public)으로 설정한 후 링크를 복사하여 사용자들에게 공유 및 시연합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Opal은 구글의 실험적 프로젝트 서비스로 AI 모델 사용량 제한이 있을 수 있으며, 블록을 직접 하나씩 조립하기보다는 프롬프트를 정교하게 미리 작성하여 입력하는 것이 훨씬 효율적입니다.
+</li>
+<li><strong>활용 팁</strong>: 구글의 최신 텍스트·이미지·비디오 AI 모델이 자연스럽게 연동되어 있어, 코딩 지식이 없는 교육자나 학생도 기출문제를 분석하듯 시각적 블록을 살피며 쉽게 노코드 앱을 구축할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>8. Qwen 2.5 coder (나만의 코딩 전문가)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 알리바바의 코딩 특화 모델인 Qwen 2.5 Coder를 허깅페이스(Hugging Face)의 아티팩트(Artifacts) 환경에서 활용하여 설치 없이 웹상에서 코딩 및 실시간 미리보기를 진행하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Qwen 2.5 Coder (18B/32B)</strong>, <strong>Hugging Face (Qwen 2.5 Coder Artifacts)</strong>, <strong>Cursor / VS Code (Live Server)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>허깅페이스(Hugging Face) 사이트에 가입 및 로그인 후 검색창에서 &#39;Qwen 2.5 Coder Artifacts&#39;를 찾아 들어갑니다.</li>
+<li>하단 대화창에 자연어로 원하는 서비스(예: 영단어 맞추기 게임, 테트리스, 투두리스트 등)의 작성을 요청합니다.</li>
+<li>Qwen 2.5 Coder가 작성하는 HTML/CSS/JS 코드가 우측 아티팩트 미리보기 화면에 즉시 구현되는 것을 확인합니다.</li>
+<li>미리보기 화면에 오류가 발생하거나 동작하지 않으면 에러 사실을 대화창에 전달하여 코드를 재수정합니다.</li>
+<li>&#39;View Code&#39;를 클릭해 완성된 코드를 복사하고, Cursor 에디터로 옮겨 &#39;Live Server&#39;로 로컬 실행하거나 보관합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 허깅페이스 아티팩트 미리보기에서 간혹 자바스크립트 실행 오류로 흰 화면만 표시될 수 있으므로, 대화창을 통해 에러 수정 요청을 진행해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 코딩에 특화된 모델이라 한국어 지시 이행력이 우수하며, PC에 무거운 오픈소스 AI를 직접 설치하지 않고도 허깅페이스를 통해 무료로 빠르게 프로토타이핑을 해볼 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>9. 나만의 코드 AI Agent (Gemini CLI-무료 사용량 초과 시에 과금 될 수 있음. 1분 60회, 1일 1000회 초과 시 과금 유의!)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글이 공개한 오픈소스 CLI 코딩 에이전트인 제미나이 CLI(Gemini CLI)의 기본 설치법과 한국어 대화 기반의 자율 코딩 및 웹사이트 구축 방식을 소개합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Gemini CLI (Gemini 2.5 Pro 연동)</strong>, <strong>Node.js (npx / npm)</strong>, <strong>Terminal / CMD</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>CMD 명령 프롬프트를 열고 Quick Start 안내 명령어를 입력하여 Gemini CLI를 설치합니다.</li>
+<li>터미널에 <code>gemini</code>를 입력하여 제미나이 CLI 에이전트 세션을 시작합니다.</li>
+<li>&quot;영어 학습 웹사이트를 만들어줘&quot;와 같이 한국어로 원하는 개발 요구사항을 전달합니다.</li>
+<li>제미나이 CLI가 제안하는 작업 구조 및 파일 생성 요청에 허용(Allow)을 구하면 승인하면서 <code>index.html</code> 및 관련 코드를 자동 작성시킵니다.</li>
+<li>프로젝트 폴더 내 생성된 파일들을 확인하고 로컬 브라우저에서 실행 및 테스트를 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 기본 무료 제공량이 1분당 60회, 1일 1,000회로 비교적 넉넉하지만 에이전트 특성상 연속적인 자동 요청을 진행하므로 무료 한도를 넘기면 자동으로 과금될 수 있어 주의가 필요합니다.
+</li>
+<li><strong>활용 팁</strong>: Claude Code와 매우 유사한 인터페이스를 갖추고 있으면서도 한국어로 현재 작업 진행 상황을 깔끔하게 안내해주어 초보자가 CLI 에이전트 코딩 환경에 적응하기 좋습니다.
+</li>
+</ul>
+<hr>
+<h3>10. 나만의 코딩 agent (딥시크 deep seek R1)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Cursor 에디터에 Cline(클라인) 익스텐션을 설치하고 딥시크(DeepSeek R1) API를 연동하여, 비용 효율성이 뛰어난 자율 코딩 에이전트를 구축 및 배포하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Cursor AI</strong>, <strong>Cline Extension</strong>, <strong>DeepSeek R1 (API Platform)</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>딥시크(DeepSeek) API 플랫폼에서 계정에 소액 금액을 충전한 후 API 키를 발급받습니다.</li>
+<li>Cursor AI의 익스텐션 메뉴에서 Cline(클라인)을 검색하여 설치합니다.</li>
+<li>Cline 세팅에서 API 프로바이더를 OpenAI(또는 DeepSeek)로 지정하고 Base URL(<code>https://api.deepseek.com/v1</code>), API 키, 모델 ID(<code>deepseek-reasoner</code>)를 설정합니다.</li>
+<li>프롬프트 입력창에 &quot;디자인에 신경 쓴 영어 회화 음성 인식 앱을 만들어줘&quot;라고 요청합니다.</li>
+<li>Cline 에이전트가 생각(Thinking) 과정을 거쳐 HTML, CSS, JS 파일들을 자동으로 생성하고 실행 계획 승인 후 테스트 및 GitHub/Netlify로 배포합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Cline 세팅 시 Base URL 주소 형식과 모델 ID(<code>deepseek-reasoner</code>)를 오타 없이 기입해야 딥시크 R1 추론 모델이 정상 작동합니다.
+</li>
+<li><strong>활용 팁</strong>: 딥시크 R1 추론 모델은 타사 상용 모델 대비 API 비용이 매우 저렴하면서도 스스로 파일을 읽고 수정하는 에이전트 성능이 뛰어나 개발 비용을 대폭 절감할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>1. 내 웹사이트에 &#39;데이터 베이스 + 구글 로그인&#39; 연결하는 방법 (AntiGravity+Firebase MCP)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 안티그래비티(AntiGravity)에 <strong>Firebase MCP</strong>를 연동하여 복잡한 백엔드 설정 없이 데이터베이스(Firestore) 저장은 물론 구글 로그인 인증까지 완벽하게 구현하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>AntiGravity</strong>, <strong>Node.js</strong>, <strong>Firebase (Firebase MCP / Firestore / Authentication)</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Node.js를 설치하고 CMD 터미널에서 <code>npm install -g firebase-tools</code> 명령어 실행 및 <code>firebase login</code>으로 구글 계정을 연동합니다.</li>
+<li>Firebase 콘솔 웹사이트로 이동하여 신규 프로젝트를 생성합니다.</li>
+<li>AntiGravity의 MCP 스토어에서 Firebase MCP를 검색하여 설치합니다.</li>
+<li>대화창에서 AI 에이전트에게 내 파이어베이스 프로젝트명을 지정하고 구글 로그인 및 데이터 저장 기능이 포함된 웹사이트 작성을 요청합니다.</li>
+<li>생성된 실행 계획을 승인하여 코딩을 완료하고, GitHub 저장소 업로드 및 Netlify 연동 배포를 진행합니다.</li>
+<li>Netlify 환경 변수에 Firebase Config를 추가하고, Firebase 콘솔에서 Google 로그인 활성화 및 Netlify 도메인을 승인된 도메인으로 등록합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Netlify 배포 후 첫 접속 시 화면이 하얗게 뜨는 현상은 환경 변수 설정 누락 때문이므로, Netlify 세팅에서 Firebase 설정값을 등록하고 캐시 없이 재배포해야 정상 작동합니다.
+</li>
+<li><strong>활용 팁</strong>: 단순한 껍데기 웹사이트를 넘어 Firebase MCP를 통해 실제 사용자의 데이터 저정 및 로그인 인증이 가능한 풀스택 웹 서비스를 자연어 대화만으로 빠르게 빌드할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>2. 안티그래비티로 나만의 사이트 만들고 배포하기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Projects로 프롬프트의 질을 정교하게 높인 뒤, 안티그래비티와 GitHub, Netlify를 연결하여 웹사이트를 빠르게 생성하고 실제로 배포하는 기본 워크플로우를 설명합니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>AntiGravity</strong>, <strong>Claude Projects (코딩 프롬프트 전문가 팀)</strong>, <strong>Gemini 3.1 Pro / Flash</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude Projects 지침에 프롬프트 전문가 팀 설정을 넣고 만들고자 하는 웹사이트 아이디어를 전달해 정교한 프롬프트를 생성합니다.</li>
+<li>안티그래비티를 실행하고 새 작업 폴더를 연 뒤, 생성된 최종 프롬프트를 입력합니다.</li>
+<li>에이전트가 제시하는 실행 계획과 승인 버튼을 순차적으로 눌러 코드를 자동 생성합니다.</li>
+<li>터미널 창을 열어 튜토리얼의 Git 명령어(<code>git remote add</code>, <code>git commit</code>, <code>git push</code>)를 사용해 GitHub 저장소에 코드를 올립니다.</li>
+<li>Netlify에서 해당 GitHub 저장소를 불러와 디플로이(Deploy) 버튼을 누르고 웹사이트 URL을 생성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 로컬 PC의 안티그래비티 상에서 생성된 코드는 내 컴퓨터 안에서만 동작하므로, 다른 사람이 접속하게 하려면 반드시 GitHub에 올리고 Netlify로 배포하는 과정을 거쳐야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 웹앱 생성 요청 시 사용자가 자신의 Gemini API 키를 직접 입력하도록 프롬프트에 명시하면, 타인이 서비스를 사용하더라도 작성자 본인에게 API 비용이 청구되지 않습니다.
+</li>
+</ul>
+<hr>
+<h3>3. 클로드 API 활용법 (나만의 코딩 선생님)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 앤트로픽 콘솔에서 발급받은 Claude API 키를 파이썬 Streamlit 코드와 결합하여, 내 웹사이트 내부에서 Claude AI가 사내 지침이나 교육 자료를 바탕으로 응답하는 맞춤형 튜터 사이트를 구축하는 실습입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Anthropic Console (Claude API)</strong>, <strong>VS Code (Visual Studio Code)</strong>, <strong>Python</strong>, <strong>Streamlit</strong>, <strong>GitHub</strong>, <strong>Streamlit Cloud</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>구글에 &#39;Anthropic Console&#39;을 검색해 로그인하고 API 키를 발급받아 메모장에 저장합니다.</li>
+<li>Claude 대화창을 통해 Streamlit 및 Claude API 연동 파이썬 코드(<code>app.py</code>) 작성을 요청하고, 사용자 지침(<code>instructions</code>)을 코드 내에 삽입합니다.</li>
+<li>VS Code 에디터에 해당 파이썬 코드와 패키지 설치용 <code>requirements.txt</code> 파일 두 개를 작성해 저장합니다.</li>
+<li>두 파일을 GitHub 신규 저장소에 업로드합니다.</li>
+<li>Streamlit Cloud에 접속하여 GitHub 저장소와 메인 파이썬 파일을 지정한 뒤 배포를 완료합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: API 키를 파이썬 코드 안에 하드코딩한 채 공개 저장소에 올리면 과금 남용 위험이 있으므로, 웹 UI에서 사용자가 직접 본인의 API 키를 입력하도록 설정하는 것이 안전합니다.
+</li>
+<li><strong>활용 팁</strong>: 회사의 복지제도나 특정 매뉴얼 텍스트를 파이썬 코드 내 지침에 등록해 두면, 사내 직원들이 궁금한 점을 질문했을 때 Claude API가 해당 문서 내용에 맞춰 정확히 답변해 주는 사내 지식 챗봇으로 활용할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>4. 클로드 디자인이 코드를 보내고, 클로드 코드가 마무리하다</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude.ai의 최신 기능인 <strong>Claude Design</strong>으로 브랜드 디자인 시스템이 적용된 시안을 제작하고, 해당 코드를 <strong>Claude Code</strong> 터미널로 내보내 완성도 높은 동적 웹사이트로 배포하는 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude.ai (Claude Design / Opus 4.7)</strong>, <strong>Claude Code</strong>, <strong>GitHub</strong>, <strong>GitHub Pages</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude.ai 웹사이트에 접속해 &#39;Design&#39; 메뉴를 선택하고, 브랜드 스타일이 반영된 나만의 디자인 시스템(Design System)을 생성합니다.</li>
+<li>요구사항을 입력해 고품질 웹사이트 디자인 시안을 도출합니다.</li>
+<li>디자인 우측 상단의 Export 메뉴에서 &#39;Claude Code&#39;를 선택하고 제시되는 커맨드 명령어를 복사합니다.</li>
+<li>내 PC 터미널에서 새 폴더를 만들고 Claude Code를 실행한 뒤, 복사한 명령어를 붙여넣어 디자인을 실제 코드로 전환시킵니다.</li>
+<li>완성된 코드를 GitHub 저장소에 자동 올려주도록 지시하고, GitHub Pages 설정을 활성화하여 최종 웹 주소를 생성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: GitHub Pages 설정 직후에는 웹사이트 반영까지 몇 분 정도의 지연 시간이 발생할 수 있으므로 브라우저를 새로고침하며 잠시 기다려야 합니다.
+</li>
+<li><strong>활용 팁</strong>: Claude Design에 나만의 브랜드 정체성을 디자인 시스템으로 미리 등록해 두면, 매번 디테일한 디자인 지침을 입력하지 않아도 일관되고 완성도 높은 UI/UX 코드를 뽑아낼 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>5. 클로드 아티팩트 신기능 : 코딩 없이 AI 프로토타입을 뚝딱! 만들기</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 별도의 코딩 및 에디터 설치 없이 Claude 웹 환경의 <strong>아티팩트(Artifacts)</strong> 스토어와 개별 생성 기능을 활용하여, 작동하는 AI 앱 프로토타입을 빠르게 만들고 링크로 공유하는 방법을 다룹니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude (Artifacts / Artifacts Store)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude 사이트 메뉴에서 아티팩트(Artifacts) 탭으로 이동해 다른 사용자들이 만든 다양한 프로토타입 앱들을 탐색합니다.</li>
+<li>&#39;새 아티팩트 시작하기&#39;를 선택하고 만들고자 하는 서비스(예: AI 기초 개념 퀴즈 학습 앱)의 목적과 형태를 대화로 설명합니다.</li>
+<li>Claude가 오른쪽에 대화형으로 동작하는 프로토타입 웹 화면을 즉시 생성합니다.</li>
+<li>&#39;사용자 지정&#39; 버튼을 눌러 원하지 않는 로직을 수정하거나 디자인 및 문제를 고도화합니다.</li>
+<li>상단의 &#39;게시(Publish)&#39; 버튼을 클릭해 생성된 공유 URL 링크를 팀원들에게 전달합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 아티팩트로 만들어진 공유 링크는 사용자가 Claude 계정의 토큰을 소비하여 동작하므로 작성자에게 API 비용이 발생하지는 않지만, 실제 독립형 상용 서비스로 배포하려면 코드를 추출해 별도 배포해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 아이디어를 팀원들에게 말이나 텍스트로 설명하는 대신, 아티팩트로 3분 만에 동작하는 프로토타입을 만들어 링크로 공유하면 기획 의도를 시각적으로 명확하게 전달할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>6. 클로드 코드도 배우고, 좋은 일도 할 수 있는 기회! :)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Code의 <strong>스킬(Skills)</strong> 및 <strong>서브 에이전트</strong> 기능을 활용해 반복적인 출제 및 교안 작성 업무를 자동화하고, 스터디 참여를 통해 사회적 기부를 실천하는 워크플로우입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code (Sub-Agents / Skills)</strong>, <strong>NotebookLM</strong>, <strong>Cursor</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>NotebookLM에 행사나 교육 안내 텍스트를 넣어 슬라이드 덱 및 인포그래픽 요약 자료를 생성합니다.</li>
+<li>Cursor 터미널에서 Claude Code를 불러옵니다.</li>
+<li><code>Skill Creator</code> 스킬을 사용해 문제 생성기(<code>Quiz Generator</code>) 및 수업 계획안 생성기(<code>Lesson Plan Generator</code>)라는 반복 업무용 커스텀 스킬을 구축합니다.</li>
+<li>구축된 스킬을 불러와 &quot;세계사 고대사 문제 템플릿을 만들어줘&quot;와 같이 요청하여 시험지와 교안 초안을 자동 생성합니다.</li>
+<li>봉사단 스터디 현장에 참여하여 에이전트 및 스킬 구동법, 배포 과정 교육을 이수하고 참가비를 통해 보육원 노트북 지원에 동참합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: AI가 스킬을 통해 자동 생성해 준 시험 문제나 수업 계획안은 초안 개념이므로, 교육자가 반드시 내용을 검토하고 오류를 수정하여 사용해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 매번 긴 프롬프트를 입력할 필요 없이, 자주 하는 반복 업무 프로세스를 스킬(Skills)로 등록해 두면 인수인계서를 건네듯 신속하게 정형화된 교안이나 문제를 생성할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>7. 클로드 코드에 Supabase MCP 연동하기!</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: Claude Code에 백엔드 서비스인 <strong>Supabase MCP</strong>를 연결하여, 터미널 환경에서 대화만으로 데이터베이스 테이블 스키마 생성 및 사용자 인증 로직을 구축하는 기법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>Supabase</strong>, <strong>Supabase MCP Server (<code>.mcp.json</code>)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Supabase 사이트에서 계정을 만들고 Access Token을 발급받은 뒤, 신규 프로젝트를 만들어 Project Reference ID를 복사합니다.</li>
+<li>구글에서 &#39;Supabase MCP&#39; 문서를 검색해 설치 명령어를 확인하거나, 작업 폴더 내 <code>.mcp.json</code> 파일에 Access Token과 Project Reference ID를 입력합니다.</li>
+<li>터미널에서 Claude Code를 실행하고 <code>/mcp</code> 명령을 통해 Supabase MCP가 &#39;Connected&#39; 상태인지 확인합니다.</li>
+<li>대화창에 &quot;로그인 회원 시스템 및 사용자 데이터 저장을 위한 테이블을 Supabase에 구축해 줘&quot;라고 지시합니다.</li>
+<li>Claude Code가 Supabase 서버에 직접 접속하여 데이터베이스 테이블 및 보안 규칙(RLS)을 자동 작성합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: Supabase MCP 연동 상태에서 작업을 계속 진행하면 Claude 코딩 토큰 소모가 빠를 수 있으므로, 20달러 기본 요금제 사용자는 작업을 단계별로 분할하여 실행하는 것이 좋습니다.
+</li>
+<li><strong>활용 팁</strong>: <code>.mcp.json</code> 설정 파일을 사용자 루트 폴더에 두면 모든 프로젝트에 동일한 Supabase가 적용되고, 개별 프로젝트 폴더에 두면 각 앱마다 별도의 전용 데이터베이스를 연동해 관리할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>8. 클로드를 좋아하는 두 번째 이유 : 데스크탑 앱 + 클로드 코드</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 터미널 환경이 낯선 유료 사용자들을 위해, <strong>Claude 데스크톱 앱</strong> 내에 탑재된 <strong>Code</strong> 탭 인터페이스를 활용하여 손쉽게 웹앱 코딩부터 GitHub 푸시, Netlify 배포까지 완료하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Desktop App (Code 기능)</strong>, <strong>Claude Projects (코딩 프롬프트 팀)</strong>, <strong>GitHub</strong>, <strong>Netlify</strong>, <strong>Google AI Studio (Gemini API)</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Claude 데스크톱 앱을 설치하고 유료 계정(Pro 이상)으로 로그인합니다.</li>
+<li>Claude Projects를 통해 만들어진 상세 프롬프트(예: 사주 보는 웹앱)를 복사합니다.</li>
+<li>데스크톱 앱 상단 메뉴에서 &#39;Code&#39;를 선택하고, 작업할 로컬 폴더 지정 및 GitHub 커넥터 연동을 완료합니다.</li>
+<li>복사한 프롬프트를 코드 입력창에 넣고 에이전트가 코드를 구성하도록 승인합니다.</li>
+<li>작업이 끝나면 내 GitHub 저장소 정보를 전달하여 코드를 자동 올리게 하고, Netlify와 연동해 배포합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 데스크톱 앱의 Code 기능은 20달러 유료 요금제(Pro 이상) 사용자만 접근 가능하며, 무료 사용자는 이용할 수 없습니다.
+</li>
+<li><strong>활용 팁</strong>: 데스크톱 앱 내에서 코드를 추가 수정하면 연결된 GitHub 저장소로 자동 푸시되므로, 이미 배포된 Netlify 사이트 화면은 새로고침만 하면 최신 디자인이 즉시 반영됩니다.
+</li>
+</ul>
+<hr>
+<h3>9. 클로드를 좋아하는 여섯 번째 이유 : 클로드 코드 Claude Code</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 터미널 기반의 <strong>Claude Code</strong> 환경을 구축하고, 세부 역할별 <strong>서브 에이전트</strong> 및 <strong>GitHub MCP</strong>를 구성하여 자연어 명령만으로 웹사이트 제작부터 커밋, 배포까지 전 과정을 자동화하는 방법입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>Node.js</strong>, <strong>Git</strong>, <strong>GitHub MCP</strong>, <strong>Sub-Agents</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>Node.js와 Git을 설치한 후, 터미널에서 <code>npm install -g @anthropic-ai/claude-code</code> 명령어로 Claude Code를 설치합니다.</li>
+<li>터미널에서 <code>claude</code>를 실행한 뒤, <code>/agents</code> 명령어로 역할별 에이전트(프론트엔드, 백엔드, 테스트, GitHub 담당 등)에 고유 색상과 툴 권한을 부여해 만듭니다.</li>
+<li>GitHub 토큰을 발급받아 GitHub MCP 연동을 완료합니다.</li>
+<li>에이전트 팀에 원하는 웹사이트(예: 심리상담 웹앱) 제작 프롬프트를 입력하면 에이전트들이 순차적으로 개발 및 테스트를 진행합니다.</li>
+<li>GitHub 담당 에이전트가 레포지토리를 자동 생성해 코드를 올리면, Netlify에서 해당 저장소를 불러와 웹 배포를 마칩니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 여러 에이전트가 자율적으로 협업하는 과정에서 생각보다 많은 토큰이 소모될 수 있으므로, 사용 한도를 미리 점검하면서 진행해야 합니다.
+</li>
+<li><strong>활용 팁</strong>: 각 서브 에이전트마다 고유 색상(오렌지, 퍼플 등)과 제한된 툴 권한(Read-only, Edit 등)을 설정해두면 터미널상에서 에이전트별 작업 진행 상태를 시각적으로 명확하게 구분하고 관리할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>10. 학부모님들을 위한 바이브 코딩 입문 수업을 합니다! :) (필로소피 AI 봉사단 3차 스터디 6월 28일 일요일)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 코딩 경험이 없는 학부모나 교육자가 바이브 코딩(Vibe Coding) 기법을 배워, 자녀나 학생들을 위한 맞춤형 학습 보조 및 생활 관리 웹앱을 직접 만들어 보는 실습 안내입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Claude Code</strong>, <strong>Cursor</strong>, <strong>AntiGravity</strong>, <strong>Netlify</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ol>
+<li>자녀에게 필요한 맞춤형 앱 아이디어(예: 숙제 목록 체크, 엄마의 응원 쪽지함, 타이머 등이 포함된 습관 형성 앱)를 기획합니다.</li>
+<li>Claude Code 또는 Cursor, AntiGravity와 같은 AI 코딩 툴을 열고 원하는 앱의 구조와 디자인을 자연어로 지시합니다.</li>
+<li>AI가 생성해 준 코드를 테스트하고 추가하고 싶은 기능(칭찬 스티커, 오답 노트 등)을 대화로 수정합니다.</li>
+<li>완성된 웹사이트 코드를 GitHub에 업로드하고 Netlify를 통해 무료 웹사이트 URL로 배포합니다.</li>
+<li>생성된 주소를 자녀의 스마트폰이나 패드에 추가하여 실제 실생활 학습 관리에 활용합니다.</li>
+</ol>
+</li>
+<li><strong>주의점</strong>: 처음부터 너무 거대하고 복잡한 기능의 앱을 만들기보다는 자녀에게 당장 필요한 소규모 핵심 기능 하나부터 완성해 나가는 것이 바이브 코딩 성공률을 높입니다.
+</li>
+<li><strong>활용 팁</strong>: 학부모가 직접 만든 앱을 자녀가 사용하는 경험을 통해 아이의 디지털 학습 흥미가 극대화되며, 스터디 참가비 기부를 통해 보육원 아동들에게 리퍼 노트북을 선물하는 사회적 가치도 실천할 수 있습니다.
+</li>
+</ul>
+<hr>
+<h3>11. 학생들도 쉽게 쓸 수 있는 바이브 코딩 Tool (Opal, Google AI Studio)</h3>
+<ul>
+<li><strong>핵심 요약 및 개요</strong>: 구글의 노코드 웹 빌더인 <strong>Opal</strong>과 <strong>Google AI Studio</strong>의 빌더 기능을 활용하여, 학생들이 코딩 한 줄 없이 프롬프트 입력만으로 시각적 퀴즈 및 멀티미디어 미니 앱을 쉽게 제작하는 수업 가이드입니다.
+</li>
+<li><strong>사용한 도구명</strong>: <strong>Google Opal (<code>opal.google</code>)</strong>, <strong>Google AI Studio (<code>aistudio.google.com</code> / Build Vibe CodeGen AI)</strong>, <strong>Gemini 2.5 Flash / Pro</strong>.
+</li>
+<li><strong>실습 절차</strong>:
+<ul>
+<li><strong>Google Opal</strong>: <code>opal.google</code> 접속 -&gt; &#39;Create New&#39; 선택 -&gt; &quot;설악산 탐방 지리 안내 앱을 만들어줘&quot; 입력 -&gt; AI가 멀티미디어(텍스트, 이미지, 비디오) 생성 노드가 포함된 미니 앱 자동 구축 -&gt; &#39;Share App&#39; 퍼블릭 설정 후 카피 링크 공유.</li>
+<li><strong>Google AI Studio</strong>: <code>aistudio.google.com</code> 접속 -&gt; &#39;Build Vibe CodeGen AI&#39; 클릭 -&gt; &quot;세계사 연표 및 로마 제국 퀴즈 앱을 만들어줘&quot; 입력 -&gt; 오른쪽 미리보기 화면에서 직접 퀴즈를 풀며 수정 지시 -&gt; 우측 상단 &#39;Deploy&#39; 버튼을 눌러 퍼블릭 웹사이트 배포.</li>
+</ul>
+</li>
+<li><strong>주의점</strong>: 구글의 두 도구 모두 자연어 한 줄로 완성되지만, 현재 실험적 단계의 무료 서비스이므로 일일 생성 및 호출 한도 제한이 적용될 수 있습니다.
+</li>
+<li><strong>활용 팁</strong>: 선생님이 단순 강의를 진행하는 대신 학생들에게 직접 지리나 역사 주제에 대한 미니 앱을 만들고 서로의 링크를 공유해 공유 테스트를 해보게 하면 참여형 수업 효과를 극대화할 수 있습니다.
+</li>
+</ul>
+</article>
+</main>
+<footer>
+<div class="footer-inner">
+<p>운영자 : 윤희준</p>
+<p>연락처 : <a href="mailto:newstoday7720@gmail.com">newstoday7720@gmail.com</a></p>
+<nav class="footer-links" aria-label="사이트 안내">
+<a href="../../privacy.html">개인정보처리방침</a>
+<a href="../../terms.html">이용약관</a>
+</nav>
+<p class="footer-note">본 사이트는 영리를 목적으로 하지 않는 개인미디어입니다.</p>
+<p class="footer-copy">Copyright © 뉴스투데이 All rights reserved. 무단 전재 및 재배포 금지.</p>
+</div>
+</footer>
+</body>
+</html>
