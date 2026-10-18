@@ -303,13 +303,6 @@ margin:10px 0 12px;
 <div class="card-body"><ol class="item-list"></ol></div>
 <div class="pager"></div>
 </section></li>
-<!-- 08 -->
-<li><section class="card" id="card-blog" aria-labelledby="h-blog">
-<h2 id="h-blog">네이버 블로그 전체 글</h2>
-<p class="card-desc">blog.naver.com/dongbang_artmuseum 의 RSS로 자동 수집한 목록입니다. 링크는 새 창에서 열립니다.</p>
-<div class="card-body"><ol class="item-list"></ol></div>
-<div class="pager"></div>
-</section></li>
 <!-- 09 -->
 <li><section class="card" id="card-etc" aria-labelledby="h-etc">
 <h2 id="h-etc">기타 모음</h2>
@@ -348,8 +341,6 @@ margin:10px 0 12px;
   나머지 박스는 3개씩 표시되며
   초과분은 박스 하단의 ‹ › 화살표로 이전/다음 페이지를 볼 수 있습니다.
    (표시 개수는 아래 PAGE_SIZE_BOOK / PAGE_SIZE_YOUTUBE / PAGE_SIZE_LIST 값으로 조절)
-▶ 08번(네이버 블로그) blogData 배열은 손으로 수정하지 않습니다.
-  scripts/sync-naver-blog.mjs 를 GitHub Actions가 주기 실행하여 이 배열 전체를 자동 갱신·커밋합니다.
 ========================================================================= */
 
 const PAGE_SIZE_BOOK = 5;
@@ -538,25 +529,6 @@ const diabetesData = [
 // , { date: "YYYY.MM.DD", title: "채널명_라벨명", url: "https://app.notion.com/..." }
 ];
 
-// 08 네이버 블로그 전체 글 — scripts/sync-naver-blog.mjs(GitHub Actions 자동 실행)가 관리합니다.
-// 이 배열은 RSS 동기화 봇이 통째로 다시 생성하므로, 수동으로 줄을 추가해도 다음 자동 실행 때 덮어써집니다.
-const blogData = [
-{ date: "2026.09.28", category: "매일 AI와 나눈 이야기 모음", title: "네이버 블로그와 newstoday.co.kr과 연동 완료", url: "https://blog.naver.com/dongbang_artmuseum/224425017414", guid: "https://blog.naver.com/dongbang_artmuseum/224425017414" },
-{ date: "2026.09.22", category: "내가 출간한 전자책", title: "내가 출간한 전자책", url: "https://blog.naver.com/dongbang_artmuseum/224419479320", guid: "https://blog.naver.com/dongbang_artmuseum/224419479320" },
-{ date: "2026.09.22", category: "내가 출간한 POD(종이책)", title: "내가 출간한 POD(종이책)", url: "https://blog.naver.com/dongbang_artmuseum/224419472455", guid: "https://blog.naver.com/dongbang_artmuseum/224419472455" },
-{ date: "2026.09.21", category: "당뇨관리", title: "[공지] 당뇨관리 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419031880", guid: "https://blog.naver.com/dongbang_artmuseum/224419031880" },
-{ date: "2026.09.21", category: "시니어 수익", title: "[공지] 시니어 수익 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419031510", guid: "https://blog.naver.com/dongbang_artmuseum/224419031510" },
-{ date: "2026.09.21", category: "매일 AI와 나눈 이야기 모음", title: "[공지] AI 이야기·유튜브 요약 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419031141", guid: "https://blog.naver.com/dongbang_artmuseum/224419031141" },
-{ date: "2026.09.21", category: "비즈넷타임즈 오피니언 기고문", title: "[공지] 비즈넷타임즈 오피니언 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419029950", guid: "https://blog.naver.com/dongbang_artmuseum/224419029950" },
-{ date: "2026.09.21", category: "사이버 동방예술관", title: "[공지] 사이버 동방예술관 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419027882", guid: "https://blog.naver.com/dongbang_artmuseum/224419027882" },
-{ date: "2026.09.21", category: "내가 출간한 전자책", title: "[공지] 전자책 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419027297", guid: "https://blog.naver.com/dongbang_artmuseum/224419027297" },
-{ date: "2026.09.21", category: "내가 출간한 POD(종이책)", title: "[공지] POD 종이책 — 이 카테고리 안내", url: "https://blog.naver.com/dongbang_artmuseum/224419026559", guid: "https://blog.naver.com/dongbang_artmuseum/224419026559" },
-{ date: "2025.09.05", category: "사이버 동방예술관", title: "'전국 원대 도자기전' 성황리에, 수장가 황희면 1등상 수상", url: "https://blog.naver.com/dongbang_artmuseum/223996662257", guid: "https://blog.naver.com/dongbang_artmuseum/223996662257" },
-{ date: "2025.07.05", category: "사이버 동방예술관", title: "동방예술관의 유물을 시리즈로 소개합니다.", url: "https://blog.naver.com/dongbang_artmuseum/223922791324", guid: "https://blog.naver.com/dongbang_artmuseum/223922791324" },
-{ date: "2025.07.03", category: "사이버 동방예술관", title: "동방예술관 청동유물", url: "https://blog.naver.com/dongbang_artmuseum/223920670715", guid: "https://blog.naver.com/dongbang_artmuseum/223920670715" },
-{ date: "2025.07.02", category: "사이버 동방예술관", title: "동방예술관 건립 홍보 영상", url: "https://blog.naver.com/dongbang_artmuseum/223919351385", guid: "https://blog.naver.com/dongbang_artmuseum/223919351385" }
-];
-
 // 09 기타 모음 (누적)
 const etcData = [
 // ↓ 새 자료 등록 시 아래에 한 줄 추가
@@ -658,9 +630,6 @@ renderCard("card-ai-talks", aiTalksData, PAGE_SIZE_LIST);
 renderCard("card-senior", seniorData, PAGE_SIZE_LIST);
 renderCard("card-diabetes", diabetesData, PAGE_SIZE_YOUTUBE);
 renderCard("card-etc", etcData, PAGE_SIZE_LIST);
-
-// 08 네이버 블로그 전체 글 (blogData는 GitHub Actions가 자동 갱신)
-renderCard("card-blog", blogData.map(r => ({ title: r.title, url: r.url, date: r.date + (r.category ? " · " + r.category : "") })), PAGE_SIZE_LIST);
 </script>
 </body>
 </html>
