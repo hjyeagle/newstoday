@@ -4978,6 +4978,44 @@ ul.wp-block-post-template > li {
 .archive .entry-content div[style*="margin-top: 40px"] {
     display: none !important;
 }
+
+.ast-primary-header-bar .ast-builder-grid-row { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; }
+
+/* ===== 글자 크기와 링크 색 (2026-11-16) ===== */
+/* 글 본문 */
+.single-post .entry-content,
+.single-post .entry-content p,
+.single-post .entry-content li { font-size: 18px; line-height: 1.8; color: #222222; }
+.single-post .entry-content h4 { font-size: 24px; margin-top: 1.6em; }
+.single-post .entry-content h5 { font-size: 20px; margin-top: 1.3em; }
+.single-post .entry-content a { color: #1e4fa3; text-decoration: underline; }
+.single-post .site-main > article { max-width: 960px; margin-left: auto; margin-right: auto; }
+/* 글 목록 */
+.archive .ast-excerpt-container p,
+.archive .entry-content p { font-size: 18px; line-height: 1.7; color: #222222; }
+.archive .entry-meta,
+.archive .entry-meta * { font-size: 15px; }
+/* 상단 메뉴 */
+.main-header-menu .menu-link { font-size: 16px; }
+
+/* ===== 페이지(길 위의 이야기, 맛집 아카이브, 도서관 & 출간) 가운데 정렬 (2026-11-16) ===== */
+.page.ast-page-builder-template:not(.home) .entry-header,
+.page.ast-page-builder-template:not(.home) .entry-content > :not(.alignfull):not(style):not(script) { max-width: 1200px; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+.page.ast-page-builder-template:not(.home) .entry-header { padding: 40px 0 10px; }
+@media (max-width: 1240px) {
+  .page.ast-page-builder-template:not(.home) .entry-header,
+  .page.ast-page-builder-template:not(.home) .entry-content > :not(.alignfull) { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ===== 좁은 PC 화면에서 상단 메뉴 한 줄 유지 (2026-11-16) ===== */
+.site-title, .site-description { white-space: nowrap; }
+@media (min-width: 922px) and (max-width: 1240px) {
+  .main-header-menu .menu-link { font-size: 13px; padding-left: 6px; padding-right: 6px; letter-spacing: -0.3px; }
+  .ast-primary-header-bar .site-title { font-size: 22px; }
+}
+@media (min-width: 1080px) and (max-width: 1240px) {
+  .main-header-menu .menu-link { font-size: 14px; padding-left: 8px; padding-right: 8px; }
+}
 </style>
 </head>
 
@@ -5017,11 +5055,13 @@ class="hfeed site" id="page">
 			<!-- .site-branding -->
 					</div>
 				<div class="ast-builder-menu-1 ast-builder-menu ast-flex ast-builder-menu-1-focus-item ast-builder-layout-element site-header-focus-item" data-section="section-hb-menu-1">
-			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="primary-site-navigation-desktop" aria-label="주 내비게이션" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation ast-inline-flex"><ul id="ast-hf-menu-1" class="main-header-menu ast-menu-shadow ast-nav-menu ast-flex  submenu-with-border stack-on-mobile"><li id="menu-item-3090" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="primary-site-navigation-desktop" aria-label="주 내비게이션" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation ast-inline-flex"><ul id="ast-hf-menu-1" class="main-header-menu ast-menu-shadow ast-nav-menu ast-flex  submenu-with-border stack-on-mobile"><li id="menu-item-3083" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li id="menu-item-3090" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+<li id="menu-item-2230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
 <li id="menu-item-2430" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430"><a href="../../travel/index.html" class="menu-link">길 위의 이야기</a></li>
 <li id="menu-item-2229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2229"><a href="../../food-archive/index.html" class="menu-link">맛집 아카이브</a></li>
-<li id="menu-item-2230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
-<li id="menu-item-3083" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li id="menu-item-3279" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3279"><a href="../../about/index.html" class="menu-link">소개</a></li>
+<li id="menu-item-3278" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3278"><a href="../../contact/index.html" class="menu-link">문의하기</a></li>
 </ul></div></nav></div></div>		</div>
 								</div>
 																								<div class="site-header-primary-section-right site-header-section ast-flex ast-grid-right-section">
@@ -5144,10 +5184,36 @@ class="hfeed site" id="page">
 	
 					<main id="main" class="site-main">
 				<div class="ast-row"><article
+class="post-3282 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3282" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
+	<div class="post-content ast-grid-common-col" >
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../ai-veteran-jobs-2026-11-16/index.html" rel="bookmark">[실버정보] ‘AI 다룰 줄 아는 베테랑&#8217; 찾는 기업이 늘었습니다 – 경력 15년 이상 채용공고 30% 증가 (11.16)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+			<div class="entry-meta">			<span class="comments-link">
+				<a href="../../ai-veteran-jobs-2026-11-16/index.html#respond">댓글 달기</a>			</span>
+
+			 / <span class="ast-taxonomy-container cat-links default"><a href="index.html" rel="category tag">AI 제작일지 &amp; 아카이브</a></span> / <span class="posted-by vcard author" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author">			<a title="hjyeagle의 모든 글 보기"
+				href="../../author/hjyeagle/index.html" rel="author"
+				class="url fn n" itemprop="url"				>
+				<span
+				class="author-name" itemprop="name"				>
+				hjyeagle			</span>
+			</a>
+		</span>
+
+		</div>		</header><!-- .entry-header -->
+					<div class="ast-excerpt-container ast-blog-single-element">
+				<p>2026년 11월 16일(월) · 수익·일자리 한 줄 요약: 경력 15년 이상을 찾는 채용공고가 1년 새 30% 늘었고, 그 가운데 &#8216;AI&#8217;를 명시한 공고의 비율도 6%에서 약 10%로 올랐습니다. 오랜 경력에 AI 활용 경험을 더하면 선택지가 넓어진다는 신호입니다. 무슨 소식인가요? 채용 사이트 잡코리아가 11월 16일, 올해 1~10월에 올라온 채용공고와 회원 자료를 분석한 결과를 내놓았습니다. 청년일보, 연합뉴스 등</p>			</div>
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../ai-veteran-jobs-2026-11-16/index.html"> <span class="screen-reader-text">[실버정보] ‘AI 다룰 줄 아는 베테랑&#8217; 찾는 기업이 늘었습니다 – 경력 15년 이상 채용공고 30% 증가 (11.16)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		itemprop="text"		>
+					</div><!-- .entry-content .clear -->
+	</div><!-- .post-content -->
+</div> <!-- .blog-layout-1 -->
+	</article><!-- #post-## -->
+<article
 class="post-3262 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3262" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111-3/index.html" rel="bookmark">[실버정보]2026.11.15 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111-3/index.html" rel="bookmark">[실버정보] AI에게 세금·재산 문제를 물어볼 때 – &#8216;묻지 않은 것&#8217;을 놓친다는 시험 결과와 대처법 (11.15)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1111-3/index.html#respond">댓글 달기</a>			</span>
 
@@ -5163,7 +5229,7 @@ class="post-3262 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 15일(일) · AI 쉽게 익히기 한 줄 요약: AI에게 세금 상담을 시켜 보는 시험에서, AI는 계산은 하면서도 &#8220;꼭 확인해야 할 것&#8221;을 놓치는 일이 많았습니다. 돈과 재산이 걸린 문제를 AI에게 물을 때는 질문하는 방법과 마지막 확인이 중요합니다. 무슨 소식인가요? AI의 성능을 평가하는 미국 회사 서지(Surge AI)가 10월 27일 &#8216;DAYJOB: Tax&#8217;라는 시험 결과를 공개했고, 일본</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111-3/index.html"> <span class="screen-reader-text">[실버정보]2026.11.15 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111-3/index.html"> <span class="screen-reader-text">[실버정보] AI에게 세금·재산 문제를 물어볼 때 – &#8216;묻지 않은 것&#8217;을 놓친다는 시험 결과와 대처법 (11.15)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5173,7 +5239,7 @@ class="post-3262 post type-post status-publish format-standard hentry category-a
 class="post-3260 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3260" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111-2/index.html" rel="bookmark">[실버정보]2026.11.14 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111-2/index.html" rel="bookmark">[실버정보] AI가 대신 결제해 주는 시대? &#8216;챗GPT 월렛&#8217; – 미국에서 시작, 어르신이 알아 둘 5가지 (11.14)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1111-2/index.html#respond">댓글 달기</a>			</span>
 
@@ -5189,7 +5255,7 @@ class="post-3260 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 14일(토) · AI 쉽게 익히기 한 줄 요약: 챗GPT를 만든 오픈AI가 AI가 쇼핑하고 결제까지 도와주는 &#8216;챗GPT 월렛&#8217;을 미국에서 시작했습니다. 한국에서는 아직 쓸 수 없지만, 이런 기능이 오면 어떻게 대비할지 미리 알아 두세요. 무슨 소식인가요? 오픈AI가 13일(미국 현지) &#8216;챗GPT 월렛&#8217;을 공개했습니다. 챗GPT 안의 AI 도우미(오픈AI는 &#8216;닷츠&#8217;라고 부릅니다)가 이용자 대신 물건을 고르고 결제를 도와주는 전자</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111-2/index.html"> <span class="screen-reader-text">[실버정보]2026.11.14 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111-2/index.html"> <span class="screen-reader-text">[실버정보] AI가 대신 결제해 주는 시대? &#8216;챗GPT 월렛&#8217; – 미국에서 시작, 어르신이 알아 둘 5가지 (11.14)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5199,7 +5265,7 @@ class="post-3260 post type-post status-publish format-standard hentry category-a
 class="post-3258 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3258" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1113/index.html" rel="bookmark">[실버정보]2026.11.13 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1113/index.html" rel="bookmark">[실버정보] AI가 알려 준 쇼핑 사이트, 가짜일 수 있습니다 – 연말 쇼핑 전에 확인할 4가지 (11.13)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1113/index.html#respond">댓글 달기</a>			</span>
 
@@ -5215,7 +5281,7 @@ class="post-3258 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 13일(금) · AI 쉽게 익히기 한 줄 요약: AI에게 &#8220;어디서 사면 좋아?&#8221;라고 물으면 가짜 사이트가 섞여 나올 수 있다는 연구가 나왔습니다. AI가 준 주소는 &#8216;후보&#8217;로만 보고, 결제 전에 공식 주소인지 직접 확인하세요. 무슨 소식인가요? 미국의 IT 매체 더버지(The Verge)가 13일 보도한 내용입니다. 브랜드 보호 업체 포디(Podqi)가 챗GPT, 제미나이, 퍼플렉시티에게 &#8220;[브랜드]를 살 수 있는</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1113/index.html"> <span class="screen-reader-text">[실버정보]2026.11.13 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1113/index.html"> <span class="screen-reader-text">[실버정보] AI가 알려 준 쇼핑 사이트, 가짜일 수 있습니다 – 연말 쇼핑 전에 확인할 4가지 (11.13)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5225,7 +5291,7 @@ class="post-3258 post type-post status-publish format-standard hentry category-a
 class="post-3256 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3256" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1112/index.html" rel="bookmark">[실버정보]2026.11.12 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1112/index.html" rel="bookmark">[실버정보] AI는 나를 기억합니다 – 비밀번호는 절대 쓰지 말고, 기억은 직접 확인하세요 (11.12)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1112/index.html#respond">댓글 달기</a>			</span>
 
@@ -5241,7 +5307,7 @@ class="post-3256 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 12일(목) · AI 쉽게 익히기 한 줄 요약: AI는 대화를 통해 나를 기억하기도 합니다. 비밀번호와 계좌번호는 AI에게 절대 쓰지 말고, 기억 기능이 있다면 무엇을 기억하는지 직접 확인하고 지우세요. 무슨 소식인가요? 이번 주에 AI와 개인정보에 관한 소식이 둘 나왔습니다. 구글 제미나이(미국 먼저): AI가 이용자에 대해 기억하는 내용을 한눈에 보여 주는 &#8216;메모리 요약&#8217; 기능이 나왔습니다.</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1112/index.html"> <span class="screen-reader-text">[실버정보]2026.11.12 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1112/index.html"> <span class="screen-reader-text">[실버정보] AI는 나를 기억합니다 – 비밀번호는 절대 쓰지 말고, 기억은 직접 확인하세요 (11.12)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5251,7 +5317,7 @@ class="post-3256 post type-post status-publish format-standard hentry category-a
 class="post-3254 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3254" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111/index.html" rel="bookmark">[실버정보]2026.11.11 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1111/index.html" rel="bookmark">[실버정보] 키오스크도 스마트폰도 &#8220;눌러 보며&#8221; 배웁니다 – 어르신 디지털 교육 소식 두 가지 (11.11)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1111/index.html#respond">댓글 달기</a>			</span>
 
@@ -5267,7 +5333,7 @@ class="post-3254 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 11일(수) · AI 쉽게 익히기 한 줄 요약: 키오스크와 스마트폰은 설명서를 읽기보다 직접 눌러 보는 것이 가장 빠릅니다. 지역마다 그런 배움터가 늘고 있으니 가까운 곳을 찾아보세요. 무슨 소식인가요? 경북 안동시: 11월 9일부터 17일까지 어르신 500명을 대상으로 &#8216;찾아가는 디지털 새싹교실&#8217; 키오스크 체험교육을 열고 있습니다. 실제 햄버거 매장에서 메뉴 고르기부터 결제까지 처음부터 끝까지 직접 해</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111/index.html"> <span class="screen-reader-text">[실버정보]2026.11.11 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1111/index.html"> <span class="screen-reader-text">[실버정보] 키오스크도 스마트폰도 &#8220;눌러 보며&#8221; 배웁니다 – 어르신 디지털 교육 소식 두 가지 (11.11)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5277,7 +5343,7 @@ class="post-3254 post type-post status-publish format-standard hentry category-a
 class="post-3250 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3250" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1110/index.html" rel="bookmark">[실버정보]2026.11.10 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../newstoday_log_2026_1110/index.html" rel="bookmark">[실버정보] AI가 식당 예약과 쇼핑까지 찾아 주는 시대 – 아직 한국엔 없지만 미리 알아 둘 것 (11.10)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../newstoday_log_2026_1110/index.html#respond">댓글 달기</a>			</span>
 
@@ -5293,7 +5359,7 @@ class="post-3250 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 10일(화) · AI 쉽게 익히기 한 줄 요약: AI가 식당을 찾고 물건을 골라 주는 서비스가 해외에서 시작됐습니다. 편리하지만, 마지막 &#8220;예약&#8221;과 &#8220;결제&#8221;는 내가 직접 확인해야 안전합니다. 무슨 소식인가요? 이번 주에 해외에서 비슷한 소식이 둘 나왔습니다. 모두 현재 한국에서는 쓸 수 없고, 기사에도 한국 출시 이야기는 없습니다. 구글(일본): 구글 검색의 &#8216;AI 모드&#8217;에서 인원, 날짜, 시간,</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1110/index.html"> <span class="screen-reader-text">[실버정보]2026.11.10 국내외 사이트에서 모은 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../newstoday_log_2026_1110/index.html"> <span class="screen-reader-text">[실버정보] AI가 식당 예약과 쇼핑까지 찾아 주는 시대 – 아직 한국엔 없지만 미리 알아 둘 것 (11.10)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5303,7 +5369,7 @@ class="post-3250 post type-post status-publish format-standard hentry category-a
 class="post-3246 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3246" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
 		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
 	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../silver_tip_2026_1109_01/index.html" rel="bookmark">[실버정보]2026.11.09 국내외 사이트에서 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
+		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../silver_tip_2026_1109_01/index.html" rel="bookmark">[실버정보] AI에게 그림 부탁할 때 이것만 기억하세요 – 오픈AI 이미지 가이드를 시니어용으로 풀었습니다 (11.09)</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
 			<div class="entry-meta">			<span class="comments-link">
 				<a href="../../silver_tip_2026_1109_01/index.html#respond">댓글 달기</a>			</span>
 
@@ -5319,7 +5385,7 @@ class="post-3246 post type-post status-publish format-standard hentry category-a
 		</div>		</header><!-- .entry-header -->
 					<div class="ast-excerpt-container ast-blog-single-element">
 				<p>2026년 11월 9일(월) · AI 쉽게 익히기 한 줄 요약: 그림을 부탁할 때는 &#8220;무엇에 쓸 건지&#8221;를 먼저 말하고, 고칠 때는 &#8220;바꿀 것&#8221;과 &#8220;그대로 둘 것&#8221;을 나누어 말하면 훨씬 잘 나옵니다. 무슨 소식인가요? 오픈AI가 이미지 생성 모델 &#8216;GPT 이미지 2.6&#8217;의 공식 프롬프트 가이드를 공개했습니다. 개발자 문서로 나온 글이라 어려운 설정이 많지만, 핵심 원칙은 우리가 챗GPT에서 그림을</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../silver_tip_2026_1109_01/index.html"> <span class="screen-reader-text">[실버정보]2026.11.09 국내외 사이트에서 실버세대에게 도움이 되는 AI관련 &#8216;팁&#8217;</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
+		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../silver_tip_2026_1109_01/index.html"> <span class="screen-reader-text">[실버정보] AI에게 그림 부탁할 때 이것만 기억하세요 – 오픈AI 이미지 가이드를 시니어용으로 풀었습니다 (11.09)</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
 		itemprop="text"		>
 					</div><!-- .entry-content .clear -->
 	</div><!-- .post-content -->
@@ -5377,32 +5443,6 @@ class="post-3224 post type-post status-publish format-standard hentry category-a
 	</div><!-- .post-content -->
 </div> <!-- .blog-layout-1 -->
 	</article><!-- #post-## -->
-<article
-class="post-3218 post type-post status-publish format-standard hentry category-about-ai ast-grid-common-col ast-full-width ast-article-post" id="post-3218" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
-		<div class="ast-post-format- ast-no-thumb blog-layout-1 ast-article-inner">
-	<div class="post-content ast-grid-common-col" >
-		<div class="ast-blog-featured-section post-thumb ast-blog-single-element"></div><h2 class="entry-title ast-blog-single-element" itemprop="headline"><a href="../../standard-guide-for-visualizing-overseas-travel-stories/index.html" rel="bookmark">[업무일지 &amp; 매뉴얼] 2026-11-03 워드프레스 개편, 맛집 DB 실시간 연동 및 해외여행기 시각화 표준 지침서</a></h2>		<header class="entry-header ast-blog-single-element ast-blog-meta-container">
-			<div class="entry-meta">			<span class="comments-link">
-				<a href="../../standard-guide-for-visualizing-overseas-travel-stories/index.html#respond">댓글 달기</a>			</span>
-
-			 / <span class="ast-taxonomy-container cat-links default"><a href="index.html" rel="category tag">AI 제작일지 &amp; 아카이브</a></span> / <span class="posted-by vcard author" itemtype="https://schema.org/Person" itemscope="itemscope" itemprop="author">			<a title="hjyeagle의 모든 글 보기"
-				href="../../author/hjyeagle/index.html" rel="author"
-				class="url fn n" itemprop="url"				>
-				<span
-				class="author-name" itemprop="name"				>
-				hjyeagle			</span>
-			</a>
-		</span>
-
-		</div>		</header><!-- .entry-header -->
-					<div class="ast-excerpt-container ast-blog-single-element">
-				<p>1. 작업 개요 및 매뉴얼 목적 본 문서는 2026년 11월 03일 진행된 &#8216;뉴스투데이(newstoday.co.kr)&#8217; 홈페이지 개편 및 아카이브 시스템 구축 업무를 종합 기록함과 동시에, 관리자가 향후 동일한 작업을 독립적으로 재현·확장할 수 있도록 실무 운영 매뉴얼로 활용하기 위해 작성되었습니다.</p>			</div>
-		<p class="ast-blog-single-element ast-read-more-container read-more"> <a class="" href="../../standard-guide-for-visualizing-overseas-travel-stories/index.html"> <span class="screen-reader-text">[업무일지 &amp; 매뉴얼] 2026-11-03 워드프레스 개편, 맛집 DB 실시간 연동 및 해외여행기 시각화 표준 지침서</span> 더 읽기&quot;</a></p>		<div class="entry-content clear"
-		itemprop="text"		>
-					</div><!-- .entry-content .clear -->
-	</div><!-- .post-content -->
-</div> <!-- .blog-layout-1 -->
-	</article><!-- #post-## -->
 </div>			</main><!-- #main -->
 			
 		<div class='ast-pagination'><nav class="navigation pagination" aria-label="포스트 페이지 매김">
@@ -5428,11 +5468,13 @@ class="post-3218 post type-post status-publish format-standard hentry category-a
 					</div>
 					<div class="ast-mobile-popup-content">
 								<div class="ast-builder-menu-mobile ast-builder-menu ast-builder-menu-mobile-focus-item ast-builder-layout-element site-header-focus-item" data-section="section-header-mobile-menu">
-			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="ast-mobile-site-navigation" aria-label="사이트 탐색: Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation"><ul id="ast-hf-mobile-menu" class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+			<div class="ast-main-header-bar-alignment"><div class="main-header-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item" id="ast-mobile-site-navigation" aria-label="사이트 탐색: Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="main-navigation"><ul id="ast-hf-mobile-menu" class="main-header-menu ast-nav-menu ast-flex  submenu-with-border astra-menu-animation-fade  stack-on-mobile"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430"><a href="../../travel/index.html" class="menu-link">길 위의 이야기</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2229"><a href="../../food-archive/index.html" class="menu-link">맛집 아카이브</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3279"><a href="../../about/index.html" class="menu-link">소개</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3278"><a href="../../contact/index.html" class="menu-link">문의하기</a></li>
 </ul></div></nav></div></div>		</div>
 							</div>
 					<div class="ast-desktop-popup-content">
@@ -5448,11 +5490,13 @@ class="site-footer" id="colophon" itemtype="https://schema.org/WPFooter" itemsco
 					<div class="ast-builder-footer-grid-columns site-above-footer-inner-wrap ast-builder-grid-row">
 											<div class="site-footer-above-section-1 site-footer-section site-footer-section-1">
 								<div class="footer-widget-area widget-area site-footer-focus-item" data-section="section-footer-menu">
-				<div class="footer-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility footer-navigation" id="footer-site-navigation" aria-label="사이트 탐색: Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="footer-nav-wrap"><ul id="astra-footer-menu" class="ast-nav-menu ast-flex astra-footer-horizontal-menu astra-footer-tablet-horizontal-menu astra-footer-mobile-vertical-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+				<div class="footer-bar-navigation"><nav class="site-navigation ast-flex-grow-1 navigation-accessibility footer-navigation" id="footer-site-navigation" aria-label="사이트 탐색: Menu" itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope"><div class="footer-nav-wrap"><ul id="astra-footer-menu" class="ast-nav-menu ast-flex astra-footer-horizontal-menu astra-footer-tablet-horizontal-menu astra-footer-mobile-vertical-menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3090"><a href="../biznet_columns/index.html" class="menu-link">뉴스 &#038; 오피니언</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430"><a href="../../travel/index.html" class="menu-link">길 위의 이야기</a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2229"><a href="../../food-archive/index.html" class="menu-link">맛집 아카이브</a></li>
-<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2230"><a href="../../publications/index.html" class="menu-link">도서관 &#038; 출간</a></li>
-<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-3083"><a href="index.html" aria-current="page" class="menu-link">AI 제작일지 &amp; 아카이브</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3279"><a href="../../about/index.html" class="menu-link">소개</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3278"><a href="../../contact/index.html" class="menu-link">문의하기</a></li>
 </ul></div></nav></div>			</div>
 							</div>
 											<div class="site-footer-above-section-2 site-footer-section site-footer-section-2">

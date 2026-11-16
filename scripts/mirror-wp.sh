@@ -11,12 +11,14 @@
 #    .nojekyll.
 #
 # Env:
-#   MIRROR_WAIT   seconds between requests (default 1; wget also random-waits)
+#   MIRROR_WAIT   seconds between requests (default 5; wget also random-waits).
+#                 Cafe24 blocks clients that open more than about 150 connections
+#                 in 10 minutes. Keep this at 5 or higher (120 requests / 10 min).
 #   MIRROR_DEST   output directory (default: repository root)
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-WAIT="${MIRROR_WAIT:-1}"
+WAIT="${MIRROR_WAIT:-5}"
 DEST="${MIRROR_DEST:-$ROOT}"
 UA="newstoday-backup-mirror/1.0 (+https://github.com/hjyeagle/newstoday; polite backup)"
 
@@ -701,9 +703,12 @@ GitHub에서는 Actions의 **Mirror WordPress** 워크플로를
 서버가 처리하는 기능은 정적 미러에서 동작하지 않습니다.
 
 Cafe24 일일 전송량은 약 4GB입니다. 한도에 가까우면 이 스크립트를 실행하지 마세요.
-2026-11-04(UTC)에는 한도가 거의 소진되어 받기를 중단했고, 그날은 스크립트가
-접속을 거부합니다. 이미 받아 둔 글은 다시 받지 말고, 없거나 바뀐 글만 나누어 받으세요.
-맛집(`restaurant`) 글은 한 번에 모두 받지 못할 수 있습니다.
+호스팅은 10분에 약 150회를 넘기면 접속을 막으므로, 요청 간격은 5초 이상으로 둡니다.
+2026-11-04(UTC)에는 전송량 한도가 거의 소진되어 받기를 중단했고, 그날은 스크립트가
+접속을 거부합니다. 그 이후에는 바뀐 글과 아직 없는 맛집 글을 나누어 받았습니다.
+2026-11-16(UTC)에 라이브 사이트의 홈·메뉴·공통 레이아웃을 다시 맞춰 두었습니다.
+맛집(`restaurant`) 글 1,557개는 사이트맵과 같고, 본문은 2026-10-21 이후 바뀌지 않았습니다.
+맛집 글 목록은 한 페이지에 10편씩, 156페이지입니다.
 """
     return readme
 
